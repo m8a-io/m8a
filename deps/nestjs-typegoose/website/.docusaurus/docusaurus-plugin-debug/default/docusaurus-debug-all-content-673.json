@@ -1,0 +1,311 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/nestjs-typegoose/docs",
+          "tagsPath": "/nestjs-typegoose/docs/tags",
+          "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs",
+          "editUrlLocalized": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/home/scott/Documents/tmp/m8a-new/deps/nestjs-typegoose/website/sidebars.js",
+          "contentPath": "/home/scott/Documents/tmp/m8a-new/deps/nestjs-typegoose/website/docs",
+          "contentPathLocalized": "/home/scott/Documents/tmp/m8a-new/deps/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "unversionedId": "async-configuration",
+              "id": "async-configuration",
+              "title": "Async Configuration",
+              "description": "To provide asynchronous mongoose schema options (similar to nestjs mongoose implementation) you can use the TypegooseModule.forRootAsync",
+              "source": "@site/docs/async-configuration.md",
+              "sourceDirName": ".",
+              "slug": "/async-configuration",
+              "permalink": "/nestjs-typegoose/docs/async-configuration",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/async-configuration.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "async-configuration",
+                "title": "Async Configuration"
+              },
+              "sidebar": "someSidebar",
+              "previous": {
+                "title": "Multiple MongoDB Connections",
+                "permalink": "/nestjs-typegoose/docs/multiple-connections"
+              },
+              "next": {
+                "title": "Schema Options",
+                "permalink": "/nestjs-typegoose/docs/schema-options"
+              }
+            },
+            {
+              "unversionedId": "discriminators",
+              "id": "discriminators",
+              "title": "Mongoose Discriminators",
+              "description": "To add discriminators to a model, you may specify a discriminators array in the long-form options shown below.",
+              "source": "@site/docs/discriminators.md",
+              "sourceDirName": ".",
+              "slug": "/discriminators",
+              "permalink": "/nestjs-typegoose/docs/discriminators",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/discriminators.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "discriminators",
+                "title": "Mongoose Discriminators"
+              },
+              "sidebar": "someSidebar",
+              "previous": {
+                "title": "FAQ",
+                "permalink": "/nestjs-typegoose/docs/faq"
+              },
+              "next": {
+                "title": "Multiple MongoDB Connections",
+                "permalink": "/nestjs-typegoose/docs/multiple-connections"
+              }
+            },
+            {
+              "unversionedId": "faq",
+              "id": "faq",
+              "title": "FAQ",
+              "description": "No FAQs currently",
+              "source": "@site/docs/faq.md",
+              "sourceDirName": ".",
+              "slug": "/faq",
+              "permalink": "/nestjs-typegoose/docs/faq",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/faq.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "faq",
+                "title": "FAQ"
+              },
+              "sidebar": "someSidebar",
+              "previous": {
+                "title": "Testing",
+                "permalink": "/nestjs-typegoose/docs/testing"
+              },
+              "next": {
+                "title": "Mongoose Discriminators",
+                "permalink": "/nestjs-typegoose/docs/discriminators"
+              }
+            },
+            {
+              "unversionedId": "install",
+              "id": "install",
+              "title": "Installation",
+              "description": "This assumes you have a nestjs project to work with. If you don't I recommend that you use nestjs cli to jump start an example to project to get started using nestjs-typegoose.",
+              "source": "@site/docs/install.md",
+              "sourceDirName": ".",
+              "slug": "/install",
+              "permalink": "/nestjs-typegoose/docs/install",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/install.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "install",
+                "title": "Installation"
+              },
+              "sidebar": "someSidebar",
+              "next": {
+                "title": "Basic Usage",
+                "permalink": "/nestjs-typegoose/docs/usage"
+              }
+            },
+            {
+              "unversionedId": "multiple-connections",
+              "id": "multiple-connections",
+              "title": "Multiple MongoDB Connections",
+              "description": "To have multiple MongoDB connections one needs to add a connectionName string to forRoot and forFeature.",
+              "source": "@site/docs/multiple-connections.md",
+              "sourceDirName": ".",
+              "slug": "/multiple-connections",
+              "permalink": "/nestjs-typegoose/docs/multiple-connections",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/multiple-connections.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "multiple-connections",
+                "title": "Multiple MongoDB Connections"
+              },
+              "sidebar": "someSidebar",
+              "previous": {
+                "title": "Mongoose Discriminators",
+                "permalink": "/nestjs-typegoose/docs/discriminators"
+              },
+              "next": {
+                "title": "Async Configuration",
+                "permalink": "/nestjs-typegoose/docs/async-configuration"
+              }
+            },
+            {
+              "unversionedId": "schema-options",
+              "id": "schema-options",
+              "title": "Schema Options",
+              "description": "To add custom mongoose schema options you can simply change Typegoose.forFeature to the following format:",
+              "source": "@site/docs/schema-options.md",
+              "sourceDirName": ".",
+              "slug": "/schema-options",
+              "permalink": "/nestjs-typegoose/docs/schema-options",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/schema-options.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "schema-options",
+                "title": "Schema Options"
+              },
+              "sidebar": "someSidebar",
+              "previous": {
+                "title": "Async Configuration",
+                "permalink": "/nestjs-typegoose/docs/async-configuration"
+              }
+            },
+            {
+              "unversionedId": "testing",
+              "id": "testing",
+              "title": "Testing",
+              "description": "Like @nestjs/mongoose (see the testing section) nestjs-typegoose's forFeature and forRoot rely on a database connection to work. To unit test your CatService without connecting to a mongo database you need to create a fake model using a custom provider.",
+              "source": "@site/docs/testing.md",
+              "sourceDirName": ".",
+              "slug": "/testing",
+              "permalink": "/nestjs-typegoose/docs/testing",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/testing.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "testing",
+                "title": "Testing"
+              },
+              "sidebar": "someSidebar",
+              "previous": {
+                "title": "Basic Usage",
+                "permalink": "/nestjs-typegoose/docs/usage"
+              },
+              "next": {
+                "title": "FAQ",
+                "permalink": "/nestjs-typegoose/docs/faq"
+              }
+            },
+            {
+              "unversionedId": "usage",
+              "id": "usage",
+              "title": "Basic Usage",
+              "description": "Check out this example project if you need help.",
+              "source": "@site/docs/usage.md",
+              "sourceDirName": ".",
+              "slug": "/usage",
+              "permalink": "/nestjs-typegoose/docs/usage",
+              "draft": false,
+              "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/usage.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "id": "usage",
+                "title": "Basic Usage"
+              },
+              "sidebar": "someSidebar",
+              "previous": {
+                "title": "Installation",
+                "permalink": "/nestjs-typegoose/docs/install"
+              },
+              "next": {
+                "title": "Testing",
+                "permalink": "/nestjs-typegoose/docs/testing"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "someSidebar": [
+              {
+                "type": "category",
+                "label": "Basics",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "install"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "usage"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "testing"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "faq"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              },
+              {
+                "type": "category",
+                "label": "Advanced",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "discriminators"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "multiple-connections"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "async-configuration"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "schema-options"
+                  }
+                ],
+                "collapsed": true,
+                "collapsible": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "Recent posts",
+      "blogPosts": [],
+      "blogListPaginated": [],
+      "blogTags": {},
+      "blogTagsListPath": "/nestjs-typegoose/blog/tags",
+      "blogTagsPaginated": []
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/nestjs-typegoose/",
+        "source": "@site/src/pages/index.js"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

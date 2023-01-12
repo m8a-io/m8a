@@ -1,0 +1,27 @@
+{
+  "unversionedId": "discriminators",
+  "id": "discriminators",
+  "title": "Mongoose Discriminators",
+  "description": "To add discriminators to a model, you may specify a discriminators array in the long-form options shown below.",
+  "source": "@site/docs/discriminators.md",
+  "sourceDirName": ".",
+  "slug": "/discriminators",
+  "permalink": "/nestjs-typegoose/docs/discriminators",
+  "draft": false,
+  "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/discriminators.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "discriminators",
+    "title": "Mongoose Discriminators"
+  },
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "FAQ",
+    "permalink": "/nestjs-typegoose/docs/faq"
+  },
+  "next": {
+    "title": "Multiple MongoDB Connections",
+    "permalink": "/nestjs-typegoose/docs/multiple-connections"
+  }
+}

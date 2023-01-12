@@ -1,0 +1,27 @@
+{
+  "unversionedId": "multiple-connections",
+  "id": "multiple-connections",
+  "title": "Multiple MongoDB Connections",
+  "description": "To have multiple MongoDB connections one needs to add a connectionName string to forRoot and forFeature.",
+  "source": "@site/docs/multiple-connections.md",
+  "sourceDirName": ".",
+  "slug": "/multiple-connections",
+  "permalink": "/nestjs-typegoose/docs/multiple-connections",
+  "draft": false,
+  "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/multiple-connections.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "multiple-connections",
+    "title": "Multiple MongoDB Connections"
+  },
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Mongoose Discriminators",
+    "permalink": "/nestjs-typegoose/docs/discriminators"
+  },
+  "next": {
+    "title": "Async Configuration",
+    "permalink": "/nestjs-typegoose/docs/async-configuration"
+  }
+}

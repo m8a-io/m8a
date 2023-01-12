@@ -26,10 +26,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "6.7.1",
-
-  // "npmVersion": "6.14.15",
-  // "yarnVersion": "1.9.4",
+  "pnpmVersion": "7.24.3",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
@@ -42,7 +39,7 @@
    * LTS schedule: https://nodejs.org/en/about/releases/
    * LTS versions: https://nodejs.org/en/download/releases/
    */
-  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
+  "nodeSupportedVersionRange": ">=16.13.0 <19.0.0",
 
   /**
    * If the version check above fails, Rush will display a message showing the current
@@ -50,7 +47,7 @@
    * additional instructions that will display below the warning, if there's a specific
    * tool or script you'd like the user to use to get in line with the expected version.
    */
-  // "nodeSupportedVersionInstructions": "Run 'nvs use' to switch to the expected node version.",
+  "nodeSupportedVersionInstructions": "m8a currently isn't tested with this Node version. If the Node version you have is older, please upgrade. If it is newer, downgrade please. Odd-numbered major versions of Node.js are experimental and are not supported.",
 
   /**
    * Odd-numbered major versions of Node.js are experimental.  Even-numbered releases
@@ -76,7 +73,7 @@
    * version. In those cases, you will need to add an entry to the "allowedAlternativeVersions"
    * section of the common-versions.json.
    */
-  // "ensureConsistentVersions": true,
+  "ensureConsistentVersions": true,
 
   /**
    * Large monorepos can become intimidating for newcomers if project folder paths don't follow
@@ -101,8 +98,8 @@
    * To remove these restrictions, you could set projectFolderMinDepth=1
    * and set projectFolderMaxDepth to a large number.
    */
-  // "projectFolderMinDepth": 2,
-  // "projectFolderMaxDepth": 2,
+  "projectFolderMinDepth": 2,
+  "projectFolderMaxDepth": 4,
 
   /**
    * Today the npmjs.com registry enforces fairly strict naming rules for packages, but in the early
@@ -124,34 +121,12 @@
    * The approvals are tracked in two config files "browser-approved-packages.json"
    * and "nonbrowser-approved-packages.json".  See the Rush documentation for details.
    */
-  // "approvedPackagesPolicy": {
-  //   /**
-  //    * The review categories allow you to say for example "This library is approved for usage
-  //    * in prototypes, but not in production code."
-  //    *
-  //    * Each project can be associated with one review category, by assigning the "reviewCategory" field
-  //    * in the "projects" section of rush.json.  The approval is then recorded in the files
-  //    * "common/config/rush/browser-approved-packages.json" and "nonbrowser-approved-packages.json"
-  //    * which are automatically generated during "rush update".
-  //    *
-  //    * Designate categories with whatever granularity is appropriate for your review process,
-  //    * or you could just have a single category called "default".
-  //    */
-  //   "reviewCategories": [
-  //     // Some example categories:
-  //     "production", // projects that ship to production
-  //     "tools",      // non-shipping projects that are part of the developer toolchain
-  //     "prototypes"  // experiments that should mostly be ignored by the review process
-  //   ],
-  // 
-  //   /**
-  //    * A list of NPM package scopes that will be excluded from review.
-  //    * We recommend to exclude TypeScript typings (the "@types" scope), because
-  //    * if the underlying package was already approved, this would imply that the typings
-  //    * are also approved.
-  //    */
-  //   // "ignoredNpmScopes": ["@types"]
-  // },
+   "approvedPackagesPolicy": {
+    "reviewCategories": [
+      "production",
+      "dependency"
+    ]
+  },
 
   /**
    * If you use Git as your version control system, this section has some additional
@@ -223,13 +198,13 @@
      * your PR branch, and in this situation "rush change" will also automatically invoke "git fetch"
      * to retrieve the latest activity for the remote main branch.
      */
-    // "url": "https://github.com/microsoft/rush-example",
+    "url": "https://github.com/m8a-io/m8a",
 
     /**
      * The default branch name. This tells "rush change" which remote branch to compare against.
      * The default value is "main"
      */
-    // "defaultBranch": "main",
+    "defaultBranch": "dev"
 
     /**
      * The default remote. This tells "rush change" which remote to compare against if the remote URL is
@@ -288,7 +263,7 @@
     //    * The folder name for this variant.
     //    */
     //   "variantName": "old-sdk",
-    // 
+    //
     //   /**
     //    * An informative description
     //    */
@@ -332,24 +307,73 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
+    {
+      "packageName": "@m8a/nestjs-typegoose",
+      "projectFolder": "deps/nestjs-typegoose",
+      "reviewCategory": "production",
+      "shouldPublish": true
+    }
     // {
+    //   "packageName": "@m8a/starter-kit-api",
+    //   "projectFolder": "packages/starter-kit-api",
+    //   "reviewCategory": "production",
+    //   "shouldPublish": false
+    // },
+    // {
+    //   "packageName": "@m8a/starter-kit-app",
+    //   "projectFolder": "packages/starter-kit-app",
+    //   "reviewCategory": "production",
+    //   "shouldPublish": false
+    // },
+    // {
+    //   "packageName": "@m8a/cli",
+    //   "projectFolder": "packages/cli",
+    //   "reviewCategory": "production",
+    //   "shouldPublish": false
+    // },
+    // {
+    //   "packageName": "@m8a/cli-local",
+    //   "projectFolder": "packages/cli-local",
+    //   "reviewCategory": "production",
+    //   "shouldPublish": false
+    // },
+    // {
+    //   "packageName": "@m8a/cli-lib",
+    //   "projectFolder": "packages/cli-lib",
+    //   "reviewCategory": "production",
+    //   "shouldPublish": false
+    // },
+    // {
+    //   "packageName": "@m8a/core",
+    //   "projectFolder": "packages/core",
+    //   "reviewCategory": "production",
+    //   "shouldPublish": false
+    // },
+    // {
+    //   "packageName": "@m8a/logger",
+    //   "projectFolder": "packages/logger",
+    //   "reviewCategory": "production",
+    //   "shouldPublish": false
+    // }
+
+
     //   /**
     //    * The NPM package name of the project (must match package.json)
     //    */
     //   "packageName": "my-app",
-    // 
+    //
     //   /**
     //    * The path to the project folder, relative to the rush.json config file.
     //    */
     //   "projectFolder": "apps/my-app",
-    // 
+    //
     //   /**
     //    * An optional category for usage in the "browser-approved-packages.json"
     //    * and "nonbrowser-approved-packages.json" files.  The value must be one of the
     //    * strings from the "reviewCategories" defined above.
     //    */
     //   "reviewCategory": "production",
-    // 
+    //
     //   /**
     //    * A list of Rush project names that are to be installed from NPM
     //    * instead of linking to the local project.
@@ -376,20 +400,20 @@
     //   "decoupledLocalDependencies": [
     //     // "my-toolchain"
     //   ],
-    // 
+    //
     //   /**
     //    * If true, then this project will be ignored by the "rush check" command.
     //    * The default value is false.
     //    */
     //   // "skipRushCheck": false,
-    // 
+    //
     //   /**
     //    * A flag indicating that changes to this project will be published to npm, which affects
     //    * the Rush change and publish workflows. The default value is false.
     //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
     //    */
     //   // "shouldPublish": false,
-    // 
+    //
     //   /**
     //    * Facilitates postprocessing of a project's files prior to publishing.
     //    *
@@ -398,14 +422,14 @@
     //    * must contain its own package.json file, which is typically a build output.
     //    */
     //   // "publishFolder": "temp/publish",
-    // 
+    //
     //   /**
     //    * An optional version policy associated with the project.  Version policies are defined
     //    * in "version-policies.json" file.  See the "rush publish" documentation for more info.
     //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
     //    */
     //   // "versionPolicyName": "",
-    // 
+    //
     //   /**
     //    * An optional set of custom tags that can be used to select this project.  For example,
     //    * adding "my-custom-tag" will allow this project to be selected by the
@@ -414,20 +438,5 @@
     //    * ".", and "@" characters.
     //    */
     //   // "tags": [ "1.0.0-release", "frontend-team" ]
-    // },
-    // 
-    // {
-    //   "packageName": "my-controls",
-    //   "projectFolder": "libraries/my-controls",
-    //   "reviewCategory": "production",
-    //   "tags": [ "frontend-team" ]
-    // },
-    // 
-    // {
-    //   "packageName": "my-toolchain",
-    //   "projectFolder": "tools/my-toolchain",
-    //   "reviewCategory": "tools",
-    //   "tags": [ "tools" ]
-    // }
   ]
 }
