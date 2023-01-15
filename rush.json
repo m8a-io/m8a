@@ -3,7 +3,7 @@
  * For full documentation, please see https://rushjs.io
  */
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "$schema": "https://raw.githubusercontent.com/microsoft/json-schemas/main/rush/v5/rush.schema.json",
 
   /**
    * (Required) This specifies the version of the Rush engine to be used in this repo.
@@ -17,7 +17,6 @@
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
   "rushVersion": "5.88.0",
-
   /**
    * The next field selects which package manager should be installed and determines its version.
    * Rush installs its own local copy of the package manager to ensure that your build process
@@ -123,8 +122,8 @@
    */
    "approvedPackagesPolicy": {
     "reviewCategories": [
-      "production",
-      "dependency"
+      "apps",
+      "libraries"
     ]
   },
 
@@ -198,7 +197,7 @@
      * your PR branch, and in this situation "rush change" will also automatically invoke "git fetch"
      * to retrieve the latest activity for the remote main branch.
      */
-    "url": "https://github.com/m8a-io/m8a",
+    "url": "https://github.com/m8a-io/m8a.git",
 
     /**
      * The default branch name. This tells "rush change" which remote branch to compare against.
@@ -310,9 +309,9 @@
     {
       "packageName": "@m8a/nestjs-typegoose",
       "projectFolder": "deps/nestjs-typegoose",
-      "reviewCategory": "production",
+      "reviewCategory": "libraries",
       "shouldPublish": true
-    }
+    },
     // {
     //   "packageName": "@m8a/starter-kit-api",
     //   "projectFolder": "packages/starter-kit-api",
@@ -343,12 +342,18 @@
     //   "reviewCategory": "production",
     //   "shouldPublish": false
     // },
-    // {
-    //   "packageName": "@m8a/core",
-    //   "projectFolder": "packages/core",
-    //   "reviewCategory": "production",
-    //   "shouldPublish": false
-    // },
+    {
+      "packageName": "@m8a/core",
+      "projectFolder": "packages/core",
+      "reviewCategory": "libraries",
+      "shouldPublish": false
+    },
+        {
+      "packageName": "@m8a/eslint-config",
+      "projectFolder": "deps/eslint",
+      "reviewCategory": "libraries",
+      "shouldPublish": true
+    }
     // {
     //   "packageName": "@m8a/logger",
     //   "projectFolder": "packages/logger",

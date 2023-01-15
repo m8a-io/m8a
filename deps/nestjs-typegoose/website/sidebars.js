@@ -9,5 +9,5 @@ module.exports = {
   someSidebar: {
     Basics: ['install', 'usage', 'testing', 'faq'],
     Advanced: ['discriminators', 'multiple-connections', 'async-configuration', 'schema-options']
-  },
-};
+  }
+}

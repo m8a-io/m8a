@@ -79,8 +79,8 @@ let TypegooseCoreModule = TypegooseCoreModule_1 = class TypegooseCoreModule {
             this.createAsyncOptionsProvider(options),
             {
                 provide: options.useClass,
-                useClass: options.useClass,
-            },
+                useClass: options.useClass
+            }
         ];
     }
     static createAsyncOptionsProvider(options) {
@@ -88,13 +88,13 @@ let TypegooseCoreModule = TypegooseCoreModule_1 = class TypegooseCoreModule {
             return {
                 provide: typegoose_constants_1.TYPEGOOSE_MODULE_OPTIONS,
                 useFactory: options.useFactory,
-                inject: options.inject || [],
+                inject: options.inject || []
             };
         }
         return {
             provide: typegoose_constants_1.TYPEGOOSE_MODULE_OPTIONS,
             useFactory: async (optionsFactory) => await optionsFactory.createTypegooseOptions(),
-            inject: [options.useExisting || options.useClass],
+            inject: [options.useExisting || options.useClass]
         };
     }
     async onApplicationShutdown() {

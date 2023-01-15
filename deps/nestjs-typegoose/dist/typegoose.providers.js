@@ -9,7 +9,7 @@ function createTypegooseProviders(connectionName, models = []) {
     const buildProvider = ({ name }, modelFactory) => ({
         provide: (0, typegoose_utils_1.getModelToken)(name),
         useFactory: modelFactory,
-        inject: [connectionToken],
+        inject: [connectionToken]
     });
     const createDiscriminatorFactoryFrom = (parentFactory) => (discriminatorDefinition) => {
         if (isTypegooseClass(discriminatorDefinition)) {

@@ -3,7 +3,7 @@
  * More documentation is available on the Rush website: https://rushjs.io
  */
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/pnpm-config.schema.json",
+  "$schema": "https://raw.githubusercontent.com/microsoft/json-schemas/main/rush/v5/pnpm-config.schema.json",
 
   /**
    * If true, then `rush install` and `rush update` will use the PNPM workspaces feature
@@ -31,7 +31,7 @@
    * The default value is false to avoid legacy compatibility issues.
    * It is strongly recommended to set `strictPeerDependencies=true`.
    */
-  // "strictPeerDependencies": true,
+  "strictPeerDependencies": true,
 
   /**
    * Environment variables that will be provided to PNPM.
@@ -88,10 +88,12 @@
    *
    * PNPM documentation: https://pnpm.io/package_json#pnpmoverrides
    */
-  "globalOverrides": {
-    // "example1": "^1.0.0",
+  // "globalOverrides": {
+  //     "class-validator": "0.14.0"
+  // },
+
     // "example2": "npm:@company/example2@^1.0.0"
-  },
+  // },
 
   /**
    * The `globalPeerDependencyRules` setting provides various settings for suppressing validation errors
@@ -106,8 +108,8 @@
    * https://pnpm.io/package_json#pnpmpeerdependencyrules
    */
   "globalPeerDependencyRules": {
-    // "ignoreMissing": ["@eslint/*"],
-    // "allowedVersions": { "react": "17" },
+    // "ignoreMissing": ["class-validator"]
+    "allowedVersions": { "class-validator": "0.14.0" }
     // "allowAny": ["@babel/*"]
   },
 

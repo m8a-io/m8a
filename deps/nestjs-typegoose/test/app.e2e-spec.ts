@@ -1,42 +1,41 @@
-import request from 'supertest';
-import mongoose from 'mongoose';
-import { Test } from '@nestjs/testing';
+import request from 'supertest'
+import mongoose from 'mongoose'
+import { Test } from '@nestjs/testing'
 import {
   Body,
   Controller,
   Module,
   Post,
   INestApplication
-} from '@nestjs/common';
-import { InjectModel, TypegooseModule, getModelToken } from '../src';
-import { prop } from '@typegoose/typegoose';
-import { MongoMemoryServer } from 'mongodb-memory-server';
+} from '@nestjs/common'
+import { InjectModel, TypegooseModule, getModelToken } from '../src'
+import { prop } from '@typegoose/typegoose'
+import { MongoMemoryServer } from 'mongodb-memory-server'
 
-let mongod: MongoMemoryServer;
-let mongoUri: string;
-let app: INestApplication;
+let mongod: MongoMemoryServer
+let mongoUri: string
+let app: INestApplication
 
 beforeAll(async () => {
+  mongod = await MongoMemoryServer.create()
 
-  mongod = await MongoMemoryServer.create();
-
-  mongoUri = mongod.getUri();
+  mongoUri = mongod.getUri()
 
   const moduleFixture = await Test.createTestingModule({
     imports: [MockApp, MockSubModule]
-  }).compile();
+  }).compile()
 
-  app = moduleFixture.createNestApplication();
-  await app.init();
-});
+  app = moduleFixture.createNestApplication()
+  await app.init()
+})
 
-afterAll(async() => {
+afterAll(async () => {
   await mongoose.disconnect()
   await mongod.stop()
-});
+})
 
 @Module({
-  imports: [ TypegooseModule.forRootAsync({
+  imports: [TypegooseModule.forRootAsync({
     useFactory: () => {
       return {
         uri: mongoUri,
@@ -51,58 +50,60 @@ export class MockApp {}
 
 class MockTypegooseClass {
   @prop()
-  description: string;
+    description: string
 }
 
 class MockDiscriminatorParent extends MockTypegooseClass {
   @prop()
-  isParent: boolean;
+    isParent: boolean
 }
 
 class MockDiscriminator extends MockDiscriminatorParent {
   @prop()
-  isSubtype: boolean;
+    isSubtype: boolean
 }
 
 @Controller()
 class MockController {
-  constructor(@InjectModel(MockTypegooseClass) private readonly model: any) {} // In reality, it's a Model<schema of MockTypegooseClass>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  constructor (@InjectModel(MockTypegooseClass) private readonly model: any) {} // In reality, it's a Model<schema of MockTypegooseClass>
 
   @Post('create')
-  async createTask(@Body() body: { description: string }) {
+  async createTask (@Body() body: { description: string }) {
     return this.model.create({
       description: body.description
-    });
+    })
   }
 
   @Post('get')
-  async getTask(@Body() body: { description: string }) {
+  async getTask (@Body() body: { description: string }) {
     return this.model.findOne({
       description: body.description
-    });
+    })
   }
 }
 
 @Controller()
 class MockSubController {
-  constructor(@InjectModel(MockDiscriminator) private readonly model: any) {} // In reality, it's a Model<schema of MockDiscriminator>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  constructor (@InjectModel(MockDiscriminator) private readonly model: any) {} // In reality, it's a Model<schema of MockDiscriminator>
 
   @Post('createSubTask')
-  async createSubTask(
+  async createSubTask (
     @Body() body: { description: string; isSubtype: boolean }
   ) {
     return this.model.create({
       description: body.description,
       isParent: false,
       isSubtype: body.isSubtype
-    });
+    })
   }
 
   @Post('getSubTask')
-  async getSubTask(@Body() body: { isSubtype: boolean }) {
+  async getSubTask (@Body() body: { isSubtype: boolean }) {
     return this.model.findOne({
       isSubtype: body.isSubtype
-    });
+    })
   }
 }
 
@@ -121,50 +122,48 @@ class MockSubController {
 class MockSubModule {}
 
 describe('App consuming TypegooseModule', () => {
-
   it('should store and get mockTask', async () => {
     await request(app.getHttpServer())
       .post('/create')
       .send({
         description: 'hello world'
-      });
+      })
 
     const response = await request(app.getHttpServer())
       .post('/get')
       .send({
         description: 'hello world'
-      });
+      })
 
-    const body = response.body;
+    const body = response.body
 
-    expect(body._id).toBeTruthy();
-    expect(body.description).toBe('hello world');
-  });
-});
+    expect(body._id).toBeTruthy()
+    expect(body.description).toBe('hello world')
+  })
+})
 
 describe('Clear typegoose state after module destroy', () => {
-
   beforeEach(async () => {
     const moduleFixture = await Test.createTestingModule({
       imports: [MockApp, MockSubModule]
-    }).compile();
+    }).compile()
 
-    app = moduleFixture.createNestApplication();
-    await app.init();
-  });
+    app = moduleFixture.createNestApplication()
+    await app.init()
+  })
 
   afterEach(async () => {
-    await app.close();
-  });
+    await app.close()
+  })
 
   Array.from({ length: 2 }).forEach(() => {
     it('resolved model should use correct connection', async () => {
-      const model = await app.get(getModelToken(MockTypegooseClass.name));
+      const model = await app.get(getModelToken(MockTypegooseClass.name))
       await model.create({
         description: 'test'
-      });
-    });
-  });
+      })
+    })
+  })
 
   it('should store and get mockSubTask', async () => {
     await request(app.getHttpServer())
@@ -172,19 +171,19 @@ describe('Clear typegoose state after module destroy', () => {
       .send({
         description: 'hello world',
         isSubtype: true
-      });
+      })
 
     const response = await request(app.getHttpServer())
       .post('/getSubTask')
       .send({
         description: 'hello world',
         isSubtype: true
-      });
+      })
 
-    const body = response.body;
+    const body = response.body
 
-    expect(body._id).toBeTruthy();
-    expect(body.isParent).toBe(false);
-    expect(body.isSubtype).toBe(true);
-  });
-});
+    expect(body._id).toBeTruthy()
+    expect(body.isParent).toBe(false)
+    expect(body.isSubtype).toBe(true)
+  })
+})

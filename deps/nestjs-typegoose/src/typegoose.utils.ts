@@ -1,4 +1,4 @@
-import { DEFAULT_DB_CONNECTION_NAME } from './typegoose.constants';
+import { DEFAULT_DB_CONNECTION_NAME } from './typegoose.constants'
 
 /**
  * Returns the provider token name.
@@ -6,8 +6,8 @@ import { DEFAULT_DB_CONNECTION_NAME } from './typegoose.constants';
  * @returns The token name
  * @internal
  */
-export function getModelToken(model: string) {
-  return `${model}Model`;
+export function getModelToken (model: string) {
+  return `${model}Model`
 }
 
 /**
@@ -16,9 +16,9 @@ export function getModelToken(model: string) {
  * @returns the connection provider name
  * @internal
  */
-export function getConnectionToken(name?: string) {
+export function getConnectionToken (name?: string) {
   if (typeof name === 'string' && name !== DEFAULT_DB_CONNECTION_NAME) {
-    return `${name}Connection`;
+    return `${name}Connection`
   }
-  return DEFAULT_DB_CONNECTION_NAME;
+  return DEFAULT_DB_CONNECTION_NAME
 }

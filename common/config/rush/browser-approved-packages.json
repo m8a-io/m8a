@@ -3,116 +3,292 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@apollo/gateway",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@casl/ability",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@commitlint/cli",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@commitlint/config-conventional",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@m8a/eslint-config",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@m8a/nestjs-typegoose",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/common",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@nestjs/core",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@nestjs/graphql",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@nestjs/jwt",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@nestjs/mercurius",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@nestjs/passport",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/platform-express",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@nestjs/platform-fastify",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/testing",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@ogma/nestjs-module",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@ptc-org/nestjs-query-core",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@ptc-org/nestjs-query-graphql",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@ptc-org/nestjs-query-typegoose",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@rushstack/eslint-config",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@typegoose/typegoose",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@types/cache-manager",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@types/cache-manager-redis-store",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@types/jest",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@types/node",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@types/passport-jwt",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@types/supertest",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "apollo-server-errors",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "argon2",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "cache-manager",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "cache-manager-redis-store",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "camel-case",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "class-transformer",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "class-validator",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "coveralls",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "dataloader",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "eslint-config-standard",
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-import",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "eslint-plugin-jest",
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-jsdoc",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "eslint-plugin-n",
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-prefer-arrow",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "eslint-plugin-promise",
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "fastify",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "graphql",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "graphql-subscriptions",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "husky",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "is-class",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "jest",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "mercurius",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "mongodb-memory-server",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "mongoose",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "mongoose-autopopulate",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "ms",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "nest-typed-config",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "passport",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "passport-jwt",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "rimraf",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "rxjs",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "superagent",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "supertest",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "ts-loader",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "ts-morph",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "tslib",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "webpack",
+      "allowedCategories": [ "libraries" ]
     }
   ]
 }

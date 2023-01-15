@@ -15,13 +15,13 @@ let TypegooseModule = TypegooseModule_1 = class TypegooseModule {
     static forRoot(uri, options = {}) {
         return {
             module: TypegooseModule_1,
-            imports: [typegoose_core_module_1.TypegooseCoreModule.forRoot(uri, options)],
+            imports: [typegoose_core_module_1.TypegooseCoreModule.forRoot(uri, options)]
         };
     }
     static forRootAsync(options) {
         return {
             module: TypegooseModule_1,
-            imports: [typegoose_core_module_1.TypegooseCoreModule.forRootAsync(options)],
+            imports: [typegoose_core_module_1.TypegooseCoreModule.forRootAsync(options)]
         };
     }
     static forFeature(models, connectionName) {
