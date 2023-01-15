@@ -1,0 +1,27 @@
+{
+  "unversionedId": "usage",
+  "id": "usage",
+  "title": "Basic Usage",
+  "description": "Check out this example project if you need help.",
+  "source": "@site/docs/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/nestjs-typegoose/docs/usage",
+  "draft": false,
+  "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/usage.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "usage",
+    "title": "Basic Usage"
+  },
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/nestjs-typegoose/docs/install"
+  },
+  "next": {
+    "title": "Testing",
+    "permalink": "/nestjs-typegoose/docs/testing"
+  }
+}

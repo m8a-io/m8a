@@ -1,0 +1,48 @@
+{
+  "/nestjs-typegoose/docs-258": {
+    "__comp": "1be78505",
+    "__context": {
+      "plugin": "1f1a89eb"
+    },
+    "versionMetadata": "935f2afb"
+  },
+  "/nestjs-typegoose/docs/async-configuration-eb5": {
+    "__comp": "17896441",
+    "content": "16c91d09"
+  },
+  "/nestjs-typegoose/docs/discriminators-df5": {
+    "__comp": "17896441",
+    "content": "99f6fac0"
+  },
+  "/nestjs-typegoose/docs/faq-cc5": {
+    "__comp": "17896441",
+    "content": "0480b142"
+  },
+  "/nestjs-typegoose/docs/install-f37": {
+    "__comp": "17896441",
+    "content": "c4de80f8"
+  },
+  "/nestjs-typegoose/docs/multiple-connections-f80": {
+    "__comp": "17896441",
+    "content": "fb7b7bcb"
+  },
+  "/nestjs-typegoose/docs/schema-options-9c7": {
+    "__comp": "17896441",
+    "content": "4020c8f9"
+  },
+  "/nestjs-typegoose/docs/testing-17e": {
+    "__comp": "17896441",
+    "content": "fbe93038"
+  },
+  "/nestjs-typegoose/docs/usage-e44": {
+    "__comp": "17896441",
+    "content": "6476eba6"
+  },
+  "/nestjs-typegoose/-fcd": {
+    "__comp": "c4f5d8e4",
+    "__context": {
+      "plugin": "3a4a95f6"
+    },
+    "config": "5e9f5e1a"
+  }
+}

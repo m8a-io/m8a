@@ -1,0 +1,27 @@
+{
+  "unversionedId": "faq",
+  "id": "faq",
+  "title": "FAQ",
+  "description": "No FAQs currently",
+  "source": "@site/docs/faq.md",
+  "sourceDirName": ".",
+  "slug": "/faq",
+  "permalink": "/nestjs-typegoose/docs/faq",
+  "draft": false,
+  "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/faq.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "faq",
+    "title": "FAQ"
+  },
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Testing",
+    "permalink": "/nestjs-typegoose/docs/testing"
+  },
+  "next": {
+    "title": "Mongoose Discriminators",
+    "permalink": "/nestjs-typegoose/docs/discriminators"
+  }
+}

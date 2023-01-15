@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2020",
+    "sourceMap": false,
+    "baseUrl": "./",
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "lib": [
+      "es2020"
+    ],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "example"
+  ]
+}
