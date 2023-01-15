@@ -1,6 +1,6 @@
 import { IContext } from '../base/interfaces/context.interface'
 import { CRUDResolver, PagingStrategies } from '@ptc-org/nestjs-query-graphql'
-import { Args, Resolver, Query, Context, CONTEXT } from '@nestjs/graphql'
+import { Args, Resolver, Query, Context } from '@nestjs/graphql'
 import { UserDTO } from './dtos/user.dto'
 import { UserInputDTO } from './dtos/user.input.dto'
 import { UserService } from './user.service'
@@ -13,7 +13,7 @@ export class UserResolver extends CRUDResolver(UserDTO, {
   CreateDTOClass: UserInputDTO,
   UpdateDTOClass: UserInputDTO
 }) {
-  constructor(
+  constructor (
     private readonly userService: UserService
   ) {
     super(userService)
@@ -24,18 +24,17 @@ export class UserResolver extends CRUDResolver(UserDTO, {
     const user = await this.userService.getById(id)
     return user
   }
-  
+
   @Public()
   @Query(() => String)
   async helloWorld (): Promise<string> {
-
     // const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
     // await delay(3000)
     return 'Hello World!!!'
   }
 
   @Query(() => UserDTO)
-  async me (@Context() ctx: IContext): Promise<UserDTO | undefined>{
+  async me (@Context() ctx: IContext): Promise<UserDTO | undefined> {
     console.log('me requested')
     const user = await this.userService.findById(ctx.req.user.userId)
     return user

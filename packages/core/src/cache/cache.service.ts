@@ -3,7 +3,7 @@ import { Cache } from 'cache-manager'
 
 @Injectable()
 export class CacheService {
-  constructor(@Inject(CACHE_MANAGER) private readonly cache: Cache) { }
+  constructor (@Inject(CACHE_MANAGER) private readonly cache: Cache) { }
 
   private ttl = 60 * 30
 
@@ -21,7 +21,7 @@ export class CacheService {
     }
   }
 
-  async set (type: string, key: string, value: any, ttl: number = this.ttl): Promise<void> {
+  async set (type: string, key: string, value, ttl: number = this.ttl): Promise<void> {
     const cacheKey = this.getKey(type, key)
     try {
       await this.cache.set(cacheKey, value, ttl)
@@ -41,10 +41,9 @@ export class CacheService {
   }
 
   async resetCache (): Promise<void> {
-    if (this.cache.store.keys && this.cache.store.del ) {
+    if (this.cache.store.keys && this.cache.store.del) {
       const keys = await this.cache.store.keys()
       await this.cache.store.del(keys)
     }
-
   }
 }

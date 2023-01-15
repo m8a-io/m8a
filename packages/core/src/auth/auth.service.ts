@@ -9,11 +9,9 @@ import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
 import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 
-
 @Injectable()
 export class AuthService {
-
-  constructor(
+  constructor (
     private readonly userService: UserService,
     private readonly jwtService: JwtService,
     @Inject(CacheService) private cacheService: CacheService,
@@ -33,7 +31,7 @@ export class AuthService {
     password: string,
     ctx: IContext): Promise<AccessTokenDTO> {
     let accessToken = ''
-    let userId = ''
+    const userId = ''
 
     const user = await this.userService.query({
       filter: {
@@ -62,7 +60,7 @@ export class AuthService {
     accessToken = await this.jwtService.signAsync(payload, {
       secret: this.envConfig.ACCESS_SECRET,
       expiresIn: this.envConfig.ACCESS_TTL
-    });
+    })
 
     const refreshToken = await this.jwtService.signAsync(payload, {
       secret: this.envConfig.REFRESH_SECRET,
@@ -95,17 +93,17 @@ export class AuthService {
    * @returns a nulled out AccessTokenDTO
    */
   async logout (ctx: IContext): Promise<AccessTokenDTO> {
-    let accessToken = ''
+    const accessToken = ''
     const token = ctx.req.cookies.refreshToken
     let userId = ctx.req.user.userId
 
-      ctx.res.setCookie(
+    ctx.res.setCookie(
       'refreshToken',
       '',
       {
         expires: new Date(Date.now()),
         httpOnly: true,
-        path: '/',  // TODO: set path to refresh
+        path: '/', // TODO: set path to refresh
         sameSite: 'none',
         secure: true
       }

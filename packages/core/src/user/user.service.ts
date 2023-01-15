@@ -18,17 +18,18 @@ export class UserAssembler extends ClassTransformerAssembler<UserDTO, UserEntity
 @Injectable()
 @QueryService(UserDTO)
 export class UserService extends AssemblerQueryService<UserDTO, UserEntity> {
-  constructor(
+  constructor (
     readonly assembler: UserAssembler,
     @InjectQueryService(UserEntity) private readonly userService: QueryService<UserEntity>,
     private readonly hashService: HashService
   ) {
     super(assembler, userService)
   }
+
   /**
    * Process to register the new user
-   * @param registerInput 
-   * @returns 
+   * @param registerInput
+   * @returns
    */
   public async register (registerInput: RegisterInputDTO): Promise<UserEntity> {
     const passWithSalt = await this.hashService.getPasswordWithSalt(registerInput.password)

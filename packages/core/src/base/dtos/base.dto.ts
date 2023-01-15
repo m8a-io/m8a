@@ -1,5 +1,5 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql'
-import { FilterableField, PagingStrategies, Relation } from '@ptc-org/nestjs-query-graphql'
+import { FilterableField } from '@ptc-org/nestjs-query-graphql'
 import { UserDTO } from '../../user/dtos/user.dto'
 
 @ObjectType()
@@ -17,7 +17,7 @@ export class BaseDTO {
   // _id: Types.ObjectId
 
   @FilterableField(() => ID)
-  id!: string
+    id!: string
 
   @Field(() => UserDTO)
   public createdBy!: UserDTO | string

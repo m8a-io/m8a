@@ -5,8 +5,8 @@ import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
 
 @Resolver()
 export class LogoutResolver {
-  constructor(
-    private readonly authService: AuthService,
+  constructor (
+    private readonly authService: AuthService
   ) { }
 
   /**

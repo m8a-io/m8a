@@ -10,6 +10,8 @@ import { Base } from '@typegoose/typegoose/lib/defaultClasses'
     toObject: { virtuals: true }
   }
 })
+// workaround for type issue in mongoose-autopopulate
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 @Plugin(autopopulate as any)
 export class BaseEntity implements Base {
   _id!: Types.ObjectId

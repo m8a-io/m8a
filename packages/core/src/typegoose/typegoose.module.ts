@@ -8,7 +8,7 @@ import { ConfigModule, envConfig } from '../config'
     Typegoose.forRootAsync({
       useFactory: () => ({
         uri: `${envConfig.DB_CONNECTION}:${envConfig.DB_PORT}/${envConfig.DB_NAME}`,
-        autoIndex: envConfig.NODE_ENV === 'development' ? true : false,
+        autoIndex: envConfig.NODE_ENV === 'development',
         serverSelectionTimeoutMS: 10000
       })
     })

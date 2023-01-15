@@ -9,7 +9,7 @@ import ms, { StringValue } from 'ms'
 
 @Injectable()
 export class RefreshService {
-  constructor(
+  constructor (
     private readonly jwtService: JwtService,
     @Inject(CacheService) private cacheService: CacheService,
     private readonly envConfig: EnvironmentVariables
@@ -19,7 +19,7 @@ export class RefreshService {
     @Req() request: IFastifyRequest,
     @Res() reply: IFastifyReply
   ): Promise<AccessTokenDTO> {
-    const refreshToken = request.cookies['refreshToken']
+    const refreshToken = request.cookies.refreshToken
     console.log('refreshToken cookie accepted', request.cookies)
     const validToken = this.jwtService.verify(refreshToken, {
       secret: this.envConfig.REFRESH_SECRET
@@ -30,10 +30,10 @@ export class RefreshService {
     }
 
     const storedToken = await this.cacheService.get('refreshToken', validToken.sub) as string
-    
+
     console.log('checking stored token against cookiefied token', storedToken ? storedToken.slice(-8) : '',
       refreshToken ? refreshToken.slice(-8) : '')
-    
+
     if (refreshToken !== storedToken) return { accessToken: '', userId: '' }
 
     const payload: IJwtPayload = { sub: validToken.sub }
@@ -63,7 +63,7 @@ export class RefreshService {
         secure: true
       }
     )
-    console.log('refreshed again via refresh, new refreshToken', newRefreshToken ? newRefreshToken.slice(-8) : '' )
+    console.log('refreshed again via refresh, new refreshToken', newRefreshToken ? newRefreshToken.slice(-8) : '')
     return { accessToken: newAccessToken, userId: validToken.sub }
   }
 }
