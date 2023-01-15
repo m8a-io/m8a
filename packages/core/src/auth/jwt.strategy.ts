@@ -5,7 +5,7 @@ import { EnvironmentVariables } from '../config/env/env.schema'
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(
+  constructor (
     private readonly envConfig: EnvironmentVariables
   ) {
     super({
@@ -15,8 +15,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     })
   }
 
-  validate (payload: any) {
-    // console.log('validated Token')
+  validate (payload) {
     return { userId: payload.sub }
   }
 }

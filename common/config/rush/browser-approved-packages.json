@@ -219,6 +219,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "mercurius-integration-testing",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "mongodb-memory-server",
       "allowedCategories": [ "libraries", "production" ]
     },

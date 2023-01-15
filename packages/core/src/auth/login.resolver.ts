@@ -6,9 +6,10 @@ import { Public } from './decorators/public.decorator'
 
 @Resolver()
 export class LoginResolver {
-  constructor(
-    private readonly authService: AuthService,
+  constructor (
+    private readonly authService: AuthService
   ) { }
+
   /**
    *
    * @param username

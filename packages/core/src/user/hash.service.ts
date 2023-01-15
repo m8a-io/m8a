@@ -1,9 +1,7 @@
-import { hash, verify }from 'argon2'
-import { argon2id } from 'argon2'
+import { hash, verify, argon2id } from 'argon2'
 import { randomBytes } from 'crypto'
-  
-export class HashService {
 
+export class HashService {
   /**
    * Get a string with a password and a generated salt value
    * @param password
@@ -12,7 +10,7 @@ export class HashService {
    */
   public getPasswordWithSalt (password: string, salt?: string): string {
     if (!salt) {
-      salt = randomBytes(16).toString('base64')      
+      salt = randomBytes(16).toString('base64')
     }
     if (salt.split('').length < 24) throw new Error('Salt is too small. Must be at least 24 characters long.')
     return [password, salt].join(':')
@@ -20,7 +18,7 @@ export class HashService {
 
   /**
    * Get the salt value from a password and salt combined string
-   * @param passwordWithSalt 
+   * @param passwordWithSalt
    * @returns the salt value
    */
   public async getSalt (passwordWithSalt: string): Promise<string> {
@@ -30,7 +28,7 @@ export class HashService {
 
   /**
    * Hash the password for saving in the database
-   * @param passWithSalt 
+   * @param passWithSalt
    * @returns a hashed password
    */
   public async hashPassword (passWithSalt: string): Promise<string> {
@@ -48,20 +46,20 @@ export class HashService {
    */
   public async verifyPassword (passwordWithSalt: string, passwordHash: string): Promise<boolean> {
     this.checkPassWithSalt(passwordWithSalt)
-    try { 
+    try {
       if (await verify(passwordHash, passwordWithSalt)) {
         return true
       } else {
         return false
       }
     } catch (err) {
-      throw new Error(`Validation of password failed with error: ${err}.`)  
-    } 
+      throw new Error(`Validation of password failed with error: ${err}.`)
+    }
   }
 
   /**
    * Check to make sure the password with salt string is correctly formed.
-   * @param passwordWithSalt 
+   * @param passwordWithSalt
    */
   private checkPassWithSalt (passwordWithSalt: string): void {
     const passWithSaltParts = passwordWithSalt.split(':')

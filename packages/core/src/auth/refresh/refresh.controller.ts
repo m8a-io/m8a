@@ -2,11 +2,11 @@ import { Controller, Req, Get, Res } from '@nestjs/common'
 import { RefreshService } from './refresh.service'
 import { IFastifyRequest, IFastifyReply } from '../../base/interfaces/context.interface'
 import { Public } from '../decorators/public.decorator'
-import { AccessTokenDTO } from './dtos/access-token.dto';
+import { AccessTokenDTO } from './dtos/access-token.dto'
 
 @Controller('refresh')
 export class RefreshController {
-  constructor(private readonly refreshService: RefreshService) { }
+  constructor (private readonly refreshService: RefreshService) { }
 
   @Public()
   @Get()

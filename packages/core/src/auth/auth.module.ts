@@ -10,8 +10,8 @@ import { JwtStrategy } from './jwt.strategy'
 import { CacheModule } from '../cache/cache.module'
 import { RegisterResolver } from './register.resolver'
 import { LogoutResolver } from './logout.resolver'
-import { ConfigModule } from '../config/env/env-config.module';
-import { AuthzModule } from '../authz/authz.module';
+import { ConfigModule } from '../config/env/env-config.module'
+import { AuthzModule } from '../authz/authz.module'
 
 export const JwtModule = JModule.register({
   secret: 'someSecretValueForAccess'

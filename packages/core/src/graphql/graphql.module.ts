@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { GraphqlService } from './graphql.service'
-import { GraphQLModule as GQLModule} from '@nestjs/graphql'
+import { GraphQLModule as GQLModule } from '@nestjs/graphql'
 import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius'
 import { FastifyRequest, FastifyReply } from 'fastify'
 
@@ -16,7 +16,7 @@ import { FastifyRequest, FastifyReply } from 'fastify'
           context: (request: FastifyRequest, reply: FastifyReply) => ({ req: request, res: reply }),
           subscription: {
             context: (request, reply) => ({ req: request, res: reply })
-          },
+          }
         }
       }
     })

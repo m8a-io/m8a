@@ -6,11 +6,11 @@ import { UserEntity } from '../user/user.entity'
 
 @Resolver(() => UserDTO)
 export class RegisterResolver {
-  constructor(private readonly userService: UserService) { }
+  constructor (private readonly userService: UserService) { }
 
   /**
-   * 
-   * @param registerInput 
+   *
+   * @param registerInput
    * @returns UserDTO
    */
   @Mutation(() => UserDTO, { description: 'This is the mutation for registering a new user.' })

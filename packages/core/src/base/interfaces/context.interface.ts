@@ -15,14 +15,13 @@ export interface IFastifyReply extends FastifyReply {
       secure?: boolean;
       signed?: boolean;
     }
-  ) => this 
+  ) => this
 }
 
 export interface IFastifyRequest extends FastifyRequest {
   cookies: { [cookieName: string]: string }
   user: { userId: string }
 }
-
 
 export interface IContext {
   req: IFastifyRequest

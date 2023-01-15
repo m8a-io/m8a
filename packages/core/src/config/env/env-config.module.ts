@@ -8,11 +8,11 @@ export const ConfigModule = TypedConfigModule.forRoot({
     envFilePath: '.m8a.env'
   }),
   normalize (config) {
-    config.PORT = parseInt(config.PORT, 10);
-    config.DB_PORT = parseInt(config.DB_PORT, 10);
-    return config;
-  },
-});
+    config.PORT = parseInt(config.PORT, 10)
+    config.DB_PORT = parseInt(config.DB_PORT, 10)
+    return config
+  }
+})
 
 @Module({
   imports: [
@@ -22,6 +22,5 @@ export const ConfigModule = TypedConfigModule.forRoot({
   exports: []
 })
 export class RootConfigModule { }
-
 
 export const envConfig = selectConfig(ConfigModule, EnvironmentVariables)

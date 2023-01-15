@@ -10,7 +10,7 @@ describe('UserService', () => {
 
   const mockedUserEntityQueryService = {
     query: jest.fn(),
-    createOne: jest.fn() 
+    createOne: jest.fn()
   }
 
   beforeEach(async () => {
@@ -23,7 +23,7 @@ describe('UserService', () => {
         },
         UserAssembler,
         HashService
-      ],
+      ]
     }).compile()
 
     userService = module.get<UserService>(UserService)
@@ -39,13 +39,12 @@ describe('UserService', () => {
 
   describe('register', () => {
     let querySpy: jest.SpyInstance
-    let createOneSpy: jest.SpyInstance
 
     const RegisterInputDTO = {
       firstName: 'John',
       lastName: 'Doe',
       email: 'test@test.com',
-      password: 'blah',
+      password: 'blah'
     }
 
     const SystemUserEntity = [{
@@ -62,19 +61,15 @@ describe('UserService', () => {
     it('should find the system user', async () => {
       querySpy = jest.spyOn(userEntityQueryService, 'query')
       querySpy.mockResolvedValueOnce(SystemUserEntity)
-      
+
       await userService.register(RegisterInputDTO)
       expect(querySpy).toHaveBeenCalledWith(systemUserSearchFilter)
     })
 
     it('should fail if the system user is missing', async () => {
       querySpy = jest.spyOn(userEntityQueryService, 'query').mockResolvedValueOnce([])
- 
-      try {
-        await userService.register(RegisterInputDTO)
-      } catch(e: any) {
-        expect(e.message).toEqual('There was a problem with locating the system user for the registration process. Please see your admin for help.')
-      }        
+
+      await expect(userService.register(RegisterInputDTO)).rejects.toThrow('There was a problem with locating the system user for the registration process. Please see your admin for help.')
     })
   })
 })

@@ -2,12 +2,12 @@
 module.exports = {
   preset: 'ts-jest',
   moduleFileExtensions: [
-    "js",
-    "ts"
+    'js',
+    'ts'
   ],
-  testRegex: ".spec.ts$",
+  testRegex: '.spec.ts$',
   transform: {
-      "^.+\\.(t|j)s$": "ts-jest"
+    '^.+\\.(t|j)s$': 'ts-jest'
   },
   resetMocks: true,
   testEnvironment: 'node',
