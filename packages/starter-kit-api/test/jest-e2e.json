@@ -1,0 +1,33 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@m8a/graphql/(.*)": "<rootDir>/../libs/graphql/src/$1",
+    "@m8a/graphql": "<rootDir>/../libs/graphql/src",
+    "@m8a/user/(.*)": "<rootDir>/../libs/user/src/$1",
+    "@m8a/user": "<rootDir>/../libs/user/src",
+    "@m8a/core/(.*)": "<rootDir>/../libs/core/src/$1",
+    "@m8a/core": "<rootDir>/../libs/core/src",
+    "@m8a/auth/(.*)": "<rootDir>/../libs/auth/src/$1",
+    "@m8a/auth": "<rootDir>/../libs/auth/src",
+    "@m8a/typegoose/(.*)": "<rootDir>/../libs/typegoose/src/$1",
+    "@m8a/typegoose": "<rootDir>/../libs/typegoose/src",
+    "@m8a/cache/(.*)": "<rootDir>/../libs/cache/src/$1",
+    "@m8a/cache": "<rootDir>/../libs/cache/src",
+    "@m8a/config/(.*)": "<rootDir>/../libs/config/src/$1",
+    "@m8a/config": "<rootDir>/../libs/config/src",
+    "@m8a/logger/(.*)": "<rootDir>/../libs/logger/src/$1",
+    "@m8a/logger": "<rootDir>/../libs/logger/src",
+    "@m8a/cli-plugins/(.*)": "<rootDir>/../libs/cli-plugins/src/$1",
+    "@m8a/cli-plugins": "<rootDir>/../libs/cli-plugins/src"
+  }
+}
