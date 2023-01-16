@@ -312,36 +312,36 @@
       "reviewCategory": "libraries",
       "shouldPublish": true
     },
-    // {
-    //   "packageName": "@m8a/starter-kit-api",
-    //   "projectFolder": "packages/starter-kit-api",
-    //   "reviewCategory": "production",
-    //   "shouldPublish": false
-    // },
-    // {
-    //   "packageName": "@m8a/starter-kit-app",
-    //   "projectFolder": "packages/starter-kit-app",
-    //   "reviewCategory": "production",
-    //   "shouldPublish": false
-    // },
-    // {
-    //   "packageName": "@m8a/cli",
-    //   "projectFolder": "packages/cli",
-    //   "reviewCategory": "production",
-    //   "shouldPublish": false
-    // },
-    // {
-    //   "packageName": "@m8a/cli-local",
-    //   "projectFolder": "packages/cli-local",
-    //   "reviewCategory": "production",
-    //   "shouldPublish": false
-    // },
-    // {
-    //   "packageName": "@m8a/cli-lib",
-    //   "projectFolder": "packages/cli-lib",
-    //   "reviewCategory": "production",
-    //   "shouldPublish": false
-    // },
+    {
+      "packageName": "@m8a/starter-kit-api",
+      "projectFolder": "packages/starter-kit-api",
+      "reviewCategory": "apps",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@m8a/starter-kit-app",
+      "projectFolder": "packages/starter-kit-app",
+      "reviewCategory": "apps",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@m8a/cli",
+      "projectFolder": "packages/cli",
+      "reviewCategory": "apps",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@m8a/cli-local",
+      "projectFolder": "packages/cli-local",
+      "reviewCategory": "libraries",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@m8a/cli-lib",
+      "projectFolder": "packages/cli-lib",
+      "reviewCategory": "libraries",
+      "shouldPublish": false
+    },
     {
       "packageName": "@m8a/core",
       "projectFolder": "packages/core",
@@ -353,14 +353,13 @@
       "projectFolder": "deps/eslint",
       "reviewCategory": "libraries",
       "shouldPublish": true
+    },
+    {
+      "packageName": "@m8a/logger",
+      "projectFolder": "packages/logger",
+      "reviewCategory": "libraries",
+      "shouldPublish": false
     }
-    // {
-    //   "packageName": "@m8a/logger",
-    //   "projectFolder": "packages/logger",
-    //   "reviewCategory": "production",
-    //   "shouldPublish": false
-    // }
-
 
     //   /**
     //    * The NPM package name of the project (must match package.json)

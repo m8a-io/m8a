@@ -1,0 +1,33 @@
+{
+  "name": "@m8a/cli-lib",
+  "version": "0.0.1",
+  "description": "This is a package library of standard m8a CLI modules, which are used both for the global CLI and the local CLI packages. It is necessary to avoid code duplication between the two CLI packages.",
+  "keywords": [
+    "m8a",
+    "nodejs",
+    "nestjs"
+  ],
+  "license": "MIT",
+  "author": "Scott Molinari",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc --project tsconfig.build.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cross-spawn": "7.0.3",
+    "@m8a/logger": "workspace:*"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-config": "3.1.1",
+    "@types/cross-spawn": "6.0.2",
+    "@types/node": "18.11.18",
+    "eslint": "8.31.0",
+    "rimraf": "4.0.7",
+    "typescript": "4.9.4"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^9.2.0"
+  }
+}

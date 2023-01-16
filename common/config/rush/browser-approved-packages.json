@@ -3,6 +3,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@apollo/client",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@apollo/gateway",
       "allowedCategories": [ "libraries" ]
     },
@@ -19,20 +23,52 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@fastify/cookie",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@golevelup/nestjs-modules",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@m8a/cli",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@m8a/cli-lib",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@m8a/cli-local",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@m8a/core",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
       "name": "@m8a/eslint-config",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@m8a/logger",
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@m8a/nestjs-typegoose",
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@nestjs/cli",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@nestjs/common",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@nestjs/core",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@nestjs/graphql",
@@ -56,14 +92,18 @@
     },
     {
       "name": "@nestjs/platform-fastify",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@nestjs/testing",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@ogma/nestjs-module",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "@ogma/platform-fastify",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -79,8 +119,20 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@quasar/app-vite",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@quasar/extras",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@quasar/quasar-app-extension-apollo",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@rushstack/eslint-config",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@typegoose/typegoose",
@@ -95,12 +147,20 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@types/cross-spawn",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@types/inquirer",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
       "name": "@types/jest",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@types/node",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@types/passport-jwt",
@@ -108,15 +168,27 @@
     },
     {
       "name": "@types/supertest",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "@vue/apollo-composable",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "apollo-link-rest",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "apollo-link-token-refresh",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "apollo-server-errors",
@@ -125,6 +197,10 @@
     {
       "name": "argon2",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "autoprefixer",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "cache-manager",
@@ -139,16 +215,28 @@
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "class-transformer",
+      "name": "chalk",
       "allowedCategories": [ "libraries" ]
     },
     {
-      "name": "class-validator",
+      "name": "chalk-v2",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "class-transformer",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "class-validator",
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "coveralls",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "cross-spawn",
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "dataloader",
@@ -156,19 +244,19 @@
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-config-standard",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-import",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-jest",
@@ -180,15 +268,23 @@
     },
     {
       "name": "eslint-plugin-n",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-prefer-arrow",
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "eslint-plugin-prettier",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "eslint-plugin-promise",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "eslint-plugin-vue",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "fastify",
@@ -196,11 +292,19 @@
     },
     {
       "name": "graphql",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "graphql-anywhere",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "graphql-subscriptions",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "graphql-tag",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "husky",
@@ -212,7 +316,11 @@
     },
     {
       "name": "jest",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "jwt-decode",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "mercurius",
@@ -239,6 +347,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "nest-commander",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
       "name": "nest-typed-config",
       "allowedCategories": [ "libraries" ]
     },
@@ -251,16 +363,36 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "postcss",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "prettier",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "qs",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "quasar",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "reflect-metadata",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "rimraf",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "rxjs",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "source-map-support",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "superagent",
@@ -268,19 +400,31 @@
     },
     {
       "name": "supertest",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "ts-json-schema-generator",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "ts-loader",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "ts-morph",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "ts-node",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "tsconfig-paths",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "tslib",
@@ -288,11 +432,19 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "vue",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "vue-router",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "webpack",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     }
   ]
 }

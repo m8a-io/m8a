@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "src/*": [
+        "./src/*"
+      ],
+      "app/*": [
+        "./*"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ],
+      "layouts/*": [
+        "./src/layouts/*"
+      ],
+      "pages/*": [
+        "./src/pages/*"
+      ],
+      "assets/*": [
+        "./src/assets/*"
+      ],
+      "boot/*": [
+        "./src/boot/*"
+      ],
+      "stores/*": [
+        "./src/stores/*"
+      ]
+    }
+  }
+}
