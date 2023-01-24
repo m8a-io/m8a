@@ -28,7 +28,7 @@
     "@m8a/logger": "workspace:*",
     "@nestjs/common": "9.2.1",
     "cross-spawn": "7.0.3",
-    "nest-commander": "2.5.0"
+    "nest-commander": "3.4.0"
   },
   "devDependencies": {
     "@nestjs/testing": "9.2.1",
