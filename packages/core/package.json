@@ -53,7 +53,7 @@
     "class-validator": "0.14.0",
     "fastify": "4.11.0",
     "graphql": "16.6.0",
-    "mercurius": "10.5.1",
+    "mercurius": "11.5.0",
     "mongoose": "6.8.3",
     "mongoose-autopopulate": "0.17.1",
     "ms": "3.0.0-canary.1",
