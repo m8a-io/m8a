@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@m8a/eslint-config": "workspace:*",
-    "@apollo/gateway": "2.2.3",
+    "@apollo/gateway": "2.3.0",
     "@nestjs/mercurius": "^10.1.0",
     "@nestjs/common": "9.2.1",
     "@nestjs/core": "9.2.1",
