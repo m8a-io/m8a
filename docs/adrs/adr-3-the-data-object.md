@@ -1,10 +1,10 @@
-## ADR - The User Structure
+## ADR - 3 The Data Object
 
 #### Title
 
-**The Data Object**
+These documents have names that are short noun phrases. For example, "adr-1: Deployment on Ruby on Rails 3.0.10" or "adr-9: LDAP for Multitenant Integration"
 
-Authored by Scott Molinari on 23.01.2023
+Authored by [author's name] on [date created]
 
 #### Context
 
