@@ -75,7 +75,7 @@
     "@types/node": "18.11.18",
     "@types/passport-jwt": "3.0.8",
     "dataloader": "2.1.0",
-    "eslint": "8.31.0",
+    "eslint": "8.33.0",
     "graphql-subscriptions": "2.0.0",
     "jest": "29.3.1",
     "mercurius-integration-testing": "5.0.0",
