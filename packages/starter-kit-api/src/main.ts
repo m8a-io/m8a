@@ -11,7 +11,7 @@ async function bootstrap () {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule, new FastifyAdapter(),
     {
-      logger: ['error', 'warn', 'debug'],
+      logger: false,
       bufferLogs: true,
       abortOnError: true
     })
@@ -26,7 +26,7 @@ async function bootstrap () {
 
   if (config.NODE_ENV === 'development') {
     dev = true
-    logger = new DevLoggerService('starter-kit', { timestamp: true })
+    logger = new DevLoggerService('starter-kit', { timestamp: true, logLevels: ['debug', 'warn', 'error', 'verbose'] })
     app.useLogger(logger)
   } else {
     // we are in anything other than development
@@ -35,7 +35,7 @@ async function bootstrap () {
   }
 
   const globalPrefix = config.GQL_PATH
-  
+
   app.enableCors({
     credentials: true,
     origin: 'http://localhost:9000'

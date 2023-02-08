@@ -111,11 +111,12 @@
     // "ignoreMissing": ["class-validator"]
     "allowedVersions": {
       "class-validator": "0.14.0",
-      "@typegoose/typegoose": "10.0.0",
+      "@typegoose/typegoose": "10.1.1",
       "@m8a/nestjs-typegoose": "10.0.0",
-      "@nestjs/common": "9.2.1",
-      "@nestjs/core": "9.2.1",
-      "graphql": "16.6.0"
+      "@nestjs/common": "9.3.3",
+      "@nestjs/core": "9.3.3",
+      "graphql": "16.6.0",
+      "mercurius": "11.5.0"
     }
     // "allowAny": ["@babel/*"]
   },
