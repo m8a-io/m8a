@@ -36,7 +36,7 @@
     "@casl/ability": "~6.3.0",
     "@m8a/nestjs-typegoose": "workspace:*",
     "@nestjs/graphql": "10.1.7",
-    "@nestjs/jwt": "10.0.1",
+    "@nestjs/jwt": "10.0.2",
     "@nestjs/passport": "9.0.0",
     "@nestjs/platform-fastify": "9.2.1",
     "@ogma/nestjs-module": "4.2.2",
