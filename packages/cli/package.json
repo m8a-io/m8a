@@ -26,13 +26,14 @@
   "dependencies": {
     "@m8a/cli-lib": "workspace:0.0.1",
     "@m8a/logger": "workspace:0.0.1",
-    "@nestjs/common": "9.3.3",
     "cross-spawn": "7.0.3",
-    "nest-commander": "2.5.0"
+    "nest-commander": "3.5.0"
   },
   "devDependencies": {
-    "@nestjs/testing": "9.3.3",
-    "@nestjs/core": "9.3.3",
+    "@m8a/eslint-config": "workspace:*",
+    "@nestjs/testing": "9.3.8",
+    "@nestjs/common": "9.3.8",
+    "@nestjs/core": "9.3.8",
     "@rushstack/eslint-config": "3.1.1",
     "@types/inquirer": "^8.1.3",
     "@types/jest": "29.4.0",
@@ -72,5 +73,13 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "peerDependenciesMeta": {
+    "@m8a/core": {
+      "injected": true
+    },
+    "@m8a/common": {
+      "injected": true
+    }
   }
 }

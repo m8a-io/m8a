@@ -1,4 +1,4 @@
-import { CommandsModule } from "./commands/commands.module"
+import { CommandsModule } from './commands/commands.module'
 
 export default CommandsModule
 

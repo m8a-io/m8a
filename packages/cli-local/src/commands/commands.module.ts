@@ -9,7 +9,6 @@ import { InitCommand, InitQuestions } from './init.command'
 import { CliUserModule } from '../cli-user/cli-user.module'
 import { InitConfigModule } from '../init-config/init-config.module'
 
-
 @Module({
   imports: [ConfigModule, TypegooseModule, DbConfigModule, CliLibModule, LoggerModule, CliUserModule, InitConfigModule],
   providers: [UpCommand, DownCommand, InitCommand, InitQuestions, DevCommand],

@@ -27,5 +27,4 @@ import { OgmaModule } from '@ogma/nestjs-module'
   ],
   providers: []
 })
-export class AppModule { }
-
+export class AppModule {}

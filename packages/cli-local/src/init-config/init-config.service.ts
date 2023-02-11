@@ -1,18 +1,16 @@
 import { Injectable } from '@nestjs/common'
-import { DbConfigService } from '@m8a/core'
+import { DbConfigService, EnvironmentVariables } from '@m8a/core'
 import { DevLoggerService } from '@m8a/logger'
-import { EnvironmentVariables } from '@m8a/core'
 
 @Injectable()
 export class InitConfigService {
-  constructor(
+  constructor (
     private readonly logService: DevLoggerService,
     private readonly dbConfigService: DbConfigService,
     private readonly envConfigService: EnvironmentVariables
   ) { }
 
   async createInitialConfig (): Promise<boolean> {
-
     const tempData = await this.dbConfigService.getConfig()
 
     if (tempData.length > 0) {

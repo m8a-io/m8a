@@ -352,14 +352,13 @@
       "packageName": "@m8a/eslint-config",
       "projectFolder": "utils/eslint",
       "reviewCategory": "libraries",
-      "shouldPublish": false,
-      "skipRushCheck": true
+      "shouldPublish": false
     },
     {
       "packageName": "@m8a/logger",
       "projectFolder": "packages/logger",
       "reviewCategory": "libraries",
-      "shouldPublish": false
+      "shouldPublish": true
     }
 
     //   /**

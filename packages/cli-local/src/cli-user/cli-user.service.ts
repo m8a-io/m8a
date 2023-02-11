@@ -1,12 +1,10 @@
-import { UserService } from '@m8a/core'
-import { UserDTO } from '@m8a/core'
+import { UserService, UserDTO, HashService } from '@m8a/core'
 import { Injectable } from '@nestjs/common'
 import { DevLoggerService } from '@m8a/logger'
-import { HashService } from '@m8a/core'
 
 @Injectable()
 export class CliUserService {
-  constructor(
+  constructor (
     private readonly userService: UserService,
     private readonly logService: DevLoggerService,
     private readonly hashService: HashService
@@ -24,7 +22,7 @@ export class CliUserService {
       return false
     }
 
-    const tempPassword = (Math.random() + 1).toString(36).substring(2);
+    const tempPassword = (Math.random() + 1).toString(36).substring(2)
     const passWithSalt = this.hashService.getPasswordWithSalt(tempPassword)
     const salt = await this.hashService.getSalt(passWithSalt)
     const hashedPassword = await this.hashService.hashPassword(passWithSalt)
@@ -59,4 +57,3 @@ export class CliUserService {
     this.logService.log('Initial user updated and ready to use.')
   }
 }
-

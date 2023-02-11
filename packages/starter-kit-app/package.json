@@ -34,6 +34,7 @@
     "@vue/apollo-composable": "4.0.0-beta.1"
   },
   "devDependencies": {
+    "@m8a/eslint-config": "workspace:*",
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
     "eslint": "8.33.0",

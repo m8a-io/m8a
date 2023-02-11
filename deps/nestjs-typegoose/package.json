@@ -42,9 +42,9 @@
   },
   "devDependencies": {
     "@m8a/eslint-config": "workspace:*",
-    "@nestjs/common": "9.3.3",
-    "@nestjs/core": "9.3.3",
-    "@nestjs/testing": "9.3.3",
+    "@nestjs/common": "9.3.8",
+    "@nestjs/core": "9.3.8",
+    "@nestjs/testing": "9.3.8",
     "@rushstack/eslint-config": "3.1.1",
     "@types/jest": "29.4.0",
     "@types/supertest": "2.0.12",

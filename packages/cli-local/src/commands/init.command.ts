@@ -9,16 +9,18 @@ import { InitConfigService } from '../init-config/init-config.service'
 
 @Command({
   name: 'init',
-  description: `The "init" command will do initial set up the databases for local development.`
+  description: 'The "init" command will do initial set up the databases for local development.'
 })
-export class InitCommand implements CommandRunner {
-  constructor(
+export class InitCommand extends CommandRunner {
+  constructor (
     private readonly logService: DevLoggerService,
     @Inject(getConnectionToken()) private readonly connection: Connection,
     private readonly userService: CliUserService,
     private readonly inquirer: InquirerService,
     private readonly initConfigService: InitConfigService
-  ) {}
+  ) {
+    super()
+  }
 
   async run (input: string[], options: Record<string, any>): Promise<void> {
     this.logService.addLine()
@@ -57,10 +59,9 @@ export class InitCommand implements CommandRunner {
     description: 'Resets the dev databases, should they not be empty. Use with care!'
   })
   parseShell (val: string) {
-    return val;
+    return val
   }
 }
-
 
 @QuestionSet({ name: 'init' })
 export class InitQuestions {
@@ -69,7 +70,7 @@ export class InitQuestions {
     name: 'init'
   })
   parseReply (val: string) {
-    return val;
+    return val
   }
 
   @ValidateFor({ name: 'init' })

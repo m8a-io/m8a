@@ -3,12 +3,14 @@ import { DevLoggerService } from '@m8a/logger'
 import { CheckForService, RunnerService } from '@m8a/cli-lib'
 
 @Command({ name: 'down', description: 'The "down" command will shut down your local m8a dev containers.' })
-export class DownCommand implements CommandRunner {
-  constructor(
+export class DownCommand extends CommandRunner {
+  constructor (
     private readonly logService: DevLoggerService,
     private readonly runnerService: RunnerService,
     private readonly checkFor: CheckForService
-  ) {}
+  ) {
+    super()
+  }
 
   async run (passedParams: string[]): Promise<void> {
     this.dockerDown()
@@ -22,8 +24,8 @@ export class DownCommand implements CommandRunner {
     if (hasDocker || hasNerdctl) {
       this.logService.log('Stopping your containers....')
       hasDocker
-        ? this.runnerService.spawnSync('docker', ['compose','down'])
-        : this.runnerService.spawnSync('nerdctl', ['compose','down'])
+        ? this.runnerService.spawnSync('docker', ['compose', 'down'])
+        : this.runnerService.spawnSync('nerdctl', ['compose', 'down'])
       this.logService.addLine()
       this.logService.success('Your containers have been stopped and removed. Cya later!')
       this.logService.addLine()

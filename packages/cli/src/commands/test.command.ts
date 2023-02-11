@@ -1,17 +1,19 @@
-import { Command, CommandRunner, Option } from 'nest-commander'
+import { Command, CommandRunner } from 'nest-commander'
 import { DevLoggerService } from '@m8a/logger'
 import { CheckForService } from '@m8a/cli-lib'
 import { Injectable } from '@nestjs/common'
 
 @Injectable()
 @Command({ name: 'test', description: 'Checks for dev environment.' })
-export class TestCommand implements CommandRunner {
-  constructor(
+export class TestCommand extends CommandRunner {
+  constructor (
     private readonly logService: DevLoggerService,
-    private readonly checkFor: CheckForService) {}
+    private readonly checkFor: CheckForService) {
+    super()
+  }
 
-  async run (passedParams: string[]): Promise<void> {
-    this.logService.log(`Testing your development environment....`)
+  async run (): Promise<void> {
+    this.logService.log('Testing your development environment....')
     if (this.checkFor.nodeJS() && this.checkFor.docker() && this.checkFor.packageManager()) {
       this.logService.success('Your system is ready for the m8a platform!')
     } else {
