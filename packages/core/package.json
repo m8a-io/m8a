@@ -57,7 +57,7 @@
     "mongoose": "6.9.0",
     "mongoose-autopopulate": "0.17.1",
     "ms": "3.0.0-canary.1",
-    "nest-typed-config": "~2.4.0",
+    "nest-typed-config": "~2.5.0",
     "passport": "0.6.0",
     "passport-jwt": "4.0.1"
   },
