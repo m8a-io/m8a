@@ -35,7 +35,7 @@
   "dependencies": {
     "@casl/ability": "~6.3.0",
     "@m8a/nestjs-typegoose": "workspace:*",
-    "@nestjs/graphql": "10.1.7",
+    "@nestjs/graphql": "10.2.0",
     "@nestjs/jwt": "10.0.2",
     "@nestjs/passport": "9.0.0",
     "@nestjs/platform-fastify": "9.2.1",
