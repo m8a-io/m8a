@@ -42,7 +42,7 @@
     "@ogma/nestjs-module": "4.2.2",
     "@ptc-org/nestjs-query-core": "1.1.7",
     "@ptc-org/nestjs-query-graphql": "1.1.7",
-    "@ptc-org/nestjs-query-typegoose": "1.1.7",
+    "@ptc-org/nestjs-query-typegoose": "2.1.0",
     "@typegoose/typegoose": "10.1.1",
     "apollo-server-errors": "3.3.1",
     "argon2": "0.30.3",
