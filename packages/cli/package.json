@@ -26,13 +26,13 @@
   "dependencies": {
     "@m8a/cli-lib": "workspace:*",
     "@m8a/logger": "workspace:*",
-    "@nestjs/common": "9.2.1",
+    "@nestjs/common": "9.3.9",
     "cross-spawn": "7.0.3",
     "nest-commander": "2.5.0"
   },
   "devDependencies": {
-    "@nestjs/testing": "9.2.1",
-    "@nestjs/core": "9.2.1",
+    "@nestjs/testing": "9.3.9",
+    "@nestjs/core": "9.3.9",
     "@rushstack/eslint-config": "3.2.0",
     "@types/inquirer": "^9.0.0",
     "@types/jest": "29.4.0",
