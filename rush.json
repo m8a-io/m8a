@@ -16,7 +16,7 @@
    * path segment in the "$schema" field for all your Rush config files.  This will ensure
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
-  "rushVersion": "5.88.0",
+  "rushVersion": "5.90.0",
   /**
    * The next field selects which package manager should be installed and determines its version.
    * Rush installs its own local copy of the package manager to ensure that your build process
@@ -25,7 +25,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "7.24.3",
+  "pnpmVersion": "7.27.0",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
@@ -313,6 +313,12 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@m8a/nestjs-yoga",
+      "projectFolder": "deps/nestjs-yoga",
+      "reviewCategory": "libraries",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@m8a/starter-kit-api",
       "projectFolder": "packages/starter-kit-api",
       "reviewCategory": "apps",
@@ -330,18 +336,18 @@
       "reviewCategory": "apps",
       "shouldPublish": false
     },
-    {
-      "packageName": "@m8a/cli-local",
-      "projectFolder": "packages/cli-local",
-      "reviewCategory": "libraries",
-      "shouldPublish": false
-    },
-    {
-      "packageName": "@m8a/cli-lib",
-      "projectFolder": "packages/cli-lib",
-      "reviewCategory": "libraries",
-      "shouldPublish": false
-    },
+    // {
+    //   "packageName": "@m8a/cli-local",
+    //   "projectFolder": "packages/cli-local",
+    //   "reviewCategory": "libraries",
+    //   "shouldPublish": false
+    // },
+    // {
+    //   "packageName": "@m8a/cli-lib",
+    //   "projectFolder": "packages/cli-lib",
+    //   "reviewCategory": "libraries",
+    //   "shouldPublish": false
+    // },
     {
       "packageName": "@m8a/core",
       "projectFolder": "packages/core",
@@ -350,15 +356,15 @@
     },
         {
       "packageName": "@m8a/eslint-config",
-      "projectFolder": "deps/eslint",
+      "projectFolder": "utils/eslint",
       "reviewCategory": "libraries",
-      "shouldPublish": true
+      "shouldPublish": false
     },
     {
       "packageName": "@m8a/logger",
       "projectFolder": "packages/logger",
       "reviewCategory": "libraries",
-      "shouldPublish": false
+      "shouldPublish": true
     }
 
     //   /**

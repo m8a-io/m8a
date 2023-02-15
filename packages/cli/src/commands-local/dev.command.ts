@@ -1,13 +1,12 @@
 import { Command, CommandRunner } from 'nest-commander'
-import { CheckForService, RunnerService } from '@m8a/cli-lib'
+import { RunnerService } from '../utils/runner.service'
 import { DevLoggerService } from '@m8a/logger'
 
 @Command({ name: 'dev', description: 'The "dev" command will start a local development server for the package you are currently in.' })
 export class DevCommand extends CommandRunner {
   constructor (
     private readonly logService: DevLoggerService,
-    private readonly runnerService: RunnerService,
-    private readonly checkFor: CheckForService
+    private readonly runnerService: RunnerService
   ) {
     super()
   }

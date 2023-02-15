@@ -1,5 +1,6 @@
 import { Command, CommandRunner } from 'nest-commander'
-import { CheckForService, RunnerService } from '@m8a/cli-lib'
+import { CheckForService } from '../utils/checkFor.service'
+import { RunnerService } from '../utils/runner.service'
 import { DevLoggerService } from '@m8a/logger'
 
 @Command({ name: 'up', description: 'The "up" command will either start the necessary docker containers for your local m8a dev platform or, if starting for the first time, it will also help you initialize a development environment to develop with the m8a platform locally. The counterpart command is "m8a down".' })

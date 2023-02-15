@@ -1,6 +1,7 @@
 import { Command, CommandRunner, Option } from 'nest-commander'
 import { DevLoggerService } from '@m8a/logger'
-import { CheckForService, RunnerService } from '@m8a/cli-lib'
+import { CheckForService } from '../utils/checkFor.service'
+import { RunnerService } from '../utils/runner.service'
 
 @Command({ name: 'down', description: 'The "down" command will shut down your local m8a dev containers.' })
 export class DownCommand extends CommandRunner {

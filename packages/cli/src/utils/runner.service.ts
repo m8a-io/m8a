@@ -4,8 +4,7 @@ import { DevLoggerService } from '@m8a/logger'
 
 @Injectable()
 export class RunnerService {
-
-  constructor(private readonly logService: DevLoggerService) { }
+  constructor (private readonly logService: DevLoggerService) { }
 
   public spawnSync (cmd: string, params: any[]) {
     const runner = spawn.sync(
@@ -24,8 +23,7 @@ export class RunnerService {
     try {
       const child = spawn.sync(command, params)
       if (child.status === 0) return child.output
-    }
-    catch (err) {
+    } catch (err) {
       return 'Not available'
     }
   }
