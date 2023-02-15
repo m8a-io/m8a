@@ -39,18 +39,18 @@
   },
 
   "devDependencies": {
-    "@m8a/eslint-config": "workspace:*",
-    "@nestjs/platform-fastify": "9.3.8",
-    "@ogma/nestjs-module": "^4.0.0",
-    "@ogma/platform-fastify": "4.0.1",
     "@golevelup/nestjs-modules": "0.6.1",
-    "fastify": "4.13.0",
-    "@nestjs/testing": "9.3.8",
-    "@types/node": "18.13.0",
+    "@nestjs/common": "9.3.9",
+    "@nestjs/core": "9.3.9",
+    "@nestjs/platform-fastify": "9.3.9",
+    "@ogma/nestjs-module": "4.2.2",
+    "@ogma/platform-fastify": "4.0.1",
+    "fastify": "4.12.0",
+    "@nestjs/testing": "9.3.9",
+    "@types/node": "18.11.18",
     "reflect-metadata": "0.1.13",
     "rimraf": "4.1.2",
-    "rxjs": "7.8.0",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "peerDependencies": {
   }
