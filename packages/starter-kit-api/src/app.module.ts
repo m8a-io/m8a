@@ -8,7 +8,7 @@ import {
   CacheModule,
   M8aConfigModule
 } from '@m8a/core'
-import { LoggerModule, OgmaModuleConfig } from '@m8a/logger'
+import { LoggerModule, ProdLoggerConfig } from '@m8a/logger'
 import { OgmaModule } from '@ogma/nestjs-module'
 
 @Module({
@@ -22,7 +22,7 @@ import { OgmaModule } from '@ogma/nestjs-module'
     TypegooseModule,
     UserModule,
     OgmaModule.forRootAsync({
-      useClass: OgmaModuleConfig
+      useClass: ProdLoggerConfig
     })
   ],
   providers: []

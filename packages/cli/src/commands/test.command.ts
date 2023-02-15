@@ -1,6 +1,6 @@
 import { Command, CommandRunner } from 'nest-commander'
 import { DevLoggerService } from '@m8a/logger'
-import { CheckForService } from '@m8a/cli-lib'
+import { CheckForService } from '../utils/checkFor.service'
 import { Injectable } from '@nestjs/common'
 
 @Injectable()

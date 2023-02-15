@@ -11,7 +11,15 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@apollo/subgraph",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@casl/ability",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@changesets/cli",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -21,6 +29,18 @@
     {
       "name": "@commitlint/config-conventional",
       "allowedCategories": [ "libraries", "production" ]
+    },
+    {
+      "name": "@envelop/apollo-federation",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@envelop/apollo-server-errors",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@envelop/core",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@fastify/cookie",
@@ -56,6 +76,10 @@
     },
     {
       "name": "@m8a/nestjs-typegoose",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "@m8a/nestjs-yoga",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -99,6 +123,10 @@
       "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
+      "name": "@ogma/common",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@ogma/nestjs-module",
       "allowedCategories": [ "apps", "libraries" ]
     },
@@ -133,6 +161,14 @@
     {
       "name": "@rushstack/eslint-config",
       "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "@theguild/eslint-config",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@theguild/prettier-config",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@typegoose/typegoose",
@@ -183,12 +219,24 @@
       "allowedCategories": [ "apps" ]
     },
     {
+      "name": "apollo-cache-inmemory",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "apollo-client",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "apollo-link-rest",
       "allowedCategories": [ "apps" ]
     },
     {
       "name": "apollo-link-token-refresh",
       "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "apollo-link-ws",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "apollo-server-errors",
@@ -201,6 +249,10 @@
     {
       "name": "autoprefixer",
       "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "bob-the-bundler",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "cache-manager",
@@ -307,6 +359,10 @@
       "allowedCategories": [ "apps" ]
     },
     {
+      "name": "graphql-yoga",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "husky",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -315,12 +371,20 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "iterall",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "jest",
       "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "jwt-decode",
       "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "lint-staged",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "mercurius",
@@ -336,7 +400,7 @@
     },
     {
       "name": "mongoose",
-      "allowedCategories": [ "libraries", "production" ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "mongoose-autopopulate",
@@ -360,6 +424,10 @@
     },
     {
       "name": "passport-jwt",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "patch-package",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -393,6 +461,10 @@
     {
       "name": "source-map-support",
       "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "subscriptions-transport-ws",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "superagent",

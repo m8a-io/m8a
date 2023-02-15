@@ -4,7 +4,7 @@ import { ModuleConfigFactory } from '@golevelup/nestjs-modules'
 import { OgmaModuleOptions } from '@ogma/nestjs-module'
 
 @Injectable()
-export class OgmaModuleConfig implements ModuleConfigFactory<OgmaModuleOptions> {
+export class ProdLoggerConfig implements ModuleConfigFactory<OgmaModuleOptions> {
   constructor(/* private readonly configService: ConfigService */) { }
 
   createModuleConfig (): OgmaModuleOptions {

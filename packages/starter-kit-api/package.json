@@ -28,8 +28,6 @@
     "@nestjs/platform-fastify": "9.3.8",
 
     "fastify": "4.13.0",
-
-    "@ogma/nestjs-module": "4.2.2",
     "@fastify/cookie": "8.3.0",
     "class-validator": "0.14.0",
     "class-transformer": "0.5.1"
@@ -37,7 +35,6 @@
   "devDependencies": {
     "@nestjs/cli": "9.2.0",
     "@m8a/eslint-config": "workspace:*",
-    "@m8a/cli-local": "workspace:*",
     "@nestjs/testing": "9.3.8",
     "@rushstack/eslint-config": "3.1.1",
     "@types/jest": "29.4.0",
