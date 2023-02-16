@@ -24,11 +24,10 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@m8a/cli-lib": "workspace:*",
     "@m8a/logger": "workspace:*",
     "@nestjs/common": "9.3.9",
     "cross-spawn": "7.0.3",
-    "nest-commander": "2.5.0"
+    "nest-commander": "3.5.0"
   },
   "devDependencies": {
     "@nestjs/testing": "9.3.9",

@@ -203,6 +203,10 @@
       "allowedCategories": [ "apps" ]
     },
     {
+      "name": "axios",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "cache-manager",
       "allowedCategories": [ "libraries" ]
     },
