@@ -40,10 +40,10 @@ export class CacheService {
     return `${type}:${initialKey}`
   }
 
-  async resetCache (): Promise<void> {
-    if (this.cache.store.keys && this.cache.store.del) {
-      const keys = await this.cache.store.keys()
-      await this.cache.store.del(keys)
-    }
-  }
+  // async resetCache (): Promise<void> {
+  //   if (this.cache.store.keys && this.cache.store.del) {
+  //     const keys = await this.cache.store.keys()
+  //     await this.cache.store.del(keys)
+  //   }
+  // }
 }

@@ -1,14 +1,16 @@
-import { Command, CommandRunner, Option } from 'nest-commander'
+import { Command, CommandRunner } from 'nest-commander'
 import { DevLoggerService } from '@m8a/logger'
-import { CheckForService } from '@m8a/cli-lib'
+import { CheckForService } from '../utils/checkFor.service'
 import { Injectable } from '@nestjs/common'
 
 @Injectable()
 @Command({ name: 'test', description: 'Checks for dev environment.' })
-export class TestCommand implements CommandRunner {
+export class TestCommand extends CommandRunner {
   constructor(
     private readonly logService: DevLoggerService,
-    private readonly checkFor: CheckForService) {}
+    private readonly checkFor: CheckForService) {
+    super()
+    }
 
   async run (passedParams: string[]): Promise<void> {
     this.logService.log(`Testing your development environment....`)
