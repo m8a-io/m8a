@@ -34,8 +34,8 @@
 
   "dependencies": {
     "chalk-v2": "1.0.2",
-    "@nestjs/common": "9.3.8",
-    "@nestjs/core": "9.3.8"
+    "@nestjs/common": "9.3.9",
+    "@nestjs/core": "9.3.9"
   },
 
   "devDependencies": {
