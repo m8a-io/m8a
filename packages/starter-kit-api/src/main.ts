@@ -15,7 +15,7 @@ async function bootstrap () {
       bufferLogs: true,
       abortOnError: true
     })
-
+  // @ts-ignore
   await app.register(fastifyCookie, {
     secret: 'my-secret', // TODO: update for better cookie signature
   })
@@ -35,7 +35,7 @@ async function bootstrap () {
   }
 
   const globalPrefix = config.GQL_PATH
-  
+
   app.enableCors({
     credentials: true,
     origin: 'http://localhost:9000'

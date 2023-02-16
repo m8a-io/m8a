@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common'
-import { TestCommand } from './test.command'
-import { CliLibModule } from '@m8a/cli-lib'
+import { TestCommand } from './test.command';
 import { LoggerModule } from '@m8a/logger'
+import { DevCommand } from './dev.command';
+import { UtilsModule } from '../utils/utils.module';
 
 @Module({
-  imports: [LoggerModule, CliLibModule],
-  providers: [TestCommand],
+  imports: [LoggerModule, UtilsModule],
+  providers: [DevCommand, TestCommand],
   exports: []
 })
 export class CommandsModule { }
