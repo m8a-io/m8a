@@ -36,7 +36,7 @@
     "@nestjs/testing": "9.3.9",
     "@rushstack/eslint-config": "3.2.0",
     "@types/jest": "29.4.0",
-    "@types/node": "18.11.18",
+    "@types/node": "18.13.0",
     "@types/supertest": "2.0.12",
     "eslint": "8.34.0",
     "jest": "29.4.1",

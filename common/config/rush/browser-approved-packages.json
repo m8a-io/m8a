@@ -23,11 +23,19 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@envelop/core",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@fastify/cookie",
       "allowedCategories": [ "apps" ]
     },
     {
       "name": "@golevelup/nestjs-modules",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@graphql-yoga/nestjs",
       "allowedCategories": [ "libraries" ]
     },
     {
