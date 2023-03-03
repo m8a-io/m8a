@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zeus-api-dev
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: zeus-api
+  template:
+    metadata:
+      labels:
+        app: zeus-api
+    spec:
+      containers:
+      - image: need-to-add-the-image-name
+        name: zeus-api
+        ports:
+        - containerPort: 3000
+    env:
+    - name: NODE_ENV
+      value: "development"
+    - name: DB_NAME
+      value: "zeus-dev"
+    - name: MONGODB_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: db-secrets
+          key: mongodb_username
+    - name: MONGODB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: db-secrets
+          key: mongodb_password
+    - name: REDIS_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: db-secrets
+          key: redis_username
+    - name: redis_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: db-secrets
+          key: redis_password
+    - name: DEMO_FAREWELL
+      value: "Such a sweet sorrow"
+
+
+      NODE_ENV=development
+PORT=3000
+COOKIE_SECRET=woijvgthuerwiu&gtwerfgweow?efwefpwewefoiweuhfwero8qr982340!
+DB_NAME=zeus-db-dev
+DB_CONNECTION=mongodb://
+DB_HOST=psmdb-db-rs0.mongodb.svc.cluster.local
+DB_PORT=27017
+DB_USERNAME=''
+DB_PASSWORD=''
+GQL_PATH=api
+ACCESS_SECRET=addSomeSecretKeyHere!!!1234
+ACCESS_TTL=5s
+REFRESH_SECRET=addAnotherSecretKeyHere!!!1234
+REFRESH_TTL=5m
