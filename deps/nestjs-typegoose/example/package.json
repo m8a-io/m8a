@@ -24,7 +24,7 @@
     "@nestjs/common": "9.3.9",
     "@nestjs/core": "9.3.9",
     "@nestjs/platform-express": "9.3.9",
-    "@typegoose/typegoose": "10.1.1",
+    "@typegoose/typegoose": "10.3.0",
     "class-validator": "0.14.0",
     "mongoose": "6.10.0",
     "reflect-metadata": "0.1.13",
