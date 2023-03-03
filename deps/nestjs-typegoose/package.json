@@ -1,6 +1,6 @@
 {
   "name": "@m8a/nestjs-typegoose",
-  "version": "10.0.0",
+  "version": "10.1.0",
   "description": "A nestjs module wrapper for typegoose",
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@m8a/eslint-config": "workspace:*",
-    "@nestjs/common":"9.3.9",
+    "@nestjs/common": "9.3.9",
     "@nestjs/core": "9.3.9",
     "@nestjs/testing": "9.3.9",
     "@rushstack/eslint-config": "3.2.0",
@@ -60,7 +60,8 @@
     "supertest": "6.3.3",
     "ts-jest": "29.0.5",
     "@typegoose/typegoose": "10.3.0",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "@nestjs/platform-express": "~9.3.9"
   },
   "peerDependencies": {
     "@nestjs/common": "^9.2.0",
