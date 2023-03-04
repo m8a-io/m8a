@@ -57,7 +57,7 @@
     "@graphql-yoga/nestjs": "0.3.1",
     "@envelop/core": "3.0.6",
     "mercurius": "10.5.1",
-    "mongoose": "6.10.0",
+    "mongoose": "6.10.1",
     "mongoose-autopopulate": "0.17.1",
     "ms": "3.0.0-canary.1",
     "nest-typed-config": "~2.5.0",
