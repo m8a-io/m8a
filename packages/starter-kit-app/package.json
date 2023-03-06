@@ -42,7 +42,7 @@
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "@types/node": "18.13.0",
+    "@types/node": "18.14.6",
     "@quasar/app-vite": "^1.0.0",
     "autoprefixer": "^10.4.2",
     "postcss": "8.4.21",
