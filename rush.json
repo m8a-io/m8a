@@ -16,7 +16,7 @@
    * path segment in the "$schema" field for all your Rush config files.  This will ensure
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
-  "rushVersion": "5.88.0",
+  "rushVersion": "5.93.0",
   /**
    * The next field selects which package manager should be installed and determines its version.
    * Rush installs its own local copy of the package manager to ensure that your build process
@@ -327,6 +327,18 @@
     {
       "packageName": "@m8a/cli",
       "projectFolder": "packages/cli",
+      "reviewCategory": "apps",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@m8a/zeus-app",
+      "projectFolder": "apps/zeus-app",
+      "reviewCategory": "apps",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@m8a/zeus-api",
+      "projectFolder": "packages/zeus-api",
       "reviewCategory": "apps",
       "shouldPublish": false
     },
