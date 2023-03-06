@@ -2,31 +2,34 @@ import { IsDefined, IsNumber, IsString } from 'class-validator'
 
 export class EnvironmentVariables {
   @IsDefined()
-    NODE_ENV = 'development'
+    NODE_ENV!: string
 
   @IsNumber()
-    PORT = '3001'
+    PORT!: string
 
   @IsString()
-    COOKIE_SECRET = 'SomeSecretShouldOneBeForgotten'
+    COOKIE_SECRET!: string
 
   @IsString()
-    DB_NAME = 'dev'
+    DB_NAME!: string
 
   @IsString()
-    DB_CONNECTION = 'mongodb://localhost'
+    DB_CONNECTION!: string
+
+  @IsString()
+    DB_HOST!: string
 
   @IsNumber()
-    DB_PORT = '27017'
+    DB_PORT!: string
 
   @IsString()
-    DB_USERNAME = ''
+    DB_USERNAME!: string
 
   @IsString()
-    DB_PASSWORD = ''
+    DB_PASSWORD!: string
 
   @IsString()
-    GQL_PATH = 'graphql'
+    GQL_PATH!: string
 
   @IsString()
     ACCESS_SECRET!: string
