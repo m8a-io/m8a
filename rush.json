@@ -25,7 +25,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "7.29.0",
+  "pnpmVersion": "7.29.3",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
@@ -321,7 +321,7 @@
       "packageName": "@m8a/cli",
       "projectFolder": "packages/cli",
       "reviewCategory": "apps",
-      "shouldPublish": false
+      "shouldPublish": true
     },
     {
       "packageName": "@m8a/zeus-app",
@@ -351,7 +351,7 @@
       "packageName": "@m8a/core",
       "projectFolder": "packages/core",
       "reviewCategory": "libraries",
-      "shouldPublish": false
+      "shouldPublish": true
     },
     {
       "packageName": "@m8a/eslint-config",
@@ -363,7 +363,7 @@
       "packageName": "@m8a/logger",
       "projectFolder": "packages/logger",
       "reviewCategory": "libraries",
-      "shouldPublish": false
+      "shouldPublish": true
     }
 
     //   /**

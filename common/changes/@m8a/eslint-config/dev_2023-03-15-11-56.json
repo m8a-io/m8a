@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@m8a/eslint-config",
+      "comment": "Initial change log entry",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@m8a/eslint-config"
+}
