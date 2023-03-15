@@ -1,3 +1,3 @@
 export interface IJwtPayload {
-  sub: string
+  sub: string;
 }

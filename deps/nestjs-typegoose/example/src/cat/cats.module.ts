@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common';
-import { TypegooseModule } from '@m8a/nestjs-typegoose';
-import { Cat } from './cat.model';
-import { CatsController } from './cats.controller';
-import { CatsService } from './cats.service';
+import { Module } from "@nestjs/common";
+import { TypegooseModule } from "@m8a/nestjs-typegoose";
+import { Cat } from "./cat.model";
+import { CatsController } from "./cats.controller";
+import { CatsService } from "./cats.service";
 
 @Module({
   imports: [TypegooseModule.forFeature([Cat])],

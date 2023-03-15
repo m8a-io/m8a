@@ -1,140 +1,162 @@
-import { prop } from '@typegoose/typegoose'
-import { TypegooseModule } from './typegoose.module'
-import { TypegooseCoreModule as CoreModule } from './typegoose-core.module'
-import * as createProviders from './typegoose.providers'
+import { prop } from "@typegoose/typegoose";
+import { TypegooseModule } from "./typegoose.module";
+import { TypegooseCoreModule as CoreModule } from "./typegoose-core.module";
+import * as createProviders from "./typegoose.providers";
 
 class MockTask {
   @prop()
-    description: string
+  description: string;
 }
 
 class MockUser {
   @prop()
-    name: string
+  name: string;
 }
 
-describe('TypegooseModule', () => {
-  describe('forRoot', () => {
-    it('should call global CoreModule forRoot', () => {
-      jest.spyOn(CoreModule, 'forRoot').mockImplementation(() => ({
-        providers: 'DbConnection'
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any))
+describe("TypegooseModule", () => {
+  describe("forRoot", () => {
+    it("should call global CoreModule forRoot", () => {
+      jest.spyOn(CoreModule, "forRoot").mockImplementation(
+        () =>
+          ({
+            providers: "DbConnection",
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } as any)
+      );
 
-      const module = TypegooseModule.forRoot('mongourl', { dbName: 'db settings' })
+      const module = TypegooseModule.forRoot("mongourl", {
+        dbName: "db settings",
+      });
 
       expect(module).toEqual({
         module: TypegooseModule,
         imports: [
           {
-            providers: 'DbConnection'
-          }
-        ]
-      })
+            providers: "DbConnection",
+          },
+        ],
+      });
 
-      expect(CoreModule.forRoot).toHaveBeenCalledWith('mongourl', { dbName: 'db settings' })
-    })
+      expect(CoreModule.forRoot).toHaveBeenCalledWith("mongourl", {
+        dbName: "db settings",
+      });
+    });
 
-    it('should call global CoreModule forRoot with empty config', () => {
-      jest.spyOn(CoreModule, 'forRoot').mockImplementation(() => ({
-        providers: 'DbConnection'
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any))
+    it("should call global CoreModule forRoot with empty config", () => {
+      jest.spyOn(CoreModule, "forRoot").mockImplementation(
+        () =>
+          ({
+            providers: "DbConnection",
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } as any)
+      );
 
-      TypegooseModule.forRoot('mongourl')
+      TypegooseModule.forRoot("mongourl");
 
-      expect(CoreModule.forRoot).toHaveBeenCalledWith('mongourl', {})
-    })
-  })
+      expect(CoreModule.forRoot).toHaveBeenCalledWith("mongourl", {});
+    });
+  });
 
-  describe('forRootAsync', () => {
-    it('should call global CoreModule forRoot', () => {
-      jest.spyOn(CoreModule, 'forRootAsync').mockImplementation(() => ({
-        providers: 'DbConnection'
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any))
+  describe("forRootAsync", () => {
+    it("should call global CoreModule forRoot", () => {
+      jest.spyOn(CoreModule, "forRootAsync").mockImplementation(
+        () =>
+          ({
+            providers: "DbConnection",
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } as any)
+      );
 
       const options = {
         useFactory: () => {
           return {
-            uri: 'mongourl',
-            db: 'db settings'
-          }
-        }
-      }
+            uri: "mongourl",
+            db: "db settings",
+          };
+        },
+      };
 
-      const module = TypegooseModule.forRootAsync(options)
+      const module = TypegooseModule.forRootAsync(options);
 
       expect(module).toEqual({
         module: TypegooseModule,
         imports: [
           {
-            providers: 'DbConnection'
-          }
-        ]
-      })
+            providers: "DbConnection",
+          },
+        ],
+      });
 
-      expect(CoreModule.forRootAsync).toHaveBeenCalledWith(options)
-    })
-  })
+      expect(CoreModule.forRootAsync).toHaveBeenCalledWith(options);
+    });
+  });
 
-  describe('forFeature', () => {
-    let models, convertedModels
+  describe("forFeature", () => {
+    let models, convertedModels;
     beforeEach(() => {
       models = [
         MockTask,
         {
           typegooseClass: MockUser,
           schemaOptions: {
-            collection: 'differentCollectionNameUser'
-          }
-        }
-      ]
+            collection: "differentCollectionNameUser",
+          },
+        },
+      ];
 
-      let count = -1
-      convertedModels = [
-        'convertedTask',
-        'convertedUser'
-      ]
+      let count = -1;
+      convertedModels = ["convertedTask", "convertedUser"];
 
-      jest.spyOn(createProviders, 'convertToTypegooseClassWithOptions')
+      jest
+        .spyOn(createProviders, "convertToTypegooseClassWithOptions")
         .mockImplementation(() => {
-          count += 1
-          return convertedModels[count]
-        })
+          count += 1;
+          return convertedModels[count];
+        });
 
-      jest.spyOn(createProviders, 'createTypegooseProviders')
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .mockReturnValue('createdProviders' as any)
-    })
+      jest
+        .spyOn(createProviders, "createTypegooseProviders")
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .mockReturnValue("createdProviders" as any);
+    });
 
-    it('should return module that exports providers for models', () => {
-      const module = TypegooseModule.forFeature(models)
+    it("should return module that exports providers for models", () => {
+      const module = TypegooseModule.forFeature(models);
 
-      const expectedProviders = 'createdProviders'
+      const expectedProviders = "createdProviders";
 
-      expect(createProviders.convertToTypegooseClassWithOptions).toHaveBeenCalledWith(MockTask)
-      expect(createProviders.convertToTypegooseClassWithOptions).toHaveBeenCalledWith({
+      expect(
+        createProviders.convertToTypegooseClassWithOptions
+      ).toHaveBeenCalledWith(MockTask);
+      expect(
+        createProviders.convertToTypegooseClassWithOptions
+      ).toHaveBeenCalledWith({
         typegooseClass: MockUser,
         schemaOptions: {
-          collection: 'differentCollectionNameUser'
-        }
-      })
+          collection: "differentCollectionNameUser",
+        },
+      });
 
-      expect(createProviders.createTypegooseProviders).toHaveBeenCalledWith(undefined, convertedModels)
+      expect(createProviders.createTypegooseProviders).toHaveBeenCalledWith(
+        undefined,
+        convertedModels
+      );
       expect(module).toEqual({
         module: TypegooseModule,
         providers: expectedProviders,
-        exports: expectedProviders
-      })
-    })
+        exports: expectedProviders,
+      });
+    });
 
-    it('should return module that createdTypegooseProviders with provided connectionName', () => {
-      const connectionName = 'OtherMongoDB'
+    it("should return module that createdTypegooseProviders with provided connectionName", () => {
+      const connectionName = "OtherMongoDB";
 
-      TypegooseModule.forFeature(models, connectionName)
+      TypegooseModule.forFeature(models, connectionName);
 
-      expect(createProviders.createTypegooseProviders).toHaveBeenCalledWith(connectionName, convertedModels)
-    })
-  })
-})
+      expect(createProviders.createTypegooseProviders).toHaveBeenCalledWith(
+        connectionName,
+        convertedModels
+      );
+    });
+  });
+});

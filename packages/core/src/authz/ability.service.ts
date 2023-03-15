@@ -1,52 +1,58 @@
-import { PureAbility, AbilityBuilder, AbilityClass, Subject } from '@casl/ability'
-import { Injectable } from '@nestjs/common'
+import {
+  PureAbility,
+  AbilityBuilder,
+  AbilityClass,
+  Subject,
+} from "@casl/ability";
+import { Injectable } from "@nestjs/common";
 
 export interface RawRule {
-  action: string | string[]
-  subject?: string | string[]
+  action: string | string[];
+  subject?: string | string[];
   /** an array of fields to which user has (or not) access */
-  fields?: string[]
+  fields?: string[];
   /** an object of conditions which restricts the rule scope */
-  conditions?: unknown
+  conditions?: unknown;
   /** indicates whether rule allows or forbids something */
-  inverted?: boolean
+  inverted?: boolean;
   /** message which explains why rule is forbidden */
-  reason?: string
+  reason?: string;
 }
 
-type Abilities = [string, Subject]
-export type AppAbility = PureAbility<Abilities>
-const Ability = PureAbility as AbilityClass<AppAbility>
+type Abilities = [string, Subject];
+export type AppAbility = PureAbility<Abilities>;
+const Ability = PureAbility as AbilityClass<AppAbility>;
 
 @Injectable()
 export class AbilityService {
   private rule = new Ability([
     {
-      action: 'read',
-      subject: 'helloWorld'
+      action: "read",
+      subject: "helloWorld",
     },
     {
-      action: 'read',
-      subject: 'me'
+      action: "read",
+      subject: "me",
     },
     {
-      action: 'read',
-      subject: 'logout'
-    }
+      action: "read",
+      subject: "logout",
+    },
+  ]);
 
-  ])
-
-  defineRulesFor (userId: string) {
-    const { /* can, cannot, */ build } = new AbilityBuilder(Ability as AbilityClass<AppAbility>)
-    console.log('userId: ', userId)
+  defineRulesFor(userId: string) {
+    const { /* can, cannot, */ build } = new AbilityBuilder(
+      Ability as AbilityClass<AppAbility>
+    );
+    console.log("userId: ", userId);
     return build({
       // Read https://casl.js.org/v5/en/guide/subject-type-detection#use-classes-as-subject-types for details
       // detectSubjectType: item => item.constructor as ExtractSubjectType<Subjects>
-    })
+    });
   }
 
-  getRulesForUser (userId: string): AppAbility {
-    console.log('getting rules for user', userId)
-    return this.rule
+  getRulesForUser(userId: string): AppAbility {
+    console.log("getting rules for user", userId);
+    return this.rule;
   }
 }

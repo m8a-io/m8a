@@ -1,5 +1,5 @@
-import { prop, arrayProp, Ref } from '@typegoose/typegoose';
-import { Cat } from 'src/cat/cat.model';
+import { prop, arrayProp, Ref } from "@typegoose/typegoose";
+import { Cat } from "src/cat/cat.model";
 
 export class User {
   @prop({ required: true })

@@ -15,16 +15,9 @@
     "baseUrl": "./",
     "incremental": true,
     "tsBuildInfoFile": ".tsbuildinfo",
-    "lib": [
-      "es2020"
-    ],
+    "lib": ["es2020"],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    "example"
-  ]
+  "exclude": ["node_modules", "dist", "build", "example"]
 }

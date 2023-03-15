@@ -1,4 +1,4 @@
-import { SchemaOptions } from 'mongoose'
+import { SchemaOptions } from "mongoose";
 
 export interface TypegooseClass {
   new (...args: unknown[]);

@@ -13,7 +13,7 @@
   animation: rotation 1s linear infinite;
 }
 .loader::after {
-  content: '';
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 0;

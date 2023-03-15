@@ -31,12 +31,10 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:watch": "jest --watch"
   },
-
   "dependencies": {
     "chalk-v2": "1.0.2",
     "rxjs": "7.8.0"
   },
-
   "devDependencies": {
     "@golevelup/nestjs-modules": "0.6.1",
     "@nestjs/common": "9.3.9",

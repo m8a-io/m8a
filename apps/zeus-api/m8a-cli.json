@@ -1,5 +1,3 @@
 {
-  "plugins": [
-    "@m8a/cli-local"
-  ]
+  "plugins": ["@m8a/cli-local"]
 }

@@ -1,5 +1,5 @@
-import { Field, ObjectType } from '@nestjs/graphql'
-import { UserDTO } from '../../user/dtos/user.dto'
+import { Field, ObjectType } from "@nestjs/graphql";
+import { UserDTO } from "../../user/dtos/user.dto";
 
 @ObjectType()
 // @Relation('createdBy', () => UserDTO, {
@@ -14,8 +14,8 @@ import { UserDTO } from '../../user/dtos/user.dto'
 // })c
 export class BaseInputDTO {
   @Field(() => UserDTO)
-  public createdBy!: UserDTO
+  public createdBy!: UserDTO;
 
   @Field(() => UserDTO)
-  public modifiedBy!: UserDTO
+  public modifiedBy!: UserDTO;
 }
