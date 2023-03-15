@@ -7,7 +7,7 @@ services:
     command: keydb-server /etc/keydb/redis.conf --server-threads 2
     ports:
       - 6379:6379
-    volumes: 
+    volumes:
       - db-volume:/data/cache
 
   # redis-commander:
@@ -49,11 +49,11 @@ services:
       - MONGODB_DATABASE="dev"
     ports:
       - 27017:27017
-    volumes: 
+    volumes:
       - db-volume:/data/db
 
 volumes:
-  db-volume: 
+  db-volume:
   # rabbit:
   #   container_name: test-rabbit
   #   hostname: rabbit

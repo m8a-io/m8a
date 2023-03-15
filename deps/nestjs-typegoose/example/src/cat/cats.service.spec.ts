@@ -5,19 +5,16 @@ import { TypegooseModule } from "nestjs-typegoose";
 import { TestDatabaseModule } from "../database/test-database.module";
 
 const testCat = {
-  name: "Mica"
-}
+  name: "Mica",
+};
 
-describe('CatsService', () => {
+describe("CatsService", () => {
   let module: TestingModule;
   let service: CatsService;
 
   beforeAll(async () => {
     module = await Test.createTestingModule({
-      imports: [
-        TestDatabaseModule,
-        TypegooseModule.forFeature([Cat])
-      ],
+      imports: [TestDatabaseModule, TypegooseModule.forFeature([Cat])],
       providers: [CatsService],
     }).compile();
 
@@ -28,16 +25,16 @@ describe('CatsService', () => {
     await module.close();
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(service).toBeDefined();
   });
 
-  it('should insert a new cat', async () => {
+  it("should insert a new cat", async () => {
     const newCat = await service.create(testCat);
-    expect(newCat.name).toEqual('Mica');
+    expect(newCat.name).toEqual("Mica");
   });
 
-  it('should return all cats', async () => {
+  it("should return all cats", async () => {
     await expect(service.findAll()).resolves.toHaveLength(1);
     await service.create(testCat);
     await expect(service.findAll()).resolves.toHaveLength(2);

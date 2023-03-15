@@ -1,15 +1,7 @@
 {
   "name": "@m8a/eslint-config",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "The base set of eslint rules for developing m8a applications",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": ""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/m8a-io/m8a.git"
-  },
   "keywords": [
     "eslint",
     "eslint-config",
@@ -19,12 +11,20 @@
     "platform",
     "paas"
   ],
-  "author": "Scott Moinari",
-  "license": "MIT",
+  "homepage": "https://github.com/m8a-io/m8a#readme",
   "bugs": {
     "url": "https://github.com/m8a-io/m8a/issues"
   },
-  "homepage": "https://github.com/m8a-io/m8a#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m8a-io/m8a.git"
+  },
+  "license": "MIT",
+  "author": "Scott Moinari",
+  "scripts": {
+    "build": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
@@ -33,13 +33,13 @@
     "@typescript-eslint/parser": "5.54.0",
     "eslint": "8.35.0",
     "eslint-config-prettier": "8.6.0",
+    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jest": "27.2.1",
     "eslint-plugin-jsdoc": "^40.0.0",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-config-standard": "^17.0.0",
     "typescript": "4.9.5"
   }
 }

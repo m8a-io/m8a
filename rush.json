@@ -25,7 +25,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "7.27.0",
+  "pnpmVersion": "7.29.3",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
@@ -120,11 +120,8 @@
    * The approvals are tracked in two config files "browser-approved-packages.json"
    * and "nonbrowser-approved-packages.json".  See the Rush documentation for details.
    */
-   "approvedPackagesPolicy": {
-    "reviewCategories": [
-      "apps",
-      "libraries"
-    ]
+  "approvedPackagesPolicy": {
+    "reviewCategories": ["apps", "libraries"]
   },
 
   /**
@@ -147,14 +144,12 @@
     //   "[^@]+@users\\.noreply\\.github\\.com",
     //   "rush-bot@example\\.org"
     // ],
-
     /**
      * When Rush reports that the address is malformed, the notice can include an example
      * of a recommended email.  Make sure it conforms to one of the allowedEmailRegExps
      * expressions.
      */
     // "sampleEmail": "example@users.noreply.github.com",
-
     /**
      * The commit message to use when committing changes during 'rush publish'.
      *
@@ -163,7 +158,6 @@
      * in the commit message, and then customize Rush's message to contain that string.
      */
     // "versionBumpCommitMessage": "Bump versions [skip ci]",
-
     /**
      * The commit message to use when committing changes during 'rush version'.
      *
@@ -172,13 +166,12 @@
      * in the commit message, and then customize Rush's message to contain that string.
      */
     // "changeLogUpdateCommitMessage": "Update changelogs [skip ci]",
-
     /**
      * The commit message to use when commiting changefiles during 'rush change --commit'
      *
      * If no commit message is set it will default to 'Rush change'
      */
-     // "changefilesCommitMessage": "Rush change"
+    // "changefilesCommitMessage": "Rush change"
   },
 
   "repository": {
@@ -288,13 +281,13 @@
   // "hotfixChangeEnabled": false,
 
   /**
-    * This is an optional, but recommended, list of allowed tags that can be applied to Rush projects
-    * using the "tags" setting in this file.  This list is useful for preventing mistakes such as misspelling,
-    * and it also provides a centralized place to document your tags.  If "allowedProjectTags" list is
-    * not specified, then any valid tag is allowed.  A tag name must be one or more words
-    * separated by hyphens or slashes, where a word may contain lowercase ASCII letters, digits,
-    * ".", and "@" characters.
-    */
+   * This is an optional, but recommended, list of allowed tags that can be applied to Rush projects
+   * using the "tags" setting in this file.  This list is useful for preventing mistakes such as misspelling,
+   * and it also provides a centralized place to document your tags.  If "allowedProjectTags" list is
+   * not specified, then any valid tag is allowed.  A tag name must be one or more words
+   * separated by hyphens or slashes, where a word may contain lowercase ASCII letters, digits,
+   * ".", and "@" characters.
+   */
   // "allowedProjectTags": [ "tools", "frontend-team", "1.0.0-release" ],
 
   /**
@@ -328,7 +321,7 @@
       "packageName": "@m8a/cli",
       "projectFolder": "packages/cli",
       "reviewCategory": "apps",
-      "shouldPublish": false
+      "shouldPublish": true
     },
     {
       "packageName": "@m8a/zeus-app",
@@ -338,7 +331,7 @@
     },
     {
       "packageName": "@m8a/zeus-api",
-      "projectFolder": "packages/zeus-api",
+      "projectFolder": "apps/zeus-api",
       "reviewCategory": "apps",
       "shouldPublish": false
     },
@@ -358,9 +351,9 @@
       "packageName": "@m8a/core",
       "projectFolder": "packages/core",
       "reviewCategory": "libraries",
-      "shouldPublish": false
+      "shouldPublish": true
     },
-        {
+    {
       "packageName": "@m8a/eslint-config",
       "projectFolder": "deps/eslint",
       "reviewCategory": "libraries",
@@ -370,7 +363,7 @@
       "packageName": "@m8a/logger",
       "projectFolder": "packages/logger",
       "reviewCategory": "libraries",
-      "shouldPublish": false
+      "shouldPublish": true
     }
 
     //   /**

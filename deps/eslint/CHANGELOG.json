@@ -1,0 +1,30 @@
+{
+  "name": "@m8a/eslint-config",
+  "entries": [
+    {
+      "version": "0.0.3",
+      "tag": "@m8a/eslint-config_v0.0.3",
+      "date": "Wed, 15 Mar 2023 12:11:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial change log entry"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.0.2",
+      "tag": "@m8a/core_v0.0.2",
+      "date": "Wed, 15 Mar 2023 12:02:22 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial change log entry"
+          }
+        ],
+        "dependency": []
+      }
+    }
+  ]
+}

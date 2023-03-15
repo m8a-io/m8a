@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common'
+import { Module } from "@nestjs/common";
 import {
   GraphQLModule,
   RefreshModule,
@@ -6,10 +6,10 @@ import {
   UserModule,
   AuthModule,
   CacheModule,
-  M8aConfigModule
-} from '@m8a/core'
-import { LoggerModule, OgmaModuleConfig } from '@m8a/logger'
-import { OgmaModule } from '@ogma/nestjs-module'
+  M8aConfigModule,
+} from "@m8a/core";
+import { LoggerModule, OgmaModuleConfig } from "@m8a/logger";
+import { OgmaModule } from "@ogma/nestjs-module";
 
 @Module({
   imports: [
@@ -22,10 +22,9 @@ import { OgmaModule } from '@ogma/nestjs-module'
     TypegooseModule,
     UserModule,
     OgmaModule.forRootAsync({
-      useClass: OgmaModuleConfig
-    })
+      useClass: OgmaModuleConfig,
+    }),
   ],
-  providers: []
+  providers: [],
 })
-export class AppModule { }
-
+export class AppModule {}

@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@m8a/logger",
+      "comment": "Initial change log entry",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@m8a/logger"
+}

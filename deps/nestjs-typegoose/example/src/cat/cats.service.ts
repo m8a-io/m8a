@@ -1,12 +1,12 @@
-import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@m8a/nestjs-typegoose';
-import { Cat } from './cat.model';
-import { ReturnModelType } from '@typegoose/typegoose';
+import { Injectable } from "@nestjs/common";
+import { InjectModel } from "@m8a/nestjs-typegoose";
+import { Cat } from "./cat.model";
+import { ReturnModelType } from "@typegoose/typegoose";
 
 @Injectable()
 export class CatsService {
   constructor(
-    @InjectModel(Cat) private readonly catModel: ReturnModelType<typeof Cat>,
+    @InjectModel(Cat) private readonly catModel: ReturnModelType<typeof Cat>
   ) {}
 
   async create(createCatDto: { name: string }): Promise<Cat> {

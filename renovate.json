@@ -1,23 +1,11 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "ignoreDeps": [
-    "@m8a/core",
-    "@m8a/cli-lib",
-    "@m8a/cli-local",
-    "@m8a/logger"
-  ],
-  "schedule": [
-    "after 10pm and before 5am every weekday",
-    "every weekend"
-  ],
+  "extends": ["config:base"],
+  "ignoreDeps": ["@m8a/core", "@m8a/cli-lib", "@m8a/cli-local", "@m8a/logger"],
+  "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
   "packageRules": [
     {
       "automerge": true,
-      "matchPackagePatterns": [
-        "*"
-      ],
+      "matchPackagePatterns": ["*"],
       "rangeStrategy": "replace"
     }
   ]

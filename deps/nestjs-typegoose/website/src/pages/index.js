@@ -1,10 +1,10 @@
-import React from 'react'
-import classnames from 'classnames'
-import Layout from '@theme/Layout'
-import Link from '@docusaurus/Link'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import useBaseUrl from '@docusaurus/useBaseUrl'
-import styles from './styles.module.css'
+import React from "react";
+import classnames from "classnames";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import styles from "./styles.module.css";
 
 // const features = [
 //   {
@@ -54,24 +54,26 @@ import styles from './styles.module.css'
 //   )
 // }
 
-function Home () {
-  const context = useDocusaurusContext()
-  const { siteConfig = {} } = context
+function Home() {
+  const context = useDocusaurusContext();
+  const { siteConfig = {} } = context;
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="A NestJS Module for Typegoose">
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
+      description="A NestJS Module for Typegoose"
+    >
+      <header className={classnames("hero hero--primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                'button button--outline button--secondary button--lg',
+                "button button--outline button--secondary button--lg",
                 styles.getStarted
               )}
-              to={useBaseUrl('docs/install')}>
+              to={useBaseUrl("docs/install")}
+            >
               Get Started
             </Link>
           </div>
@@ -91,7 +93,7 @@ function Home () {
         )}
       </main> */}
     </Layout>
-  )
+  );
 }
 
-export default Home
+export default Home;

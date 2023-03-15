@@ -1,10 +1,10 @@
-import { Module } from '@nestjs/common'
-import { CommandsModule } from './commands/commands.module'
-import { LoggerModule } from '@m8a/logger'
+import { Module } from "@nestjs/common";
+import { CommandsModule } from "./commands/commands.module";
+import { LoggerModule } from "@m8a/logger";
 
 @Module({
   imports: [CommandsModule, LoggerModule],
   providers: [],
-  exports: []
+  exports: [],
 })
-export class AppModule { }
+export class AppModule {}

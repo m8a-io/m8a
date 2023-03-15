@@ -1,0 +1,39 @@
+{
+  "name": "@m8a/cli",
+  "entries": [
+    {
+      "version": "0.0.5",
+      "tag": "@m8a/cli_v0.0.5",
+      "date": "Wed, 15 Mar 2023 12:11:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial change log entry"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@m8a/logger\" to `0.0.5`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.0.2",
+      "tag": "@m8a/cli_v0.0.2",
+      "date": "Wed, 15 Mar 2023 12:02:22 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial change log entry"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@m8a/logger\" to `0.0.2`"
+          }
+        ]
+      }
+    }
+  ]
+}

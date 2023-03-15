@@ -1,6 +1,6 @@
-import { DynamicModule, OnApplicationShutdown } from '@nestjs/common';
-import { ModuleRef } from '@nestjs/core';
-import { TypegooseModuleAsyncOptions, TypegooseConnectionOptions } from './typegoose-options.interface';
+import { DynamicModule, OnApplicationShutdown } from "@nestjs/common";
+import { ModuleRef } from "@nestjs/core";
+import { TypegooseModuleAsyncOptions, TypegooseConnectionOptions } from "./typegoose-options.interface";
 export declare class TypegooseCoreModule implements OnApplicationShutdown {
     private readonly connectionName;
     private readonly moduleRef;

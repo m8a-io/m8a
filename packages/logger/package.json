@@ -1,6 +1,6 @@
 {
   "name": "@m8a/logger",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "The logger module for m8a applications.",
   "keywords": [
     "platform",
@@ -31,22 +31,23 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:watch": "jest --watch"
   },
-
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
   "dependencies": {
     "chalk-v2": "1.0.2",
     "rxjs": "7.8.0"
   },
-
   "devDependencies": {
     "@golevelup/nestjs-modules": "0.6.1",
     "@nestjs/common": "9.3.9",
     "@nestjs/core": "9.3.9",
     "@nestjs/platform-fastify": "9.3.9",
+    "@nestjs/testing": "9.3.9",
     "@ogma/nestjs-module": "4.2.2",
     "@ogma/platform-fastify": "4.0.1",
-    "fastify": "4.12.0",
-    "@nestjs/testing": "9.3.9",
     "@types/node": "18.14.6",
+    "fastify": "4.12.0",
     "reflect-metadata": "0.1.13",
     "rimraf": "4.1.2",
     "typescript": "4.9.5"

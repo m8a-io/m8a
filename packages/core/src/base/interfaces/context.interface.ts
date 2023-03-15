@@ -1,4 +1,4 @@
-import { FastifyRequest, FastifyReply } from 'fastify'
+import { FastifyRequest, FastifyReply } from "fastify";
 
 export interface IFastifyReply extends FastifyReply {
   setCookie: (
@@ -11,19 +11,19 @@ export interface IFastifyReply extends FastifyReply {
       httpOnly?: boolean;
       maxAge?: number;
       path?: string;
-      sameSite?: boolean | 'lax' | 'strict' | 'none';
+      sameSite?: boolean | "lax" | "strict" | "none";
       secure?: boolean;
       signed?: boolean;
     }
-  ) => this
+  ) => this;
 }
 
 export interface IFastifyRequest extends FastifyRequest {
-  cookies: { [cookieName: string]: string }
-  user: { userId: string }
+  cookies: { [cookieName: string]: string };
+  user: { userId: string };
 }
 
 export interface IContext {
-  req: IFastifyRequest
-  res: IFastifyReply
+  req: IFastifyRequest;
+  res: IFastifyReply;
 }

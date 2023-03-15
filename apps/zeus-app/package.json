@@ -1,6 +1,7 @@
 {
-  "name": "@m8a/starter-kit-app",
+  "name": "@m8a/zeus-app",
   "version": "0.0.1",
+  "private": true,
   "description": "A starter kit for front end work with m8a",
   "keywords": [
     "platform",
@@ -8,43 +9,46 @@
     "SaaS",
     "TypeScript"
   ],
-  "productName": "Quasar App",
   "author": "Scott Molinari <scott.molinari@adduco.de>",
-  "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.ts,.vue ./ --fix",
     "build": "quasar build",
     "codegen": "tsc src/graphql/utils/operations-from-schema.ts && graphql-codegen --config codegen.yml",
+    "lint": "eslint --ext .js,.ts,.vue ./ --fix",
     "test": "echo \"No test specified\" && exit 0"
   },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.ts": "eslint --fix",
+    "*.vue": "eslint --fix"
+  },
   "dependencies": {
-    "graphql-tag": "2.12.6",
-    "graphql": "16.6.0",
-    "graphql-anywhere": "4.2.8",
-    "qs": "6.11.0",
-    "jwt-decode": "3.1.2",
+    "@apollo/client": "3.7.9",
     "@quasar/extras": "1.15.11",
-    "quasar": "2.11.6",
-    "vue": "3.2.47",
-    "vue-router": "4.1.6",
+    "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
+    "@vue/apollo-composable": "4.0.0-beta.4",
     "apollo-link-rest": "0.9.0",
     "apollo-link-token-refresh": "0.4.0",
-    "@apollo/client": "3.7.7",
-    "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
-    "@vue/apollo-composable": "4.0.0-beta.2"
+    "graphql": "16.6.0",
+    "graphql-anywhere": "4.2.8",
+    "graphql-tag": "2.12.6",
+    "jwt-decode": "3.1.2",
+    "qs": "6.11.0",
+    "quasar": "2.11.7",
+    "vue": "3.2.47",
+    "vue-router": "4.1.6"
   },
   "devDependencies": {
+    "@quasar/app-vite": "^1.0.0",
+    "@types/node": "18.14.6",
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.54.0",
-    "eslint": "8.34.0",
-    "eslint-plugin-vue": "^9.0.0",
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.35.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "@types/node": "18.14.6",
-    "@quasar/app-vite": "^1.0.0",
-    "autoprefixer": "^10.4.2",
+    "eslint-plugin-vue": "^9.0.0",
     "postcss": "8.4.21",
     "typescript": "4.9.5"
   },
@@ -52,5 +56,6 @@
     "node": "^18 || ^16 || ^14.19",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "productName": "Quasar App"
 }

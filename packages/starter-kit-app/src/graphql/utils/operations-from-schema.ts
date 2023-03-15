@@ -1,24 +1,32 @@
 /*eslint-disable */
-import { buildClientSchema, getIntrospectionQuery, parse, print, buildSchema, printSchema, graphqlSync } from 'graphql'
-import { mergeSchemas } from '@graphql-tools/schema'
-import { buildOperationNodeForField } from '@graphql-tools/utils'
-import got from 'got'
-import * as fs from 'fs'
+import {
+  buildClientSchema,
+  getIntrospectionQuery,
+  parse,
+  print,
+  buildSchema,
+  printSchema,
+  graphqlSync,
+} from "graphql";
+import { mergeSchemas } from "@graphql-tools/schema";
+import { buildOperationNodeForField } from "@graphql-tools/utils";
+import got from "got";
+import * as fs from "fs";
 
 const getSchemaFromUrl = async (url: string) => {
-    const searchParams = {
-        query: getIntrospectionQuery().toString(),
-    }
+  const searchParams = {
+    query: getIntrospectionQuery().toString(),
+  };
 
-    const response = await got.get(url, {
-        searchParams,
-        responseType: 'json',
-    })
+  const response = await got.get(url, {
+    searchParams,
+    responseType: "json",
+  });
 
-    const { data } = response.body as any
-    fs.writeFileSync('schema2.txt', JSON.stringify(data))
-    return buildClientSchema(data) 
-}
+  const { data } = response.body as any;
+  fs.writeFileSync("schema2.txt", JSON.stringify(data));
+  return buildClientSchema(data);
+};
 
 // const getSchemaFromFile = async () => {
 
@@ -31,35 +39,36 @@ const getSchemaFromUrl = async (url: string) => {
 // }
 
 const main = async (urlPath: string) => {
-    const schema = await getSchemaFromUrl(urlPath)
-    // const localSchema = await getSchemaFromFile()
+  const schema = await getSchemaFromUrl(urlPath);
+  // const localSchema = await getSchemaFromFile()
 
+  // const schema = mergeSchemas({
+  //     schemas: [urlSchema, localSchema]
+  // })
 
-    // const schema = mergeSchemas({
-    //     schemas: [urlSchema, localSchema]
-    // })
+  const operationsDictionary = {
+    query: { ...(schema.getQueryType()?.getFields() ?? {}) },
+    mutation: { ...(schema.getMutationType()?.getFields() ?? {}) },
+    subscription: { ...(schema.getSubscriptionType()?.getFields() ?? {}) },
+  };
 
-    const operationsDictionary = {
-        query: { ...(schema.getQueryType()?.getFields() ?? {}) },
-        mutation: { ...(schema.getMutationType()?.getFields() ?? {}) },
-        subscription: { ...(schema.getSubscriptionType()?.getFields() ?? {}) },
+  let documentString = "";
+
+  for (const [operationKind, operationValue] of Object.entries(
+    operationsDictionary
+  )) {
+    for (const operationName of Object.keys(operationValue)) {
+      const operationAST = buildOperationNodeForField({
+        schema,
+        kind: operationKind as any,
+        field: operationName,
+      });
+
+      documentString += print(operationAST);
     }
-   
-    let documentString = ''
+  }
 
-    for (const [operationKind, operationValue] of Object.entries(operationsDictionary)) {
-        for (const operationName of Object.keys(operationValue)) {
-            const operationAST = buildOperationNodeForField({
-                schema,
-                kind: operationKind as any,
-                field: operationName,
-            })
+  return parse(documentString);
+};
 
-            documentString += print(operationAST)
-        }
-    }
-    
-    return parse(documentString)
-}
-
-export default main
+export default main;
