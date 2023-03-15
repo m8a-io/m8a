@@ -20,6 +20,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:watch": "jest --watch"
   },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
   "jest": {
     "collectCoverageFrom": [
       "**/*.(t|j)s"

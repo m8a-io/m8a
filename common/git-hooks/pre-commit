@@ -1,5 +1,5 @@
-#!/bin/sh
-
+#!/bin/bash
+# needed for those useing nvm locally
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # Called by "git commit" with no arguments.  The hook should
@@ -10,3 +10,4 @@ export NVM_DIR="$HOME/.nvm"
 # are committed. The command is defined in common/config/rush/command-line.json
 # and uses the "rush-prettier" autoinstaller.
 node common/scripts/install-run-rush.js prettier || exit $?
+node common/scripts/install-run-rush.js lint-staged || exit $?

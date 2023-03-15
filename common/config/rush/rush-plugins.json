@@ -25,5 +25,23 @@
     //    */
     //   "autoinstallerName": "rush-plugins"
     // }
+    {
+    //   /**
+    //    * The name of the NPM package that provides the plugin.
+    //    */
+      "packageName": "rush-lint-staged-plugin",
+    //   /**
+    //    * The name of the plugin.  This can be found in the "pluginName"
+    //    * field of the "rush-plugin-manifest.json" file in the NPM package folder.
+    //    */
+      "pluginName": "rush-lint-staged-plugin",
+    //   /**
+    //    * The name of a Rush autoinstaller that will be used for installation, which
+    //    * can be created using "rush init-autoinstaller".  Add the plugin's NPM package
+    //    * to the package.json "dependencies" of your autoinstaller, then run
+    //    * "rush update-autoinstaller".
+    //    */
+      "autoinstallerName": "lint-staged"
+    }
   ]
 }

@@ -20,6 +20,14 @@
       "shellCommand": "pretty-quick --staged"
     }
     // {
+    //   "name": "lint-staged",
+    //   "commandKind": "global",
+    //   "summary": "Used by the pre-commit Git hook. This command invokes the per-package-configed linters to lint staged changes.",
+    //   "safeForSimultaneousRushProcesses": true,
+    //   "autoinstallerName": "lint-staged",
+    //   "shellCommand": "lint-staged"
+    // }
+    // {
     //   /**
     //    * (Required) Determines the type of custom command.
     //    * Rush's "bulk" commands are invoked separately for each project.  Rush will look in

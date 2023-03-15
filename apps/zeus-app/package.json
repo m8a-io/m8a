@@ -16,6 +16,11 @@
     "lint": "eslint --ext .js,.ts,.vue ./ --fix",
     "test": "echo \"No test specified\" && exit 0"
   },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.ts": "eslint --fix",
+    "*.vue": "eslint --fix"
+  },
   "dependencies": {
     "@apollo/client": "3.7.9",
     "@quasar/extras": "1.15.11",

@@ -19,9 +19,12 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:watch": "jest --watch"
   },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
   "dependencies": {
-    "@m8a/logger": "workspace:*",
-    "@m8a/core": "workspace:*"
+    "@m8a/core": "workspace:*",
+    "@m8a/logger": "workspace:*"
   },
   "devDependencies": {
     "@nestjs/common": "9.3.9",
@@ -47,8 +50,8 @@
     "webpack": "5.75.0"
   },
   "peerDependencies": {
-    "nest-commander": "2.5.0",
-    "@m8a/cli": "^0.0.1"
+    "@m8a/cli": "^0.0.1",
+    "nest-commander": "2.5.0"
   },
   "peerDependenciesMeta": {
     "@m8a/core": {

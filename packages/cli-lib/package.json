@@ -15,9 +15,12 @@
     "build": "rimraf dist && tsc --project tsconfig.build.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
   "dependencies": {
-    "cross-spawn": "7.0.3",
-    "@m8a/logger": "workspace:*"
+    "@m8a/logger": "workspace:*",
+    "cross-spawn": "7.0.3"
   },
   "devDependencies": {
     "@rushstack/eslint-config": "3.2.0",
