@@ -1,0 +1,8 @@
+{
+  "name": "lint-staged",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "lint-staged": "^13.2.0"
+  }
+}
