@@ -1,6 +1,6 @@
 {
   "name": "@m8a/logger",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "The logger module for m8a applications.",
   "keywords": [
     "platform",

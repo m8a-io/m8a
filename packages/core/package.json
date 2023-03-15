@@ -1,6 +1,6 @@
 {
   "name": "@m8a/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "The core modules for m8a applications.",
   "keywords": [
     "platform",

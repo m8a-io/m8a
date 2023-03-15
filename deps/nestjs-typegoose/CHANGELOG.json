@@ -1,4 +1,24 @@
 {
   "name": "@m8a/nestjs-typegoose",
-  "entries": []
+  "entries": [
+    {
+      "version": "10.1.3",
+      "tag": "@m8a/nestjs-typegoose_v10.1.3",
+      "date": "Wed, 15 Mar 2023 13:28:34 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial change log entry",
+            "author": "Scott Molinari <scott.molinari@adduco.de>",
+            "commit": "b3569983bd49be2dd5e35575a721894390f126de"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@m8a/eslint-config\" to `0.0.4`"
+          }
+        ]
+      }
+    }
+  ]
 }
