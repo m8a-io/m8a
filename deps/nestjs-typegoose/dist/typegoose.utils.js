@@ -7,7 +7,7 @@ function getModelToken(model) {
 }
 exports.getModelToken = getModelToken;
 function getConnectionToken(name) {
-    if (typeof name === 'string' && name !== typegoose_constants_1.DEFAULT_DB_CONNECTION_NAME) {
+    if (typeof name === "string" && name !== typegoose_constants_1.DEFAULT_DB_CONNECTION_NAME) {
         return `${name}Connection`;
     }
     return typegoose_constants_1.DEFAULT_DB_CONNECTION_NAME;

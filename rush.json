@@ -25,7 +25,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "7.27.0",
+  "pnpmVersion": "7.29.0",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
@@ -331,7 +331,7 @@
     },
     {
       "packageName": "@m8a/zeus-api",
-      "projectFolder": "packages/zeus-api",
+      "projectFolder": "apps/zeus-api",
       "reviewCategory": "apps",
       "shouldPublish": false
     },

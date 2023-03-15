@@ -33,23 +33,23 @@ let TypegooseCoreModule = TypegooseCoreModule_1 = class TypegooseCoreModule {
         const connectionName = (0, typegoose_utils_1.getConnectionToken)(options.connectionName);
         const connectionNameProvider = {
             provide: typegoose_constants_1.TYPEGOOSE_CONNECTION_NAME,
-            useValue: connectionName
+            useValue: connectionName,
         };
         const connectionProvider = {
             provide: connectionName,
-            useFactory: () => mongoose_1.default.createConnection(uri, options)
+            useFactory: () => mongoose_1.default.createConnection(uri, options),
         };
         return {
             module: TypegooseCoreModule_1,
             providers: [connectionProvider, connectionNameProvider],
-            exports: [connectionProvider]
+            exports: [connectionProvider],
         };
     }
     static forRootAsync(options) {
         const connectionName = (0, typegoose_utils_1.getConnectionToken)(options.connectionName);
         const connectionNameProvider = {
             provide: typegoose_constants_1.TYPEGOOSE_CONNECTION_NAME,
-            useValue: connectionName
+            useValue: connectionName,
         };
         const connectionProvider = {
             provide: connectionName,
@@ -57,7 +57,7 @@ let TypegooseCoreModule = TypegooseCoreModule_1 = class TypegooseCoreModule {
                 const { uri, ...typegooseOptions } = typegooseModuleOptions;
                 return mongoose_1.default.createConnection(uri, typegooseOptions);
             },
-            inject: [typegoose_constants_1.TYPEGOOSE_MODULE_OPTIONS]
+            inject: [typegoose_constants_1.TYPEGOOSE_MODULE_OPTIONS],
         };
         const asyncProviders = this.createAsyncProviders(options);
         return {
@@ -66,9 +66,9 @@ let TypegooseCoreModule = TypegooseCoreModule_1 = class TypegooseCoreModule {
             providers: [
                 ...asyncProviders,
                 connectionProvider,
-                connectionNameProvider
+                connectionNameProvider,
             ],
-            exports: [connectionProvider]
+            exports: [connectionProvider],
         };
     }
     static createAsyncProviders(options) {
@@ -79,8 +79,8 @@ let TypegooseCoreModule = TypegooseCoreModule_1 = class TypegooseCoreModule {
             this.createAsyncOptionsProvider(options),
             {
                 provide: options.useClass,
-                useClass: options.useClass
-            }
+                useClass: options.useClass,
+            },
         ];
     }
     static createAsyncOptionsProvider(options) {
@@ -88,25 +88,29 @@ let TypegooseCoreModule = TypegooseCoreModule_1 = class TypegooseCoreModule {
             return {
                 provide: typegoose_constants_1.TYPEGOOSE_MODULE_OPTIONS,
                 useFactory: options.useFactory,
-                inject: options.inject || []
+                inject: options.inject || [],
             };
         }
         return {
             provide: typegoose_constants_1.TYPEGOOSE_MODULE_OPTIONS,
             useFactory: async (optionsFactory) => await optionsFactory.createTypegooseOptions(),
-            inject: [options.useExisting || options.useClass]
+            inject: [options.useExisting || options.useClass],
         };
     }
     async onApplicationShutdown() {
-        const connection = this.moduleRef.get(this.connectionName, { strict: false });
+        const connection = this.moduleRef.get(this.connectionName, {
+            strict: false,
+        });
         if (connection) {
             await connection.close();
-            [...data_1.models.entries()].reduce((array, [key, model]) => {
+            [...data_1.models.entries()]
+                .reduce((array, [key, model]) => {
                 if (model.db === connection) {
                     array.push(key);
                 }
                 return array;
-            }, []).forEach(typegoose_1.deleteModel);
+            }, [])
+                .forEach(typegoose_1.deleteModel);
         }
     }
 };

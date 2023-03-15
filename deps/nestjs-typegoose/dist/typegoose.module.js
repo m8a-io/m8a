@@ -15,22 +15,22 @@ let TypegooseModule = TypegooseModule_1 = class TypegooseModule {
     static forRoot(uri, options = {}) {
         return {
             module: TypegooseModule_1,
-            imports: [typegoose_core_module_1.TypegooseCoreModule.forRoot(uri, options)]
+            imports: [typegoose_core_module_1.TypegooseCoreModule.forRoot(uri, options)],
         };
     }
     static forRootAsync(options) {
         return {
             module: TypegooseModule_1,
-            imports: [typegoose_core_module_1.TypegooseCoreModule.forRootAsync(options)]
+            imports: [typegoose_core_module_1.TypegooseCoreModule.forRootAsync(options)],
         };
     }
     static forFeature(models, connectionName) {
-        const convertedModels = models.map(model => (0, typegoose_providers_1.convertToTypegooseClassWithOptions)(model));
+        const convertedModels = models.map((model) => (0, typegoose_providers_1.convertToTypegooseClassWithOptions)(model));
         const providers = (0, typegoose_providers_1.createTypegooseProviders)(connectionName, convertedModels);
         return {
             module: TypegooseModule_1,
             providers,
-            exports: providers
+            exports: providers,
         };
     }
 };
