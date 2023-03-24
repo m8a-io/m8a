@@ -432,6 +432,7 @@ importers:
     specifiers:
       '@fastify/cookie': 8.3.0
       '@m8a/core': workspace:*
+      '@m8a/eslint-config': workspace:*
       '@m8a/logger': workspace:*
       '@nestjs/cli': 9.2.0
       '@nestjs/common': 9.3.9
@@ -470,6 +471,7 @@ importers:
       class-transformer: 0.5.1
       class-validator: 0.14.0
     devDependencies:
+      '@m8a/eslint-config': link:../../deps/eslint
       '@nestjs/cli': 9.2.0
       '@nestjs/testing': 9.3.9_77foi4w27ghy47yutmnzv7krjy
       '@rushstack/eslint-config': 3.2.0_ycpbpc6yetojsgtrx3mwntkhsu
