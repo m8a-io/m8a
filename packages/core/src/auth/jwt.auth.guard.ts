@@ -4,7 +4,7 @@ import { Reflector } from '@nestjs/core'
 import { GqlExecutionContext } from '@nestjs/graphql'
 import { AuthGuard } from '@nestjs/passport'
 import { IS_PUBLIC_KEY } from './decorators/public.decorator'
-import { ApolloError } from 'apollo-server-errors'
+import { GraphQLError } from 'graphql'
 import { Observable } from 'rxjs'
 
 @Injectable()
@@ -22,9 +22,14 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleRequest (err: any, user: any) {
     if (err || !user) {
-      throw new ApolloError(
+      throw new GraphQLError(
         'Your access is denied. If you think there is an error, please contact your administrator.',
-        '1002'
+        {
+          extensions: {
+            code: 'UNAUTHORIZED',
+            myExtension: 'm8a-error-code-1002'
+          }
+        }
       )
     }
 

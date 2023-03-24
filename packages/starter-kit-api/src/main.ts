@@ -5,8 +5,7 @@ import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify
 import { AppModule } from './app.module'
 import { EnvironmentVariables } from '@m8a/core'
 import { OgmaService } from '@ogma/nestjs-module'
-// import fastifyCookie from '@fastify/cookie'
-import { fastifyCookie } from '@fastify/cookie'
+import fastifyCookie from '@fastify/cookie'
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter(), {
@@ -14,7 +13,7 @@ async function bootstrap() {
     bufferLogs: true,
     abortOnError: true
   })
-  // @eslint-disable-next-line
+
   await app.register(fastifyCookie, {
     secret: 'my-secret' // TODO: update for better cookie signature
   })
