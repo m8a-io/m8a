@@ -1,2 +1,2 @@
-export * from "./typegoose.module";
-export * from "./typegoose.service";
+export * from './typegoose.module'
+export * from './typegoose.service'

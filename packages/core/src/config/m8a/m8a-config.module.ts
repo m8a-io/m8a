@@ -1,7 +1,7 @@
-import { Global, Module } from "@nestjs/common";
-import { DbConfigEntity } from "./entities/config.entity";
-import { DbConfigService } from "./db-config.service";
-import { DbConfigModule } from "./db-config.module";
+import { Global, Module } from '@nestjs/common'
+import { DbConfigEntity } from './entities/config.entity'
+import { DbConfigService } from './db-config.service'
+import { DbConfigModule } from './db-config.module'
 
 @Global()
 @Module({
@@ -10,11 +10,11 @@ import { DbConfigModule } from "./db-config.module";
     {
       provide: DbConfigEntity,
       useFactory: async (dbConfigService: DbConfigService) => {
-        return await dbConfigService.getConfig();
+        return await dbConfigService.getConfig()
       },
-      inject: [DbConfigService],
-    },
+      inject: [DbConfigService]
+    }
   ],
-  exports: [DbConfigEntity],
+  exports: [DbConfigEntity]
 })
 export class M8aConfigModule {}

@@ -1,6 +1,6 @@
-import { Field, ID, ObjectType } from "@nestjs/graphql";
-import { FilterableField } from "@ptc-org/nestjs-query-graphql";
-import { UserDTO } from "../../user/dtos/user.dto";
+import { Field, ID, ObjectType } from '@nestjs/graphql'
+import { FilterableField } from '@ptc-org/nestjs-query-graphql'
+import { UserDTO } from '../../user/dtos/user.dto'
 
 @ObjectType()
 // @Relation('createdBy', () => UserDTO, {
@@ -17,23 +17,23 @@ export class BaseDTO {
   // _id: Types.ObjectId
 
   @FilterableField(() => ID)
-  id!: string;
+    id!: string
 
   @Field(() => UserDTO)
-  public createdBy!: UserDTO | string;
+  public createdBy!: UserDTO | string
 
   @Field(() => UserDTO)
-  public modifiedBy!: UserDTO | string;
+  public modifiedBy!: UserDTO | string
 
   @FilterableField({
     description:
-      "A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was modified.",
+      'A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was modified.'
   })
-  public modifiedAt?: Date;
+  public modifiedAt?: Date
 
   @FilterableField({
     description:
-      "A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was created.",
+      'A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was created.'
   })
-  public createdAt?: Date;
+  public createdAt?: Date
 }
