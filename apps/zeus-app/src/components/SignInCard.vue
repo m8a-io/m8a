@@ -1,15 +1,9 @@
 <template>
   <q-dialog ref="dialogRef">
     <q-card square bordered class="q-pa-lg shadow-1">
-      <transition-group
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
-      >
+      <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <q-card-section v-if="loginError">
-          <q-banner key="banner" rounded class="text-white bg-red"
-            >{{ loginErrorMessage }}
-          </q-banner>
+          <q-banner key="banner" rounded class="text-white bg-red">{{ loginErrorMessage }} </q-banner>
         </q-card-section>
       </transition-group>
 
@@ -41,14 +35,7 @@
         </q-form>
       </q-card-section>
       <q-card-actions class="q-px-md">
-        <q-btn
-          unelevated
-          color="light-green-7"
-          size="lg"
-          class="full-width"
-          label="Login"
-          @click="login()"
-        />
+        <q-btn unelevated color="light-green-7" size="lg" class="full-width" label="Login" @click="login()" />
       </q-card-actions>
       <q-card-section class="text-center q-pa-none">
         <p class="text-grey-6">Not registered? Create an Account</p>
@@ -58,57 +45,56 @@
 </template>
 
 <script lang="ts">
-import { useDialogPluginComponent, useQuasar } from "quasar";
-import { useMutation } from "@vue/apollo-composable";
-import { ref, defineComponent } from "vue";
-import { Login_Mutation } from "src/graphql/gql-operations";
-import { userLoggedInVar } from "src/apollo/index";
+import { useDialogPluginComponent, useQuasar } from 'quasar'
+import { useMutation } from '@vue/apollo-composable'
+import { ref, defineComponent } from 'vue'
+import { Login_Mutation } from 'src/graphql/gql-operations'
+import { userLoggedInVar } from 'src/apollo/index'
 
 export default defineComponent({
   emits: [...useDialogPluginComponent.emits],
 
-  setup() {
-    const { dialogRef, onDialogOK } = useDialogPluginComponent();
+  setup () {
+    const { dialogRef, onDialogOK } = useDialogPluginComponent()
 
-    const $q = useQuasar();
+    const $q = useQuasar()
 
-    const username = ref("");
-    const password = ref("");
-    const loginErrorMessage = ref("");
-    const loginError = ref(false);
-    const passwordVisible = ref(false);
+    const username = ref('')
+    const password = ref('')
+    const loginErrorMessage = ref('')
+    const loginError = ref(false)
+    const passwordVisible = ref(false)
 
     const { mutate: login } = useMutation(Login_Mutation, () => ({
       variables: {
         username: username.value,
-        password: password.value,
+        password: password.value
       },
       update: (
         cache,
         {
           data: {
-            login: { accessToken, userId },
-          },
+            login: { accessToken, userId }
+          }
         }
       ) => {
         if (!accessToken || !userId) {
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-          loginError.value = true;
-          loginErrorMessage.value =
-            "Your username or password is incorrect. Please try again.";
+          loginError.value = true
+          loginErrorMessage.value = 'Your username or password is incorrect. Please try again.'
         } else {
-          $q.localStorage.set("token", accessToken as string);
-          $q.localStorage.set("userId", userId as string);
-          userLoggedInVar(true);
+          $q.localStorage.set('token', accessToken as string)
+          $q.localStorage.set('userId', userId as string)
+          userLoggedInVar(true)
           $q.notify({
-            color: "teal",
-            message: "You are logged in.",
-            icon: "thumb_up",
-          });
-          onDialogOK();
+            color: 'teal',
+            message: 'You are logged in.',
+            icon: 'thumb_up'
+          })
+          onDialogOK()
         }
-      },
-    }));
+      }
+    }))
 
     return {
       login,
@@ -117,14 +103,14 @@ export default defineComponent({
       dialogRef,
       username,
       password,
-      passwordVisible,
-    };
-  },
-});
+      passwordVisible
+    }
+  }
+})
 </script>
 
 <style>
-.q-card {
-  width: 360px;
-}
+  .q-card {
+    width: 360px;
+  }
 </style>

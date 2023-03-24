@@ -7,10 +7,10 @@ import {
 } from '@ptc-org/nestjs-query-core'
 import { RegisterInputDTO } from '../auth/dtos/register.input.dto'
 import { UserEntity } from './user.entity'
-import { UserInputError, ApolloError } from 'apollo-server-errors'
 import { Injectable } from '@nestjs/common'
 import { UserDTO } from './dtos/user.dto'
 import { HashService } from './hash.service'
+import { GraphQLError } from 'graphql'
 
 @Assembler(UserDTO, UserEntity)
 export class UserAssembler extends ClassTransformerAssembler<UserDTO, UserEntity> {}
@@ -44,9 +44,14 @@ export class UserService extends AssemblerQueryService<UserDTO, UserEntity> {
     })
 
     if (result.length === 0) {
-      throw new ApolloError(
+      throw new GraphQLError(
         'There was a problem with locating the system user for the registration process. Please see your admin for help.',
-        '1001'
+        {
+          extensions: {
+            code: 'FORBIDDEN',
+            myExtension: 'm8a-error-code-1001'
+          }
+        }
       )
     }
 
@@ -59,7 +64,12 @@ export class UserService extends AssemblerQueryService<UserDTO, UserEntity> {
     })
 
     if (locatedUser && locatedUser.length === 1) {
-      throw new UserInputError('This user already exists.')
+      throw new GraphQLError('This user already exists.', {
+        extensions: {
+          code: 'FORBIDDEN',
+          myExtension: 'm8a-error-code-1002'
+        }
+      })
     }
 
     const user = await this.userService.createOne({

@@ -1,14 +1,14 @@
-import { ApolloClient /*, createHttpLink */ } from "@apollo/client/core";
-import { ApolloClients } from "@vue/apollo-composable";
-import { boot } from "quasar/wrappers";
-import { getClientOptions } from "../apollo";
+import { ApolloClient /*, createHttpLink */ } from '@apollo/client/core'
+import { ApolloClients } from '@vue/apollo-composable'
+import { boot } from 'quasar/wrappers'
+import { getClientOptions } from '../apollo'
 
-let apolloClients: Record<string, ApolloClient<unknown>> = {};
+let apolloClients: Record<string, ApolloClient<unknown>> = {}
 export default boot(
   /* async */ ({ app /* router */ }) => {
     // Default client.
-    const options = getClientOptions(/* { router } */);
-    const apolloClient = new ApolloClient(options);
+    const options = getClientOptions(/* { router } */)
+    const apolloClient = new ApolloClient(options)
     // // Additional client `clientA`
     // const optionsA = { ...options }
     // // Modify options as needed.
@@ -22,13 +22,13 @@ export default boot(
     // const clientB = new ApolloClient(optionsB)
 
     apolloClients = {
-      default: apolloClient,
+      default: apolloClient
       // clientA,
       // clientB,
-    };
+    }
 
-    app.provide(ApolloClients, apolloClients);
+    app.provide(ApolloClients, apolloClients)
   }
-);
+)
 
-export { apolloClients };
+export { apolloClients }
