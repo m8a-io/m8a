@@ -1,20 +1,20 @@
 // TODO: base.service add proper tests
 
-import { Test, TestingModule } from "@nestjs/testing";
-import { BaseService } from "./base.service";
+import { Test, TestingModule } from '@nestjs/testing'
+import { BaseService } from './base.service'
 
-describe("BaseService", () => {
-  let service: BaseService;
+describe('BaseService', () => {
+  let service: BaseService
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [BaseService],
-    }).compile();
+      providers: [BaseService]
+    }).compile()
 
-    service = module.get<BaseService>(BaseService);
-  });
+    service = module.get<BaseService>(BaseService)
+  })
 
-  it("should be defined", () => {
-    expect(service).toBeDefined();
-  });
-});
+  it('should be defined', () => {
+    expect(service).toBeDefined()
+  })
+})
