@@ -22,7 +22,7 @@
     "*.vue": "eslint --fix"
   },
   "dependencies": {
-    "@apollo/client": "3.7.9",
+    "@apollo/client": "3.7.10",
     "@quasar/extras": "1.15.11",
     "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
     "@vue/apollo-composable": "4.0.0-beta.4",
@@ -32,7 +32,7 @@
     "graphql-anywhere": "4.2.8",
     "graphql-tag": "2.12.6",
     "jwt-decode": "3.1.2",
-    "qs": "6.11.0",
+    "qs": "6.11.1",
     "quasar": "2.11.7",
     "vue": "3.2.47",
     "vue-router": "4.1.6"
@@ -40,10 +40,10 @@
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",
     "@types/node": "18.14.6",
-    "@typescript-eslint/eslint-plugin": "5.54.0",
-    "@typescript-eslint/parser": "5.54.0",
+    "@typescript-eslint/eslint-plugin": "5.56.0",
+    "@typescript-eslint/parser": "5.56.0",
     "autoprefixer": "^10.4.2",
-    "eslint": "8.35.0",
+    "eslint": "8.36.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-n": "^15.0.0",

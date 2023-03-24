@@ -1,49 +1,71 @@
 {
   "name": "@m8a/starter-kit-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
   "private": true,
+  "description": "",
   "license": "UNLICENSED",
+  "author": "",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && tsc --project tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "start": "nest start",
+    "start:debug": "nest start --debug --watch",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main",
     "test": "jest",
-    "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "./coverage",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "roots": [
+      "<rootDir>/src/",
+      "<rootDir>/libs/"
+    ],
+    "testEnvironment": "node",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    }
   },
   "dependencies": {
-    "@m8a/core": "workspace:*",
-    "@nestjs/common": "9.3.9",
-    "@nestjs/core": "9.3.9",
-    "@m8a/logger": "workspace:*",
-    "@nestjs/platform-fastify": "9.3.9",
-    "@ogma/nestjs-module": "4.2.2",
     "@fastify/cookie": "8.3.0",
-    "class-validator": "0.14.0",
-    "class-transformer": "0.5.1"
+    "@m8a/core": "workspace:*",
+    "@m8a/logger": "workspace:*",
+    "@nestjs/common": "9.3.12",
+    "@nestjs/core": "9.3.12",
+    "@nestjs/platform-fastify": "9.3.12",
+    "@ogma/nestjs-module": "4.2.2",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.0"
   },
   "devDependencies": {
+    "@m8a/eslint-config": "workspace:*",
     "@nestjs/cli": "9.2.0",
-    "@nestjs/testing": "9.3.9",
+    "@nestjs/testing": "9.3.12",
     "@rushstack/eslint-config": "3.2.0",
-    "@types/jest": "29.4.0",
+    "@types/jest": "29.5.0",
     "@types/node": "18.14.6",
     "@types/supertest": "2.0.12",
-    "eslint": "8.35.0",
-    "jest": "29.4.1",
+    "eslint": "8.36.0",
+    "jest": "29.5.0",
     "prettier": "2.8.4",
     "reflect-metadata": "0.1.13",
-    "rxjs": "7.8.0",
     "rimraf": "4.1.2",
+    "rxjs": "7.8.0",
     "source-map-support": "0.5.21",
     "supertest": "6.3.3",
     "ts-jest": "29.0.5",
@@ -52,27 +74,6 @@
     "tsconfig-paths": "4.1.2",
     "typescript": "4.9.5",
     "webpack": "5.75.0"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": ".",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "./coverage",
-    "testEnvironment": "node",
-    "roots": [
-      "<rootDir>/src/",
-      "<rootDir>/libs/"
-    ]
   },
   "peerDependenciesMeta": {
     "@m8a/core": {

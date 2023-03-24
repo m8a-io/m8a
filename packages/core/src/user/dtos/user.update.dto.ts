@@ -1,25 +1,25 @@
-import { Field, InputType } from "@nestjs/graphql";
+import { Field, InputType } from '@nestjs/graphql'
 
-@InputType("UserUpdate")
+@InputType('UserUpdate')
 export class UserUpdateDTO {
   @Field({ description: "The user's first name" })
-  public firstName!: string;
+  public firstName!: string
 
   @Field({ description: "The user's last name" })
-  public lastName!: string;
+  public lastName!: string
 
   @Field({
     description:
-      "The user's username. In the form of an email address. Can be the user's email address or a version thereof.",
+      "The user's username. In the form of an email address. Can be the user's email address or a version thereof."
   })
-  public username!: string;
+  public username!: string
 
   @Field()
-  public password!: string;
+  public password!: string
 
   @Field({ description: "The user's email address" })
-  public email!: string;
+  public email!: string
 
   @Field()
-  public status!: string;
+  public status!: string
 }

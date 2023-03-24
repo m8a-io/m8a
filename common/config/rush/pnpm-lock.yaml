@@ -215,6 +215,7 @@ importers:
 
   ../../packages/cli:
     specifiers:
+      '@m8a/eslint-config': workspace:*
       '@m8a/logger': workspace:*
       '@nestjs/common': 9.3.9
       '@nestjs/core': 9.3.9
@@ -228,8 +229,6 @@ importers:
       '@typescript-eslint/parser': 5.54.0
       cross-spawn: 7.0.3
       eslint: 8.35.0
-      eslint-config-prettier: 8.6.0
-      eslint-plugin-prettier: 4.2.1
       jest: 29.4.1
       nest-commander: 3.5.0
       prettier: 2.8.4
@@ -249,6 +248,7 @@ importers:
       cross-spawn: 7.0.3
       nest-commander: 3.5.0_xav3k3izmegujrtcssjh5j4n6i
     devDependencies:
+      '@m8a/eslint-config': link:../../deps/eslint
       '@nestjs/core': 9.3.9_jrq2rdgfp2sx67wmylmrqliwxe
       '@nestjs/testing': 9.3.9_77foi4w27ghy47yutmnzv7krjy
       '@rushstack/eslint-config': 3.2.0_ycpbpc6yetojsgtrx3mwntkhsu
@@ -259,8 +259,6 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.54.0_6mj2wypvdnknez7kws2nfdgupi
       '@typescript-eslint/parser': 5.54.0_ycpbpc6yetojsgtrx3mwntkhsu
       eslint: 8.35.0
-      eslint-config-prettier: 8.6.0_eslint@8.35.0
-      eslint-plugin-prettier: 4.2.1_u2zha4kiojzs42thzpgwygphmy
       jest: 29.4.1_nvadb4ngcuh2lyv22apfdo6nc4
       prettier: 2.8.4
       reflect-metadata: 0.1.13
@@ -394,14 +392,17 @@ importers:
   ../../packages/logger:
     specifiers:
       '@golevelup/nestjs-modules': 0.6.1
+      '@m8a/eslint-config': workspace:*
       '@nestjs/common': 9.3.9
       '@nestjs/core': 9.3.9
       '@nestjs/platform-fastify': 9.3.9
       '@nestjs/testing': 9.3.9
       '@ogma/nestjs-module': 4.2.2
       '@ogma/platform-fastify': 4.0.1
+      '@rushstack/eslint-config': 3.2.0
       '@types/node': 18.14.6
       chalk-v2: 1.0.2
+      eslint: 8.35.0
       fastify: 4.12.0
       reflect-metadata: 0.1.13
       rimraf: 4.1.2
@@ -412,13 +413,16 @@ importers:
       rxjs: 7.8.0
     devDependencies:
       '@golevelup/nestjs-modules': 0.6.1_d56f3gzgbieq6fdcwcijmvtfvi
+      '@m8a/eslint-config': link:../../deps/eslint
       '@nestjs/common': 9.3.9_mnr6j2del53muneqly5h4y27ai
       '@nestjs/core': 9.3.9_jrq2rdgfp2sx67wmylmrqliwxe
       '@nestjs/platform-fastify': 9.3.9_77foi4w27ghy47yutmnzv7krjy
       '@nestjs/testing': 9.3.9_77foi4w27ghy47yutmnzv7krjy
       '@ogma/nestjs-module': 4.2.2_xap76i5unmrgcq3fgd6nhqgyvy
       '@ogma/platform-fastify': 4.0.1_sfg2o5yd2pkeupp6ihexvswyni
+      '@rushstack/eslint-config': 3.2.0_ycpbpc6yetojsgtrx3mwntkhsu
       '@types/node': 18.14.6
+      eslint: 8.35.0
       fastify: 4.12.0
       reflect-metadata: 0.1.13
       rimraf: 4.1.2
@@ -428,6 +432,7 @@ importers:
     specifiers:
       '@fastify/cookie': 8.3.0
       '@m8a/core': workspace:*
+      '@m8a/eslint-config': workspace:*
       '@m8a/logger': workspace:*
       '@nestjs/cli': 9.2.0
       '@nestjs/common': 9.3.9
@@ -466,6 +471,7 @@ importers:
       class-transformer: 0.5.1
       class-validator: 0.14.0
     devDependencies:
+      '@m8a/eslint-config': link:../../deps/eslint
       '@nestjs/cli': 9.2.0
       '@nestjs/testing': 9.3.9_77foi4w27ghy47yutmnzv7krjy
       '@rushstack/eslint-config': 3.2.0_ycpbpc6yetojsgtrx3mwntkhsu
@@ -6445,23 +6451,6 @@ packages:
       eslint: 8.35.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_u2zha4kiojzs42thzpgwygphmy:
-    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      eslint: '>=7.28.0'
-      eslint-config-prettier: '*'
-      prettier: '>=2.0.0'
-    peerDependenciesMeta:
-      eslint-config-prettier:
-        optional: true
-    dependencies:
-      eslint: 8.35.0
-      eslint-config-prettier: 8.6.0_eslint@8.35.0
-      prettier: 2.8.4
-      prettier-linter-helpers: 1.0.0
-    dev: true
-
   /eslint-plugin-promise/6.0.1_eslint@8.35.0:
     resolution: {integrity: sha512-uM4Tgo5u3UWQiroOyDEsYcVMOo7re3zmno0IZmB5auxoaQNIceAbXEkSt8RNrKtaYehARHG06pYK6K1JhtP0Zw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -6595,7 +6584,7 @@ packages:
       eslint-scope: 7.1.1
       eslint-utils: 3.0.0_eslint@8.35.0
       eslint-visitor-keys: 3.3.0
-      espree: 9.4.1
+      espree: 9.5.0
       esquery: 1.4.2
       esutils: 2.0.3
       fast-deep-equal: 3.1.3
@@ -6623,15 +6612,6 @@ packages:
       text-table: 0.2.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /espree/9.4.1:
-    resolution: {integrity: sha512-XwctdmTO6SIvCzd9810yyNzIrOrqNYV9Koizx4C/mRhf9uq0o4yHoCEU/670pOxOL/MSraektvSAji79kX90Vg==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dependencies:
-      acorn: 8.8.2
-      acorn-jsx: 5.3.2_acorn@8.8.2
-      eslint-visitor-keys: 3.3.0
     dev: true
 
   /espree/9.5.0:
@@ -6808,10 +6788,6 @@ packages:
 
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
-
-  /fast-diff/1.2.0:
-    resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
-    dev: true
 
   /fast-glob/3.2.12:
     resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
@@ -10005,13 +9981,6 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-    dev: true
-
-  /prettier-linter-helpers/1.0.0:
-    resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      fast-diff: 1.2.0
     dev: true
 
   /prettier/2.8.4:

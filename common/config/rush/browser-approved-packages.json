@@ -56,7 +56,7 @@
     },
     {
       "name": "@m8a/eslint-config",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@m8a/logger",
