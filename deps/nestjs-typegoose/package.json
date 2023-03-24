@@ -50,7 +50,7 @@
     "@nestjs/platform-express": "~9.3.9",
     "@nestjs/testing": "9.3.9",
     "@rushstack/eslint-config": "3.2.0",
-    "@typegoose/typegoose": "10.3.0",
+    "@typegoose/typegoose": "10.3.4",
     "@types/jest": "29.4.0",
     "@types/supertest": "2.0.12",
     "coveralls": "3.1.1",
