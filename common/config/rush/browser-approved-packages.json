@@ -11,6 +11,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@apollo/server",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@casl/ability",
       "allowedCategories": [ "libraries" ]
     },
