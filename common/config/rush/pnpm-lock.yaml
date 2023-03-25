@@ -294,7 +294,7 @@ importers:
       '@ogma/nestjs-module': 4.2.2
       '@ptc-org/nestjs-query-core': 2.3.0
       '@ptc-org/nestjs-query-graphql': 2.3.0
-      '@ptc-org/nestjs-query-typegoose': 2.1.1
+      '@ptc-org/nestjs-query-typegoose': 2.3.0
       '@rushstack/eslint-config': 3.2.0
       '@typegoose/typegoose': 10.3.4
       '@types/cache-manager': 4.0.2
@@ -304,7 +304,7 @@ importers:
       '@types/passport-jwt': 3.0.8
       argon2: 0.30.3
       axios: 1.3.4
-      cache-manager: 5.1.7
+      cache-manager: 5.2.0
       cache-manager-redis-store: 3.0.1
       camel-case: 4.1.2
       class-transformer: 0.5.1
@@ -344,11 +344,11 @@ importers:
       '@ogma/nestjs-module': 4.2.2_of4akadhszyqq4nremfoaw2364
       '@ptc-org/nestjs-query-core': 2.3.0_rkliolcojx64n52xjl6bhnp7re
       '@ptc-org/nestjs-query-graphql': 2.3.0_x4sow7lo75mig4o3ecyadn55v4
-      '@ptc-org/nestjs-query-typegoose': 2.1.1_arbrn6jrcact7tqedh5j5kuygy
+      '@ptc-org/nestjs-query-typegoose': 2.3.0_arbrn6jrcact7tqedh5j5kuygy
       '@typegoose/typegoose': 10.3.4_mongoose@6.10.4
       argon2: 0.30.3
       axios: 1.3.4
-      cache-manager: 5.1.7
+      cache-manager: 5.2.0
       cache-manager-redis-store: 3.0.1
       camel-case: 4.1.2
       class-transformer: 0.5.1
@@ -365,7 +365,7 @@ importers:
     devDependencies:
       '@apollo/gateway': 2.4.0_graphql@16.6.0
       '@m8a/eslint-config': link:../../deps/eslint
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       '@nestjs/core': 9.3.12_jy37pi22pqa22ux5geb72eebiu
       '@nestjs/mercurius': 10.2.0_p3d7uczmtdqyi4gqkzjjd4olsa
       '@nestjs/testing': 9.3.12_ge4qplnzbmfyi5znl534zhtkn4
@@ -2422,7 +2422,7 @@ packages:
     dependencies:
       '@apollo/gateway': 2.4.0_graphql@16.6.0
       '@envelop/apollo-server-errors': 4.0.6_adj6itjezth6avcd67ktx7eo6a
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       '@nestjs/core': 9.3.12_jy37pi22pqa22ux5geb72eebiu
       '@nestjs/graphql': 10.2.0_bteujpiirhsp3xc44ojptufpja
       graphql-yoga: 3.7.0_cgtgaifngotilrr3yihlf6bcy4
@@ -2867,7 +2867,7 @@ packages:
       reflect-metadata: ^0.1.12
       rxjs: ^6.0.0 || ^7.0.0
     dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       axios: 1.3.4
       reflect-metadata: 0.1.13
       rxjs: 7.8.0
@@ -2908,6 +2908,31 @@ packages:
       - webpack-cli
     dev: true
 
+  /@nestjs/common/9.3.12_5ezc66h7azca7t7jxbenr4bfzy:
+    resolution: {integrity: sha512-NtrUG2VgCbhmZEO1yRt/Utq16uFRV+xeHAOtdYIsfHGG0ssAV2lVLlvFFAQYh0SQ+KuYY1Gsxd3GK2JFoJCNqQ==}
+    peerDependencies:
+      cache-manager: <=5
+      class-transformer: '*'
+      class-validator: '*'
+      reflect-metadata: ^0.1.12
+      rxjs: ^7.1.0
+    peerDependenciesMeta:
+      cache-manager:
+        optional: true
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      cache-manager: 5.2.0
+      class-transformer: 0.5.1
+      class-validator: 0.14.0
+      iterare: 1.2.1
+      reflect-metadata: 0.1.13
+      rxjs: 7.8.0
+      tslib: 2.5.0
+      uid: 2.0.1
+
   /@nestjs/common/9.3.12_mnr6j2del53muneqly5h4y27ai:
     resolution: {integrity: sha512-NtrUG2VgCbhmZEO1yRt/Utq16uFRV+xeHAOtdYIsfHGG0ssAV2lVLlvFFAQYh0SQ+KuYY1Gsxd3GK2JFoJCNqQ==}
     peerDependencies:
@@ -2924,31 +2949,6 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      iterare: 1.2.1
-      reflect-metadata: 0.1.13
-      rxjs: 7.8.0
-      tslib: 2.5.0
-      uid: 2.0.1
-
-  /@nestjs/common/9.3.12_nza3ix4qrkhc5teka4arycjvca:
-    resolution: {integrity: sha512-NtrUG2VgCbhmZEO1yRt/Utq16uFRV+xeHAOtdYIsfHGG0ssAV2lVLlvFFAQYh0SQ+KuYY1Gsxd3GK2JFoJCNqQ==}
-    peerDependencies:
-      cache-manager: <=5
-      class-transformer: '*'
-      class-validator: '*'
-      reflect-metadata: ^0.1.12
-      rxjs: ^7.1.0
-    peerDependenciesMeta:
-      cache-manager:
-        optional: true
-      class-transformer:
-        optional: true
-      class-validator:
-        optional: true
-    dependencies:
-      cache-manager: 5.1.7
-      class-transformer: 0.5.1
-      class-validator: 0.14.0
       iterare: 1.2.1
       reflect-metadata: 0.1.13
       rxjs: 7.8.0
@@ -3065,7 +3065,7 @@ packages:
       '@graphql-tools/merge': 8.3.18_graphql@16.6.0
       '@graphql-tools/schema': 9.0.16_graphql@16.6.0
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       '@nestjs/core': 9.3.12_jy37pi22pqa22ux5geb72eebiu
       '@nestjs/mapped-types': 1.2.2_5pvgaw2xy5j677zk7xp6almw2q
       chokidar: 3.5.3
@@ -3092,7 +3092,7 @@ packages:
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
     dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       '@types/jsonwebtoken': 9.0.1
       jsonwebtoken: 9.0.0
     dev: false
@@ -3110,7 +3110,7 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       class-transformer: 0.5.1
       class-validator: 0.14.0
       reflect-metadata: 0.1.13
@@ -3128,7 +3128,7 @@ packages:
       '@apollo/subgraph':
         optional: true
     dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       '@nestjs/graphql': 10.2.0_bteujpiirhsp3xc44ojptufpja
       fastify: 4.15.0
       graphql: 16.6.0
@@ -3142,7 +3142,7 @@ packages:
       '@nestjs/common': ^8.0.0 || ^9.0.0
       passport: ^0.4.0 || ^0.5.0 || ^0.6.0
     dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       passport: 0.6.0
     dev: false
 
@@ -3386,26 +3386,13 @@ packages:
   /@protobufjs/utf8/1.1.0:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
 
-  /@ptc-org/nestjs-query-core/2.1.1_rkliolcojx64n52xjl6bhnp7re:
-    resolution: {integrity: sha512-69EXpffF6EqBDadPLeIgA3RL93M0B7OkPFU0wl2O6KKEwX8b/Nh3Hb+GtCrKZZYSXPy91Afbs4UPwX5E+iigCQ==}
-    peerDependencies:
-      '@nestjs/common': ^8.0.0 || ^9.0.0
-      class-transformer: ^0.2.3 || 0.3.1 || ^0.5
-    dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
-      class-transformer: 0.5.1
-      lodash.merge: 4.6.2
-      reflect-metadata: 0.1.13
-      tslib: 2.5.0
-    dev: false
-
   /@ptc-org/nestjs-query-core/2.3.0_rkliolcojx64n52xjl6bhnp7re:
     resolution: {integrity: sha512-1D1t+xDPoQAPTJhIODki0cNX5bLEhPqAdNvNwtVV0stHi2lrVpqUpbOnPGaiGMJlyh3YmXDoSFM32Iwy5b/y5w==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
       class-transformer: ^0.2.3 || 0.3.1 || ^0.5
     dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       class-transformer: 0.5.1
       lodash.merge: 4.6.2
       reflect-metadata: 0.1.13
@@ -3426,7 +3413,7 @@ packages:
       ts-morph: ^13.0.2 || ^14.0.0 || ^15.0.0 || 17.0.1
     dependencies:
       '@apollo/gateway': 2.4.0_graphql@16.6.0
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       '@nestjs/core': 9.3.12_jy37pi22pqa22ux5geb72eebiu
       '@nestjs/graphql': 10.2.0_bteujpiirhsp3xc44ojptufpja
       '@ptc-org/nestjs-query-core': 2.3.0_rkliolcojx64n52xjl6bhnp7re
@@ -3446,8 +3433,8 @@ packages:
       upper-case-first: 2.0.2
     dev: false
 
-  /@ptc-org/nestjs-query-typegoose/2.1.1_arbrn6jrcact7tqedh5j5kuygy:
-    resolution: {integrity: sha512-kT1z4nZo1UNJBCBHaodL8HYqhkauRByiv/7NaepKJU3jQLHuoGaH6H6G+BnY6W+G2t0bieowlGbz4cAS10rbKA==}
+  /@ptc-org/nestjs-query-typegoose/2.3.0_arbrn6jrcact7tqedh5j5kuygy:
+    resolution: {integrity: sha512-xqMtxPSNWDcQnReJikFZAJqOw5nV9rPUecXqg4qYViDySHWwn1xtq2F0Dsj2j4PIF2HjcC1RBlpit6hxG3baDA==}
     peerDependencies:
       '@m8a/nestjs-typegoose': ^8.0.5 || ^10.0.0
       '@nestjs/common': ^8.0.0 || ^9.0.0
@@ -3455,8 +3442,8 @@ packages:
       mongoose: ^6.5.0
     dependencies:
       '@m8a/nestjs-typegoose': link:../../deps/nestjs-typegoose
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
-      '@ptc-org/nestjs-query-core': 2.1.1_rkliolcojx64n52xjl6bhnp7re
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
+      '@ptc-org/nestjs-query-core': 2.3.0_rkliolcojx64n52xjl6bhnp7re
       '@typegoose/typegoose': 10.3.4_mongoose@6.10.4
       camel-case: 4.1.2
       is-class: 0.0.9
@@ -5362,8 +5349,8 @@ packages:
       redis: 4.6.4
     dev: false
 
-  /cache-manager/5.1.7:
-    resolution: {integrity: sha512-2W43F4ruaYb7dSiCOqkKtpnmn51/3DqxbKMMTxHfLa6qtj1letd8rr17/P/c7D7wYViqQLa+LetLCoKSVwBN1w==}
+  /cache-manager/5.2.0:
+    resolution: {integrity: sha512-jwXDLtn8tQGS2vGDTKAhee2OhuX/2cgxlh97fqMnWp328VszIn064BFyKZ87dwp9GmlBFuHYfaVQehI85hFwIw==}
     dependencies:
       lodash.clonedeep: 4.5.0
       lru-cache: 7.18.3
@@ -9579,7 +9566,7 @@ packages:
       reflect-metadata: ^0.1.12
       rxjs: '>= 6.0.0 < 8'
     dependencies:
-      '@nestjs/common': 9.3.12_nza3ix4qrkhc5teka4arycjvca
+      '@nestjs/common': 9.3.12_5ezc66h7azca7t7jxbenr4bfzy
       chalk: 4.1.2
       class-transformer: 0.5.1
       class-validator: 0.14.0
