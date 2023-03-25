@@ -72,7 +72,7 @@
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/common": "9.3.12",
     "@nestjs/core": "9.3.12",
-    "@nestjs/mercurius": "^10.1.0",
+    "@nestjs/mercurius": "^11.0.0",
     "@nestjs/testing": "9.3.12",
     "@rushstack/eslint-config": "3.2.0",
     "@types/cache-manager": "4.0.2",
