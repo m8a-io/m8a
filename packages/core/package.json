@@ -61,7 +61,7 @@
     "graphql": "16.6.0",
     "mercurius": "10.5.1",
     "mongoose": "6.10.4",
-    "mongoose-autopopulate": "0.17.1",
+    "mongoose-autopopulate": "1.0.0",
     "ms": "3.0.0-canary.1",
     "nest-typed-config": "~2.5.0",
     "passport": "0.6.0",
