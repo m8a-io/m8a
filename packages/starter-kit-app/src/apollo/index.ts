@@ -133,7 +133,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   //   }
   // })
 
-  // TODO: holding for ws inclusion later
+  // TODO: holding for ws inclusion later - now SSE with Yoga - need to check on that
   // const authToken = localStorage.getItem('token');
   // const wsLink = new WebSocketLink({
   //   uri: websocketApiUrl,
