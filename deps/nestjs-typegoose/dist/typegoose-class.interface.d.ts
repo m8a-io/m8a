@@ -1,3 +1,4 @@
+/// <reference types="mongoose/types/schemaoptions" />
 import { SchemaOptions } from "mongoose";
 export interface TypegooseClass {
     new (...args: unknown[]): any;

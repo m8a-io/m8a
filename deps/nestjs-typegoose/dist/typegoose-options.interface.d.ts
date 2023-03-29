@@ -1,3 +1,4 @@
+/// <reference types="mongoose/types/connection" />
 import { Type } from "@nestjs/common";
 import { ModuleMetadata } from "@nestjs/common/interfaces";
 import { ConnectOptions } from "mongoose";
