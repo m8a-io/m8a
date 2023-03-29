@@ -2,6 +2,18 @@
   "name": "@m8a/nestjs-typegoose",
   "entries": [
     {
+      "version": "11.0.0",
+      "tag": "@m8a/nestjs-typegoose_v11.0.0",
+      "date": "Wed, 29 Mar 2023 08:03:00 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "update to newest typegoose v11 and mongoose v7"
+          }
+        ]
+      }
+    },
+    {
       "version": "10.1.3",
       "tag": "@m8a/nestjs-typegoose_v10.1.3",
       "date": "Wed, 15 Mar 2023 13:28:34 GMT",
