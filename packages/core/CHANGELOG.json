@@ -2,6 +2,23 @@
   "name": "@m8a/core",
   "entries": [
     {
+      "version": "0.0.7",
+      "tag": "@m8a/core_v0.0.7",
+      "date": "Wed, 29 Mar 2023 08:03:00 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "dependency updates"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@m8a/nestjs-typegoose\" to `11.0.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.6",
       "tag": "@m8a/core_v0.0.6",
       "date": "Wed, 15 Mar 2023 13:28:34 GMT",

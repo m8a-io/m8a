@@ -323,6 +323,10 @@
       "allowedCategories": [ "apps" ]
     },
     {
+      "name": "graphql-yoga",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "husky",
       "allowedCategories": [ "libraries", "production" ]
     },
