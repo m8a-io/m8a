@@ -42,7 +42,7 @@
     "@graphql-yoga/nestjs": "1.0.0",
     "@m8a/nestjs-typegoose": "workspace:*",
     "@nestjs/graphql": "11.0.5",
-    "@nestjs/jwt": "10.0.2",
+    "@nestjs/jwt": "10.0.3",
     "@nestjs/passport": "9.0.3",
     "@nestjs/platform-fastify": "9.4.0",
     "@ogma/nestjs-module": "4.2.2",
