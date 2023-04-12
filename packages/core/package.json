@@ -86,7 +86,7 @@
     "reflect-metadata": "0.1.13",
     "rimraf": "~5.0.0",
     "rxjs": "7.8.0",
-    "ts-jest": "29.0.5",
+    "ts-jest": "29.1.0",
     "ts-loader": "9.4.2",
     "ts-morph": "^17.0.0",
     "tslib": "2.5.0",
