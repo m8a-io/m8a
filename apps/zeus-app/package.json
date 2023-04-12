@@ -22,7 +22,7 @@
     "*.vue": "eslint --fix"
   },
   "dependencies": {
-    "@apollo/client": "3.7.10",
+    "@apollo/client": "3.7.11",
     "@quasar/extras": "1.16.2",
     "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
     "@vue/apollo-composable": "4.0.0-beta.4",
