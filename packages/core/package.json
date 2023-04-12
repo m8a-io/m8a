@@ -41,7 +41,7 @@
     "@envelop/core": "3.0.6",
     "@graphql-yoga/nestjs": "1.0.0",
     "@m8a/nestjs-typegoose": "workspace:*",
-    "@nestjs/graphql": "11.0.4",
+    "@nestjs/graphql": "11.0.5",
     "@nestjs/jwt": "10.0.2",
     "@nestjs/passport": "9.0.3",
     "@nestjs/platform-fastify": "9.3.12",
