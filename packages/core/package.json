@@ -48,7 +48,7 @@
     "@ogma/nestjs-module": "4.2.2",
     "@ptc-org/nestjs-query-core": "2.3.1",
     "@ptc-org/nestjs-query-graphql": "2.3.0",
-    "@ptc-org/nestjs-query-typegoose": "2.3.0",
+    "@ptc-org/nestjs-query-typegoose": "2.3.1",
     "@typegoose/typegoose": "11.0.0",
     "argon2": "0.30.3",
     "axios": "1.3.5",
