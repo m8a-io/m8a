@@ -36,7 +36,7 @@
     "*.ts": "eslint --fix"
   },
   "dependencies": {
-    "@apollo/server": "4.5.0",
+    "@apollo/server": "4.6.0",
     "@casl/ability": "~6.4.0",
     "@envelop/core": "3.0.6",
     "@graphql-yoga/nestjs": "1.0.0",
@@ -68,7 +68,7 @@
     "passport-jwt": "4.0.1"
   },
   "devDependencies": {
-    "@apollo/gateway": "2.4.0",
+    "@apollo/gateway": "2.4.1",
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
