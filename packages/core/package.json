@@ -47,7 +47,7 @@
     "@nestjs/platform-fastify": "9.4.0",
     "@ogma/nestjs-module": "4.2.3",
     "@ptc-org/nestjs-query-core": "2.4.0",
-    "@ptc-org/nestjs-query-graphql": "2.3.1",
+    "@ptc-org/nestjs-query-graphql": "2.4.0",
     "@ptc-org/nestjs-query-typegoose": "2.4.0",
     "@typegoose/typegoose": "11.0.2",
     "argon2": "0.30.3",
