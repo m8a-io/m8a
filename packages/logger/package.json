@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "chalk-v2": "1.0.2",
-    "rxjs": "7.8.0"
+    "rxjs": "7.8.1"
   },
   "devDependencies": {
     "@golevelup/nestjs-modules": "0.6.1",
