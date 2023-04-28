@@ -17,7 +17,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@apollo/client": "3.7.12",
+    "@apollo/client": "3.7.13",
     "@quasar/extras": "1.16.3",
     "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
     "@vue/apollo-composable": "4.0.0-beta.4",
