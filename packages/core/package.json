@@ -49,7 +49,7 @@
     "@ptc-org/nestjs-query-core": "2.4.0",
     "@ptc-org/nestjs-query-graphql": "2.4.0",
     "@ptc-org/nestjs-query-typegoose": "2.4.0",
-    "@typegoose/typegoose": "11.0.2",
+    "@typegoose/typegoose": "11.0.3",
     "argon2": "0.30.3",
     "axios": "1.4.0",
     "cache-manager": "5.2.1",
