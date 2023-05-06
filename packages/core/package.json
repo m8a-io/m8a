@@ -77,7 +77,7 @@
     "@types/cache-manager": "4.0.2",
     "@types/cache-manager-redis-store": "2.0.1",
     "@types/jest": "29.5.1",
-    "@types/node": "18.16.3",
+    "@types/node": "18.16.5",
     "@types/passport-jwt": "3.0.8",
     "dataloader": "2.2.2",
     "eslint": "8.39.0",
