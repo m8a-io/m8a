@@ -7,4 +7,5 @@
   export default defineComponent({
     name: 'App'
   })
+  console.log()
 </script>

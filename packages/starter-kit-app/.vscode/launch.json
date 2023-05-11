@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Quasar App: chrome",
+      "url": "http://localhost:9000",
+      // To properly reflect changes after HMR with Vite:
+      "enableContentValidation": true,
+      "webRoot": "${workspaceFolder}/src",
+      "breakOnLoad": true,
+      // No need to configure sourcemap explicitly for vite.
+      "sourceMapPathOverrides": {
+        "webpack://@m8a/starter-kit-app/./src/*": "${webRoot}/*"
+      }
+    }
+  ]
+}
