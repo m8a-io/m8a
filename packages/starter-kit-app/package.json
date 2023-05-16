@@ -41,7 +41,7 @@
     "eslint": "8.40.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.0.0",
     "postcss": "8.4.23",
