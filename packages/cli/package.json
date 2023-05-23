@@ -44,14 +44,14 @@
   },
   "dependencies": {
     "@m8a/logger": "workspace:*",
-    "@nestjs/common": "9.4.0",
+    "@nestjs/common": "9.4.2",
     "cross-spawn": "7.0.3",
     "nest-commander": "3.7.1"
   },
   "devDependencies": {
     "@m8a/eslint-config": "workspace:*",
-    "@nestjs/core": "9.4.0",
-    "@nestjs/testing": "9.4.0",
+    "@nestjs/core": "9.4.2",
+    "@nestjs/testing": "9.4.2",
     "@rushstack/eslint-config": "3.2.0",
     "@types/inquirer": "^9.0.0",
     "@types/jest": "29.5.1",
