@@ -68,7 +68,7 @@
     "passport-jwt": "4.0.1"
   },
   "devDependencies": {
-    "@apollo/gateway": "2.4.3",
+    "@apollo/gateway": "2.4.6",
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/common": "9.4.2",
     "@nestjs/core": "9.4.2",
