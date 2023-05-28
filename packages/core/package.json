@@ -38,7 +38,7 @@
   "dependencies": {
     "@apollo/server": "4.7.1",
     "@casl/ability": "~6.5.0",
-    "@envelop/core": "3.0.6",
+    "@envelop/core": "4.0.0",
     "@graphql-yoga/nestjs": "1.1.1",
     "@m8a/nestjs-typegoose": "workspace:*",
     "@nestjs/graphql": "11.0.6",
