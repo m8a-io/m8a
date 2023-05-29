@@ -1,12 +1,12 @@
-import { Module, CacheModule as Cache, CacheStore } from '@nestjs/common'
+import { CacheModule as Cache } from '@nestjs/cache-manager'
+import { Module } from '@nestjs/common'
 import { CacheService } from './cache.service'
-import { redisStore } from 'cache-manager-redis-store'
+import { redisStore } from 'cache-manager-redis-yet'
 
 @Module({
   imports: [
     Cache.register({
-      // TODO: needs fix from https://github.com/dabroek/node-cache-manager-redis-store/pull/54
-      store: redisStore as unknown as CacheStore,
+      store: redisStore,
       host: 'localhost',
       port: 6379,
       db: 0,
