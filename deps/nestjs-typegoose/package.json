@@ -51,7 +51,7 @@
     "@nestjs/testing": "9.4.2",
     "@rushstack/eslint-config": "3.3.0",
     "@typegoose/typegoose": "11.2.0",
-    "@types/jest": "29.5.1",
+    "@types/jest": "29.5.2",
     "@types/supertest": "2.0.12",
     "coveralls": "3.1.1",
     "eslint": "8.41.0",
