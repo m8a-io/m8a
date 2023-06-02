@@ -47,7 +47,7 @@
     "@nestjs/passport": "9.0.3",
     "@nestjs/platform-fastify": "9.4.2",
     "@ogma/nestjs-module": "4.2.3",
-    "@ptc-org/nestjs-query-core": "2.4.0",
+    "@ptc-org/nestjs-query-core": "2.5.0",
     "@ptc-org/nestjs-query-graphql": "2.4.0",
     "@ptc-org/nestjs-query-typegoose": "2.4.0",
     "@typegoose/typegoose": "11.2.0",
