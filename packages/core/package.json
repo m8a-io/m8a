@@ -53,7 +53,7 @@
     "@typegoose/typegoose": "11.2.0",
     "argon2": "0.30.3",
     "axios": "1.4.0",
-    "cache-manager": "5.2.1",
+    "cache-manager": "5.2.2",
     "cache-manager-redis-yet": "4.1.1",
     "camel-case": "4.1.2",
     "class-transformer": "0.5.1",
