@@ -71,6 +71,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@nestjs/cache-manager",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@nestjs/cli",
       "allowedCategories": [ "apps" ]
     },
@@ -224,6 +228,10 @@
     },
     {
       "name": "cache-manager-redis-store",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "cache-manager-redis-yet",
       "allowedCategories": [ "libraries" ]
     },
     {
