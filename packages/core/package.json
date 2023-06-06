@@ -36,7 +36,7 @@
     "*.ts": "eslint --fix"
   },
   "dependencies": {
-    "@apollo/server": "4.7.1",
+    "@apollo/server": "4.7.2",
     "@casl/ability": "~6.5.0",
     "@envelop/core": "4.0.0",
     "@graphql-yoga/nestjs": "2.0.0",
