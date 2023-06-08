@@ -59,7 +59,7 @@
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/cli": "~9.5.0",
     "@nestjs/testing": "9.4.2",
-    "@rushstack/eslint-config": "3.3.0",
+    "@rushstack/eslint-config": "3.3.1",
     "@types/jest": "29.5.2",
     "@types/node": "18.16.16",
     "@types/supertest": "2.0.12",
