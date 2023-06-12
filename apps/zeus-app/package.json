@@ -40,8 +40,8 @@
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",
     "@types/node": "18.16.17",
-    "@typescript-eslint/eslint-plugin": "5.59.9",
-    "@typescript-eslint/parser": "5.59.9",
+    "@typescript-eslint/eslint-plugin": "5.59.11",
+    "@typescript-eslint/parser": "5.59.11",
     "autoprefixer": "^10.4.2",
     "eslint": "8.42.0",
     "eslint-config-standard": "^17.0.0",
