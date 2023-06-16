@@ -49,7 +49,7 @@
     "@nestjs/core": "9.4.3",
     "@nestjs/platform-express": "~9.4.0",
     "@nestjs/testing": "9.4.3",
-    "@rushstack/eslint-config": "3.3.1",
+    "@rushstack/eslint-config": "3.3.2",
     "@typegoose/typegoose": "11.2.0",
     "@types/jest": "29.5.2",
     "@types/supertest": "2.0.12",
