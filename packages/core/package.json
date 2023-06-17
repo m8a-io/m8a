@@ -41,7 +41,7 @@
     "@envelop/core": "4.0.0",
     "@graphql-yoga/nestjs": "2.0.1",
     "@m8a/nestjs-typegoose": "workspace:*",
-    "@nestjs/cache-manager": "1.0.0",
+    "@nestjs/cache-manager": "2.0.0",
     "@nestjs/graphql": "11.0.6",
     "@nestjs/jwt": "10.1.0",
     "@nestjs/passport": "9.0.3",
