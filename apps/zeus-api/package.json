@@ -76,7 +76,7 @@
     "ts-loader": "9.4.3",
     "tsconfig-paths": "4.2.0",
     "typescript": "4.9.5",
-    "webpack": "5.86.0"
+    "webpack": "5.87.0"
   },
   "peerDependenciesMeta": {
     "@m8a/core": {
