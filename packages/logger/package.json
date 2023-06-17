@@ -46,7 +46,7 @@
     "@nestjs/platform-fastify": "9.4.3",
     "@nestjs/testing": "9.4.3",
     "@ogma/nestjs-module": "4.2.3",
-    "@ogma/platform-fastify": "4.0.2",
+    "@ogma/platform-fastify": "5.0.1",
     "@rushstack/eslint-config": "3.3.2",
     "@types/node": "18.16.18",
     "eslint": "8.43.0",
