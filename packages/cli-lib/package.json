@@ -31,6 +31,6 @@
     "typescript": "4.9.5"
   },
   "peerDependencies": {
-    "@nestjs/common": "^9.2.0"
+    "@nestjs/common": "^10.0.0"
   }
 }
