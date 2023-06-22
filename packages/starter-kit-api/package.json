@@ -45,9 +45,9 @@
     "@fastify/cookie": "8.3.0",
     "@m8a/core": "workspace:*",
     "@m8a/logger": "workspace:*",
-    "@nestjs/common": "10.0.2",
-    "@nestjs/core": "10.0.2",
-    "@nestjs/platform-fastify": "10.0.2",
+    "@nestjs/common": "10.0.3",
+    "@nestjs/core": "10.0.3",
+    "@nestjs/platform-fastify": "10.0.3",
     "@ogma/nestjs-module": "5.0.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0"
@@ -55,7 +55,7 @@
   "devDependencies": {
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/cli": "~9.5.0",
-    "@nestjs/testing": "10.0.2",
+    "@nestjs/testing": "10.0.3",
     "@rushstack/eslint-config": "3.3.2",
     "@types/jest": "29.5.2",
     "@types/node": "18.16.18",
