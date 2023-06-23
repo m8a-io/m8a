@@ -39,7 +39,7 @@
     "@apollo/server": "4.7.4",
     "@casl/ability": "~6.5.0",
     "@envelop/core": "4.0.0",
-    "@graphql-yoga/nestjs": "2.0.1",
+    "@graphql-yoga/nestjs": "2.0.2",
     "@m8a/nestjs-typegoose": "workspace:*",
     "@nestjs/cache-manager": "2.0.0",
     "@nestjs/common": "10.0.3",
