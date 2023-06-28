@@ -48,7 +48,7 @@
     "@nestjs/jwt": "10.1.0",
     "@nestjs/passport": "10.0.0",
     "@nestjs/platform-fastify": "10.0.3",
-    "@ogma/nestjs-module": "5.0.1",
+    "@ogma/nestjs-module": "5.1.0",
     "@ptc-org/nestjs-query-core": "2.5.0",
     "@ptc-org/nestjs-query-graphql": "2.5.0",
     "@ptc-org/nestjs-query-typegoose": "2.5.0",
