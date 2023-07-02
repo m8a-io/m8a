@@ -14,7 +14,8 @@ async function bootstrap() {
     abortOnError: true
   })
 
-  await app.register(fastifyCookie, {
+  await app.register(fastifyCookie as any, {
+    // TODO: needs to be fixed at some point
     secret: 'my-secret' // TODO: update for better cookie signature
   })
 
