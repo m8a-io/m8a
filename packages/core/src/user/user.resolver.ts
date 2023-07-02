@@ -18,7 +18,7 @@ export class UserResolver extends CRUDResolver(UserDTO, {
   }
 
   @Query(() => UserDTO)
-  async findByIdCustom (@Args('id') id: string): Promise<UserDTO | undefined> {
+  async findUserByIdCustom (@Args('id') id: string): Promise<UserDTO | undefined> {
     const user = await this.userService.getById(id)
     return user
   }
