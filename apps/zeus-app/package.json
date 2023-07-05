@@ -25,7 +25,7 @@
     "@apollo/client": "3.7.16",
     "@quasar/extras": "1.16.4",
     "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
-    "@vue/apollo-composable": "4.0.0-beta.7",
+    "@vue/apollo-composable": "4.0.0-beta.8",
     "apollo-link-rest": "0.9.0",
     "apollo-link-token-refresh": "0.6.0",
     "graphql": "16.7.1",
