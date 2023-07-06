@@ -6,7 +6,7 @@
   "source": "@site/docs/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
-  "permalink": "/nestjs-typegoose/docs/usage",
+  "permalink": "/docs/usage",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/usage.md",
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "someSidebar",
   "previous": {
     "title": "Installation",
-    "permalink": "/nestjs-typegoose/docs/install"
+    "permalink": "/docs/install"
   },
   "next": {
     "title": "Testing",
-    "permalink": "/nestjs-typegoose/docs/testing"
+    "permalink": "/docs/testing"
   }
 }

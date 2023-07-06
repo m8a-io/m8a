@@ -1,53 +1,53 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/nestjs-typegoose/docs",
+      "path": "/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/nestjs-typegoose/docs",
+          "path": "/docs",
           "mainDocId": "install",
           "docs": [
             {
               "id": "async-configuration",
-              "path": "/nestjs-typegoose/docs/async-configuration",
+              "path": "/docs/async-configuration",
               "sidebar": "someSidebar"
             },
             {
               "id": "discriminators",
-              "path": "/nestjs-typegoose/docs/discriminators",
+              "path": "/docs/discriminators",
               "sidebar": "someSidebar"
             },
             {
               "id": "faq",
-              "path": "/nestjs-typegoose/docs/faq",
+              "path": "/docs/faq",
               "sidebar": "someSidebar"
             },
             {
               "id": "install",
-              "path": "/nestjs-typegoose/docs/install",
+              "path": "/docs/install",
               "sidebar": "someSidebar"
             },
             {
               "id": "multiple-connections",
-              "path": "/nestjs-typegoose/docs/multiple-connections",
+              "path": "/docs/multiple-connections",
               "sidebar": "someSidebar"
             },
             {
               "id": "schema-options",
-              "path": "/nestjs-typegoose/docs/schema-options",
+              "path": "/docs/schema-options",
               "sidebar": "someSidebar"
             },
             {
               "id": "testing",
-              "path": "/nestjs-typegoose/docs/testing",
+              "path": "/docs/testing",
               "sidebar": "someSidebar"
             },
             {
               "id": "usage",
-              "path": "/nestjs-typegoose/docs/usage",
+              "path": "/docs/usage",
               "sidebar": "someSidebar"
             }
           ],
@@ -55,7 +55,7 @@
           "sidebars": {
             "someSidebar": {
               "link": {
-                "path": "/nestjs-typegoose/docs/install",
+                "path": "/docs/install",
                 "label": "install"
               }
             }
