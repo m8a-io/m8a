@@ -6,7 +6,7 @@
   "source": "@site/docs/multiple-connections.md",
   "sourceDirName": ".",
   "slug": "/multiple-connections",
-  "permalink": "/nestjs-typegoose/docs/multiple-connections",
+  "permalink": "/docs/multiple-connections",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/multiple-connections.md",
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "someSidebar",
   "previous": {
     "title": "Mongoose Discriminators",
-    "permalink": "/nestjs-typegoose/docs/discriminators"
+    "permalink": "/docs/discriminators"
   },
   "next": {
     "title": "Async Configuration",
-    "permalink": "/nestjs-typegoose/docs/async-configuration"
+    "permalink": "/docs/async-configuration"
   }
 }

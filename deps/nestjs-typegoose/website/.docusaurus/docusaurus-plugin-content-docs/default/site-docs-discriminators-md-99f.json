@@ -6,7 +6,7 @@
   "source": "@site/docs/discriminators.md",
   "sourceDirName": ".",
   "slug": "/discriminators",
-  "permalink": "/nestjs-typegoose/docs/discriminators",
+  "permalink": "/docs/discriminators",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/discriminators.md",
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "someSidebar",
   "previous": {
     "title": "FAQ",
-    "permalink": "/nestjs-typegoose/docs/faq"
+    "permalink": "/docs/faq"
   },
   "next": {
     "title": "Multiple MongoDB Connections",
-    "permalink": "/nestjs-typegoose/docs/multiple-connections"
+    "permalink": "/docs/multiple-connections"
   }
 }

@@ -1,6 +1,13 @@
 # Change Log - @m8a/nestjs-typegoose
 
-This log was last generated on Wed, 29 Mar 2023 08:03:00 GMT and should not be manually modified.
+This log was last generated on Thu, 06 Jul 2023 13:51:59 GMT and should not be manually modified.
+
+## 11.0.1
+Thu, 06 Jul 2023 13:51:59 GMT
+
+### Patches
+
+- Update peer dependencies for Nestjs
 
 ## 11.0.0
 Wed, 29 Mar 2023 08:03:00 GMT

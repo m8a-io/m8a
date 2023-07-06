@@ -6,7 +6,7 @@
   "source": "@site/docs/schema-options.md",
   "sourceDirName": ".",
   "slug": "/schema-options",
-  "permalink": "/nestjs-typegoose/docs/schema-options",
+  "permalink": "/docs/schema-options",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/schema-options.md",
   "tags": [],
@@ -18,6 +18,6 @@
   "sidebar": "someSidebar",
   "previous": {
     "title": "Async Configuration",
-    "permalink": "/nestjs-typegoose/docs/async-configuration"
+    "permalink": "/docs/async-configuration"
   }
 }

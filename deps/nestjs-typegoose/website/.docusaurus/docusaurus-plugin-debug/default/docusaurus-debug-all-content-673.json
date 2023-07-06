@@ -9,15 +9,15 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/nestjs-typegoose/docs",
-          "tagsPath": "/nestjs-typegoose/docs/tags",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
           "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs",
           "editUrlLocalized": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/home/scott/Documents/tmp/m8a-new/deps/nestjs-typegoose/website/sidebars.js",
-          "contentPath": "/home/scott/Documents/tmp/m8a-new/deps/nestjs-typegoose/website/docs",
-          "contentPathLocalized": "/home/scott/Documents/tmp/m8a-new/deps/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/sidebars.js",
+          "contentPath": "/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/docs",
+          "contentPathLocalized": "/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "async-configuration",
@@ -27,7 +27,7 @@
               "source": "@site/docs/async-configuration.md",
               "sourceDirName": ".",
               "slug": "/async-configuration",
-              "permalink": "/nestjs-typegoose/docs/async-configuration",
+              "permalink": "/docs/async-configuration",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/async-configuration.md",
               "tags": [],
@@ -39,11 +39,11 @@
               "sidebar": "someSidebar",
               "previous": {
                 "title": "Multiple MongoDB Connections",
-                "permalink": "/nestjs-typegoose/docs/multiple-connections"
+                "permalink": "/docs/multiple-connections"
               },
               "next": {
                 "title": "Schema Options",
-                "permalink": "/nestjs-typegoose/docs/schema-options"
+                "permalink": "/docs/schema-options"
               }
             },
             {
@@ -54,7 +54,7 @@
               "source": "@site/docs/discriminators.md",
               "sourceDirName": ".",
               "slug": "/discriminators",
-              "permalink": "/nestjs-typegoose/docs/discriminators",
+              "permalink": "/docs/discriminators",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/discriminators.md",
               "tags": [],
@@ -66,11 +66,11 @@
               "sidebar": "someSidebar",
               "previous": {
                 "title": "FAQ",
-                "permalink": "/nestjs-typegoose/docs/faq"
+                "permalink": "/docs/faq"
               },
               "next": {
                 "title": "Multiple MongoDB Connections",
-                "permalink": "/nestjs-typegoose/docs/multiple-connections"
+                "permalink": "/docs/multiple-connections"
               }
             },
             {
@@ -81,7 +81,7 @@
               "source": "@site/docs/faq.md",
               "sourceDirName": ".",
               "slug": "/faq",
-              "permalink": "/nestjs-typegoose/docs/faq",
+              "permalink": "/docs/faq",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/faq.md",
               "tags": [],
@@ -93,22 +93,22 @@
               "sidebar": "someSidebar",
               "previous": {
                 "title": "Testing",
-                "permalink": "/nestjs-typegoose/docs/testing"
+                "permalink": "/docs/testing"
               },
               "next": {
                 "title": "Mongoose Discriminators",
-                "permalink": "/nestjs-typegoose/docs/discriminators"
+                "permalink": "/docs/discriminators"
               }
             },
             {
               "unversionedId": "install",
               "id": "install",
               "title": "Installation",
-              "description": "This assumes you have a nestjs project to work with. If you don't I recommend that you use nestjs cli to jump start an example to project to get started using nestjs-typegoose.",
+              "description": "Welcome to the nestjs-typegoose. The Typegoose module/ plugin for NestJS.",
               "source": "@site/docs/install.md",
               "sourceDirName": ".",
               "slug": "/install",
-              "permalink": "/nestjs-typegoose/docs/install",
+              "permalink": "/docs/install",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/install.md",
               "tags": [],
@@ -120,7 +120,7 @@
               "sidebar": "someSidebar",
               "next": {
                 "title": "Basic Usage",
-                "permalink": "/nestjs-typegoose/docs/usage"
+                "permalink": "/docs/usage"
               }
             },
             {
@@ -131,7 +131,7 @@
               "source": "@site/docs/multiple-connections.md",
               "sourceDirName": ".",
               "slug": "/multiple-connections",
-              "permalink": "/nestjs-typegoose/docs/multiple-connections",
+              "permalink": "/docs/multiple-connections",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/multiple-connections.md",
               "tags": [],
@@ -143,11 +143,11 @@
               "sidebar": "someSidebar",
               "previous": {
                 "title": "Mongoose Discriminators",
-                "permalink": "/nestjs-typegoose/docs/discriminators"
+                "permalink": "/docs/discriminators"
               },
               "next": {
                 "title": "Async Configuration",
-                "permalink": "/nestjs-typegoose/docs/async-configuration"
+                "permalink": "/docs/async-configuration"
               }
             },
             {
@@ -158,7 +158,7 @@
               "source": "@site/docs/schema-options.md",
               "sourceDirName": ".",
               "slug": "/schema-options",
-              "permalink": "/nestjs-typegoose/docs/schema-options",
+              "permalink": "/docs/schema-options",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/schema-options.md",
               "tags": [],
@@ -170,7 +170,7 @@
               "sidebar": "someSidebar",
               "previous": {
                 "title": "Async Configuration",
-                "permalink": "/nestjs-typegoose/docs/async-configuration"
+                "permalink": "/docs/async-configuration"
               }
             },
             {
@@ -181,7 +181,7 @@
               "source": "@site/docs/testing.md",
               "sourceDirName": ".",
               "slug": "/testing",
-              "permalink": "/nestjs-typegoose/docs/testing",
+              "permalink": "/docs/testing",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/testing.md",
               "tags": [],
@@ -193,11 +193,11 @@
               "sidebar": "someSidebar",
               "previous": {
                 "title": "Basic Usage",
-                "permalink": "/nestjs-typegoose/docs/usage"
+                "permalink": "/docs/usage"
               },
               "next": {
                 "title": "FAQ",
-                "permalink": "/nestjs-typegoose/docs/faq"
+                "permalink": "/docs/faq"
               }
             },
             {
@@ -208,7 +208,7 @@
               "source": "@site/docs/usage.md",
               "sourceDirName": ".",
               "slug": "/usage",
-              "permalink": "/nestjs-typegoose/docs/usage",
+              "permalink": "/docs/usage",
               "draft": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/usage.md",
               "tags": [],
@@ -220,11 +220,11 @@
               "sidebar": "someSidebar",
               "previous": {
                 "title": "Installation",
-                "permalink": "/nestjs-typegoose/docs/install"
+                "permalink": "/docs/install"
               },
               "next": {
                 "title": "Testing",
-                "permalink": "/nestjs-typegoose/docs/testing"
+                "permalink": "/docs/testing"
               }
             }
           ],
@@ -291,7 +291,7 @@
       "blogPosts": [],
       "blogListPaginated": [],
       "blogTags": {},
-      "blogTagsListPath": "/nestjs-typegoose/blog/tags",
+      "blogTagsListPath": "/blog/tags",
       "blogTagsPaginated": []
     }
   },
@@ -299,7 +299,7 @@
     "default": [
       {
         "type": "jsx",
-        "permalink": "/nestjs-typegoose/",
+        "permalink": "/",
         "source": "@site/src/pages/index.js"
       }
     ]

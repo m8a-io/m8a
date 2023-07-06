@@ -6,7 +6,7 @@
   "source": "@site/docs/testing.md",
   "sourceDirName": ".",
   "slug": "/testing",
-  "permalink": "/nestjs-typegoose/docs/testing",
+  "permalink": "/docs/testing",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/testing.md",
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "someSidebar",
   "previous": {
     "title": "Basic Usage",
-    "permalink": "/nestjs-typegoose/docs/usage"
+    "permalink": "/docs/usage"
   },
   "next": {
     "title": "FAQ",
-    "permalink": "/nestjs-typegoose/docs/faq"
+    "permalink": "/docs/faq"
   }
 }
