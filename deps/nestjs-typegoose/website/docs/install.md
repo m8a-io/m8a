@@ -24,12 +24,10 @@ Using `yarn`:
 
 The latest version of nestjs-typegoose requires a few peer dependencies to be installed for things to work. You need to install the following:
 
-- `@typegoose/typegoose` >10 (11 is recommended)
-- `@nestjs/common` >9 (10 is recommended)
-- `@nestjs/core` >9 (10 is recommended)
-- `mongoose` >6.8.0 with Typegoose v10 
- - or - 
-- `mongoose` >7.2.0 with Typegoose v11
+- `@typegoose/typegoose` v11+
+- `@nestjs/common` v10+
+- `@nestjs/core` v10+
+- `mongoose` v7.2.0+
 
 - be sure you have TypeScript 4.9 or higher also installed
 
