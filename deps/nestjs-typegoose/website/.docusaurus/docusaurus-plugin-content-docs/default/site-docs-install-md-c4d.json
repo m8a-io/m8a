@@ -2,11 +2,11 @@
   "unversionedId": "install",
   "id": "install",
   "title": "Installation",
-  "description": "This assumes you have a nestjs project to work with. If you don't I recommend that you use nestjs cli to jump start an example to project to get started using nestjs-typegoose.",
+  "description": "Welcome to the nestjs-typegoose. The Typegoose module/ plugin for NestJS.",
   "source": "@site/docs/install.md",
   "sourceDirName": ".",
   "slug": "/install",
-  "permalink": "/nestjs-typegoose/docs/install",
+  "permalink": "/docs/install",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/install.md",
   "tags": [],
@@ -18,6 +18,6 @@
   "sidebar": "someSidebar",
   "next": {
     "title": "Basic Usage",
-    "permalink": "/nestjs-typegoose/docs/usage"
+    "permalink": "/docs/usage"
   }
 }

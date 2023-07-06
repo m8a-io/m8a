@@ -22,12 +22,14 @@ Using `yarn`:
 
 ## Peer Dependencies
 
-nestjs-typegoose requires a few peer dependencies to be install for things to work. You need to install the following:
+The latest version of nestjs-typegoose requires a few peer dependencies to be installed for things to work. You need to install the following:
 
-- `@typegoose/typegoose` +9.13.0-beta.1+
-- `@nestjs/common` +9.0.0
-- `@nestjs/core` +9.0.0
-- `mongoose` +6.7.0
+- `@typegoose/typegoose` v11+
+- `@nestjs/common` v10+
+- `@nestjs/core` v10+
+- `mongoose` v7.2.0+
+
+- be sure you have TypeScript 4.9 or higher also installed
 
 Using `npm`:
 
@@ -37,4 +39,8 @@ Using `yarn`:
 
 `yarn add @typegoose/typegoose @nestjs/common @nestjs/core mongoose`
 
-Now you are ready to get [ready to start](usage.md) using `nestjs-typegoose`!
+Using `pnpm`:
+
+`pnpm install --save @typegoose/typegoose @nestjs/common @nestjs/core mongoose`
+
+Now you are [ready to start](usage.md) using `nestjs-typegoose`!

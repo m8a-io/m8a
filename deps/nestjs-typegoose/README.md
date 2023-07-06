@@ -30,9 +30,7 @@ yarn add @m8a/nestjs-typegoose
 
 ## Documentation
 
-[Here is the full documentation describing all basic and advanced features (from the original author kpfromer).](https://kpfromer.github.io/nestjs-typegoose/)
-
-**NOTE:** The imports in those docs show `nestjs-typegoose`. Obviously, they would need to be changed to `@m8a/nestjs-typegoose`.
+[Here is the full documentation describing all basic and advanced features.](https://nestjs-typegoose.m8a.io)
 
 ## Basic usage
 

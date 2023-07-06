@@ -111,13 +111,13 @@
   "globalPeerDependencyRules": {
     // "ignoreMissing": ["class-validator"]
     "allowedVersions": {
-      "class-validator": "0.14.0",
-      "@typegoose/typegoose": "^10.0.0",
-      "@m8a/nestjs-typegoose": "^10.0.0",
-      "graphql": "16.6.0",
+      "eslint-plugin-n": "16.0.0",
+      "@nestjs/common": "^10.0.0",
+      // "@nestjs/core": "^10.0.0",
       "@types/inquirer": "9.0.3",
-      "ts-morph": "18.0.0",
-      "@nestjs/graphql": "11.0.5"
+      // "@nestjs/graphql": "^12.0.0",
+      "graphql": "^16.0.0",
+      "ts-morph": "19.0.0"
     }
     // "allowAny": ["@babel/*"]
   },

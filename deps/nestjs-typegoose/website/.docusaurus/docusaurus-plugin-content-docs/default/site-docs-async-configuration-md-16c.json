@@ -6,7 +6,7 @@
   "source": "@site/docs/async-configuration.md",
   "sourceDirName": ".",
   "slug": "/async-configuration",
-  "permalink": "/nestjs-typegoose/docs/async-configuration",
+  "permalink": "/docs/async-configuration",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/async-configuration.md",
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "someSidebar",
   "previous": {
     "title": "Multiple MongoDB Connections",
-    "permalink": "/nestjs-typegoose/docs/multiple-connections"
+    "permalink": "/docs/multiple-connections"
   },
   "next": {
     "title": "Schema Options",
-    "permalink": "/nestjs-typegoose/docs/schema-options"
+    "permalink": "/docs/schema-options"
   }
 }

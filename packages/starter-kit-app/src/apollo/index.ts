@@ -45,7 +45,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   const refreshLink = new TokenRefreshLink({
     accessTokenField: 'accessToken',
     // No need to refresh if token exists and is still valid
-    isTokenValidOrUndefined: (): boolean => {
+    isTokenValidOrUndefined: async (): boolean => {
       const token: string | null = LocalStorage.getItem('token')
       const userId: string | null = LocalStorage.getItem('userId')
       // No need to refresh if we don't have a userId
@@ -67,7 +67,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
         // no need to refresh if userId is not defined
         return null
       }
-      // Use fetch to access the refreshUserToken mutation
+      // Use fetch to access the refreshUserToken api
       const response = await fetch('http://localhost:3000/refresh', {
         method: 'GET',
         headers: {

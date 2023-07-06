@@ -6,7 +6,7 @@
   "source": "@site/docs/faq.md",
   "sourceDirName": ".",
   "slug": "/faq",
-  "permalink": "/nestjs-typegoose/docs/faq",
+  "permalink": "/docs/faq",
   "draft": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/faq.md",
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "someSidebar",
   "previous": {
     "title": "Testing",
-    "permalink": "/nestjs-typegoose/docs/testing"
+    "permalink": "/docs/testing"
   },
   "next": {
     "title": "Mongoose Discriminators",
-    "permalink": "/nestjs-typegoose/docs/discriminators"
+    "permalink": "/docs/discriminators"
   }
 }

@@ -16,25 +16,25 @@
           {
             "type": "link",
             "label": "Installation",
-            "href": "/nestjs-typegoose/docs/install",
+            "href": "/docs/install",
             "docId": "install"
           },
           {
             "type": "link",
             "label": "Basic Usage",
-            "href": "/nestjs-typegoose/docs/usage",
+            "href": "/docs/usage",
             "docId": "usage"
           },
           {
             "type": "link",
             "label": "Testing",
-            "href": "/nestjs-typegoose/docs/testing",
+            "href": "/docs/testing",
             "docId": "testing"
           },
           {
             "type": "link",
             "label": "FAQ",
-            "href": "/nestjs-typegoose/docs/faq",
+            "href": "/docs/faq",
             "docId": "faq"
           }
         ],
@@ -48,25 +48,25 @@
           {
             "type": "link",
             "label": "Mongoose Discriminators",
-            "href": "/nestjs-typegoose/docs/discriminators",
+            "href": "/docs/discriminators",
             "docId": "discriminators"
           },
           {
             "type": "link",
             "label": "Multiple MongoDB Connections",
-            "href": "/nestjs-typegoose/docs/multiple-connections",
+            "href": "/docs/multiple-connections",
             "docId": "multiple-connections"
           },
           {
             "type": "link",
             "label": "Async Configuration",
-            "href": "/nestjs-typegoose/docs/async-configuration",
+            "href": "/docs/async-configuration",
             "docId": "async-configuration"
           },
           {
             "type": "link",
             "label": "Schema Options",
-            "href": "/nestjs-typegoose/docs/schema-options",
+            "href": "/docs/schema-options",
             "docId": "schema-options"
           }
         ],
@@ -97,7 +97,7 @@
     "install": {
       "id": "install",
       "title": "Installation",
-      "description": "This assumes you have a nestjs project to work with. If you don't I recommend that you use nestjs cli to jump start an example to project to get started using nestjs-typegoose.",
+      "description": "Welcome to the nestjs-typegoose. The Typegoose module/ plugin for NestJS.",
       "sidebar": "someSidebar"
     },
     "multiple-connections": {
