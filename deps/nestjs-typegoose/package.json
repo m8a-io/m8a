@@ -70,7 +70,7 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@typegoose/typegoose": "^11.0.0",
-    "mongoose": "^7.0.0"
+    "mongoose": "^7.2.0"
   },
   "engines": {
     "node": ">=16"
