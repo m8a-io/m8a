@@ -49,7 +49,7 @@
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.0.0",
-    "postcss": "8.4.24",
+    "postcss": "8.4.25",
     "typescript": "4.9.5"
   },
   "engines": {
