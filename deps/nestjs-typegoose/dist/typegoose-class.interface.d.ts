@@ -1,7 +1,7 @@
 /// <reference types="mongoose/types/schemaoptions" />
-import { SchemaOptions } from "mongoose";
+import { SchemaOptions } from 'mongoose';
 export interface TypegooseClass {
-    new (...args: unknown[]): any;
+    new (...args: unknown[]): unknown;
 }
 export interface TypegooseClassWrapper {
     typegooseClass: TypegooseClass;

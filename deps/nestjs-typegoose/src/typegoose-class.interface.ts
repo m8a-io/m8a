@@ -1,17 +1,17 @@
-import { SchemaOptions } from "mongoose";
+import { SchemaOptions } from 'mongoose'
 
 export interface TypegooseClass {
-  new (...args: unknown[]);
+  new (...args: unknown[]): unknown
 }
 
 export interface TypegooseClassWrapper {
-  typegooseClass: TypegooseClass;
+  typegooseClass: TypegooseClass
 }
 
 export interface TypegooseDiscriminator extends TypegooseClassWrapper {
-  discriminatorId?: string;
+  discriminatorId?: string
 }
 export interface TypegooseClassWithOptions extends TypegooseClassWrapper {
-  schemaOptions?: SchemaOptions;
-  discriminators?: (TypegooseClass | TypegooseDiscriminator)[];
+  schemaOptions?: SchemaOptions
+  discriminators?: (TypegooseClass | TypegooseDiscriminator)[]
 }

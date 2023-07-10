@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "declaration": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "removeComments": true,
