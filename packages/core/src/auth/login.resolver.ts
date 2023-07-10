@@ -25,7 +25,6 @@ export class LoginResolver {
     @Args('password') password: string,
     @Context() ctx: IContext
   ): Promise<AccessTokenDTO> {
-    const result = await this.authService.login(username, password, ctx)
-    return result
+    return await this.authService.login(username, password, ctx)
   }
 }
