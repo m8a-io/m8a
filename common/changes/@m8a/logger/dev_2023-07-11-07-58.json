@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@m8a/logger",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@m8a/logger"
+}

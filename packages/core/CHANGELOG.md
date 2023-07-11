@@ -1,6 +1,11 @@
 # Change Log - @m8a/core
 
-This log was last generated on Thu, 06 Jul 2023 13:51:59 GMT and should not be manually modified.
+This log was last generated on Tue, 11 Jul 2023 08:45:06 GMT and should not be manually modified.
+
+## 0.0.9
+Tue, 11 Jul 2023 08:45:06 GMT
+
+_Version update only_
 
 ## 0.0.8
 Thu, 06 Jul 2023 13:51:59 GMT
