@@ -1,8 +1,7 @@
 import { SchemaOptions } from 'mongoose'
+import type { types } from '@typegoose/typegoose'
 
-export interface TypegooseClass {
-  new (...args: unknown[]): unknown
-}
+export type TypegooseClass = types.AnyParamConstructor<unknown>
 
 export interface TypegooseClassWrapper {
   typegooseClass: TypegooseClass
