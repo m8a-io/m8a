@@ -71,6 +71,7 @@ common/deploy/
 common/temp/
 common/autoinstallers/*/.npmrc
 **/.rush/temp/
+common/config/rush/.npmrc-publish
 
 # Heft temporary files
 .heft
