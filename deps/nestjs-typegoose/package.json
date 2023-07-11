@@ -1,6 +1,6 @@
 {
   "name": "@m8a/nestjs-typegoose",
-  "version": "11.0.1",
+  "version": "11.0.2",
   "description": "A nestjs module wrapper for typegoose",
   "homepage": "https://nestjs-typegoose.m8a.io/",
   "repository": {
