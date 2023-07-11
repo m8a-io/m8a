@@ -9,7 +9,7 @@ function createTypegooseProviders(connectionName, models = []) {
     const buildProvider = ({ name }, modelFactory) => ({
         provide: (0, typegoose_utils_1.getModelToken)(name),
         useFactory: modelFactory,
-        inject: [connectionToken],
+        inject: [connectionToken]
     });
     const createDiscriminatorFactoryFrom = (parentFactory) => (discriminatorDefinition) => {
         if (isTypegooseClass(discriminatorDefinition)) {
@@ -21,7 +21,7 @@ function createTypegooseProviders(connectionName, models = []) {
     return models.reduce((providers, { typegooseClass, schemaOptions = {}, discriminators = [] }) => {
         const modelFactory = (connection) => (0, typegoose_1.getModelForClass)(typegooseClass, {
             existingConnection: connection,
-            schemaOptions,
+            schemaOptions
         });
         const modelProvider = buildProvider(typegooseClass, modelFactory);
         const discriminatorProviders = discriminators.map(createDiscriminatorFactoryFrom(modelFactory));
@@ -33,11 +33,11 @@ function convertToTypegooseClassWithOptions(item) {
     const tcwo = convertToOptions(item);
     if (tcwo) {
         if (tcwo.discriminators) {
-            tcwo.discriminators = tcwo.discriminators.map((d) => convertToOptions(d) || invalidObject("discriminator"));
+            tcwo.discriminators = tcwo.discriminators.map((d) => convertToOptions(d) || invalidObject('discriminator'));
         }
         return tcwo;
     }
-    return invalidObject("model");
+    return invalidObject('model');
 }
 exports.convertToTypegooseClassWithOptions = convertToTypegooseClassWithOptions;
 const isTypegooseClass = (item) => (0, is_class_1.isClass)(item);

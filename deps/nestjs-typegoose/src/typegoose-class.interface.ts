@@ -1,17 +1,16 @@
-import { SchemaOptions } from "mongoose";
+import { SchemaOptions } from 'mongoose'
+import type { types } from '@typegoose/typegoose'
 
-export interface TypegooseClass {
-  new (...args: unknown[]);
-}
+export type TypegooseClass = types.AnyParamConstructor<unknown>
 
 export interface TypegooseClassWrapper {
-  typegooseClass: TypegooseClass;
+  typegooseClass: TypegooseClass
 }
 
 export interface TypegooseDiscriminator extends TypegooseClassWrapper {
-  discriminatorId?: string;
+  discriminatorId?: string
 }
 export interface TypegooseClassWithOptions extends TypegooseClassWrapper {
-  schemaOptions?: SchemaOptions;
-  discriminators?: (TypegooseClass | TypegooseDiscriminator)[];
+  schemaOptions?: SchemaOptions
+  discriminators?: (TypegooseClass | TypegooseDiscriminator)[]
 }
