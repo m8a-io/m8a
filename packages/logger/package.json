@@ -49,7 +49,7 @@
     "@ogma/platform-fastify": "5.0.1",
     "@rushstack/eslint-config": "3.3.2",
     "@types/node": "18.16.19",
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "fastify": "4.19.2",
     "reflect-metadata": "0.1.13",
     "rimraf": "~5.0.0",
