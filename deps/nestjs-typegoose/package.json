@@ -75,12 +75,5 @@
   },
   "engines": {
     "node": ">=16"
-  },
-  "pnpm": {
-    "allowedDeprecatedVersions": {
-      "har-validator": "5",
-      "uuid": "3",
-      "superagent": "*"
-    }
   }
 }
