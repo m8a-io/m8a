@@ -11,13 +11,10 @@ export class EnvironmentVariables {
     COOKIE_SECRET!: string
 
   @IsString()
-    DB_NAME!: string
-
-  @IsString()
-    DB_CONNECTION!: string
-
-  @IsString()
     DB_HOST!: string
+
+  @IsString()
+    DB_NAME!: string
 
   @IsNumber()
     DB_PORT!: string
@@ -27,6 +24,21 @@ export class EnvironmentVariables {
 
   @IsString()
     DB_PASSWORD!: string
+
+  @IsString()
+    CACHE_HOST!: string
+
+  @IsString()
+    CACHE_NAME!: string
+
+  @IsNumber()
+    CACHE_PORT!: string
+
+  @IsString()
+    CACHE_USERNAME!: string
+
+  @IsString()
+    CACHE_PASSWORD!: string
 
   @IsString()
     GQL_PATH!: string

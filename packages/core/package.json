@@ -68,7 +68,8 @@
     "ms": "3.0.0-canary.1",
     "nest-typed-config": "~2.7.0",
     "passport": "0.6.0",
-    "passport-jwt": "4.0.1"
+    "passport-jwt": "4.0.1",
+    "redis": "4.6.7"
   },
   "devDependencies": {
     "@apollo/gateway": "2.4.9",

@@ -10,6 +10,7 @@ export const ConfigModule = TypedConfigModule.forRoot({
   normalize (config) {
     config.PORT = parseInt(config.PORT, 10)
     config.DB_PORT = parseInt(config.DB_PORT, 10)
+    config.CACHE_PORT = parseInt(config.CACHE_PORT, 10)
     return config
   }
 })
