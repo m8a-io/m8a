@@ -55,7 +55,7 @@
     "@rushstack/eslint-config": "3.3.2",
     "@types/inquirer": "^9.0.0",
     "@types/jest": "29.5.3",
-    "@types/node": "18.16.19",
+    "@types/node": "18.17.0",
     "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
