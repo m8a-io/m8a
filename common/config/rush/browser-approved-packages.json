@@ -407,6 +407,10 @@
       "allowedCategories": [ "apps" ]
     },
     {
+      "name": "redis",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "reflect-metadata",
       "allowedCategories": [ "apps", "libraries", "production" ]
     },
@@ -461,6 +465,10 @@
     {
       "name": "typescript",
       "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "vite",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "vue",
