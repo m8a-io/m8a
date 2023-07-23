@@ -6,11 +6,13 @@ import { ConfigModule, envConfig } from '../config'
   imports: [
     ConfigModule,
     Typegoose.forRootAsync({
-      useFactory: () => ({
-        uri: `${envConfig.DB_CONNECTION}:${envConfig.DB_USERNAME}@${envConfig.DB_PASSWORD}:${envConfig.DB_HOST}:${envConfig.DB_PORT}/${envConfig.DB_NAME}`,
-        autoIndex: envConfig.NODE_ENV === 'development',
-        serverSelectionTimeoutMS: 1500
-      })
+      useFactory: () => {
+        return {
+          uri: `mongodb://${envConfig.DB_USERNAME}:${envConfig.DB_PASSWORD}@${envConfig.DB_HOST}:${envConfig.DB_PORT}?authSource=admin&readPreference=primary&directConnection=true&ssl=false`,
+          autoIndex: envConfig.NODE_ENV === 'development',
+          serverSelectionTimeoutMS: 1500
+        }
+      }
     })
   ],
   providers: [],
