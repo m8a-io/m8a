@@ -39,7 +39,7 @@
     "rxjs": "7.8.1"
   },
   "devDependencies": {
-    "@golevelup/nestjs-modules": "0.6.1",
+    "@golevelup/nestjs-modules": "0.7.0",
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/common": "10.0.5",
     "@nestjs/core": "10.0.5",
