@@ -49,7 +49,7 @@
     "@nestjs/passport": "10.0.0",
     "@nestjs/platform-fastify": "10.1.0",
     "@ogma/nestjs-module": "5.1.1",
-    "@ptc-org/nestjs-query-core": "3.0.0",
+    "@ptc-org/nestjs-query-core": "3.0.2",
     "@ptc-org/nestjs-query-graphql": "3.0.0",
     "@ptc-org/nestjs-query-typegoose": "3.0.0",
     "@typegoose/typegoose": "11.4.0",
