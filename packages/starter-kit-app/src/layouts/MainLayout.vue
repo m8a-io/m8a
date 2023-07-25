@@ -7,7 +7,6 @@
         <q-toolbar-title>m8a DSK - test</q-toolbar-title>
 
         <q-toggle color="light-blue" :icon="darkIcon" v-model="darkMode" />
-
         <div v-if="userLoggedIn">
           <UserAvatar />
           <UserAccountMenu />
@@ -20,12 +19,11 @@
     </q-header>
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header>Essential Links</q-item-label>
+        <q-item-label header>Essential Links Blah</q-item-label>
 
         <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -35,7 +33,7 @@
 <script lang="ts">
   import EssentialLink from 'components/EssentialLink.vue'
   import { computed, defineComponent, ref, watch } from 'vue'
-  import { useQuasar } from 'quasar'
+  import { LocalStorage, useQuasar } from 'quasar'
   import { useQuery } from '@vue/apollo-composable'
   import UserAvatar from 'components/UserAvatar.vue'
   import UserAccountMenu from 'components/UserAccountMenu.vue'
@@ -119,6 +117,13 @@
       function openSignInDialog() {
         $q.dialog({
           component: SignInCardVue
+        })
+      }
+
+      if (!LocalStorage.getItem('networkOk')) {
+        console.log('network ok', LocalStorage.getItem('networkOk'))
+        $q.dialog({
+          message: 'Network has no connection to the server.'
         })
       }
 

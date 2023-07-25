@@ -29,6 +29,9 @@ const retryLink = new RetryLink({
   }
 })
 
+// set network connectivity flat to true, to assume connectivity is working
+LocalStorage.set('networkOk', true)
+
 export function getClientOptions(options?: Partial<BootFileParams<unknown>>): ApolloClientOptions<unknown> {
   const authLink = setContext(() => {
     const token: string | null = LocalStorage.getItem('token')
@@ -45,7 +48,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   const refreshLink = new TokenRefreshLink({
     accessTokenField: 'accessToken',
     // No need to refresh if token exists and is still valid
-    isTokenValidOrUndefined: async (): boolean => {
+    isTokenValidOrUndefined: async (): Promise<boolean> => {
       const token: string | null = LocalStorage.getItem('token')
       const userId: string | null = LocalStorage.getItem('userId')
       // No need to refresh if we don't have a userId
@@ -68,7 +71,8 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
         return null
       }
       // Use fetch to access the refreshUserToken api
-      const response = await fetch('http://localhost:3000/refresh', {
+      const response = await fetch('https://zeus-dev-api.m8a.io/refresh', {
+        // TODO - set env vars for this
         method: 'GET',
         headers: {
           'content-type': 'application/json'
@@ -101,7 +105,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   })
 
   const graphQLLink = createHttpLink({
-    uri: 'http://localhost:3000/api-test', // TODO: need to get from .env later
+    uri: 'https://zeus-dev-api.m8a.io/graphql', // TODO: need to get from .env later
     credentials: 'include', // TODO: need to turn on later to harden
     fetch
   })
@@ -174,7 +178,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   return <ApolloClientOptions<unknown>>Object.assign(
     // General options.
     <ApolloClientOptions<unknown>>{
-      link: from([refreshLink, authLink, errorLink, retryLink, graphQLLink]),
+      link: from([refreshLink, authLink, retryLink, graphQLLink, errorLink]),
       cache: new InMemoryCache({
         typePolicies: {
           Query: {

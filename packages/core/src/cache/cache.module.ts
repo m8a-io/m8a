@@ -8,7 +8,7 @@ import { envConfig } from '../config'
 @Module({
   imports: [
     Cache.registerAsync<RedisClientOptions>({
-      useFactory: () => {
+      useFactory: async () => {
         return {
           url: `redis://${envConfig.CACHE_USERNAME}:${envConfig.CACHE_PASSWORD}@${envConfig.CACHE_HOST}:${envConfig.CACHE_PORT}`,
           keyPrefix: 'zeus.m8a.io:',
