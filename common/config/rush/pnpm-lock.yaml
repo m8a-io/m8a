@@ -759,9 +759,15 @@ importers:
         specifier: 4.2.4
         version: 4.2.4(vue@3.3.4)
     devDependencies:
+      '@m8a/eslint-config':
+        specifier: workspace:*
+        version: link:../../deps/eslint
       '@quasar/app-vite':
         specifier: 1.4.3
         version: 1.4.3(eslint@8.45.0)(quasar@2.12.3)(vue-router@4.2.4)(vue@3.3.4)
+      '@rushstack/eslint-config':
+        specifier: 3.3.2
+        version: 3.3.2(eslint@8.45.0)(typescript@4.9.5)
       '@types/node':
         specifier: 18.17.0
         version: 18.17.0

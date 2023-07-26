@@ -6,5 +6,8 @@ export default defineConfig({
       // Allow serving files from one level up to the project root
       allow: ['../..']
     }
+  },
+  resolve: {
+    dedupe: ['vue']
   }
 })

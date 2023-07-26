@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title>m8a DSK - test</q-toolbar-title>
+        <q-toolbar-title>m8a-Zeus-Dev</q-toolbar-title>
 
         <q-toggle color="light-blue" :icon="darkIcon" v-model="darkMode" />
         <div v-if="userLoggedIn">
@@ -19,7 +19,7 @@
     </q-header>
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header>Essential Links Blah</q-item-label>
+        <q-item-label header>Links</q-item-label>
 
         <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
@@ -42,46 +42,40 @@
 
   const linksList = [
     {
-      title: 'Docs',
-      caption: 'quasar.dev',
-      icon: 'school',
-      link: 'https://quasar.dev'
+      title: 'Rancher UI',
+      caption: 'Cluster Admininstration Instance',
+      icon: 'app_registration',
+      link: 'https://rancher.m8a.io'
     },
     {
-      title: 'Github',
-      caption: 'github.com/quasarframework',
+      title: 'Coder-Zeus',
+      caption: 'Dev Workspaces Management',
       icon: 'code',
-      link: 'https://github.com/quasarframework'
+      link: 'https://coder-zeus.m8a.dev'
     },
     {
-      title: 'Discord Chat Channel',
-      caption: 'chat.quasar.dev',
-      icon: 'chat',
-      link: 'https://chat.quasar.dev'
+      title: 'Keycloak OIDC',
+      caption: 'OIDC Service Administration',
+      icon: 'admin_panel_settings',
+      link: 'https://auth.m8a.io'
     },
     {
-      title: 'Forum',
-      caption: 'forum.quasar.dev',
-      icon: 'record_voice_over',
-      link: 'https://forum.quasar.dev'
+      title: 'eMail System',
+      caption: 'Mail Service Admininistration',
+      icon: 'email',
+      link: 'https://mail.m8a.io/sso/login?url=/webmail/?homepage'
     },
     {
-      title: 'Twitter',
-      caption: '@quasarframework',
-      icon: 'rss_feed',
-      link: 'https://twitter.quasar.dev'
+      title: 'Cluster Workflows',
+      caption: 'Argo Workflows UI for m8a',
+      icon: 'checklist',
+      link: 'https://workflows.m8a.io/'
     },
     {
-      title: 'Facebook',
-      caption: '@QuasarFramework',
-      icon: 'public',
-      link: 'https://facebook.quasar.dev'
-    },
-    {
-      title: 'Quasar Awesome',
-      caption: 'Community Quasar projects',
-      icon: 'favorite',
-      link: 'https://awesome.quasar.dev'
+      title: 'Continous Deployment',
+      caption: 'Argo CD UI for m8a',
+      icon: 'ads_click',
+      link: 'https://deploy.m8a.io/'
     }
   ]
 

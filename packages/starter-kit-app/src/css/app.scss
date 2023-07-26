@@ -27,3 +27,16 @@
     color: #a3e1ee;
   }
 }
+
+@font-face {
+  font-family: notoSans;
+  src: url(/fonts/NotoSans-Regular.woff);
+}
+
+.noto-font {
+  font-family: 'notoSans';
+}
+
+body {
+  font-family: 'NotoSans';
+}

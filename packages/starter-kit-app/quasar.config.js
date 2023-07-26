@@ -12,14 +12,14 @@ const { configure } = require('quasar/wrappers')
 
 module.exports = configure(function (ctx) {
   return {
-    eslint: {
-      // fix: true,
-      // include = [],
-      // exclude = [],
-      // rawOptions = {},
-      warnings: true,
-      errors: true
-    },
+    // eslint: {
+    //   // fix: true,
+    //   // include = [],
+    //   // exclude = [],
+    //   // rawOptions = {},
+    //   warnings: true,
+    //   errors: true
+    // },
 
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -41,8 +41,7 @@ module.exports = configure(function (ctx) {
       // 'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-
-      'roboto-font', // optional, you are not bound to it
+      // 'roboto-font', // optional, you are not bound to it
       'material-icons' // optional, you are not bound to it
     ],
 
@@ -104,7 +103,8 @@ module.exports = configure(function (ctx) {
     devServer: {
       // https: true
       open: false, // opens browser window automatically
-      strictPort: true
+      strictPort: true,
+      hmr: { clientPort: 443 }
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -122,7 +122,7 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['LocalStorage', 'Loading', 'Dialog']
+      plugins: ['LocalStorage', 'Loading', 'Dialog', 'Meta']
     },
 
     // animations: 'all', // --- includes all animations

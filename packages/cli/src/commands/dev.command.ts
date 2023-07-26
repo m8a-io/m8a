@@ -5,7 +5,7 @@ import { RunnerService } from '../utils/runner.service'
 
 @Command({
   name: 'dev',
-  description: 'The "dev" command will start a local development server for the package you are currently in.'
+  description: 'The "dev" command will start a local development server.'
 })
 export class DevCommand extends CommandRunner {
   constructor (
@@ -17,12 +17,14 @@ export class DevCommand extends CommandRunner {
   }
 
   async run (passedParams: string[]): Promise<void> {
-    this.runDev()
+    this.runApiDev(passedParams)
   }
 
-  private runDev (): void {
-    this.logService.addLine()
-    this.logService.log('Starting your dev environment....')
-    this.runnerService.spawnSync('pnpm', ['start:dev'])
+  private runApiDev (passedParams): void {
+    if (passedParams === 'api') {
+      this.logService.addLine()
+      this.logService.log('Starting your API dev environment....')
+      this.runnerService.spawnSync('pnpm', ['start:dev'])
+    }
   }
 }
