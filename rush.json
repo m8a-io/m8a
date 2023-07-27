@@ -323,18 +323,6 @@
       "reviewCategory": "apps",
       "shouldPublish": true
     },
-    {
-      "packageName": "@m8a/zeus-app",
-      "projectFolder": "apps/zeus-app",
-      "reviewCategory": "apps",
-      "shouldPublish": false
-    },
-    {
-      "packageName": "@m8a/zeus-api",
-      "projectFolder": "apps/zeus-api",
-      "reviewCategory": "apps",
-      "shouldPublish": false
-    },
     // {
     //   "packageName": "@m8a/cli-local",
     //   "projectFolder": "packages/cli-local",

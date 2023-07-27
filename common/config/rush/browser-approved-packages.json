@@ -151,6 +151,14 @@
       "allowedCategories": [ "apps", "libraries" ]
     },
     {
+      "name": "@swc/cli",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@swc/core",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@typegoose/typegoose",
       "allowedCategories": [ "libraries", "production" ]
     },
@@ -433,6 +441,10 @@
     {
       "name": "supertest",
       "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "swc-loader",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "ts-jest",
