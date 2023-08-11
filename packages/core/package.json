@@ -63,7 +63,7 @@
     "fastify": "4.20.0",
     "graphql": "16.7.1",
     "graphql-yoga": "4.0.3",
-    "mongoose": "7.4.0",
+    "mongoose": "7.4.3",
     "mongoose-autopopulate": "1.0.1",
     "ms": "3.0.0-canary.1",
     "nest-typed-config": "~2.7.0",

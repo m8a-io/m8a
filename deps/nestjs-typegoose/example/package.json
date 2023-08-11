@@ -26,7 +26,7 @@
     "@nestjs/platform-express": "10.1.0",
     "@typegoose/typegoose": "11.4.0",
     "class-validator": "0.14.0",
-    "mongoose": "7.4.0",
+    "mongoose": "7.4.3",
     "reflect-metadata": "0.1.13",
     "rimraf": "5.0.1",
     "rxjs": "7.8.1"
