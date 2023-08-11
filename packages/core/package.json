@@ -82,7 +82,7 @@
     "@types/node": "18.17.0",
     "@types/passport-jwt": "3.0.9",
     "dataloader": "2.2.2",
-    "eslint": "8.45.0",
+    "eslint": "8.47.0",
     "graphql-subscriptions": "2.0.0",
     "jest": "29.6.1",
     "reflect-metadata": "0.1.13",
