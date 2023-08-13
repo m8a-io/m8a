@@ -41,7 +41,7 @@
     "@m8a/logger": "workspace:*",
     "@nestjs/common": "10.1.0",
     "cross-spawn": "7.0.3",
-    "nest-commander": "3.11.0"
+    "nest-commander": "3.11.1"
   },
   "devDependencies": {
     "@m8a/eslint-config": "workspace:*",
