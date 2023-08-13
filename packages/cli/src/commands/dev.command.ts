@@ -23,9 +23,9 @@ export class DevCommand extends CommandRunner {
     }
     const appType = passedParams[0].toLowerCase()
     if (appType === 'api') {
-      this.runAppDev(appType)
-    } else if (appType === 'app') {
       this.runApiDev(appType)
+    } else if (appType === 'app') {
+      this.runAppDev(appType)
     } else {
       this.logService.log(`You've given an unknown option to the "dev" command. ${appType}?`)
       this.logService.log('Please try again!')
@@ -42,7 +42,7 @@ export class DevCommand extends CommandRunner {
     process.chdir('/')
     process.chdir(`home/dev/m8a/packages/starter-kit-${appType}`)
     this.logService.log(`Starting your ${appType.toUpperCase()} dev environment....`)
-    this.runnerService.spawnSync('quasar', ['dev'])
+    this.runnerService.spawnSync('pnpm', ['start:dev'])
   }
 
   @Option({

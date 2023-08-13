@@ -2,9 +2,15 @@
   "name": "@m8a/starter-kit-api",
   "version": "0.0.1",
   "private": true,
-  "description": "",
-  "license": "UNLICENSED",
-  "author": "",
+  "description": "A starter kit for front end work with m8a",
+  "keywords": [
+    "platform",
+    "PaaS",
+    "SaaS",
+    "TypeScript"
+  ],
+  "license": "MIT",
+  "author": "Scott Molinari <scott.molinari@m8a.io>",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && tsc --project tsconfig.build.json",

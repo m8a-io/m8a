@@ -9,10 +9,12 @@
     "SaaS",
     "TypeScript"
   ],
-  "author": "Scott Molinari <scott.molinari@adduco.de>",
+  "license": "MIT",
+  "author": "Scott Molinari <scott.molinari@m8a.io>",
   "scripts": {
+    "b-loader": "tsc src/graphql/utils/operations-from-schema.ts",
     "build": "quasar build",
-    "codegen": "tsc src/graphql/utils/operations-from-schema.ts && graphql-codegen --config codegen.yml",
+    "codegen": "graphql-codegen --config codegen.ts",
     "lint": "eslint --ext .js,.ts,.vue ./ --fix",
     "test": "echo \"No test specified\" && exit 0"
   },
@@ -33,6 +35,12 @@
     "vue-router": "4.2.4"
   },
   "devDependencies": {
+    "@dreamonkey/graphql-codegen-vue-apollo-plugin": "0.1.1",
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/client-preset": "4.1.0",
+    "@graphql-tools/schema": "10.0.0",
+    "@graphql-tools/utils": "10.0.4",
+    "@graphql-typed-document-node/core": "3.2.0",
     "@m8a/eslint-config": "workspace:*",
     "@quasar/app-vite": "1.4.3",
     "@rushstack/eslint-config": "3.3.3",
@@ -46,11 +54,12 @@
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.0.0",
+    "got": "11.8.2",
     "postcss": "8.4.27",
     "typescript": "4.9.5"
   },
   "engines": {
-    "node": "^18 || ^16 || ^14.19",
+    "node": "^18 || ^16",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
   },

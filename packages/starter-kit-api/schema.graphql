@@ -126,13 +126,23 @@ type UserConnection {
 
 type UserAggregateGroupBy {
   id: ID
-  modifiedAt: DateTime
-  createdAt: DateTime
+  modifiedAt(by: GroupBy! = DAY): DateTime
+  createdAt(by: GroupBy! = DAY): DateTime
   firstName: String
   lastName: String
   username: String
   email: String
   status: String
+}
+
+"""
+Group by
+"""
+enum GroupBy {
+  DAY
+  WEEK
+  MONTH
+  YEAR
 }
 
 type UserCountAggregate {
@@ -192,25 +202,26 @@ type Query {
     The id of the record to find.
     """
     id: ID!
-  ): User
+  ): User!
   users(
     """
     Limit or page results.
     """
-    paging: OffsetPaging = { limit: 10 }
+    paging: OffsetPaging! = { limit: 10 }
 
     """
     Specify to filter the records returned.
     """
-    filter: UserFilter = {}
+    filter: UserFilter! = {}
 
     """
     Specify to sort results.
     """
-    sorting: [UserSort!] = []
+    sorting: [UserSort!]! = []
   ): UserConnection!
-  findByIdCustom(id: String!): User!
+  findUserByIdCustom(id: String!): User!
   helloWorld: String!
+  helloWorld2(input: String): String!
   me: User!
 }
 
@@ -340,12 +351,24 @@ enum SortNulls {
 }
 
 type Mutation {
-  login(password: String!, username: String!): AccessTokenDTO
+  """
+  The login mutation for the login process.
+  """
+  login(username: String!, password: String!): AccessTokenDTO
+
+  """
+  The login mutation for the m8a SSO login process.
+  """
+  m8aAuthLogin(code: String!, sessionStatus: String!): AccessTokenDTO
 
   """
   This is the mutation for registering a new user.
   """
   register(data: RegisterInputDTO!): User!
+
+  """
+  The logout mutation for the logout process.
+  """
   logout: AccessTokenDTO
   createOneUser(input: CreateOneUserInput!): User!
   createManyUsers(input: CreateManyUsersInput!): [User!]!

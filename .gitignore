@@ -75,3 +75,6 @@ common/config/rush/.npmrc-publish
 
 # Heft temporary files
 .heft
+
+# pnpm-store files
+.pnpm-store/

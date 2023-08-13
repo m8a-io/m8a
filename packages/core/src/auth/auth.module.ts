@@ -12,6 +12,8 @@ import { RegisterResolver } from './register.resolver'
 import { LogoutResolver } from './logout.resolver'
 import { ConfigModule } from '../config/env/env-config.module'
 import { AuthzModule } from '../authz/authz.module'
+import { M8aAuthLoginResolver } from './m8a-auth-login.resolver'
+import { M8aAuthService } from './m8a-auth.service'
 
 export const JwtModule = JModule.register({
   secret: 'someSecretValueForAccess'
@@ -28,8 +30,10 @@ export const JwtModule = JModule.register({
   ],
   providers: [
     LoginResolver,
+    M8aAuthLoginResolver,
     RegisterResolver,
     AuthService,
+    M8aAuthService,
     JwtStrategy,
     LogoutResolver,
     {

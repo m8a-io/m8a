@@ -1,6 +1,7 @@
 import { route } from 'quasar/wrappers'
 import { createMemoryHistory, createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import routes from './routes'
+import { LocalStorage } from 'quasar'
 
 /*
  * If not building with SSR mode, you can
@@ -11,7 +12,7 @@ import routes from './routes'
  * with the Router instance.
  */
 
-export default route(function (/* { store, ssrContext } */) {
+export default route(function (/* { store , ssrContext } */) {
   const createHistory = process.env.SERVER
     ? createMemoryHistory
     : process.env.VUE_ROUTER_MODE === 'history'
@@ -26,6 +27,19 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> vueRouterMode
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE)
+  })
+
+  Router.beforeEach(async (to, from) => {
+    if (
+      !LocalStorage.getItem('userId') &&
+      !LocalStorage.getItem('login-token') &&
+      !['/callback', '/login'].includes(to.path)
+    ) {
+      console.log('redirect to keycloak')
+      window.location.replace(
+        'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/auth?scope=openid&redirect_uri=https://zeus-dev.m8a.io/callback&client_id=zeus-dev&response_type=code'
+      )
+    }
   })
 
   return Router
