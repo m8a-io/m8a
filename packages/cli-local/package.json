@@ -30,7 +30,7 @@
     "@nestjs/common": "10.1.0",
     "@nestjs/core": "10.1.0",
     "@nestjs/testing": "10.1.0",
-    "@rushstack/eslint-config": "3.3.2",
+    "@rushstack/eslint-config": "3.3.3",
     "@types/inquirer": "^9.0.0",
     "@types/jest": "29.5.3",
     "@types/node": "18.17.0",

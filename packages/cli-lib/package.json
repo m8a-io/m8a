@@ -23,7 +23,7 @@
     "cross-spawn": "7.0.3"
   },
   "devDependencies": {
-    "@rushstack/eslint-config": "3.3.2",
+    "@rushstack/eslint-config": "3.3.3",
     "@types/cross-spawn": "6.0.2",
     "@types/node": "18.17.0",
     "eslint": "8.47.0",
