@@ -1,4 +1,8 @@
-/* eslint-disable */
+import { computed as vueComputed } from 'vue'
+import { useQuery as vueApolloUseQuery, useLazyQuery as vueApolloUseLazyQuery } from '@vue/apollo-composable'
+import type * as VueApolloQuery from '@vue/apollo-composable/dist/useQuery'
+import type { UseQueryReturn as VueApolloUseQueryReturn } from '@vue/apollo-composable'
+import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 export type Maybe<T> = T | null
 export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
@@ -13,7 +17,6 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean }
   Int: { input: number; output: number }
   Float: { input: number; output: number }
-  /** A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format. */
   DateTime: { input: any; output: any }
 }
 
@@ -104,7 +107,7 @@ export type Mutation = {
   login?: Maybe<AccessTokenDto>
   /** The logout mutation for the logout process. */
   logout?: Maybe<AccessTokenDto>
-  /** The login mutation for the login process. */
+  /** The login mutation for the m8a SSO login process. */
   m8aAuthLogin?: Maybe<AccessTokenDto>
   /** This is the mutation for registering a new user. */
   register: User
@@ -169,6 +172,7 @@ export type Query = {
   __typename?: 'Query'
   findUserByIdCustom: User
   helloWorld: Scalars['String']['output']
+  helloWorld2: Scalars['String']['output']
   me: User
   user: User
   userAggregate: Array<UserAggregateResponse>
@@ -177,6 +181,10 @@ export type Query = {
 
 export type QueryFindUserByIdCustomArgs = {
   id: Scalars['String']['input']
+}
+
+export type QueryHelloWorld2Args = {
+  input?: InputMaybe<Scalars['String']['input']>
 }
 
 export type QueryUserArgs = {
@@ -443,3 +451,44 @@ export type UserUpdateFilter = {
   status?: InputMaybe<StringFieldComparison>
   username?: InputMaybe<StringFieldComparison>
 }
+
+export const HelloWorldDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'helloWorld' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [{ kind: 'Field', name: { kind: 'Name', value: 'helloWorld' } }]
+      }
+    }
+  ]
+} as unknown as DocumentNode<HelloWorldQuery, HelloWorldQueryVariables>
+export type HelloWorldQueryVariables = Exact<{ [key: string]: never }>
+
+export type HelloWorldQuery = { __typename?: 'Query'; helloWorld: string }
+
+export function useHelloWorldQuery(
+  variables: VueApolloQuery.VariablesParameter<HelloWorldQueryVariables> = {},
+  options: VueApolloQuery.OptionsParameter<HelloWorldQuery, HelloWorldQueryVariables> = {}
+) {
+  const useQuery = vueApolloUseQuery(HelloWorldDocument, variables, options)
+  return {
+    ...useQuery,
+    helloWorld: vueComputed(() => useQuery.result.value?.helloWorld)
+  }
+}
+
+export function useHelloWorldLazyQuery(
+  variables: VueApolloQuery.VariablesParameter<HelloWorldQueryVariables> = {},
+  options: VueApolloQuery.OptionsParameter<HelloWorldQuery, HelloWorldQueryVariables> = {}
+) {
+  return vueApolloUseLazyQuery(HelloWorldDocument, variables, options)
+}
+
+export type HelloWorldCompositionFunctionResult = VueApolloUseQueryReturn<
+  HelloWorldQuery,
+  HelloWorldQueryVariables
+>

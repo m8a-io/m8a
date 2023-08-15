@@ -7,7 +7,7 @@
         <div class="text-h6">From the GraphQL API:</div>
       </q-card-section>
       <q-card-section class="q-pt-none">
-        {{ helloWorld }}
+        <!-- {{ helloWorld }} -->
       </q-card-section>
       <q-card-section>The login page</q-card-section>
     </q-card>
@@ -19,37 +19,37 @@
   import GlobalSpinner from '../components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
   import { useQuery } from '@vue/apollo-composable'
-  import { useQueryHelloWorld_Query } from '../graphql/gen'
+  // import { useQueryHelloWorld_Query } from '../graphql/gen'
 
   export default defineComponent({
     name: 'PageLogin',
 
     setup() {
       const $q = useQuasar()
-      const { result, loading, onResult } = graphql(`query HelloWorld_Query`)
-      const helloWorld = computed(() => result.value?.helloWorld ?? '')
-      const metaData = {
-        title: 'Home - m8a-Zeus-Dev'
-      }
+      // // const { result, loading, onResult } = graphql(`query HelloWorld_Query`)
+      // const helloWorld = computed(() => result.value?.helloWorld ?? '')
+      // const metaData = {
+      //   title: 'Home - m8a-Zeus-Dev'
+      // }
 
-      useMeta(metaData)
+      // useMeta(metaData)
 
-      if (loading) {
-        $q.loading.show({
-          spinner: GlobalSpinner,
-          delay: 300,
-          message: 'Getting HelloWorld!'
-        })
-      }
+      // if (loading) {
+      //   $q.loading.show({
+      //     spinner: GlobalSpinner,
+      //     delay: 300,
+      //     message: 'Getting HelloWorld!'
+      //   })
+      // }
 
-      onResult(() => {
-        console.log('got result', helloWorld.value)
-        $q.loading.hide()
-      })
+      // onResult(() => {
+      //   console.log('got result', helloWorld.value)
+      //   $q.loading.hide()
+      // })
 
-      return {
-        helloWorld
-      }
+      // return {
+      //   helloWorld
+      // }
     }
   })
 </script>

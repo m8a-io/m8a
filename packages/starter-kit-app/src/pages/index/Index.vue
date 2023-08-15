@@ -14,19 +14,17 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, computed } from 'vue'
-  import GlobalSpinner from '../components/GlobalSpinner.vue'
+  import { defineComponent } from 'vue'
+  import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useQuery } from '@vue/apollo-composable'
-  import { HelloWorld_Query } from '../graphql/gql-operations'
+  import { useHelloWorldQuery } from '../../graphql'
 
   export default defineComponent({
     name: 'PageIndex',
 
     setup() {
       const $q = useQuasar()
-      const { result, loading, onResult } = useQuery(HelloWorld_Query)
-      const helloWorld = computed(() => result.value?.helloWorld ?? '')
+      const { helloWorld, loading, onResult } = useHelloWorldQuery()
       const metaData = {
         title: 'Home - m8a-Zeus-Dev'
       }

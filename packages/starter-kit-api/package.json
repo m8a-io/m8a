@@ -17,7 +17,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "start": "nest start",
-    "start:debug": "nest start --debug --watch",
+    "start:debug": "nest start --builder swc --debug --watch",
     "start:dev": "nest start --builder swc --watch",
     "start:prod": "node dist/main",
     "test": "jest",
