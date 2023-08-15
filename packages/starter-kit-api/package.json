@@ -48,7 +48,7 @@
     }
   },
   "dependencies": {
-    "@fastify/cookie": "8.3.0",
+    "@fastify/cookie": "9.0.4",
     "@m8a/core": "workspace:*",
     "@m8a/logger": "workspace:*",
     "@nestjs/common": "10.1.3",
