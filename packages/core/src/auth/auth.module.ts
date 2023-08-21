@@ -12,8 +12,7 @@ import { RegisterResolver } from './register.resolver'
 import { LogoutResolver } from './logout.resolver'
 import { ConfigModule } from '../config/env/env-config.module'
 import { AuthzModule } from '../authz/authz.module'
-import { M8aAuthLoginResolver } from './m8a-auth-login.resolver'
-import { M8aAuthService } from './m8a-auth.service'
+import { HttpModule } from '@nestjs/axios'
 
 export const JwtModule = JModule.register({
   secret: 'someSecretValueForAccess'
@@ -26,14 +25,16 @@ export const JwtModule = JModule.register({
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule,
     UserModule,
-    CacheModule
+    CacheModule,
+    HttpModule.register({
+      timeout: 5000,
+      maxRedirects: 5
+    })
   ],
   providers: [
     LoginResolver,
-    M8aAuthLoginResolver,
     RegisterResolver,
     AuthService,
-    M8aAuthService,
     JwtStrategy,
     LogoutResolver,
     {

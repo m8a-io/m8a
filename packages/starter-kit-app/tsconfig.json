@@ -10,8 +10,7 @@
       "pages": ["src/pages/*"],
       "assets": ["src/assets/*"],
       "boot": ["src/boot/*"],
-      "stores": ["src/stores/*"],
-      "graphql": ["src/graphql/*"]
+      "stores": ["src/stores/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

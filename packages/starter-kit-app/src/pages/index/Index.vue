@@ -17,7 +17,7 @@
   import { defineComponent } from 'vue'
   import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useHelloWorldQuery } from '../../graphql'
+  import { useHelloWorldQuery } from './index.graphql'
 
   export default defineComponent({
     name: 'PageIndex',

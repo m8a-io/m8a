@@ -1,3 +1,4 @@
 query helloWorld {
   helloWorld
+  helloWorld
 }

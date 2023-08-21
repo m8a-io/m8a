@@ -1,17 +1,17 @@
 // TODO: m8a-auth.service add proper tests for this
 
 import { Test, TestingModule } from '@nestjs/testing'
-import { M8aAuthService } from './m8a-auth.service'
+import { AuthService } from './auth.service'
 
 describe('RefreshService', () => {
-  let service: M8aAuthService
+  let service: AuthService
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [M8aAuthService]
+      providers: [AuthService]
     }).compile()
 
-    service = module.get<M8aAuthService>(M8aAuthService)
+    service = module.get<AuthService>(AuthService)
   })
 
   it('should be defined', () => {

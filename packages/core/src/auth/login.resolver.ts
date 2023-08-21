@@ -18,7 +18,7 @@ export class LoginResolver {
   @Public()
   @Mutation(() => AccessTokenDTO, {
     nullable: true,
-    description: 'The login mutation for the login process.'
+    description: 'The login mutation for the normal login process.'
   })
   async login (
     @Args('username') username: string,
@@ -26,5 +26,21 @@ export class LoginResolver {
     @Context() ctx: IContext
   ): Promise<AccessTokenDTO> {
     return await this.authService.login(username, password, ctx)
+  }
+
+  /**
+   *
+   * @param token
+   * @param ctx
+   * @returns AccessTokenDTO
+   */
+  @Public()
+  @Mutation(() => AccessTokenDTO, {
+    nullable: true,
+    description: 'The login mutation for the m8a Auth login process.'
+  })
+  async loginWithToken (@Args('token') token: string, @Context() ctx: IContext): Promise<AccessTokenDTO> {
+    console.log('logging in')
+    return await this.authService.loginWithToken(token, ctx)
   }
 }

@@ -33,8 +33,8 @@ const retryLink = new RetryLink({
 LocalStorage.set('networkOk', true)
 
 export function getClientOptions(options?: Partial<BootFileParams<unknown>>): ApolloClientOptions<unknown> {
-  const authLink = setContext(() => {
-    const token: string | null = LocalStorage.getItem('token')
+  const authLink = setContext(async () => {
+    const token: string | null = await LocalStorage.getItem('token')
     if (token) {
       userLoggedInVar(true)
     }

@@ -352,14 +352,14 @@ enum SortNulls {
 
 type Mutation {
   """
-  The login mutation for the login process.
+  The login mutation for the normal login process.
   """
   login(username: String!, password: String!): AccessTokenDTO
 
   """
-  The login mutation for the m8a SSO login process.
+  The login mutation for the m8a Auth login process.
   """
-  m8aAuthLogin(code: String!, sessionStatus: String!): AccessTokenDTO
+  loginWithToken(token: String!): AccessTokenDTO
 
   """
   This is the mutation for registering a new user.

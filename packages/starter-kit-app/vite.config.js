@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
+import graphqlNearOperationFile from '@dreamonkey/graphql-codegen-near-operation-file'
 
+/** @type {import('vite').UserConfig} */
 export default defineConfig({
   server: {
     fs: {
@@ -9,5 +11,6 @@ export default defineConfig({
   },
   resolve: {
     dedupe: ['vue']
-  }
+  },
+  plugins: [graphqlNearOperationFile()]
 })

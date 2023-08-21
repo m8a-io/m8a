@@ -13,8 +13,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/callback',
     redirect: (to) => {
-      console.log('we are logged in via keycloak')
-      LocalStorage.set('login-token', to.query.code)
+      console.log('token ', to.query.code)
       return { path: '/login', query: to.query }
     }
   },

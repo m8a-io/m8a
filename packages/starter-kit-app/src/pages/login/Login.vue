@@ -7,49 +7,85 @@
         <div class="text-h6">From the GraphQL API:</div>
       </q-card-section>
       <q-card-section class="q-pt-none">
-        <!-- {{ helloWorld }} -->
+        <div v-if="gqlError">
+          <div class="text-h6">Error:</div>
+          {{ gqlError }}
+        </div>
+        <div v-else>Nothing to report back.</div>
       </q-card-section>
-      <q-card-section>The login page</q-card-section>
     </q-card>
   </q-page>
 </template>
 
 <script lang="ts">
-  import { defineComponent, computed } from 'vue'
-  import GlobalSpinner from '../components/GlobalSpinner.vue'
+  import { defineComponent, ref } from 'vue'
+  import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useQuery } from '@vue/apollo-composable'
-  // import { useQueryHelloWorld_Query } from '../graphql/gen'
+  import { useRoute } from 'vue-router'
+  import { useLoginWithTokenMutation } from './login.graphql'
 
   export default defineComponent({
     name: 'PageLogin',
 
     setup() {
+      const gqlError = ref('')
       const $q = useQuasar()
-      // // const { result, loading, onResult } = graphql(`query HelloWorld_Query`)
-      // const helloWorld = computed(() => result.value?.helloWorld ?? '')
-      // const metaData = {
-      //   title: 'Home - m8a-Zeus-Dev'
+      const route = useRoute()
+      const { loginWithToken, loading, onError } = useLoginWithTokenMutation()
+
+      $q.localStorage.set('mustLogin', true)
+
+      const metaData = {
+        title: 'Login - m8a-Zeus-Dev'
+      }
+
+      useMeta(metaData)
+
+      const data = async function (token: string) {
+        try {
+          const {
+            data: { accessToken, userId }
+          } = await loginWithToken({
+            token
+          })
+          console.log('AccessToken', accessToken)
+          if (accessToken !== '') {
+            $q.loading.hide()
+            $q.localStorage.set('mustLogin', false)
+            $q.localStorage.set('accessToken', accessToken)
+            $q.localStorage.set('userId', userId)
+          }
+          return data
+        } catch (_error) {
+          gqlError.value = _error.message
+          $q.loading.hide()
+          console.log('got error', _error)
+        }
+      }
+
+      // const {  } = login(route.query.code as string)
+      console.log('data', data(route.query.code as string))
+
+      // if(data.accessToken === ''){
+
       // }
 
-      // useMeta(metaData)
+      onError((error) => {
+        $q.loading.hide()
+        console.log('got error', error)
+      })
 
-      // if (loading) {
-      //   $q.loading.show({
-      //     spinner: GlobalSpinner,
-      //     delay: 300,
-      //     message: 'Getting HelloWorld!'
-      //   })
-      // }
+      if (loading) {
+        $q.loading.show({
+          spinner: GlobalSpinner,
+          delay: 300,
+          message: 'Logging you in!'
+        })
+      }
 
-      // onResult(() => {
-      //   console.log('got result', helloWorld.value)
-      //   $q.loading.hide()
-      // })
-
-      // return {
-      //   helloWorld
-      // }
+      return {
+        gqlError
+      }
     }
   })
 </script>

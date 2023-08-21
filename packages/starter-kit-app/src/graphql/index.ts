@@ -1,8 +1,3 @@
-import { computed as vueComputed } from 'vue'
-import { useQuery as vueApolloUseQuery, useLazyQuery as vueApolloUseLazyQuery } from '@vue/apollo-composable'
-import type * as VueApolloQuery from '@vue/apollo-composable/dist/useQuery'
-import type { UseQueryReturn as VueApolloUseQueryReturn } from '@vue/apollo-composable'
-import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 export type Maybe<T> = T | null
 export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
@@ -73,12 +68,7 @@ export type DeleteOneUserInput = {
 }
 
 /** Group by */
-export enum GroupBy {
-  Day = 'DAY',
-  Month = 'MONTH',
-  Week = 'WEEK',
-  Year = 'YEAR'
-}
+export type GroupBy = 'DAY' | 'MONTH' | 'WEEK' | 'YEAR'
 
 export type IdFilterComparison = {
   eq?: InputMaybe<Scalars['ID']['input']>
@@ -103,12 +93,12 @@ export type Mutation = {
   createOneUser: User
   deleteManyUsers: DeleteManyResponse
   deleteOneUser: UserDeleteResponse
-  /** The login mutation for the login process. */
+  /** The login mutation for the normal login process. */
   login?: Maybe<AccessTokenDto>
+  /** The login mutation for the m8a Auth login process. */
+  loginWithToken?: Maybe<AccessTokenDto>
   /** The logout mutation for the logout process. */
   logout?: Maybe<AccessTokenDto>
-  /** The login mutation for the m8a SSO login process. */
-  m8aAuthLogin?: Maybe<AccessTokenDto>
   /** This is the mutation for registering a new user. */
   register: User
   updateManyUsers: UpdateManyResponse
@@ -136,9 +126,8 @@ export type MutationLoginArgs = {
   username: Scalars['String']['input']
 }
 
-export type MutationM8aAuthLoginArgs = {
-  code: Scalars['String']['input']
-  sessionStatus: Scalars['String']['input']
+export type MutationLoginWithTokenArgs = {
+  token: Scalars['String']['input']
 }
 
 export type MutationRegisterArgs = {
@@ -209,16 +198,10 @@ export type RegisterInputDto = {
 }
 
 /** Sort Directions */
-export enum SortDirection {
-  Asc = 'ASC',
-  Desc = 'DESC'
-}
+export type SortDirection = 'ASC' | 'DESC'
 
 /** Sort Nulls Options */
-export enum SortNulls {
-  NullsFirst = 'NULLS_FIRST',
-  NullsLast = 'NULLS_LAST'
-}
+export type SortNulls = 'NULLS_FIRST' | 'NULLS_LAST'
 
 export type StringFieldComparison = {
   eq?: InputMaybe<Scalars['String']['input']>
@@ -428,16 +411,15 @@ export type UserSort = {
   nulls?: InputMaybe<SortNulls>
 }
 
-export enum UserSortFields {
-  CreatedAt = 'createdAt',
-  Email = 'email',
-  FirstName = 'firstName',
-  Id = 'id',
-  LastName = 'lastName',
-  ModifiedAt = 'modifiedAt',
-  Status = 'status',
-  Username = 'username'
-}
+export type UserSortFields =
+  | 'createdAt'
+  | 'email'
+  | 'firstName'
+  | 'id'
+  | 'lastName'
+  | 'modifiedAt'
+  | 'status'
+  | 'username'
 
 export type UserUpdateFilter = {
   and?: InputMaybe<Array<UserUpdateFilter>>
@@ -451,44 +433,3 @@ export type UserUpdateFilter = {
   status?: InputMaybe<StringFieldComparison>
   username?: InputMaybe<StringFieldComparison>
 }
-
-export const HelloWorldDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'helloWorld' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [{ kind: 'Field', name: { kind: 'Name', value: 'helloWorld' } }]
-      }
-    }
-  ]
-} as unknown as DocumentNode<HelloWorldQuery, HelloWorldQueryVariables>
-export type HelloWorldQueryVariables = Exact<{ [key: string]: never }>
-
-export type HelloWorldQuery = { __typename?: 'Query'; helloWorld: string }
-
-export function useHelloWorldQuery(
-  variables: VueApolloQuery.VariablesParameter<HelloWorldQueryVariables> = {},
-  options: VueApolloQuery.OptionsParameter<HelloWorldQuery, HelloWorldQueryVariables> = {}
-) {
-  const useQuery = vueApolloUseQuery(HelloWorldDocument, variables, options)
-  return {
-    ...useQuery,
-    helloWorld: vueComputed(() => useQuery.result.value?.helloWorld)
-  }
-}
-
-export function useHelloWorldLazyQuery(
-  variables: VueApolloQuery.VariablesParameter<HelloWorldQueryVariables> = {},
-  options: VueApolloQuery.OptionsParameter<HelloWorldQuery, HelloWorldQueryVariables> = {}
-) {
-  return vueApolloUseLazyQuery(HelloWorldDocument, variables, options)
-}
-
-export type HelloWorldCompositionFunctionResult = VueApolloUseQueryReturn<
-  HelloWorldQuery,
-  HelloWorldQueryVariables
->

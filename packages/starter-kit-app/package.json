@@ -35,9 +35,11 @@
     "vue-router": "4.2.4"
   },
   "devDependencies": {
+    "@dreamonkey/graphql-codegen-near-operation-file": "0.1.1",
     "@dreamonkey/graphql-codegen-vue-apollo-plugin": "0.1.1",
     "@graphql-codegen/cli": "5.0.0",
     "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-operations": "4.0.1",
     "@graphql-tools/schema": "10.0.0",
     "@graphql-tools/utils": "10.0.4",
     "@graphql-typed-document-node/core": "3.2.0",

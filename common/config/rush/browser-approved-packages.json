@@ -27,6 +27,10 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@dreamonkey/graphql-codegen-near-operation-file",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@dreamonkey/graphql-codegen-vue-apollo-plugin",
       "allowedCategories": [ "apps" ]
     },
@@ -52,6 +56,10 @@
     },
     {
       "name": "@graphql-codegen/typescript",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript-operations",
       "allowedCategories": [ "apps" ]
     },
     {

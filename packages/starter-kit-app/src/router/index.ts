@@ -30,12 +30,12 @@ export default route(function (/* { store , ssrContext } */) {
   })
 
   Router.beforeEach(async (to, from) => {
-    if (
-      !LocalStorage.getItem('userId') &&
-      !LocalStorage.getItem('login-token') &&
-      !['/callback', '/login'].includes(to.path)
-    ) {
-      console.log('redirect to keycloak')
+    console.log('userId', LocalStorage.getItem('userId'))
+
+    if (!LocalStorage.getItem('mustLogin')) return
+
+    if (!LocalStorage.getItem('userId') && !['/callback'].includes(to.path)) {
+      console.log('redirecting to keycloak')
       window.location.replace(
         'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/auth?scope=openid&redirect_uri=https://zeus-dev.m8a.io/callback&client_id=zeus-dev&response_type=code'
       )
