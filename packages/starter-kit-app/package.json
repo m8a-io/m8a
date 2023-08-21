@@ -41,7 +41,7 @@
     "@graphql-codegen/typescript": "4.0.1",
     "@graphql-codegen/typescript-operations": "4.0.1",
     "@graphql-tools/schema": "10.0.0",
-    "@graphql-tools/utils": "10.0.4",
+    "@graphql-tools/utils": "10.0.5",
     "@graphql-typed-document-node/core": "3.2.0",
     "@m8a/eslint-config": "workspace:*",
     "@quasar/app-vite": "1.4.3",
