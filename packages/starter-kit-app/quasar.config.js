@@ -93,7 +93,7 @@ module.exports = configure(function (ctx) {
         })
       },
       // viteVuePluginOptions: {},
-      vitePlugins: ['@dreamonkey/graphql-codegen-near-operation-file']
+      vitePlugins: [['@dreamonkey/graphql-codegen-near-operation-file', {}]]
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
