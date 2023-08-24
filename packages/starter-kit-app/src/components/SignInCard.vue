@@ -48,7 +48,6 @@
   import { useDialogPluginComponent, useQuasar } from 'quasar'
   import { useMutation } from '@vue/apollo-composable'
   import { ref, defineComponent } from 'vue'
-  import { userLoggedInVar } from 'src/apollo/index'
 
   export default defineComponent({
     emits: [...useDialogPluginComponent.emits],
@@ -84,7 +83,7 @@
       //     } else {
       //       $q.localStorage.set('token', accessToken as string)
       //       $q.localStorage.set('userId', userId as string)
-      //       userLoggedInVar(true)
+      //       LocalStorage.set('isLoggedIn', true)
       //       $q.notify({
       //         color: 'teal',
       //         message: 'You are logged in.',

@@ -160,6 +160,8 @@ export type OffsetPaging = {
 export type Query = {
   __typename?: 'Query'
   findUserByIdCustom: User
+  /** Testing the cache service. */
+  getCachedToken?: Maybe<Scalars['String']['output']>
   helloWorld: Scalars['String']['output']
   helloWorld2: Scalars['String']['output']
   me: User

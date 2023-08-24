@@ -1,4 +1,4 @@
-import { Args, Context, Mutation, Resolver } from '@nestjs/graphql'
+import { Args, Context, Mutation, Resolver, Query } from '@nestjs/graphql'
 import { IContext } from '../base/interfaces/context.interface'
 import { AuthService } from './auth.service'
 import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
@@ -41,6 +41,26 @@ export class LoginResolver {
   })
   async loginWithToken (@Args('token') token: string, @Context() ctx: IContext): Promise<AccessTokenDTO> {
     console.log('logging in')
-    return await this.authService.loginWithToken(token, ctx)
+    try {
+      return await this.authService.loginWithToken(token, ctx)
+    } catch (e) {
+      console.log('error', e)
+      return { accessToken: '', userId: '' }
+    }
+  }
+
+  @Public()
+  @Query(() => String, {
+    nullable: true,
+    description: 'Testing the cache service.'
+  })
+  async getCachedToken (@Context() ctx: IContext): Promise<string> {
+    console.log('logging in')
+    try {
+      return await this.authService.getCachedToken(ctx)
+    } catch (e) {
+      console.log('error', e)
+      return ''
+    }
   }
 }

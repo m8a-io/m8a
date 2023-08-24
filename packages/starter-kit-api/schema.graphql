@@ -191,6 +191,10 @@ type AccessTokenDTO {
 }
 
 type Query {
+  """
+  Testing the cache service.
+  """
+  getCachedToken: String
   userAggregate(
     """
     Filter to find records to aggregate on

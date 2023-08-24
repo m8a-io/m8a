@@ -7,7 +7,7 @@
         <q-toolbar-title>m8a-Zeus-Dev</q-toolbar-title>
 
         <q-toggle color="light-blue" :icon="darkIcon" v-model="darkMode" />
-        <div v-if="userLoggedIn">
+        <div v-if="isLoggedIn">
           <UserAvatar />
           <UserAccountMenu />
         </div>
@@ -32,13 +32,11 @@
 
 <script lang="ts">
   import EssentialLink from 'components/EssentialLink.vue'
-  import { computed, defineComponent, ref, watch } from 'vue'
+  import { defineComponent, ref, watch } from 'vue'
   import { LocalStorage, useQuasar } from 'quasar'
-  import { useQuery } from '@vue/apollo-composable'
   import UserAvatar from 'components/UserAvatar.vue'
   import UserAccountMenu from 'components/UserAccountMenu.vue'
   import SignInCardVue from 'components/SignInCard.vue'
-  import { userLoggedIn_Query } from 'src/graphql/local/schema'
 
   const linksList = [
     {
@@ -96,9 +94,9 @@
 
       darkIcon.value = 'light_mode'
 
-      const { result } = useQuery(userLoggedIn_Query)
-      const userLoggedIn = computed(() => result.value?.userLoggedIn ?? false)
-      console.log('user is logged in', userLoggedIn.value)
+      const isLoggedIn = ref(false)
+      isLoggedIn.value = LocalStorage.getItem('isLoggedIn') || false
+      console.log('user is logged in', isLoggedIn.value)
 
       watch(darkMode, () => {
         $q.dark.toggle()
@@ -122,7 +120,7 @@
       }
 
       return {
-        userLoggedIn,
+        isLoggedIn,
         darkMode,
         darkIcon,
         essentialLinks: linksList,

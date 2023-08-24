@@ -19,7 +19,6 @@
   import { computed, defineComponent } from 'vue'
   import { useQuasar } from 'quasar'
   import { useMutation, useQuery } from '@vue/apollo-composable'
-  import { userLoggedInVar } from '../apollo/index'
   // import { Logout_Mutation, Me_Query } from '../graphql/gql-operations'
 
   export default defineComponent({
@@ -47,7 +46,7 @@
       //         message: 'You are logged out.',
       //         icon: 'logout'
       //       })
-      //       userLoggedInVar(false)
+      //       LocalStorage.set('isLoggedIn', true)
       //       $q.localStorage.remove('userId')
       //       $q.localStorage.remove('token')
       //     }

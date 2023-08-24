@@ -9,7 +9,7 @@ import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
 import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 import { HttpService } from '@nestjs/axios'
-import { catchError, firstValueFrom } from 'rxjs'
+import { catchError, firstValueFrom, of } from 'rxjs'
 
 @Injectable()
 export class AuthService {
@@ -67,7 +67,7 @@ export class AuthService {
       expiresIn: this.envConfig.REFRESH_TTL
     })
 
-    this.cacheService.set('refreshToken', foundUser.id, refreshToken)
+    await this.cacheService.set('refreshToken', foundUser.id, refreshToken)
 
     const ttlInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
 
@@ -116,13 +116,13 @@ export class AuthService {
         .post('https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/token', keyCloakData, axiosConfig)
         .pipe(
           catchError((error) => {
-            console.error(error.response.data)
-            throw new Error(`An error happened! error: ${error.response.data}`)
+            console.error('error from m8a Auth: ', error.response.data)
+            return of(error)
           })
         )
     )
 
-    console.log('data ', data)
+    console.log('data.refresh_token ', data.refresh_token)
     // if user is not found, return empty accessToken and userId
     if (data.refresh_token === undefined) {
       return { accessToken, userId }
@@ -131,11 +131,11 @@ export class AuthService {
     refreshToken = data.refresh_token
     userId = '1'
 
-    this.cacheService.set('refreshToken', userId, data.refreshToken)
+    await this.cacheService.set('refreshToken', userId, refreshToken)
     console.log('set cached refresh token')
 
     const ttlInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
-    console.log('ctx ', ctx)
+
     ctx.reply.setCookie('refreshToken', refreshToken, {
       expires: new Date(Date.now() + ttlInMillis),
       httpOnly: true,
@@ -229,7 +229,9 @@ export class AuthService {
     console.log('logged out user')
     return { accessToken, userId }
   }
-}
-function getTokens () {
-  throw new Error('Function not implemented.')
+
+  async getCachedToken (ctx): Promise<string> {
+    console.log('hit getCachedToken')
+    return (await this.cacheService.get('refreshToken', '1')) as string
+  }
 }

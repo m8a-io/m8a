@@ -3,8 +3,7 @@ import {
   ApolloClientOptions,
   createHttpLink,
   InMemoryCache,
-  from,
-  makeVar
+  from
   /* split */
 } from '@apollo/client/core'
 import type { BootFileParams } from '@quasar/app-vite'
@@ -21,7 +20,8 @@ interface DecodedToken {
   iat: number
 }
 
-export const userLoggedInVar = makeVar(false)
+// No longer needed but keeping for reference
+// export const userLoggedInVar = makeVar(false)
 
 const retryLink = new RetryLink({
   attempts: {
@@ -36,7 +36,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   const authLink = setContext(async () => {
     const token: string | null = await LocalStorage.getItem('token')
     if (token) {
-      userLoggedInVar(true)
+      LocalStorage.set('isLoggedIn', true)
     }
     return {
       headers: {
@@ -84,19 +84,19 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
     handleFetch: (newToken) => {
       // save new authentication token to state
       LocalStorage.set('token', newToken)
-      userLoggedInVar(true)
+      LocalStorage.set('isLoggedIn', true)
     },
     handleResponse: () => (response: { accessToken: string; userId: string }) => {
       if (!response) {
         return { accessToken: null }
       }
       LocalStorage.set('token', response.accessToken)
-      userLoggedInVar(true)
+      LocalStorage.set('isLoggedIn', true)
       return { accessToken: response.accessToken }
     },
     handleError: (error) => {
       console.error('Cannot refresh access token:', error)
-      userLoggedInVar(false)
+      LocalStorage.set('isLoggedIn', false)
       LocalStorage.remove('token')
       LocalStorage.remove('userId')
       console.log(options)
@@ -180,17 +180,18 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
     <ApolloClientOptions<unknown>>{
       link: from([refreshLink, authLink, retryLink, graphQLLink, errorLink]),
       cache: new InMemoryCache({
-        typePolicies: {
-          Query: {
-            fields: {
-              userLoggedIn: {
-                read() {
-                  return userLoggedInVar()
-                }
-              }
-            }
-          }
-        }
+        // Below not needed, just left for reference
+        // typePolicies: {
+        //   Query: {
+        //     fields: {
+        //       userLoggedIn: {
+        //         read() {
+        //           return userLoggedInVar()
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
       })
     },
 

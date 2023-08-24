@@ -21,7 +21,7 @@
   import { defineComponent, ref } from 'vue'
   import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useRoute } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
   import { useLoginWithTokenMutation } from './login.graphql'
 
   export default defineComponent({
@@ -31,9 +31,8 @@
       const gqlError = ref('')
       const $q = useQuasar()
       const route = useRoute()
+      const router = useRouter()
       const { loginWithToken, loading, onError } = useLoginWithTokenMutation()
-
-      $q.localStorage.set('mustLogin', true)
 
       const metaData = {
         title: 'Login - m8a-Zeus-Dev'
@@ -51,9 +50,10 @@
           console.log('AccessToken', accessToken)
           if (accessToken !== '') {
             $q.loading.hide()
-            $q.localStorage.set('mustLogin', false)
-            $q.localStorage.set('accessToken', accessToken)
+            $q.localStorage.set('isLoggedIn', true)
+            $q.localStorage.set('token', accessToken)
             $q.localStorage.set('userId', userId)
+            router.push('/')
           }
           return data
         } catch (_error) {
