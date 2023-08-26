@@ -1,6 +1,7 @@
 import { prop } from "@typegoose/typegoose";
 import * as nest from "@nestjs/common";
-import { InjectModel } from "./typegoose.decorators";
+import { InjectModel, InjectConnection } from "./typegoose.decorators";
+import { DEFAULT_DB_CONNECTION_NAME } from "./typegoose.constants";
 
 jest.mock("@nestjs/common", () => ({
   Inject: jest.fn(),
@@ -16,5 +17,14 @@ describe("InjectModel", () => {
     InjectModel(MockUser);
 
     expect(nest.Inject).toHaveBeenCalledWith("MockUserModel");
+  });
+});
+
+
+describe("InjectConnection", () => {
+  it("should inject the connection", () => {
+    InjectConnection();
+
+    expect(nest.Inject).toHaveBeenCalledWith(DEFAULT_DB_CONNECTION_NAME);
   });
 });
