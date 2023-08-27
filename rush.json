@@ -321,18 +321,6 @@
       "packageName": "@m8a/cli",
       "projectFolder": "packages/cli",
       "reviewCategory": "apps",
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@m8a/zeus-app",
-      "projectFolder": "apps/zeus-app",
-      "reviewCategory": "apps",
-      "shouldPublish": false
-    },
-    {
-      "packageName": "@m8a/zeus-api",
-      "projectFolder": "apps/zeus-api",
-      "reviewCategory": "apps",
       "shouldPublish": false
     },
     // {
@@ -357,13 +345,13 @@
       "packageName": "@m8a/eslint-config",
       "projectFolder": "deps/eslint",
       "reviewCategory": "libraries",
-      "shouldPublish": true
+      "shouldPublish": false
     },
     {
       "packageName": "@m8a/logger",
       "projectFolder": "packages/logger",
       "reviewCategory": "libraries",
-      "shouldPublish": true
+      "shouldPublish": false
     }
 
     //   /**

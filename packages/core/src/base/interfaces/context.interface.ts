@@ -25,5 +25,5 @@ export interface IFastifyRequest extends FastifyRequest {
 
 export interface IContext {
   req: IFastifyRequest
-  res: IFastifyReply
+  reply: IFastifyReply
 }

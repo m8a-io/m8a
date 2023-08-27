@@ -12,14 +12,14 @@ const { configure } = require('quasar/wrappers')
 
 module.exports = configure(function (ctx) {
   return {
-    eslint: {
-      // fix: true,
-      // include = [],
-      // exclude = [],
-      // rawOptions = {},
-      warnings: true,
-      errors: true
-    },
+    // eslint: {
+    //   // fix: true,
+    //   // include = [],
+    //   // exclude = [],
+    //   // rawOptions = {},
+    //   warnings: true,
+    //   errors: true
+    // },
 
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -41,8 +41,7 @@ module.exports = configure(function (ctx) {
       // 'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-
-      'roboto-font', // optional, you are not bound to it
+      // 'roboto-font', // optional, you are not bound to it
       'material-icons' // optional, you are not bound to it
     ],
 
@@ -53,12 +52,12 @@ module.exports = configure(function (ctx) {
         node: 'node16'
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
 
-      // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
+      rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
       // publicPath: '/',
       // analyze: true,
@@ -92,18 +91,17 @@ module.exports = configure(function (ctx) {
             }
           }
         })
-      }
+      },
       // viteVuePluginOptions: {},
-
-      // vitePlugins: [
-      //   [ 'package-name', { ..options.. } ]
-      // ]
+      vitePlugins: [['@dreamonkey/graphql-codegen-near-operation-file', {}]]
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
       // https: true
-      open: true // opens browser window automatically
+      open: false, // opens browser window automatically
+      strictPort: true,
+      hmr: { clientPort: 443 }
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -121,7 +119,7 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['LocalStorage', 'Loading', 'Dialog']
+      plugins: ['LocalStorage', 'Loading', 'Dialog', 'Meta']
     },
 
     // animations: 'all', // --- includes all animations
@@ -153,7 +151,7 @@ module.exports = configure(function (ctx) {
       // manualStoreHydration: true,
       // manualPostHydrationTrigger: true,
 
-      prodPort: 3000, // The default port that the production server should use
+      prodPort: 80, // The default port that the production server should use
       // (gets superseded if process.env.PORT is specified at runtime)
 
       middlewares: [

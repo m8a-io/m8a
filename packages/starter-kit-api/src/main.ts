@@ -37,19 +37,19 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: 'http://localhost:9000'
+    origin: /\.m8a\.io$/
   })
 
   app.useGlobalPipes(new ValidationPipe())
 
   const port = config.PORT || 3000
-  await app.listen(port, () => {
+  await app.listen(port, '0.0.0.0', () => {
     if (dev && logger instanceof DevLoggerService) {
-      logger.success(`Server listening at http://localhost:${port}/${globalPrefix}`)
+      logger.success(`Server listening at http://0.0.0.0:${port}/${globalPrefix}`)
       logger.success(`Running in ${config.NODE_ENV} mode`)
       logger.success('The database in use is: ' + config.DB_NAME)
     } else {
-      logger.log(`Server listening at http://localhost:${port}/${globalPrefix}`)
+      logger.log(`Server listening at http://0.0.0.0:${port}/${globalPrefix}`)
     }
   })
 }

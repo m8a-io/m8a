@@ -140,6 +140,22 @@ export class CatsController {
 }
 ```
 
+### Added in 11.1.0
+
+You can now inject a connection inside of your services, when needed.
+
+```typescript
+import { Injectable } from '@nestjs/common';
+import { InjectConnection } from '@m8a/nestjs-typegoose';
+import { Connection } from 'mongoose';
+
+@Injectable()
+export class CatsService {
+  constructor(@InjectConnection() private connection: Connection) {}
+}
+
+```
+
 ## Requirements
 
 1.  @typegoose/typegoose +9
