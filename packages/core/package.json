@@ -70,7 +70,7 @@
     "nest-typed-config": "~2.7.0",
     "passport": "0.6.0",
     "passport-jwt": "4.0.1",
-    "redis": "4.6.7"
+    "redis": "4.6.8"
   },
   "devDependencies": {
     "@apollo/gateway": "2.5.3",
