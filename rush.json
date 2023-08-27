@@ -321,7 +321,7 @@
       "packageName": "@m8a/cli",
       "projectFolder": "packages/cli",
       "reviewCategory": "apps",
-      "shouldPublish": true
+      "shouldPublish": false
     },
     // {
     //   "packageName": "@m8a/cli-local",
@@ -345,13 +345,13 @@
       "packageName": "@m8a/eslint-config",
       "projectFolder": "deps/eslint",
       "reviewCategory": "libraries",
-      "shouldPublish": true
+      "shouldPublish": false
     },
     {
       "packageName": "@m8a/logger",
       "projectFolder": "packages/logger",
       "reviewCategory": "libraries",
-      "shouldPublish": true
+      "shouldPublish": false
     }
 
     //   /**

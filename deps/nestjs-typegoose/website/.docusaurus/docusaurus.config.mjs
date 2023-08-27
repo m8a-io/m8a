@@ -186,11 +186,11 @@ export default {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: '/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/sidebars.js',
+          sidebarPath: '/home/dev/m8a/deps/nestjs-typegoose/website/sidebars.js',
           editUrl: 'https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website'
         },
         theme: {
-          customCss: '/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/src/css/custom.css'
+          customCss: '/home/dev/m8a/deps/nestjs-typegoose/website/src/css/custom.css'
         }
       }
     ]

@@ -8,14 +8,14 @@
     "0480b142": [836],
     "16c91d09": [519],
     "1be78505": [532, 972],
-    "1f1a89eb": [755],
-    "3a4a95f6": [78],
+    "240e7a45": [483],
     "4020c8f9": [888],
     "6476eba6": [827],
     "935f2afb": [53],
     "99f6fac0": [11],
     "c4de80f8": [943],
     "c4f5d8e4": [532, 195],
+    "eb54544b": [196],
     "fb7b7bcb": [730],
     "fbe93038": [432],
     "styles": [179, 195, 303, 514, 918, 532]
@@ -24,158 +24,158 @@
     "11": {
       "js": [
         {
-          "file": "assets/js/99f6fac0.ff0deb69.js",
-          "hash": "b7c8600204d443f6",
-          "publicPath": "/nestjs-typegoose/assets/js/99f6fac0.ff0deb69.js"
+          "file": "assets/js/99f6fac0.4e423bcc.js",
+          "hash": "b8dbd3802defd321",
+          "publicPath": "/assets/js/99f6fac0.4e423bcc.js"
         }
       ]
     },
     "53": {
       "js": [
         {
-          "file": "assets/js/935f2afb.b5dc8b78.js",
-          "hash": "fdf3ef14ded87c13",
-          "publicPath": "/nestjs-typegoose/assets/js/935f2afb.b5dc8b78.js"
-        }
-      ]
-    },
-    "78": {
-      "js": [
-        {
-          "file": "assets/js/3a4a95f6.7fa60f4c.js",
-          "hash": "707124c55d3b2dd7",
-          "publicPath": "/nestjs-typegoose/assets/js/3a4a95f6.7fa60f4c.js"
+          "file": "assets/js/935f2afb.dd88b7b3.js",
+          "hash": "7c65bdb2020ee401",
+          "publicPath": "/assets/js/935f2afb.dd88b7b3.js"
         }
       ]
     },
     "179": {
       "js": [
         {
-          "file": "assets/js/main.46b0d0bb.js",
-          "hash": "3fc07b5c18e2fec4",
-          "publicPath": "/nestjs-typegoose/assets/js/main.46b0d0bb.js"
+          "file": "assets/js/main.ffc7b142.js",
+          "hash": "621f54b3ec289fe5",
+          "publicPath": "/assets/js/main.ffc7b142.js"
         }
       ]
     },
     "195": {
       "js": [
         {
-          "file": "assets/js/c4f5d8e4.a7b43a0c.js",
-          "hash": "4431125874709014",
-          "publicPath": "/nestjs-typegoose/assets/js/c4f5d8e4.a7b43a0c.js"
+          "file": "assets/js/c4f5d8e4.08db0541.js",
+          "hash": "0857ab5b076373ee",
+          "publicPath": "/assets/js/c4f5d8e4.08db0541.js"
+        }
+      ]
+    },
+    "196": {
+      "js": [
+        {
+          "file": "assets/js/eb54544b.9fa5345a.js",
+          "hash": "49e5ae8dc51ca4d6",
+          "publicPath": "/assets/js/eb54544b.9fa5345a.js"
         }
       ]
     },
     "303": {
       "js": [
         {
-          "file": "assets/js/runtime~main.45fbf431.js",
-          "hash": "c5f67b608f8e553e",
-          "publicPath": "/nestjs-typegoose/assets/js/runtime~main.45fbf431.js"
+          "file": "assets/js/runtime~main.d9ed7087.js",
+          "hash": "43618f964abcd008",
+          "publicPath": "/assets/js/runtime~main.d9ed7087.js"
         }
       ]
     },
     "432": {
       "js": [
         {
-          "file": "assets/js/fbe93038.5933f0b7.js",
-          "hash": "4da6110ac0f78f22",
-          "publicPath": "/nestjs-typegoose/assets/js/fbe93038.5933f0b7.js"
+          "file": "assets/js/fbe93038.f36bea2c.js",
+          "hash": "bc99258d8b7409bd",
+          "publicPath": "/assets/js/fbe93038.f36bea2c.js"
+        }
+      ]
+    },
+    "483": {
+      "js": [
+        {
+          "file": "assets/js/240e7a45.c0f18f97.js",
+          "hash": "4ef24170463af71f",
+          "publicPath": "/assets/js/240e7a45.c0f18f97.js"
         }
       ]
     },
     "519": {
       "js": [
         {
-          "file": "assets/js/16c91d09.b40195bd.js",
-          "hash": "e3131d4fb1f21fd1",
-          "publicPath": "/nestjs-typegoose/assets/js/16c91d09.b40195bd.js"
+          "file": "assets/js/16c91d09.8b77e465.js",
+          "hash": "22c7cb69c8771c93",
+          "publicPath": "/assets/js/16c91d09.8b77e465.js"
         }
       ]
     },
     "532": {
       "css": [
         {
-          "file": "assets/css/styles.7d8eddeb.css",
-          "hash": "ca451a19f91ad83f",
-          "publicPath": "/nestjs-typegoose/assets/css/styles.7d8eddeb.css"
+          "file": "assets/css/styles.4d9402f3.css",
+          "hash": "9ee505321dc6a55a",
+          "publicPath": "/assets/css/styles.4d9402f3.css"
         }
       ]
     },
     "730": {
       "js": [
         {
-          "file": "assets/js/fb7b7bcb.b014cfc0.js",
-          "hash": "d1937a4654b44d08",
-          "publicPath": "/nestjs-typegoose/assets/js/fb7b7bcb.b014cfc0.js"
-        }
-      ]
-    },
-    "755": {
-      "js": [
-        {
-          "file": "assets/js/1f1a89eb.47324f48.js",
-          "hash": "0d0ed0ce0361cd4d",
-          "publicPath": "/nestjs-typegoose/assets/js/1f1a89eb.47324f48.js"
+          "file": "assets/js/fb7b7bcb.fadcf511.js",
+          "hash": "91d3ce2794f1d52d",
+          "publicPath": "/assets/js/fb7b7bcb.fadcf511.js"
         }
       ]
     },
     "827": {
       "js": [
         {
-          "file": "assets/js/6476eba6.a624665e.js",
-          "hash": "34defa144ea843fe",
-          "publicPath": "/nestjs-typegoose/assets/js/6476eba6.a624665e.js"
+          "file": "assets/js/6476eba6.7a6a2eec.js",
+          "hash": "982e18f8d5db96de",
+          "publicPath": "/assets/js/6476eba6.7a6a2eec.js"
         }
       ]
     },
     "836": {
       "js": [
         {
-          "file": "assets/js/0480b142.0e41926d.js",
-          "hash": "13fd9a30d32d5be4",
-          "publicPath": "/nestjs-typegoose/assets/js/0480b142.0e41926d.js"
+          "file": "assets/js/0480b142.76d3aeb9.js",
+          "hash": "068ea746948e253a",
+          "publicPath": "/assets/js/0480b142.76d3aeb9.js"
         }
       ]
     },
     "888": {
       "js": [
         {
-          "file": "assets/js/4020c8f9.18b04c06.js",
-          "hash": "ef7346bcdcb217d1",
-          "publicPath": "/nestjs-typegoose/assets/js/4020c8f9.18b04c06.js"
+          "file": "assets/js/4020c8f9.6a489422.js",
+          "hash": "82451beb5beba8ca",
+          "publicPath": "/assets/js/4020c8f9.6a489422.js"
         }
       ]
     },
     "918": {
       "js": [
         {
-          "file": "assets/js/17896441.640a80dc.js",
-          "hash": "7263a167ee1707dc",
-          "publicPath": "/nestjs-typegoose/assets/js/17896441.640a80dc.js"
+          "file": "assets/js/17896441.1cc7a792.js",
+          "hash": "d74808f01cebc79e",
+          "publicPath": "/assets/js/17896441.1cc7a792.js"
         }
       ]
     },
     "943": {
       "js": [
         {
-          "file": "assets/js/c4de80f8.3f42651a.js",
-          "hash": "acceae67c9998f42",
-          "publicPath": "/nestjs-typegoose/assets/js/c4de80f8.3f42651a.js"
+          "file": "assets/js/c4de80f8.7c754f26.js",
+          "hash": "565ae7e10be7b2e2",
+          "publicPath": "/assets/js/c4de80f8.7c754f26.js"
         }
       ]
     },
     "972": {
       "js": [
         {
-          "file": "assets/js/972.8c90e867.js",
-          "hash": "41fd05990512b9d0",
-          "publicPath": "/nestjs-typegoose/assets/js/972.8c90e867.js"
+          "file": "assets/js/972.3ccd22ab.js",
+          "hash": "dfc015f711231110",
+          "publicPath": "/assets/js/972.3ccd22ab.js"
         },
         {
-          "file": "assets/js/1be78505.40c86e5b.js",
-          "hash": "83677a36027be3ac",
-          "publicPath": "/nestjs-typegoose/assets/js/1be78505.40c86e5b.js"
+          "file": "assets/js/1be78505.cd6d62fb.js",
+          "hash": "1da86d994272aa21",
+          "publicPath": "/assets/js/1be78505.cd6d62fb.js"
         }
       ]
     }
