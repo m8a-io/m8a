@@ -65,6 +65,7 @@ jspm_packages/
 
 # build files
 dist/
+.tsbuildinfo
 
 # Rush temporary files
 common/deploy/
