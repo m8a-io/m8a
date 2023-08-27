@@ -79,7 +79,7 @@
     "@rushstack/eslint-config": "3.3.3",
     "@types/cache-manager": "4.0.2",
     "@types/cache-manager-redis-store": "2.0.1",
-    "@types/jest": "29.5.3",
+    "@types/jest": "29.5.4",
     "@types/node": "18.17.11",
     "@types/passport-jwt": "3.0.9",
     "dataloader": "2.2.2",
