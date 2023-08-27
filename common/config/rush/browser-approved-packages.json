@@ -27,6 +27,14 @@
       "allowedCategories": [ "libraries", "production" ]
     },
     {
+      "name": "@dreamonkey/graphql-codegen-near-operation-file",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@dreamonkey/graphql-codegen-vue-apollo-plugin",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@envelop/core",
       "allowedCategories": [ "libraries" ]
     },
@@ -37,6 +45,34 @@
     {
       "name": "@golevelup/nestjs-modules",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@graphql-codegen/cli",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-codegen/client-preset",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-codegen/typescript-operations",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-tools/schema",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-tools/utils",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-typed-document-node/core",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-yoga/nestjs",
@@ -68,6 +104,10 @@
     },
     {
       "name": "@m8a/nestjs-typegoose",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@nestjs/axios",
       "allowedCategories": [ "libraries" ]
     },
     {
@@ -149,6 +189,14 @@
     {
       "name": "@rushstack/eslint-config",
       "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
+      "name": "@swc/cli",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@swc/core",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@typegoose/typegoose",
@@ -315,6 +363,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "got",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "graphql",
       "allowedCategories": [ "apps", "libraries" ]
     },
@@ -323,11 +375,19 @@
       "allowedCategories": [ "apps" ]
     },
     {
+      "name": "graphql-code-generator",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "graphql-subscriptions",
       "allowedCategories": [ "libraries" ]
     },
     {
       "name": "graphql-tag",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "graphql-tools",
       "allowedCategories": [ "apps" ]
     },
     {
@@ -433,6 +493,10 @@
     {
       "name": "supertest",
       "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "swc-loader",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "ts-jest",

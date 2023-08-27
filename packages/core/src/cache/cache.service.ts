@@ -6,7 +6,7 @@ import { Cache } from 'cache-manager'
 export class CacheService {
   constructor (@Inject(CACHE_MANAGER) private readonly cache: Cache) {}
 
-  private ttl = 60 * 30
+  private ttl = 0
 
   async get (type: string, key: string): Promise<unknown | null> {
     const cacheKey = this.getKey(type, key)
@@ -17,7 +17,7 @@ export class CacheService {
       }
       return value
     } catch (e) {
-      console.log('Oops')
+      console.log('Oops. Getting something from the cache failed.', e)
       throw e
     }
   }
@@ -26,8 +26,9 @@ export class CacheService {
     const cacheKey = this.getKey(type, key)
     try {
       await this.cache.set(cacheKey, value, ttl)
+      console.log('cache saved', cacheKey, value, ttl)
     } catch (e) {
-      console.log('Oops')
+      console.log('Oops. Setting something to the cache failed.', e)
       throw e
     }
   }
@@ -38,7 +39,7 @@ export class CacheService {
   }
 
   private getKey (type: string, initialKey: string): string {
-    return `${type}:${initialKey}`
+    return `zeus.m8a.io:${type}:${initialKey}`
   }
 
   // async resetCache (): Promise<void> {

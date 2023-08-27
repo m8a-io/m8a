@@ -10,13 +10,16 @@ import { FastifyRequest, FastifyReply } from 'fastify'
       driver: YogaDriver,
       useFactory: () => {
         return {
-          autoSchemaFile: true,
+          autoSchemaFile: { path: 'schema.graphql' },
           path: process.env.GQL_PATH,
           // jit: 5,
-          context: (request: FastifyRequest, reply: FastifyReply) => ({
-            req: request,
-            res: reply
-          }),
+          // context: (request: FastifyRequest, reply: FastifyReply) => {
+          //   console.log('response ', reply)
+          //   return {
+          //   req: request,
+          //   res: reply
+          // }
+          // },
           subscription: {
             context: (request, reply) => ({ req: request, res: reply })
           }

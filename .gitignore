@@ -65,6 +65,7 @@ jspm_packages/
 
 # build files
 dist/
+.tsbuildinfo
 
 # Rush temporary files
 common/deploy/
@@ -75,3 +76,9 @@ common/config/rush/.npmrc-publish
 
 # Heft temporary files
 .heft
+
+# pnpm-store files
+.pnpm-store/
+
+# GraphQL Code Generator
+src/**/*.graphql.ts

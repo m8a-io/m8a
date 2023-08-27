@@ -1,9 +1,0 @@
-/dist
-/node_modules
-.eslintrc.js
-/.husky
-/.rush
-/.github
-/common
-/website
-/example

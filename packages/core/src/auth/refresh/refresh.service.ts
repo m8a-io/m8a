@@ -43,25 +43,25 @@ export class RefreshService {
       expiresIn: this.envConfig.ACCESS_TTL
     })
 
-    const newRefreshToken = await this.jwtService.signAsync(payload, {
-      secret: this.envConfig.REFRESH_SECRET,
-      expiresIn: this.envConfig.REFRESH_TTL
-    })
+    // const newRefreshToken = await this.jwtService.signAsync(payload, {
+    //   secret: this.envConfig.REFRESH_SECRET,
+    //   expiresIn: this.envConfig.REFRESH_TTL
+    // })
 
-    await this.cacheService.set('refreshToken', validToken.sub, newRefreshToken)
+    // await this.cacheService.set('refreshToken', validToken.sub, newRefreshToken)
 
-    const timeInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
+    // const timeInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
 
-    reply.setCookie('refreshToken', newRefreshToken, {
-      expires: new Date(Date.now() + timeInMillis),
-      httpOnly: true,
-      path: '/',
-      sameSite: 'none',
-      secure: true
-    })
+    // reply.setCookie('refreshToken', newRefreshToken, {
+    //   expires: new Date(Date.now() + timeInMillis),
+    //   httpOnly: true,
+    //   path: '/',
+    //   sameSite: 'none',
+    //   secure: true
+    // })
     console.log(
-      'refreshed again via refresh, new refreshToken',
-      newRefreshToken ? newRefreshToken.slice(-8) : ''
+      'refreshed again via refresh, new refreshToken' /*,
+      newRefreshToken ? newRefreshToken.slice(-8) : '' */
     )
     return { accessToken: newAccessToken, userId: validToken.sub }
   }
