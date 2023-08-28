@@ -1,5 +1,4 @@
 import { Command, CommandRunner, Option } from 'nest-commander'
-import { CheckForService } from '../utils/checkFor.service'
 import { DevLoggerService } from '@m8a/logger'
 import { RunnerService } from '../utils/runner.service'
 
@@ -9,11 +8,7 @@ import { RunnerService } from '../utils/runner.service'
     'The "dev" command (with one of the app types option) will start a local development server for that app type (i.e. "app" or "api" or "cli").'
 })
 export class DevCommand extends CommandRunner {
-  constructor (
-    private readonly logService: DevLoggerService,
-    private readonly runnerService: RunnerService,
-    private readonly checkFor: CheckForService
-  ) {
+  constructor (private readonly logService: DevLoggerService, private readonly runnerService: RunnerService) {
     super()
   }
 
@@ -40,7 +35,7 @@ export class DevCommand extends CommandRunner {
     this.logService.addLine()
     this.logService.log(`Moving to the ${appType} folder`)
     process.chdir('/')
-    process.chdir(`home/dev/m8a/packages/starter-kit-${appType}`)
+    process.chdir(`home/dev/m8a/starter-kits/${appType}`)
     this.logService.log(`Starting your ${appType.toUpperCase()} dev environment....`)
     this.runnerService.spawnSync('pnpm', ['start:dev'])
   }
@@ -53,7 +48,7 @@ export class DevCommand extends CommandRunner {
     this.logService.addLine()
     this.logService.log(`Moving to the ${appType} folder`)
     process.chdir('/')
-    process.chdir(`home/dev/m8a/packages/starter-kit-${appType}`)
+    process.chdir(`home/dev/m8a/starter-kits/${appType}`)
     this.logService.log(`Starting your ${appType.toUpperCase()} dev environment....`)
     this.runnerService.spawnSync('quasar', ['dev'])
   }
