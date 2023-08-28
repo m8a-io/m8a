@@ -1,6 +1,6 @@
 ## ADR3 - Architecture Decision Record for the m8a Platform
 
-#### **m8a.io - The Data Entity**
+#### **m8a.io - The Data Entities**
 
 Authored by Scott Molinari on 28 August 2023 
 
