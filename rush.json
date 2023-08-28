@@ -301,55 +301,43 @@
   "projects": [
     {
       "packageName": "@m8a/nestjs-typegoose",
-      "projectFolder": "deps/nestjs-typegoose",
+      "projectFolder": "libs/nestjs-typegoose",
       "reviewCategory": "libraries",
       "shouldPublish": true
     },
     {
       "packageName": "@m8a/starter-kit-api",
-      "projectFolder": "packages/starter-kit-api",
+      "projectFolder": "starter-kits/api",
       "reviewCategory": "apps",
       "shouldPublish": false
     },
     {
       "packageName": "@m8a/starter-kit-app",
-      "projectFolder": "packages/starter-kit-app",
+      "projectFolder": "starter-kits/app",
       "reviewCategory": "apps",
       "shouldPublish": false
     },
     {
       "packageName": "@m8a/cli",
-      "projectFolder": "packages/cli",
+      "projectFolder": "apps/cli",
       "reviewCategory": "apps",
       "shouldPublish": false
     },
-    // {
-    //   "packageName": "@m8a/cli-local",
-    //   "projectFolder": "packages/cli-local",
-    //   "reviewCategory": "libraries",
-    //   "shouldPublish": false
-    // },
-    // {
-    //   "packageName": "@m8a/cli-lib",
-    //   "projectFolder": "packages/cli-lib",
-    //   "reviewCategory": "libraries",
-    //   "shouldPublish": false
-    // },
     {
       "packageName": "@m8a/core",
-      "projectFolder": "packages/core",
+      "projectFolder": "libs/core",
       "reviewCategory": "libraries",
       "shouldPublish": true
     },
     {
       "packageName": "@m8a/eslint-config",
-      "projectFolder": "deps/eslint",
+      "projectFolder": "libs/eslint",
       "reviewCategory": "libraries",
       "shouldPublish": false
     },
     {
       "packageName": "@m8a/logger",
-      "projectFolder": "packages/logger",
+      "projectFolder": "libs/logger",
       "reviewCategory": "libraries",
       "shouldPublish": false
     }
