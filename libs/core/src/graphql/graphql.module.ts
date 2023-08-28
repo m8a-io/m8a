@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common'
 import { GraphqlService } from './graphql.service'
 import { GraphQLModule as GQLModule } from '@nestjs/graphql'
 import { YogaDriver, YogaDriverConfig } from '@graphql-yoga/nestjs'
-import { FastifyRequest, FastifyReply } from 'fastify'
 
 @Module({
   imports: [
@@ -10,7 +9,6 @@ import { FastifyRequest, FastifyReply } from 'fastify'
       driver: YogaDriver,
       useFactory: () => {
         return {
-          autoSchemaFile: { path: 'schema.graphql' },
           path: process.env.GQL_PATH,
           // jit: 5,
           // context: (request: FastifyRequest, reply: FastifyReply) => {
