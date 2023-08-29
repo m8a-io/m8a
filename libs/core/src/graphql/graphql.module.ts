@@ -10,6 +10,7 @@ import { YogaDriver, YogaDriverConfig } from '@graphql-yoga/nestjs'
       useFactory: () => {
         return {
           path: process.env.GQL_PATH,
+          autoSchemaFile: true,
           // jit: 5,
           // context: (request: FastifyRequest, reply: FastifyReply) => {
           //   console.log('response ', reply)

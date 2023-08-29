@@ -27,13 +27,15 @@ export class BaseDTO {
 
   @FilterableField({
     description:
-      'A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was modified.'
+      'A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was modified.'
   })
   public modifiedAt?: Date
 
   @FilterableField({
     description:
-      'A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was created.'
+      'A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was created.'
   })
   public createdAt?: Date
+
+  public m8aAuthId?: string
 }
