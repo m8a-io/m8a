@@ -54,10 +54,10 @@ export class LoginResolver {
     nullable: true,
     description: 'Testing the cache service.'
   })
-  async getCachedToken (@Context() ctx: IContext): Promise<string> {
+  async getCachedToken (): Promise<string> {
     console.log('logging in')
     try {
-      return await this.authService.getCachedToken(ctx)
+      return await this.authService.getCachedToken()
     } catch (e) {
       console.log('error', e)
       return ''

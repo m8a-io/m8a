@@ -12,6 +12,8 @@
   "license": "MIT",
   "author": "Scott Molinari <scott.molinari@m8a.io>",
   "scripts": {
+    "_phase:build": "pnpm prebuild && tsc --project tsconfig.build.json",
+    "_phase:test": "jest --detectOpenHandles",
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && tsc --project tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
@@ -20,7 +22,7 @@
     "start:debug": "nest start --builder swc --debug --watch",
     "start:dev": "nest start --builder swc --watch",
     "start:prod": "node dist/main",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",

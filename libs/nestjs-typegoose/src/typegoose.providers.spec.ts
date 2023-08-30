@@ -49,7 +49,16 @@ describe('createTypegooseProviders', () => {
   })
 
   describe('setModelForClass', () => {
-    let mockSetModel, MockTypegooseClass1, mockConnection, schemaOptions, provider
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let mockSetModel: jest.SpyInstance<
+        Typegoose.types.ReturnModelType<Typegoose.types.AnyParamConstructor<any>, unknown>,
+        [cl: Typegoose.types.AnyParamConstructor<any>, options?: Typegoose.types.IModelOptions],
+        any
+      >,
+      MockTypegooseClass1,
+      mockConnection: any,
+      schemaOptions: { collection: string },
+      provider
     beforeEach(() => {
       mockSetModel = jest
         .spyOn(Typegoose, 'getModelForClass')

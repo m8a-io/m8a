@@ -21,6 +21,8 @@
   "main": "dist/index.js",
   "types": "dist",
   "scripts": {
+    "_phase:build": "pnpm prebuild && tsc --project tsconfig.build.json",
+    "_phase:test": "jest --detectOpenHandles",
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && tsc --project tsconfig.build.json",
     "build:watch": "pnpm prebuild && tsc --project tsconfig.build.json --watch",

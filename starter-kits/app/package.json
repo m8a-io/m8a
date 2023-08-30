@@ -12,6 +12,8 @@
   "license": "MIT",
   "author": "Scott Molinari <scott.molinari@m8a.io>",
   "scripts": {
+    "_phase:build": "quasar build",
+    "_phase:test": "echo \"No test specified\" && exit 0",
     "b-loader": "tsc src/graphql/utils/operations-from-schema.ts",
     "build": "quasar build",
     "codegen": "graphql-codegen --config codegen.ts",
