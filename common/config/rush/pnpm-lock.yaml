@@ -88,7 +88,7 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.11)(jest@29.6.4)(typescript@4.9.5)
+        version: 29.1.1(jest@29.6.4)(typescript@4.9.5)
       ts-loader:
         specifier: 9.4.4
         version: 9.4.4(typescript@4.9.5)(webpack@5.88.2)
@@ -263,7 +263,7 @@ importers:
         version: 7.8.1
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.11)(jest@29.6.4)(typescript@4.9.5)
+        version: 29.1.1(jest@29.6.4)(typescript@4.9.5)
       ts-loader:
         specifier: 9.4.4
         version: 9.4.4(typescript@4.9.5)(webpack@5.88.2)
@@ -364,6 +364,9 @@ importers:
       '@rushstack/eslint-config':
         specifier: 3.3.3
         version: 3.3.3(eslint@8.48.0)(typescript@4.9.5)
+      '@types/jest':
+        specifier: 29.5.4
+        version: 29.5.4
       '@types/node':
         specifier: 18.17.11
         version: 18.17.11
@@ -373,6 +376,9 @@ importers:
       fastify:
         specifier: 4.21.0
         version: 4.21.0
+      jest:
+        specifier: 29.6.4
+        version: 29.6.4(@types/node@18.17.11)
       reflect-metadata:
         specifier: 0.1.13
         version: 0.1.13
@@ -448,7 +454,7 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.11)(jest@29.6.4)(typescript@4.9.5)
+        version: 29.1.1(jest@29.6.4)(typescript@4.9.5)
       typescript:
         specifier: 4.9.5
         version: 4.9.5
@@ -536,7 +542,7 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.11)(jest@29.6.4)(typescript@4.9.5)
+        version: 29.1.1(jest@29.6.4)(typescript@4.9.5)
       ts-json-schema-generator:
         specifier: 1.2.0
         version: 1.2.0
@@ -13647,7 +13653,7 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /ts-jest@29.1.1(@babel/core@7.22.11)(jest@29.6.4)(typescript@4.9.5):
+  /ts-jest@29.1.1(jest@29.6.4)(typescript@4.9.5):
     resolution: {integrity: sha512-D6xjnnbP17cC85nliwGiL+tpoKN0StpgE0TeOjXQTU6MVCfsB4v7aW05CgQ/1OywGb0x/oy9hHFnN+sczTiRaA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -13668,7 +13674,6 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.22.11
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 29.6.4(@types/node@18.17.11)(ts-node@10.9.1)
