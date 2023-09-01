@@ -14,6 +14,8 @@
     "m8a": "./dist/main.js"
   },
   "scripts": {
+    "_phase:build": "pnpm prebuild && swc src -d dist --config-file .build.swcrc",
+    "_phase:test": "jest",
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && swc src -d dist --config-file .build.swcrc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

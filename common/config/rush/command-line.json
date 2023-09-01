@@ -30,7 +30,7 @@
     {
       "commandKind": "phased",
       "name": "build",
-      "summary": "Build and test all projects.",
+      "summary": "Build all projects.",
       "phases": ["_phase:build"],
       "enableParallelism": true,
       "incremental": true,
