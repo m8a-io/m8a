@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import * as argon2 from 'argon2'
-import { HashService } from '../hash.service'
+import { HashService } from './hash.service'
 
 describe('HashService', () => {
   let service: HashService
@@ -18,23 +18,23 @@ describe('HashService', () => {
     jest.restoreAllMocks()
   })
 
-  describe('getSalt', () => {
+  describe('getSaltFromPasswordHash', () => {
     const passWithSalt = 'thisIsSomePassWord:whsW!sinITl6NrthJPVsew=='
     it('should get the salt from the password and salt hash combined string', async () => {
-      const salt = await service.getSalt(passWithSalt)
+      const salt = await service.getSaltFromPasswordHash(passWithSalt)
       expect(salt).toEqual('whsW!sinITl6NrthJPVsew==')
     })
 
     it('should throw an error, if the password with salt string is malformed', async () => {
-      const passWithSaltIncorrect = 'someIncorrectString'
-      await expect(service.getSalt(passWithSaltIncorrect)).rejects.toEqual(
+      const passWithSaltIncorrect = 'someIncorrectString' // missing the colon
+      await expect(service.getSaltFromPasswordHash(passWithSaltIncorrect)).rejects.toEqual(
         Error('Password with Salt string is malformed.')
       )
     })
 
     it('should throw an error, if the password with salt string is malformed: hash is too small', async () => {
-      const passWithSaltTooSmall = 'thisIsSomePassWord:wKhsW!si=='
-      await expect(service.getSalt(passWithSaltTooSmall)).rejects.toEqual(
+      const passWithSaltTooSmall = 'shortPassword:shortSalt'
+      await expect(service.getSaltFromPasswordHash(passWithSaltTooSmall)).rejects.toEqual(
         Error('Salt is too small. Must be at least 24 characters long.')
       )
     })
@@ -82,13 +82,13 @@ describe('HashService', () => {
     })
 
     it('should throw an error, if the password with salt string is malformed', async () => {
-      const passWithSaltIncorrect = 'someIncorrectString'
+      const passWithSaltIncorrect = 'someIncorrectString' // missing the colon
       await expect(service.hashPassword(passWithSaltIncorrect)).rejects.toEqual(
         Error('Password with Salt string is malformed.')
       )
     })
 
-    it('should throw an error, if the password with salt string is malformed: hash is too small', async () => {
+    it('should throw an error, if the password with salt string is malformed: salt hash is too small', async () => {
       const passWithSaltTooSmall = 'thisIsSomePassWord:wKhsW!si=='
       await expect(service.hashPassword(passWithSaltTooSmall)).rejects.toEqual(
         Error('Salt is too small. Must be at least 24 characters long.')

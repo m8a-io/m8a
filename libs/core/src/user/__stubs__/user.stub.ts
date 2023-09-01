@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer'
-import { UserEntity } from '../../user.entity'
+import { UserEntity } from '../user.entity'
 
 const user = {
   _id: 'acacacacacacacacacac',

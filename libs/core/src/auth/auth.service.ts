@@ -53,7 +53,7 @@ export class AuthService {
 
     const foundUser = user[0]
     const passWithSalt = this.hashService.getPasswordWithSalt(password, foundUser.salt)
-    const valid = await this.hashService.verifyPassword(passWithSalt, passWithSalt)
+    const valid = await this.hashService.verifyPassword(passWithSalt, foundUser.passwordHash)
 
     if (!valid) {
       return { accessToken, userId }

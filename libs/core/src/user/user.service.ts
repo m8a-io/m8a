@@ -34,7 +34,7 @@ export class UserService extends AssemblerQueryService<UserDTO, UserEntity> {
    */
   public async register (registerInput: RegisterInputDTO): Promise<UserEntity> {
     const passWithSalt = await this.hashService.getPasswordWithSalt(registerInput.password)
-    const salt = await this.hashService.getSalt(passWithSalt)
+    const salt = await this.hashService.getSaltFromPasswordHash(passWithSalt)
     const hashedPassword = await this.hashService.hashPassword(passWithSalt)
 
     const result = await this.userService.query({
@@ -77,7 +77,7 @@ export class UserService extends AssemblerQueryService<UserDTO, UserEntity> {
       lastName: registerInput.lastName,
       email: registerInput.email,
       username: registerInput.email,
-      password: hashedPassword,
+      passwordHash: hashedPassword,
       salt,
       status: 'Registered', // TODO: need proper email verification process
       createdBy: sysUser._id,

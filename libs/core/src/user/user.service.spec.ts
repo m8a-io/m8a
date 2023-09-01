@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { getQueryServiceToken, QueryService } from '@ptc-org/nestjs-query-core'
-import { UserAssembler, UserService } from '../user.service'
-import { UserEntity } from '../user.entity'
-import { HashService } from '../hash.service'
+import { UserAssembler, UserService } from './user.service'
+import { UserEntity } from './user.entity'
+import { HashService } from './hash.service'
 
 describe('UserService', () => {
   let userService: UserService

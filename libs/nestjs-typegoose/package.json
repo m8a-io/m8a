@@ -20,7 +20,7 @@
     "coverage": "yarn run test:cov && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --fix ./",
     "prepare": "npm run build",
-    "test": "jest --detectOpenHandles",
+    "test": "jest  --verbose",
     "test:ci": "jest",
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json --detectOpenHandles",

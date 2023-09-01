@@ -17,7 +17,7 @@ export class UserDTO extends BaseDTO {
   })
   public username!: string
 
-  public password!: string
+  public passwordHash!: string
 
   @FilterableField({ description: "The user's email address" })
   public email!: string
