@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@m8a/nestjs-typegoose':
     specifier: latest
-    version: 11.1.0(@nestjs/common@10.2.4)(@nestjs/core@10.2.4)(@typegoose/typegoose@11.4.1)(mongoose@7.5.0)
+    version: 11.1.0(@nestjs/common@10.2.4)(@nestjs/core@10.2.4)(@typegoose/typegoose@11.5.0)(mongoose@7.5.0)
   '@nestjs/common':
     specifier: 10.2.4
     version: 10.2.4(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -18,8 +18,8 @@ dependencies:
     specifier: 10.2.4
     version: 10.2.4(@nestjs/common@10.2.4)(@nestjs/core@10.2.4)
   '@typegoose/typegoose':
-    specifier: 11.4.1
-    version: 11.4.1(mongoose@7.5.0)
+    specifier: 11.5.0
+    version: 11.5.0(mongoose@7.5.0)
   class-validator:
     specifier: 0.14.0
     version: 0.14.0
@@ -1742,7 +1742,7 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
 
-  /@m8a/nestjs-typegoose@11.1.0(@nestjs/common@10.2.4)(@nestjs/core@10.2.4)(@typegoose/typegoose@11.4.1)(mongoose@7.5.0):
+  /@m8a/nestjs-typegoose@11.1.0(@nestjs/common@10.2.4)(@nestjs/core@10.2.4)(@typegoose/typegoose@11.5.0)(mongoose@7.5.0):
     resolution: {integrity: sha512-2zvMKJNLGLC9ifL8FBKyHp4h7Wr+PrbP9mNl2gYXXPNv39QF2I+TE1LnqgBaZeMa/TUhexOTbEYOjQMOteOiUQ==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -1753,7 +1753,7 @@ packages:
     dependencies:
       '@nestjs/common': 10.2.4(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.2.4(@nestjs/common@10.2.4)(@nestjs/platform-express@10.2.4)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@typegoose/typegoose': 11.4.1(mongoose@7.5.0)
+      '@typegoose/typegoose': 11.5.0(mongoose@7.5.0)
       is-class: 0.0.9
       mongoose: 7.5.0
     dev: false
@@ -1997,11 +1997,11 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@typegoose/typegoose@11.4.1(mongoose@7.5.0):
-    resolution: {integrity: sha512-mOMEUBaxnSYtnGWAMsduh1+4MeJHpYN2+rhZ5rHq9mKRT8Ix3nsR0QWEnFIIqTnksL0Yt3Ww7Qj8IFzWhoIyoQ==}
+  /@typegoose/typegoose@11.5.0(mongoose@7.5.0):
+    resolution: {integrity: sha512-+ca//+8hUzOdK7mJTxHwqMiQjarVGCkF5x073ZScXfWOw35kPOzvvQwBEqFiVMhKW5txkiswsALwriJxhYcO2A==}
     engines: {node: '>=14.17.0'}
     peerDependencies:
-      mongoose: ~7.4.0
+      mongoose: ~7.5.0
     dependencies:
       lodash: 4.17.21
       loglevel: 1.8.1
@@ -2305,7 +2305,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.8
+      semver: 7.5.4
       tsutils: 3.21.0(typescript@4.9.5)
       typescript: 4.9.5
     transitivePeerDependencies:
@@ -2326,7 +2326,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@4.9.5)
       eslint: 8.26.0
       eslint-scope: 5.1.1
-      semver: 7.3.8
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6303,7 +6303,7 @@ packages:
       methods: 1.1.2
       mime: 2.6.0
       qs: 6.11.0
-      semver: 7.3.8
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
     dev: true
