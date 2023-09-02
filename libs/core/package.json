@@ -38,7 +38,7 @@
     "*.ts": "eslint --fix"
   },
   "dependencies": {
-    "@apollo/server": "4.9.2",
+    "@apollo/server": "4.9.3",
     "@casl/ability": "~6.5.0",
     "@envelop/core": "4.0.0",
     "@graphql-yoga/nestjs": "2.0.4",
@@ -75,7 +75,7 @@
     "redis": "4.6.8"
   },
   "devDependencies": {
-    "@apollo/gateway": "2.5.3",
+    "@apollo/gateway": "2.5.4",
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/testing": "10.2.4",
     "@rushstack/eslint-config": "3.3.3",
