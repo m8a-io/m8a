@@ -46,7 +46,7 @@
     "@graphql-tools/utils": "10.0.5",
     "@graphql-typed-document-node/core": "3.2.0",
     "@m8a/eslint-config": "workspace:*",
-    "@quasar/app-vite": "1.4.6",
+    "@quasar/app-vite": "1.4.7",
     "@rushstack/eslint-config": "3.3.3",
     "@types/node": "18.17.12",
     "@typescript-eslint/eslint-plugin": "5.62.0",
