@@ -107,6 +107,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@microsoft/rush-lib",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@nestjs/axios",
       "allowedCategories": [ "libraries" ]
     },
@@ -212,7 +216,7 @@
     },
     {
       "name": "@types/cross-spawn",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@types/inquirer",
@@ -311,6 +315,10 @@
       "allowedCategories": [ "apps", "libraries" ]
     },
     {
+      "name": "dag-map",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "dataloader",
       "allowedCategories": [ "libraries" ]
     },
@@ -356,6 +364,10 @@
     },
     {
       "name": "eslint-plugin-vue",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "execa",
       "allowedCategories": [ "apps" ]
     },
     {
@@ -464,6 +476,10 @@
     },
     {
       "name": "quasar",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "read-package-json",
       "allowedCategories": [ "apps" ]
     },
     {

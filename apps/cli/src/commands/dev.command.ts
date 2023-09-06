@@ -1,55 +1,168 @@
 import { Command, CommandRunner, Option } from 'nest-commander'
 import { DevLoggerService } from '@m8a/logger'
 import { RunnerService } from '../utils/runner.service'
+import * as rushLib from '@microsoft/rush-lib'
+import * as path from 'path'
+import * as fs from 'fs/promises'
+import Dag from 'dag-map'
+import { RushConfigurationProject } from '@microsoft/rush-lib'
+import { WatchManager } from '../utils/watch/watch-manager'
+import { WatchProject } from '../utils/watch/watch-project'
 
 @Command({
   name: 'dev',
-  description:
-    'The "dev" command (with one of the app types option) will start a local development server for that app type (i.e. "app" or "api" or "cli").'
+  description: 'The "dev" command will start dev builds with watchers for development of the app given.'
 })
 export class DevCommand extends CommandRunner {
-  constructor (private readonly logService: DevLoggerService, private readonly runnerService: RunnerService) {
+  constructor (
+    private readonly logService: DevLoggerService,
+    private readonly runnerService: RunnerService,
+    private readonly watchManager: WatchManager
+  ) {
     super()
   }
 
-  async run (passedParams: string[]): Promise<void> {
-    if (passedParams.length > 1) {
-      this.logService.log('You can only give the "dev" command one option at a time.')
+  args: string[] = []
+  option = ''
+
+  async run (passedParams: string[], options): Promise<void> {
+    if (Object.keys(options).length !== 0 && passedParams.length >= 1) {
+      this.logService.error(
+        'If you use the --and-deps or --just-deps flags, you may only add one app name as an option.'
+      )
+      process.exit(1)
     }
-    const appType = passedParams[0].toLowerCase()
-    if (appType === 'api') {
-      this.runApiDev(appType)
-    } else if (appType === 'app') {
-      this.runAppDev(appType)
-    } else {
-      this.logService.log(`You've given an unknown option to the "dev" command. ${appType}?`)
+    if (passedParams.length >= 1) this.args = passedParams
+    if (Object.keys(options).length !== 0) this.option = Object.keys(options)[0]
+    try {
+      this.runDev()
+    } catch {
+      this.logService.log(`You've given an unknown project to the "dev" command. ${passedParams[0]}?`)
       this.logService.log('Please try again!')
+      process.exit(1)
     }
   }
 
   @Option({
-    flags: 'api',
-    description: 'This will start the api (backend) dev server.'
+    flags: '--and-deps <app>',
+    description: 'This flag indicates the dependencies of your app will also be built and watched.'
   })
-  private runApiDev (appType: string): void {
-    this.logService.addLine()
-    this.logService.log(`Moving to the ${appType} folder`)
-    process.chdir('/')
-    process.chdir(`home/dev/m8a/starter-kits/${appType}`)
-    this.logService.log(`Starting your ${appType.toUpperCase()} dev environment....`)
-    this.runnerService.spawnSync('pnpm', ['start:dev'])
+  parseAndDeps (app: string) {
+    this.args.push(app)
+    return app
   }
 
   @Option({
-    flags: 'app',
-    description: 'This will start the app (frontend) dev server.'
+    flags: '--just-deps <app>',
+    description: 'This flag indicates the dependencies of your app will also be built and watched.'
   })
-  private runAppDev (appType: string): void {
+  parseJustDeps (app: string) {
+    this.args.push(app)
+    return app
+  }
+
+  private async runDev (): Promise<void> {
     this.logService.addLine()
-    this.logService.log(`Moving to the ${appType} folder`)
-    process.chdir('/')
-    process.chdir(`home/dev/m8a/starter-kits/${appType}`)
-    this.logService.log(`Starting your ${appType.toUpperCase()} dev environment....`)
-    this.runnerService.spawnSync('quasar', ['dev'])
+    this.logService.log('Starting your dev environment....')
+    const projects = this._gatherProjects()
+
+    // TODO: remove: this.logService.log('projects: ', projects)
+
+    const dag = new Dag()
+    for (const [name, project] of projects.entries()) {
+      const deps = project.localDependencyProjects.map((p) => p.packageName).filter((p) => projects.has(p))
+      dag.add(name, project, [], deps)
+    }
+
+    const inOrder = []
+    const watchProjects = []
+    dag.each((name, project: RushConfigurationProject) => {
+      const projectDependencies = new Array(...project.dependencyProjects)
+      // TODO remove: this.logService.log(`${name}: ${projectDependencies}`)
+      inOrder.push(project)
+      if (projectDependencies.length === 0) {
+        watchProjects.push(new WatchProject(name, this.logService))
+      } else {
+        const directProjectDependency = new WatchProject(
+          projectDependencies[0].unscopedTempProjectName,
+          this.logService
+        )
+        watchProjects.push(new WatchProject(name, this.logService, [directProjectDependency]))
+      }
+    })
+    this.watchManager.initialize(watchProjects)
+    this.logService.log('Watch Manager initialized...')
+    // this.logService.log('watchProjects: ', watchProjects)
+    for (const project of inOrder) {
+      await this._startBuilding(
+        project,
+        watchProjects.find((p) => p.name === project.packageName)
+      )
+    }
+    this.logService.addLine()
+    this.logService.log('All watchers started!')
+  }
+
+  private async _startBuilding (
+    project: { packageName: string; projectFolder: string },
+    watchProject: WatchProject
+  ) {
+    this.logService.log(`Starting to build ${project.packageName}`)
+    const pathToPackageJson = path.join(project.projectFolder, 'package.json')
+    const packageJson = JSON.parse(await fs.readFile(pathToPackageJson, 'utf-8'))
+    const devCommand = packageJson.scripts.dev
+    if (!devCommand) {
+      this.logService.warn(`${project.packageName} has no dev command`)
+      return Promise.resolve()
+    }
+
+    const command = ['dev']
+
+    if (devCommand.includes('tsc')) {
+      command.push('--preserveWatchOutput')
+    }
+    // we know that pnpm will be installed globally in the m8a workspace
+    this.runnerService.spawnDevCommandAsync('pnpm', command, project, watchProject)
+  }
+
+  private _gatherProjects () {
+    const rushConfig = rushLib.RushConfiguration.loadFromDefaultLocation({
+      startingFolder: process.cwd()
+    })
+
+    const projects = new Map()
+
+    const recurseProjectDeps = (project: rushLib.RushConfigurationProject) => {
+      for (const dep of project.dependencyProjects) {
+        if (projects.has(dep.packageName)) {
+          continue
+        }
+
+        projects.set(dep.packageName, dep)
+        recurseProjectDeps(dep)
+      }
+    }
+    // possible for package aliases later
+    const aliases = {}
+
+    for (const arg of this.args) {
+      const actualArg = aliases[arg] || arg
+      const project = rushConfig.findProjectByShorthandName(actualArg)
+      if (!project) {
+        this.logService.error(`Could not find project ${arg}`)
+        process.exit(1)
+      }
+      this.logService.log('this.option: ', this.option)
+      if (this.option !== 'justDeps') {
+        this.logService.log('justDeps was hit')
+        projects.set(project.packageName, project)
+      }
+
+      if (this.option === 'andDeps' || this.option === 'justDeps') {
+        this.logService.log('recursing project deps')
+        recurseProjectDeps(project)
+      }
+    }
+    return projects
   }
 }
