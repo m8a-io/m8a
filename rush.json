@@ -309,13 +309,15 @@
       "packageName": "@m8a/starter-kit-api",
       "projectFolder": "starter-kits/api",
       "reviewCategory": "apps",
-      "shouldPublish": false
+      "shouldPublish": false,
+      "tags": ["dev-server"]
     },
     {
       "packageName": "@m8a/starter-kit-app",
       "projectFolder": "starter-kits/app",
       "reviewCategory": "apps",
-      "shouldPublish": false
+      "shouldPublish": false,
+      "tags": ["dev-server"]
     },
     {
       "packageName": "@m8a/cli",

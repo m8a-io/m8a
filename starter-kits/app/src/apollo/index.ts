@@ -30,7 +30,7 @@ const retryLink = new RetryLink({
 })
 
 // set network connectivity flat to true, to assume connectivity is working
-LocalStorage.set('networkOk', true)
+LocalStorage.set('networkOk', false)
 
 export function getClientOptions(options?: Partial<BootFileParams<unknown>>): ApolloClientOptions<unknown> {
   const authLink = setContext(async () => {

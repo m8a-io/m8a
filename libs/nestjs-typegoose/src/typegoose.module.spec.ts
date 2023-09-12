@@ -2,6 +2,7 @@ import { prop } from '@typegoose/typegoose'
 import { TypegooseModule } from './typegoose.module'
 import { TypegooseCoreModule as CoreModule } from './typegoose-core.module'
 import * as createProviders from './typegoose.providers'
+import { TypegooseClass, TypegooseClassWithOptions } from './typegoose-class.interface'
 
 class MockTask {
   @prop()
@@ -92,7 +93,7 @@ describe('TypegooseModule', () => {
   })
 
   describe('forFeature', () => {
-    let models, convertedModels
+    let models: (TypegooseClass | TypegooseClassWithOptions)[], convertedModels: string[]
     beforeEach(() => {
       models = [
         MockTask,
@@ -109,7 +110,8 @@ describe('TypegooseModule', () => {
 
       jest.spyOn(createProviders, 'convertToTypegooseClassWithOptions').mockImplementation(() => {
         count += 1
-        return convertedModels[count]
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        return convertedModels[count] as any
       })
 
       jest

@@ -1,0 +1,42 @@
+// app global css in SCSS form
+.body--light {
+  .q-drawer__content {
+    background-color: #b9dbf8;
+  }
+  .q-page {
+    background-color: #d2e6f6;
+  }
+}
+
+.body--dark {
+  .q-layout__section--marginal {
+    color: #9fe478;
+  }
+  .q-page-container {
+    color: #8cc0ca;
+  }
+
+  .q-item--dark {
+    color: #9fe478;
+  }
+
+  .q-item__label--caption {
+    color: #8cc0ca;
+  }
+  .q-btn__content {
+    color: #a3e1ee;
+  }
+}
+
+@font-face {
+  font-family: notoSans;
+  src: url(/fonts/NotoSans-Regular.woff);
+}
+
+.noto-font {
+  font-family: 'notoSans';
+}
+
+body {
+  font-family: 'NotoSans';
+}

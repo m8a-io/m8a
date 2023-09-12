@@ -6,6 +6,8 @@ import { UserAssembler, UserService } from './user.service'
 import { UserResolver } from './user.resolver'
 import { UserDTO, UserInputDTO, UserUpdateDTO } from '.'
 import { HashService } from './hash.service'
+import { EventEmitterModule } from '@nestjs/event-emitter'
+import { UserHelloWorldListener } from './user-listener'
 
 @Module({
   imports: [
@@ -21,9 +23,10 @@ import { HashService } from './hash.service'
           UpdateDTOClass: UserUpdateDTO
         }
       ]
-    })
+    }),
+    EventEmitterModule.forRoot()
   ],
-  providers: [UserService, UserResolver, HashService],
+  providers: [UserService, UserResolver, HashService, UserHelloWorldListener],
   exports: [UserService, HashService]
 })
 export class UserModule {}

@@ -13,7 +13,7 @@ export class HashService {
       salt = randomBytes(16).toString('base64')
     }
     if (salt.split('').length < 24) {
-      throw new Error('Salt is too small. Must be at least 24 characters long.')
+      throw new Error('Salt is too small. Must be at least 24 characters long. Test 1')
     }
     return [password, salt].join(':')
   }
@@ -23,7 +23,7 @@ export class HashService {
    * @param passwordWithSalt
    * @returns the salt value
    */
-  public async getSalt (passwordWithSalt: string): Promise<string> {
+  public async getSaltFromPasswordHash (passwordWithSalt: string): Promise<string> {
     this.checkPassWithSalt(passwordWithSalt)
     return Promise.resolve(passwordWithSalt.split(':')[1])
   }
@@ -70,7 +70,7 @@ export class HashService {
     }
     const salt = passwordWithSalt.split(':')[1]
     if (salt.split('').length < 24) {
-      throw new Error('Salt is too small. Must be at least 24 characters long.')
+      throw new Error('Salt is too small. Must be at least 24 characters long. Test 2')
     }
   }
 }

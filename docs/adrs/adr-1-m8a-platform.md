@@ -1,8 +1,6 @@
 ## ADR1 - Architecture Decision Record for the m8a Platform
 
-#### Title
-
-**m8a.io - Why build another PaaS?**
+#### **m8a.io - Why build another PaaS?**
 
 Authored by Scott Molinari on 15 January 2023
 
