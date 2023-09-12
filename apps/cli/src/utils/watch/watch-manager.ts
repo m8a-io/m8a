@@ -5,11 +5,14 @@ import { WatchProject, WatchState } from './watch-project'
 import { DevLoggerService } from '@m8a/logger'
 import * as path from 'path'
 import * as fs from 'fs/promises'
+import * as rushLib from '@microsoft/rush-lib'
+import Dag from 'dag-map'
 import { RunnerService } from '../runner.service'
 import { RushConfigurationProject } from '@microsoft/rush-lib'
 import { ChildProcess } from 'child_process'
 import { WriteBuildEvent } from './write-build.event'
 import kill = require('tree-kill')
+import { EventEmitter2 } from '@nestjs/event-emitter'
 
 @Injectable()
 export class WatchManager {
@@ -23,21 +26,9 @@ export class WatchManager {
 
   public constructor (
     private readonly logService: DevLoggerService,
-    private readonly runnerService: RunnerService
+    private readonly runnerService: RunnerService,
+    private readonly eventEmitter: EventEmitter2
   ) {}
-
-  /**
-   *
-   * @param projects
-   */
-  public initialize (projects: WatchProject[]): void {
-    this.projects.length = 0
-    this.projects.push(...projects)
-
-    for (const project of projects) {
-      this._calculateCriticalPathLength(project)
-    }
-  }
 
   /**
    * Starts the dev commands which watch the project builds of dependent projects
@@ -78,7 +69,6 @@ export class WatchManager {
     )
 
     if (this.devRunner) {
-      // console.log('PID of the dev server app: ', this.devRunner.pid)
       this.devServerActivated = true
       this.activeProject = undefined
     }
@@ -89,14 +79,13 @@ export class WatchManager {
    */
   public killDevServerApp () {
     if (this.devRunner) {
-      // console.log('killed dev server')
       kill(this.devRunner.pid, 'SIGKILL')
       this.devServerActivated = false
     }
   }
 
   /**
-   * Controls the output of the dependency projects' dev commands
+   * Controls the output of the dependent projects' dev commands
    * @param payload
    * @type WriteBuildEvent
    */
@@ -127,7 +116,7 @@ export class WatchManager {
   }
 
   /**
-   *
+   * External control to mark a project as successfully built
    * @param project
    */
   public markSucceeded (project: WatchProject): void {
@@ -141,6 +130,10 @@ export class WatchManager {
     }
   }
 
+  /**
+   * External control to mark a project as unsuccessfully built i.e. an error occurred
+   * @param project
+   */
   public markFailed (project: WatchProject): void {
     project.setState(WatchState.Failed)
 
@@ -159,6 +152,98 @@ export class WatchManager {
     this._printCompletedAndActivateSomething()
   }
 
+  /**
+   * Sets up projects to be ready for building
+   * @param selectedProjects
+   * @param option
+   * @returns a set of projects ready for building
+   */
+  public setupProjects (selectedProjects: string[], option: string) {
+    const rushConfig = rushLib.RushConfiguration.loadFromDefaultLocation({
+      startingFolder: process.cwd()
+    })
+
+    const projects = new Map()
+
+    const recurseProjectDeps = (project: rushLib.RushConfigurationProject) => {
+      for (const dep of project.dependencyProjects) {
+        if (projects.has(dep.packageName)) {
+          continue
+        }
+
+        projects.set(dep.packageName, dep)
+        recurseProjectDeps(dep)
+      }
+    }
+
+    for (const proj of selectedProjects) {
+      const project = rushConfig.findProjectByShorthandName(proj)
+      if (!project) {
+        this.logService.error(`Could not find project ${proj}`)
+        process.exit(1)
+      }
+      if (option !== 'justDeps') {
+        projects.set(project.packageName, project)
+      }
+
+      if (option === 'andDeps' || option === 'justDeps') {
+        recurseProjectDeps(project)
+      }
+    }
+
+    const inOrder = this._organizeProjects(projects)
+
+    return inOrder
+  }
+
+  /**
+   * Organizes projects so that they are in order of dependency
+   * @param projects
+   * @returns
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private _organizeProjects (projects: Map<any, any>): RushConfigurationProject[] {
+    // set up projects to be watched
+    const dag = new Dag()
+    const inOrder = []
+    const watchProjects = []
+
+    for (const [name, project] of projects.entries()) {
+      const deps = project.localDependencyProjects.map((p) => p.packageName).filter((p) => projects.has(p))
+      dag.add(name, project, [], deps)
+    }
+
+    dag.each((name, project: RushConfigurationProject) => {
+      inOrder.push(project)
+      if (watchProjects.length === 0) {
+        watchProjects.push(new WatchProject(name, this.eventEmitter))
+      } else {
+        const directDependency = new Array(watchProjects[watchProjects.length - 1])
+        watchProjects.push(new WatchProject(name, this.eventEmitter, directDependency))
+      }
+    })
+
+    this._initialize(watchProjects)
+
+    return inOrder
+  }
+
+  /**
+   *  Initializes the dependency projects to be watched
+   * @param projects
+   */
+  private _initialize (projects: WatchProject[]): void {
+    this.projects.length = 0
+    this.projects.push(...projects)
+
+    for (const project of projects) {
+      this._calculateCriticalPathLength(project)
+    }
+  }
+
+  /**
+   * Sets the dev server project
+   */
   private _setDevServerProject (projects: RushConfigurationProject[]): void {
     for (const project of projects) {
       // we have two projects given with dev-servers - error out
@@ -179,6 +264,9 @@ export class WatchManager {
     }
   }
 
+  /**
+   * Sets up the dependency projects to be watched
+   */
   private _setUpDepProjects (): void {
     if (this.devServerProject) {
       const index = this.projects.findIndex((p) => p.name === this.devServerProject.name)
@@ -192,6 +280,11 @@ export class WatchManager {
     }
   }
 
+  /**
+   * Finds if there is a dev command and if there is, runs it
+   * @param project
+   * @param watchProject
+   */
   private async _startBuildingDepProjects (
     project: { packageName: string; projectFolder: string },
     watchProject: WatchProject
@@ -270,14 +363,18 @@ export class WatchManager {
       if (candidate !== undefined) {
         this._activateProject(candidate)
       }
+
       // All dependency projects are built and watching, so we can start the dev server app
-      // console.log('we can start the dev server app at printCompleted: ', this._canStartDevServerApp(), this._canStartDevServerApp(), this.devRunner ? this.devRunner.pid : 'no dev runner')
       if (this._canStartDevServerApp() && !this.devRunner) {
         this.startDevServerApp()
       }
     }
   }
 
+  /**
+   * Calculates the critical path length of a project
+   * @param project
+   */
   private _calculateCriticalPathLength (project: WatchProject): void {
     if (project.criticalPathLength >= 0) {
       return // already calculated
@@ -297,8 +394,11 @@ export class WatchManager {
     project.criticalPathLength = max
   }
 
+  /**
+   * Activates a project
+   * @param project
+   */
   private _activateProject (project: WatchProject): void {
-    // console.log('we should stop the dev server at _activateProject: ', this.devServerActivated && this.activeProject === undefined, 'project: ', project.name)
     if (this.devServerActivated || this.activeProject === undefined) {
       this.killDevServerApp()
     }
@@ -322,15 +422,19 @@ export class WatchManager {
       default:
         throw new Error('Invalid state')
       }
+
       this.activeProject = undefined
+
       // All dependency projects are built and watching, so we can start the dev server app
-      // console.log('we can start the dev server app at clearActiveProject: ', this._canStartDevServerApp(), this.devRunner ? this.devRunner.pid : 'no dev runner')
       if (this._canStartDevServerApp()) {
         this.startDevServerApp()
       }
     }
   }
 
+  /**
+   * Checks if the dev server app can be started
+   */
   private _canStartDevServerApp (): boolean {
     return !this.projects.some((p) => p.state !== WatchState.Succeeded)
   }

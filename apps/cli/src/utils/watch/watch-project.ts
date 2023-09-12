@@ -1,6 +1,8 @@
 // Credit for this code goes to RushStack: lightwatch-plugin
 import { EventEmitter2 } from '@nestjs/event-emitter'
-
+/**
+ * The state of a project in the watch mode.
+ */
 export enum WatchState {
   /** No output received yet */
   Start = 'Start',
@@ -9,6 +11,9 @@ export enum WatchState {
   Failed = 'Failed'
 }
 
+/**
+ * Represents a project in the watch mode.
+ */
 export class WatchProject {
   private _state: WatchState = WatchState.Start
   public readonly name: string = ''
@@ -34,6 +39,12 @@ export class WatchProject {
    */
   public criticalPathLength = -1
 
+  /**
+   * WatchProject constructor
+   * @param name
+   * @param eventEmitter
+   * @param dependencies
+   */
   public constructor (name: string, eventEmitter: EventEmitter2, dependencies?: WatchProject[]) {
     if (dependencies) {
       for (const dependency of dependencies) {
@@ -51,6 +62,9 @@ export class WatchProject {
     return this._state
   }
 
+  /**
+   * A project is "reported" if and only if it has no buffered lines.
+   */
   public get reported (): boolean {
     return this.bufferedLines.length === 0
   }
@@ -62,6 +76,11 @@ export class WatchProject {
     return this._live
   }
 
+  /**
+   * Set state
+   * @param state
+   * @returns
+   */
   public setState (state: WatchState): void {
     if (this._state === state) {
       return
@@ -86,6 +105,9 @@ export class WatchProject {
     }
   }
 
+  /**
+   * Mark the consumer projects dead recursively
+   */
   private _markDeadRecursive (): void {
     for (const consumer of this.consumers) {
       if (consumer._live) {
@@ -95,6 +117,9 @@ export class WatchProject {
     }
   }
 
+  /**
+   * Mark the consumer projects live recursively
+   */
   private _markLiveRecursive (): void {
     for (const consumer of this.consumers) {
       consumer._live = true
@@ -104,6 +129,9 @@ export class WatchProject {
     }
   }
 
+  /**
+   * Print any buffered lines. Also send the `build.done` event if the build is complete.
+   */
   public printBufferedLines (): void {
     if (this._state === WatchState.Start) {
       this.setState(WatchState.Building)
@@ -112,7 +140,7 @@ export class WatchProject {
     if (this.bufferedLines.length > 0) {
       for (const line of this.bufferedLines) {
         if (line !== '') {
-          console.log(line)
+          console.log(line) // allow console.log as we need raw logging
         }
       }
       if (this._includesString(this.bufferedLines, 'Found 0 errors.')) {
@@ -123,6 +151,12 @@ export class WatchProject {
     }
   }
 
+  /**
+   * Checks if the array includes a string
+   * @param arr
+   * @param str
+   * @returns boolean
+   */
   private _includesString (arr: string[], str: string): boolean {
     return arr.some((s) => s.includes(str))
   }
