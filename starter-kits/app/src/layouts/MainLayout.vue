@@ -115,7 +115,7 @@
       if (!LocalStorage.getItem('networkOk')) {
         console.log('network ok', LocalStorage.getItem('networkOk'))
         $q.dialog({
-          message: 'Network has no connection to the server.'
+          message: 'Application has no connection to the API server. Please check back again later.'
         })
       }
 

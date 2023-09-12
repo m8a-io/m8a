@@ -16,7 +16,7 @@ export class DevLoggerService extends ConsoleLogger {
 
   public log (...args: any[]): void {
     let msg = this.format.apply(this.format, args)
-    msg = `${white(this.getFullPrefix())} ${this.sep} ${msg}`
+    msg = `${white(this._getFullPrefix())} ${this.sep} ${msg}`
     console.log(msg)
     // super.log.apply(this, msg);
   }
@@ -24,45 +24,55 @@ export class DevLoggerService extends ConsoleLogger {
   public error (...args: any[]) {
     if (args[0] instanceof Error) args[0] = args[0].message.trim()
     const msg = this.format.apply(this.format, args)
-    console.error(red(this.getFullPrefix()), this.sep, red('ERROR ⚠️ : '), msg)
+    console.error(red(this._getFullPrefix()), this.sep, red('ERROR ⚠️ : '), msg)
   }
 
   public warn (...args: any[]) {
     const msg = this.format.apply(this.format, args)
-    console.error(yellow(this.getFullPrefix()), this.sep, yellow('WARNING 🤔 :'), msg)
+    console.error(yellow(this._getFullPrefix()), this.sep, yellow('WARNING 🤔 :'), msg)
   }
 
   public success (...args: any[]) {
     const msg = this.format.apply(this.format, args)
-    console.error(green(this.getFullPrefix()), this.sep, green('SUCCESS ✔️ : '), msg)
+    console.error(green(this._getFullPrefix()), this.sep, green('SUCCESS ✔️ : '), msg)
   }
 
   public verbose (...args: any[]) {
     const msg = this.format.apply(this.format, args)
-    console.error(white(this.getFullPrefix()), this.sep, msg)
+    console.error(white(this._getFullPrefix()), this.sep, msg)
   }
 
   public addLine () {
     console.log()
   }
 
-  private getFullPrefix (): string {
+  public addLines (linesToAdd: number) {
+    for (let i = 0; i < linesToAdd; i++) {
+      console.log()
+    }
+  }
+
+  public logPlain (...args: any[]) {
+    console.log(args)
+  }
+
+  private _getFullPrefix (): string {
     this.prefix = 'm8a CLI'
     return this.options !== undefined && this.options.timestamp
-      ? `${this.prefix} ${this.sep} [${this.formatDate(new Date())}]`
+      ? `${this.prefix} ${this.sep} [${this._formatDate(new Date())}]`
       : this.prefix
   }
 
-  private formatDate (date_ob: Date): string {
-    const day = this.IntTwoChars(date_ob.getDate())
-    const month = this.IntTwoChars(date_ob.getMonth() + 1)
+  private _formatDate (date_ob: Date): string {
+    const day = this._IntTwoChars(date_ob.getDate())
+    const month = this._IntTwoChars(date_ob.getMonth() + 1)
     const year = date_ob.getFullYear()
-    const hours = this.IntTwoChars(date_ob.getHours())
-    const minutes = this.IntTwoChars(date_ob.getMinutes())
+    const hours = this._IntTwoChars(date_ob.getHours())
+    const minutes = this._IntTwoChars(date_ob.getMinutes())
     return `${year}-${month}-${day} ${hours}:${minutes}`
   }
 
-  private IntTwoChars (i: number) {
+  private _IntTwoChars (i: number) {
     return `0${i}`.slice(-2)
   }
 }

@@ -29,4 +29,7 @@ export class BaseEntity implements Base {
 
   @Prop()
   public createdAt!: Date
+
+  @Prop({ index: true })
+  public m8aAuthId?: string
 }

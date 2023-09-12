@@ -14,4 +14,7 @@ export class RegisterInputDTO {
 
   @Field()
   public password!: string
+
+  @Field({ nullable: true })
+  public temp?: string
 }

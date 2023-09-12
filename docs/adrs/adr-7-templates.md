@@ -1,6 +1,6 @@
-## ADR - Architecture Decision Record (Template)
+## ADR7 - Architecture Decision Record for the m8a Platform
 
-#### Title
+#### **ADR 7 - m8a.io - Templates for Code Generation on the Backend**
 
 These documents have names that are short noun phrases. For example, "adr-1: Deployment on Ruby on Rails 3.0.10" or "adr-9: LDAP for Multitenant Integration"
 

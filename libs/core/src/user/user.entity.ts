@@ -18,7 +18,7 @@ export class UserEntity extends BaseEntity {
   public email!: string
 
   @Prop()
-  public password!: string
+  public passwordHash!: string
 
   @Prop({ required: true })
   public status!: string

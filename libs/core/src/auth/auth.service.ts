@@ -9,10 +9,18 @@ import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
 import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 import { HttpService } from '@nestjs/axios'
-import { catchError, firstValueFrom, of } from 'rxjs'
+import { catchError, lastValueFrom, of, map, switchMap } from 'rxjs'
 
 @Injectable()
 export class AuthService {
+  private axiosConfig = {
+    headers: {
+      'Content-type': 'application/x-www-form-urlencoded',
+      Host: 'auth.m8a.io'
+    },
+    withCredentials: true
+  }
+
   constructor (
     private readonly userService: UserService,
     private readonly jwtService: JwtService,
@@ -45,7 +53,7 @@ export class AuthService {
 
     const foundUser = user[0]
     const passWithSalt = this.hashService.getPasswordWithSalt(password, foundUser.salt)
-    const valid = await this.hashService.verifyPassword(passWithSalt, passWithSalt)
+    const valid = await this.hashService.verifyPassword(passWithSalt, foundUser.passwordHash)
 
     if (!valid) {
       return { accessToken, userId }
@@ -92,9 +100,8 @@ export class AuthService {
   async loginWithToken (token: string, ctx: IContext): Promise<AccessTokenDTO> {
     let accessToken = ''
     let refreshToken = ''
-    let userId = ''
 
-    const keyCloakData = {
+    const keyCloakData1 = {
       code: token,
       client_id: this.envConfig.CLIENT_ID,
       client_secret: this.envConfig.CLIENT_SECRET,
@@ -102,37 +109,60 @@ export class AuthService {
       redirect_uri: 'https://zeus-dev.m8a.io/callback'
     }
 
-    const axiosConfig = {
-      headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
-      },
-      withCredentials: true
-    }
-
     console.log('loginWithToken ', token)
-    // ping auth.m8a.io with access code so it can be validated and we can retrieve access and refresh tokens
-    const { data } = await firstValueFrom(
+    // ping auth.m8a.io with access code, then get info about user from auth.m8a.io so it can be validated and we can retrieve access and refresh tokens
+    const { data } = await lastValueFrom(
       this.httpService
-        .post('https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/token', keyCloakData, axiosConfig)
-        .pipe(
-          catchError((error) => {
-            console.error('error from m8a Auth: ', error.response.data)
-            return of(error)
-          })
+        .post(
+          'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/token',
+          keyCloakData1,
+          this.axiosConfig
         )
+        .pipe(switchMap((response) => this.getUserInfo(response.data.access_token)))
     )
 
-    console.log('data.refresh_token ', data.refresh_token)
-    // if user is not found, return empty accessToken and userId
-    if (data.refresh_token === undefined) {
-      return { accessToken, userId }
+    // if user is not found, return empty accessToken and userId i.e. no login
+    if (data === undefined || data.active === false) {
+      return { accessToken, userId: '' }
     }
-    accessToken = data.access_token
-    refreshToken = data.refresh_token
-    userId = '1'
 
-    await this.cacheService.set('refreshToken', userId, refreshToken)
-    console.log('set cached refresh token')
+    console.log('data ', data)
+
+    // check org database for user
+    const [user] = await this.userService.query({
+      filter: {
+        m8aAuthId: { eq: data.sub }
+      }
+    })
+    // temp only: needed to create user in org database
+    // if (user.length === 0) {
+    //   orgUser = await this.userService.createOne({
+    //     username: userInfo.preferred_username,
+    //     email: userInfo.email,
+    //     firstName: userInfo.given_name,
+    //     lastName: userInfo.family_name,
+    //     m8aAuthId: userInfo.sub,
+    //     status: 'Registered'
+    //   })
+    // }
+    console.log('user ', user)
+
+    // if user is not found in org database, error out with missing user error
+
+    // if user is found, generate new access token and refresh token
+
+    const payload: IJwtPayload = { sub: user.id }
+    accessToken = await this.jwtService.signAsync(payload, {
+      secret: this.envConfig.ACCESS_SECRET,
+      expiresIn: this.envConfig.ACCESS_TTL
+    })
+
+    refreshToken = await this.jwtService.signAsync(payload, {
+      secret: this.envConfig.REFRESH_SECRET,
+      expiresIn: this.envConfig.REFRESH_TTL
+    })
+
+    this.cacheService.set('refreshToken', user.id, refreshToken)
 
     const ttlInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
 
@@ -143,66 +173,9 @@ export class AuthService {
       sameSite: 'none',
       secure: true
     })
-    console.log('set cookie with refreshToken ', refreshToken)
-
-    // get info about user from auth.m8a.io
-
-    // check org database for user
-
-    // TODO: decide on registration flow for new users
-
-    // if user is not found in org database, error out with missing user error
-
-    // if user is found, generate new access token and refresh token
-
-    // const user = await this.userService.query({
-
-    //   filter: {
-    //     username: { eq: username }
-    //   }
-    // })
-
-    // if (user.length === 0) {
-    //   return { accessToken, userId }
-    // }
-
-    // const foundUser = user[0]
-    // const passWithSalt = this.hashService.getPasswordWithSalt(password, foundUser.salt)
-    // const valid = await this.hashService.verifyPassword(passWithSalt, passWithSalt)
-
-    // if (!valid) {
-    //   return { accessToken, userId }
-    // }
-
-    // if (foundUser.status !== 'Registered') {
-    //   return { accessToken, userId }
-    // }
-
-    // const payload: IJwtPayload = { sub: foundUser.id }
-    // accessToken = await this.jwtService.signAsync(payload, {
-    //   secret: this.envConfig.ACCESS_SECRET,
-    //   expiresIn: this.envConfig.ACCESS_TTL
-    // })
-
-    // refreshToken = await this.jwtService.signAsync(payload, {
-    //   secret: this.envConfig.REFRESH_SECRET,
-    //   expiresIn: this.envConfig.REFRESH_TTL
-    // })
-
-    // this.cacheService.set('refreshToken', foundUser.id, refreshToken)
-
-    // const ttlInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
-
-    // ctx.res.setCookie('refreshToken', refreshToken, {
-    //   expires: new Date(Date.now() + ttlInMillis),
-    //   httpOnly: true,
-    //   path: '/',
-    //   sameSite: 'none',
-    //   secure: true
-    // })
 
     console.log("user logged in and we've gotten an Access Token and Refresh Token from Keycloak")
-    return { accessToken, userId }
+    return { accessToken, userId: user.id }
   }
 
   /**
@@ -230,8 +203,30 @@ export class AuthService {
     return { accessToken, userId }
   }
 
-  async getCachedToken (ctx): Promise<string> {
+  async getCachedToken (): Promise<string> {
     console.log('hit getCachedToken')
     return (await this.cacheService.get('refreshToken', '1')) as string
+  }
+
+  private getUserInfo (token: string) {
+    const keyCloakData2 = {
+      token,
+      client_id: this.envConfig.CLIENT_ID,
+      client_secret: this.envConfig.CLIENT_SECRET
+    }
+
+    return this.httpService
+      .post(
+        'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/token/introspect',
+        keyCloakData2,
+        this.axiosConfig
+      )
+      .pipe(
+        map((response) => response),
+        catchError((error) => {
+          console.error('error from m8a Auth: ', error.response)
+          return of(error)
+        })
+      )
   }
 }

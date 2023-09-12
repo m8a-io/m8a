@@ -6,7 +6,8 @@ import {
   TYPEGOOSE_CONNECTION_NAME
 } from './typegoose.constants'
 import { DynamicModule } from '@nestjs/common'
-import { FactoryProvider, ClassProvider } from '@nestjs/common/interfaces'
+import { FactoryProvider, ClassProvider, Type } from '@nestjs/common/interfaces'
+import { TypegooseOptionsFactory } from './typegoose-options.interface'
 
 describe('TypegooseCoreModule', () => {
   describe('forRoot', () => {
@@ -15,10 +16,10 @@ describe('TypegooseCoreModule', () => {
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       jest.spyOn(mongoose, 'createConnection').mockReturnValue(connection as any)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       const module = TypegooseCoreModule.forRoot('mongouri', {
-        authdb: 'mongo connection'
-      } as any)
+        connectionName: 'mongo connection'
+      })
 
       const connectionNameProvider = {
         provide: TYPEGOOSE_CONNECTION_NAME,
@@ -27,7 +28,7 @@ describe('TypegooseCoreModule', () => {
 
       const connectionProvider = {
         provide: DEFAULT_DB_CONNECTION_NAME,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         useFactory: expect.any(Function)
       }
 
@@ -55,12 +56,12 @@ describe('TypegooseCoreModule', () => {
     })
   })
   describe('forAsyncRoot', () => {
-    let connection, mockOptionFactory, wantedDependencies, module: DynamicModule
+    let connection: string, mockOptionFactory: jest.Mock, wantedDependencies: string[], module: DynamicModule
 
     beforeEach(() => {
       connection = 'i am a connection'
-
-      jest.spyOn(mongoose, 'createConnection').mockReturnValue(connection)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      jest.spyOn(mongoose, 'createConnection').mockReturnValue(connection as any)
 
       mockOptionFactory = jest.fn()
       wantedDependencies = ['CONFIG_SERVICE']
@@ -118,19 +119,22 @@ describe('TypegooseCoreModule', () => {
       })
 
       describe('useClass', () => {
-        let mockConfigClass
+        let mockConfigClass: TypegooseOptionsFactory
         beforeEach(() => {
           mockConfigClass = {
             createTypegooseOptions: jest.fn()
-          }
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } as TypegooseOptionsFactory
 
           module = TypegooseCoreModule.forRootAsync({
-            useClass: mockConfigClass
+            useClass: mockConfigClass as unknown as Type<TypegooseOptionsFactory>
           })
         })
         it('provides the TypegooseConfigService class for TYPEGOOSE_MODULE_OPTIONS', () => {
           const classProvider = module.providers.find(
-            (provider) => (provider as ClassProvider).provide === mockConfigClass
+            (provider) =>
+              (provider as ClassProvider).provide ===
+              (mockConfigClass as unknown as Type<TypegooseOptionsFactory>)
           ) as ClassProvider
           expect(classProvider.provide).toBe(mockConfigClass)
           expect(classProvider.useClass).toBe(mockConfigClass)
@@ -148,7 +152,7 @@ describe('TypegooseCoreModule', () => {
       })
 
       describe('useExisting', () => {
-        let mockUseExistingClass
+        let mockUseExistingClass: jest.Mock
 
         beforeEach(() => {
           mockUseExistingClass = jest.fn()
@@ -174,6 +178,7 @@ describe('TypegooseCoreModule', () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const coreModule = new TypegooseCoreModule(DEFAULT_DB_CONNECTION_NAME, {
         get: moduleRefGet
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any)
       await coreModule.onApplicationShutdown()
 
@@ -190,6 +195,7 @@ describe('TypegooseCoreModule', () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const coreModule = new TypegooseCoreModule(DEFAULT_DB_CONNECTION_NAME, {
       get: moduleRefGet
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any)
 
     expect(() => coreModule.onApplicationShutdown()).not.toThrow()

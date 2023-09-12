@@ -13,12 +13,12 @@ exports[`TypegooseCoreModule forAsyncRoot different types useFactory injects the
     "inject": [
       "TypegooseModuleOptions",
     ],
-    "provide": "DefaultTypegooseConnections",
+    "provide": "mongo connectionConnection",
     "useFactory": [Function],
   },
   {
     "provide": "TypegooseConnectionName",
-    "useValue": "DefaultTypegooseConnections",
+    "useValue": "mongo connectionConnection",
   },
 ]
 `;
@@ -29,7 +29,7 @@ exports[`TypegooseCoreModule forAsyncRoot different types useFactory injects the
     "inject": [
       "TypegooseModuleOptions",
     ],
-    "provide": "DefaultTypegooseConnections",
+    "provide": "mongo connectionConnection",
     "useFactory": [Function],
   },
 ]

@@ -107,6 +107,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@microsoft/rush-lib",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@nestjs/axios",
       "allowedCategories": [ "libraries" ]
     },
@@ -125,6 +129,10 @@
     {
       "name": "@nestjs/core",
       "allowedCategories": [ "apps", "libraries", "production" ]
+    },
+    {
+      "name": "@nestjs/event-emitter",
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@nestjs/graphql",
@@ -212,7 +220,7 @@
     },
     {
       "name": "@types/cross-spawn",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@types/inquirer",
@@ -311,6 +319,10 @@
       "allowedCategories": [ "apps", "libraries" ]
     },
     {
+      "name": "dag-map",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "dataloader",
       "allowedCategories": [ "libraries" ]
     },
@@ -356,6 +368,10 @@
     },
     {
       "name": "eslint-plugin-vue",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "execa",
       "allowedCategories": [ "apps" ]
     },
     {
@@ -467,6 +483,10 @@
       "allowedCategories": [ "apps" ]
     },
     {
+      "name": "read-package-json",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "redis",
       "allowedCategories": [ "libraries" ]
     },
@@ -496,6 +516,10 @@
     },
     {
       "name": "swc-loader",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "tree-kill",
       "allowedCategories": [ "apps" ]
     },
     {
