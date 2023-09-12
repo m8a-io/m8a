@@ -26,6 +26,7 @@
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && tsc --project tsconfig.build.json",
     "build:watch": "pnpm prebuild && tsc --project tsconfig.build.json --watch",
+    "dev": "pnpm prebuild && tsc --project tsconfig.build.json --watch",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "lint": "eslint --fix ./",
     "test": "jest",

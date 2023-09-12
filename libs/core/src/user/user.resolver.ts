@@ -28,7 +28,7 @@ export class UserResolver extends CRUDResolver(UserDTO, {
   async helloWorld (): Promise<string> {
     // const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
     // await delay(3000)
-    return 'Hello World!!!'
+    return this.userService.helloWorld()
   }
 
   @Public()

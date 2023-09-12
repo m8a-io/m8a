@@ -11,6 +11,7 @@ import { Injectable } from '@nestjs/common'
 import { UserDTO } from './dtos/user.dto'
 import { HashService } from './hash.service'
 import { GraphQLError } from 'graphql'
+import { EventEmitter2 } from '@nestjs/event-emitter'
 
 @Assembler(UserDTO, UserEntity)
 export class UserAssembler extends ClassTransformerAssembler<UserDTO, UserEntity> {}
@@ -22,9 +23,15 @@ export class UserService extends AssemblerQueryService<UserDTO, UserEntity> {
     readonly assembler: UserAssembler,
     @InjectQueryService(UserEntity)
     private readonly userService: QueryService<UserEntity>,
-    private readonly hashService: HashService
+    private readonly hashService: HashService,
+    private eventEmitter: EventEmitter2
   ) {
     super(assembler, userService)
+  }
+
+  public helloWorld (): string {
+    this.eventEmitter.emit('hello.world')
+    return 'Hello World!!!!!'
   }
 
   /**

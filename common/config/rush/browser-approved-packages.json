@@ -131,6 +131,10 @@
       "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
+      "name": "@nestjs/event-emitter",
+      "allowedCategories": [ "apps", "libraries" ]
+    },
+    {
       "name": "@nestjs/graphql",
       "allowedCategories": [ "libraries" ]
     },
@@ -512,6 +516,10 @@
     },
     {
       "name": "swc-loader",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "tree-kill",
       "allowedCategories": [ "apps" ]
     },
     {

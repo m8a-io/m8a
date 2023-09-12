@@ -1,13 +1,11 @@
 import { Command, CommandRunner, Option } from 'nest-commander'
 import { DevLoggerService } from '@m8a/logger'
-import { RunnerService } from '../utils/runner.service'
 import * as rushLib from '@microsoft/rush-lib'
-import * as path from 'path'
-import * as fs from 'fs/promises'
 import Dag from 'dag-map'
 import { RushConfigurationProject } from '@microsoft/rush-lib'
 import { WatchManager } from '../utils/watch/watch-manager'
 import { WatchProject } from '../utils/watch/watch-project'
+import { EventEmitter2 } from '@nestjs/event-emitter'
 
 @Command({
   name: 'dev',
@@ -16,24 +14,30 @@ import { WatchProject } from '../utils/watch/watch-project'
 export class DevCommand extends CommandRunner {
   constructor (
     private readonly logService: DevLoggerService,
-    private readonly runnerService: RunnerService,
-    private readonly watchManager: WatchManager
+    private readonly watchManager: WatchManager,
+    private eventEmitter: EventEmitter2
   ) {
     super()
   }
 
-  args: string[] = []
+  projects: string[] = []
   option = ''
+  options = {}
 
-  async run (passedParams: string[], options): Promise<void> {
-    if (Object.keys(options).length !== 0 && passedParams.length >= 1) {
+  async run (passedParams: string[], opts): Promise<void> {
+    this.options = opts
+    if (Object.keys(this.options).length !== 0 && passedParams.length >= 1) {
       this.logService.error(
         'If you use the --and-deps or --just-deps flags, you may only add one app name as an option.'
       )
       process.exit(1)
     }
-    if (passedParams.length >= 1) this.args = passedParams
-    if (Object.keys(options).length !== 0) this.option = Object.keys(options)[0]
+
+    // projects have been given via the passedParams
+    if (passedParams.length >= 1) this.projects = passedParams
+
+    // set the option given, i.e. andDeps or justDeps
+    if (Object.keys(this.options).length !== 0) this.option = Object.keys(this.options)[0]
     try {
       this.runDev()
     } catch {
@@ -48,7 +52,7 @@ export class DevCommand extends CommandRunner {
     description: 'This flag indicates the dependencies of your app will also be built and watched.'
   })
   parseAndDeps (app: string) {
-    this.args.push(app)
+    this.projects.push(app)
     return app
   }
 
@@ -57,7 +61,7 @@ export class DevCommand extends CommandRunner {
     description: 'This flag indicates the dependencies of your app will also be built and watched.'
   })
   parseJustDeps (app: string) {
-    this.args.push(app)
+    this.projects.push(app)
     return app
   }
 
@@ -66,9 +70,8 @@ export class DevCommand extends CommandRunner {
     this.logService.log('Starting your dev environment....')
     const projects = this._gatherProjects()
 
-    // TODO: remove: this.logService.log('projects: ', projects)
-
     const dag = new Dag()
+
     for (const [name, project] of projects.entries()) {
       const deps = project.localDependencyProjects.map((p) => p.packageName).filter((p) => projects.has(p))
       dag.add(name, project, [], deps)
@@ -76,53 +79,23 @@ export class DevCommand extends CommandRunner {
 
     const inOrder = []
     const watchProjects = []
+
     dag.each((name, project: RushConfigurationProject) => {
-      const projectDependencies = new Array(...project.dependencyProjects)
-      // TODO remove: this.logService.log(`${name}: ${projectDependencies}`)
+      // const projectDependencies = new Array(...project.dependencyProjects)
       inOrder.push(project)
-      if (projectDependencies.length === 0) {
-        watchProjects.push(new WatchProject(name, this.logService))
+      if (watchProjects.length === 0) {
+        watchProjects.push(new WatchProject(name, this.eventEmitter))
       } else {
-        const directProjectDependency = new WatchProject(
-          projectDependencies[0].unscopedTempProjectName,
-          this.logService
-        )
-        watchProjects.push(new WatchProject(name, this.logService, [directProjectDependency]))
+        const directDependency = new Array(watchProjects[watchProjects.length - 1])
+        watchProjects.push(new WatchProject(name, this.eventEmitter, directDependency))
       }
     })
+
     this.watchManager.initialize(watchProjects)
-    this.logService.log('Watch Manager initialized...')
-    // this.logService.log('watchProjects: ', watchProjects)
-    for (const project of inOrder) {
-      await this._startBuilding(
-        project,
-        watchProjects.find((p) => p.name === project.packageName)
-      )
-    }
+
     this.logService.addLine()
-    this.logService.log('All watchers started!')
-  }
 
-  private async _startBuilding (
-    project: { packageName: string; projectFolder: string },
-    watchProject: WatchProject
-  ) {
-    this.logService.log(`Starting to build ${project.packageName}`)
-    const pathToPackageJson = path.join(project.projectFolder, 'package.json')
-    const packageJson = JSON.parse(await fs.readFile(pathToPackageJson, 'utf-8'))
-    const devCommand = packageJson.scripts.dev
-    if (!devCommand) {
-      this.logService.warn(`${project.packageName} has no dev command`)
-      return Promise.resolve()
-    }
-
-    const command = ['dev']
-
-    if (devCommand.includes('tsc')) {
-      command.push('--preserveWatchOutput')
-    }
-    // we know that pnpm will be installed globally in the m8a workspace
-    this.runnerService.spawnDevCommandAsync('pnpm', command, project, watchProject)
+    this.watchManager.startDevWatchers(inOrder)
   }
 
   private _gatherProjects () {
@@ -142,24 +115,18 @@ export class DevCommand extends CommandRunner {
         recurseProjectDeps(dep)
       }
     }
-    // possible for package aliases later
-    const aliases = {}
 
-    for (const arg of this.args) {
-      const actualArg = aliases[arg] || arg
-      const project = rushConfig.findProjectByShorthandName(actualArg)
+    for (const proj of this.projects) {
+      const project = rushConfig.findProjectByShorthandName(proj)
       if (!project) {
-        this.logService.error(`Could not find project ${arg}`)
+        this.logService.error(`Could not find project ${proj}`)
         process.exit(1)
       }
-      this.logService.log('this.option: ', this.option)
       if (this.option !== 'justDeps') {
-        this.logService.log('justDeps was hit')
         projects.set(project.packageName, project)
       }
 
       if (this.option === 'andDeps' || this.option === 'justDeps') {
-        this.logService.log('recursing project deps')
         recurseProjectDeps(project)
       }
     }

@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common'
 import { RunnerService } from './runner.service'
 import { CheckForService } from './check-for.service'
 import { LoggerModule } from '@m8a/logger'
-import { WatchManager } from './watch/watch-manager'
+import { WatchManager, WatchListeners } from './watch'
 
 @Module({
   imports: [LoggerModule],
-  providers: [RunnerService, CheckForService, WatchManager],
+  providers: [RunnerService, CheckForService, WatchManager, WatchListeners],
   exports: [CheckForService, RunnerService, WatchManager]
 })
 export class UtilsModule {}

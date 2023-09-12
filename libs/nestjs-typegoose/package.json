@@ -18,6 +18,7 @@
     "build": "tsc -p tsconfig.build.json",
     "commit": "git cz",
     "coverage": "yarn run test:cov && cat ./coverage/lcov.info | coveralls",
+    "dev": "tsc -p tsconfig.build.json --watch",
     "lint": "eslint --fix ./",
     "prepare": "npm run build",
     "test": "jest  --verbose",

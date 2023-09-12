@@ -1,5 +1,5 @@
 // Credit for this code goes to RushStack: lightwatch-plugin
-import { DevLoggerService } from '@m8a/logger'
+import { EventEmitter2 } from '@nestjs/event-emitter'
 
 export enum WatchState {
   /** No output received yet */
@@ -10,10 +10,9 @@ export enum WatchState {
 }
 
 export class WatchProject {
-  public readonly name: string
-  private _logger: DevLoggerService
   private _state: WatchState = WatchState.Start
-
+  public readonly name: string = ''
+  private readonly eventEmitter: EventEmitter2
   // eslint-disable-next-line no-use-before-define
   public readonly dependencies: WatchProject[] = []
   // eslint-disable-next-line no-use-before-define
@@ -35,9 +34,7 @@ export class WatchProject {
    */
   public criticalPathLength = -1
 
-  public constructor (name: string, logger: DevLoggerService, dependencies?: WatchProject[]) {
-    this.name = name
-    this._logger = logger
+  public constructor (name: string, eventEmitter: EventEmitter2, dependencies?: WatchProject[]) {
     if (dependencies) {
       for (const dependency of dependencies) {
         this.dependencies.push(dependency)
@@ -46,6 +43,8 @@ export class WatchProject {
     } else {
       this._live = true
     }
+    this.name = name
+    this.eventEmitter = eventEmitter
   }
 
   public get state (): WatchState {
@@ -105,12 +104,26 @@ export class WatchProject {
     }
   }
 
-  public printBufferedLines (logger: DevLoggerService): void {
+  public printBufferedLines (): void {
+    if (this._state === WatchState.Start) {
+      this.setState(WatchState.Building)
+    }
+
     if (this.bufferedLines.length > 0) {
       for (const line of this.bufferedLines) {
-        logger.logPlain(line)
+        if (line !== '') {
+          console.log(line)
+        }
+      }
+      if (this._includesString(this.bufferedLines, 'Found 0 errors.')) {
+        this.bufferedLines.length = 0
+        this.eventEmitter.emit('build.done', this) // and watching
       }
       this.bufferedLines.length = 0
     }
+  }
+
+  private _includesString (arr: string[], str: string): boolean {
+    return arr.some((s) => s.includes(str))
   }
 }

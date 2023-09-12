@@ -53,8 +53,7 @@ export class DevLoggerService extends ConsoleLogger {
   }
 
   public logPlain (...args: any[]) {
-    const msg = this.format.apply(this.format, args)
-    console.log(msg)
+    console.log(args)
   }
 
   private _getFullPrefix (): string {

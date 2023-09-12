@@ -17,6 +17,7 @@
     "b-loader": "tsc src/graphql/utils/operations-from-schema.ts",
     "build": "quasar build",
     "codegen": "graphql-codegen --config codegen.ts",
+    "dev": "quasar dev",
     "lint": "eslint --ext .js,.ts,.vue ./ --fix",
     "test": "echo \"No test specified\" && exit 0"
   },
