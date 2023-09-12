@@ -1,22 +1,13 @@
 import { Command, CommandRunner, Option } from 'nest-commander'
 import { DevLoggerService } from '@m8a/logger'
-import * as rushLib from '@microsoft/rush-lib'
-import Dag from 'dag-map'
-import { RushConfigurationProject } from '@microsoft/rush-lib'
 import { WatchManager } from '../utils/watch/watch-manager'
-import { WatchProject } from '../utils/watch/watch-project'
-import { EventEmitter2 } from '@nestjs/event-emitter'
 
 @Command({
   name: 'dev',
   description: 'The "dev" command will start dev builds with watchers for development of the app given.'
 })
 export class DevCommand extends CommandRunner {
-  constructor (
-    private readonly logService: DevLoggerService,
-    private readonly watchManager: WatchManager,
-    private eventEmitter: EventEmitter2
-  ) {
+  constructor (private readonly logService: DevLoggerService, private readonly watchManager: WatchManager) {
     super()
   }
 
@@ -58,7 +49,8 @@ export class DevCommand extends CommandRunner {
 
   @Option({
     flags: '--just-deps <app>',
-    description: 'This flag indicates the dependencies of your app will also be built and watched.'
+    description:
+      'This flag indicates only dependencies of your app will also be built and watched. Your app will need to be ran in a second terminal.'
   })
   parseJustDeps (app: string) {
     this.projects.push(app)
@@ -68,68 +60,11 @@ export class DevCommand extends CommandRunner {
   private async runDev (): Promise<void> {
     this.logService.addLine()
     this.logService.log('Starting your dev environment....')
-    const projects = this._gatherProjects()
 
-    const dag = new Dag()
+    // get the projects of the monorepo
+    const projectsToRun = this.watchManager.setupProjects(this.projects, this.option)
 
-    for (const [name, project] of projects.entries()) {
-      const deps = project.localDependencyProjects.map((p) => p.packageName).filter((p) => projects.has(p))
-      dag.add(name, project, [], deps)
-    }
-
-    const inOrder = []
-    const watchProjects = []
-
-    dag.each((name, project: RushConfigurationProject) => {
-      // const projectDependencies = new Array(...project.dependencyProjects)
-      inOrder.push(project)
-      if (watchProjects.length === 0) {
-        watchProjects.push(new WatchProject(name, this.eventEmitter))
-      } else {
-        const directDependency = new Array(watchProjects[watchProjects.length - 1])
-        watchProjects.push(new WatchProject(name, this.eventEmitter, directDependency))
-      }
-    })
-
-    this.watchManager.initialize(watchProjects)
-
-    this.logService.addLine()
-
-    this.watchManager.startDevWatchers(inOrder)
-  }
-
-  private _gatherProjects () {
-    const rushConfig = rushLib.RushConfiguration.loadFromDefaultLocation({
-      startingFolder: process.cwd()
-    })
-
-    const projects = new Map()
-
-    const recurseProjectDeps = (project: rushLib.RushConfigurationProject) => {
-      for (const dep of project.dependencyProjects) {
-        if (projects.has(dep.packageName)) {
-          continue
-        }
-
-        projects.set(dep.packageName, dep)
-        recurseProjectDeps(dep)
-      }
-    }
-
-    for (const proj of this.projects) {
-      const project = rushConfig.findProjectByShorthandName(proj)
-      if (!project) {
-        this.logService.error(`Could not find project ${proj}`)
-        process.exit(1)
-      }
-      if (this.option !== 'justDeps') {
-        projects.set(project.packageName, project)
-      }
-
-      if (this.option === 'andDeps' || this.option === 'justDeps') {
-        recurseProjectDeps(project)
-      }
-    }
-    return projects
+    // and run them with watchers
+    this.watchManager.startDevWatchers(projectsToRun)
   }
 }
