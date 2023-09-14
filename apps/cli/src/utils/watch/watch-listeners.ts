@@ -7,11 +7,19 @@ export class WatchListeners {
   constructor (private readonly watchManager: WatchManager) {}
 
   /**
-   *  fired when dependency project builds are done
+   *  fired when dependency project build is done
    */
   @OnEvent('build.done')
   handleBuildDoneEvent (builtProject: WatchProject) {
     this.watchManager.markSucceeded(builtProject)
+  }
+
+  /**
+   *  fired when dependency project build fails
+   */
+  @OnEvent('build.failed')
+  handleBuildFailedEvent (builtProject: WatchProject) {
+    this.watchManager.markFailed(builtProject)
   }
 
   /**
@@ -20,6 +28,14 @@ export class WatchListeners {
   @OnEvent('write.buildLines')
   handleWriteBuildLinesEvent (payload) {
     this.watchManager.writeBuildLines(payload)
+  }
+
+  /**
+   * fired when the runner service emits data to be written to the console
+   */
+  @OnEvent('write.errorLines')
+  handleWriteErrorLinesEvent (payload) {
+    this.watchManager.writeErrorLines(payload)
   }
 
   /**

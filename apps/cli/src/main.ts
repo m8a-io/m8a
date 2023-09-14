@@ -5,7 +5,7 @@ import { AppModule } from './app.module'
 
 async function bootstrap () {
   await CommandFactory.runWithoutClosing(AppModule, {
-    logger: ['error', 'warn']
+    logger: ['error', 'warn', 'verbose', 'debug']
   })
 }
 
