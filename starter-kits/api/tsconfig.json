@@ -10,8 +10,11 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "incremental": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "paths": {
+      "*": ["*", "src/*"]
+    }
   }
 }

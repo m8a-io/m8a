@@ -31,7 +31,7 @@ export class UserService extends AssemblerQueryService<UserDTO, UserEntity> {
 
   public helloWorld (): string {
     this.eventEmitter.emit('hello.world')
-    return 'Hello World!!!!!'
+    return 'Hello World!!!!'
   }
 
   /**

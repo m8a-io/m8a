@@ -8,7 +8,8 @@ export enum WatchState {
   Start = 'Start',
   Building = 'Building',
   Succeeded = 'Succeeded',
-  Failed = 'Failed'
+  Failed = 'Failed',
+  Pending = 'Pending'
 }
 
 /**
@@ -16,6 +17,7 @@ export enum WatchState {
  */
 export class WatchProject {
   private _state: WatchState = WatchState.Start
+  private _initialSWCBuildCompleted = false
   public readonly name: string = ''
   private readonly eventEmitter: EventEmitter2
   // eslint-disable-next-line no-use-before-define
@@ -133,21 +135,57 @@ export class WatchProject {
    * Print any buffered lines. Also send the `build.done` event if the build is complete.
    */
   public printBufferedLines (): void {
-    if (this._state === WatchState.Start) {
-      this.setState(WatchState.Building)
-    }
-
-    if (this.bufferedLines.length > 0) {
+    // we don't want to use this to print the buffer, if the output is from a compilation error
+    if (this._state === WatchState.Failed) return
+    let isDone = false
+    // print only when we aren't pending (waiting) for further output from a failed state
+    if (this._state !== WatchState.Pending && this.bufferedLines.length > 0) {
       for (const line of this.bufferedLines) {
         if (line !== '') {
           console.log(line) // allow console.log as we need raw logging
+          // we need to set a flag to catch the initial SWC output
+          if (!this._initialSWCBuildCompleted && line.includes('Watching for file changes')) {
+            /* 'Found 0 errors.' for TSC compilation */
+            this.bufferedLines.length = 0
+            this._initialSWCBuildCompleted = true
+            isDone = true
+          }
+          if (this._initialSWCBuildCompleted && line.includes('Successfully compiled')) {
+            /* 'Found 0 errors.' for TSC compilation */
+            this.bufferedLines.length = 0
+            isDone = true
+          }
         }
       }
-      if (this._includesString(this.bufferedLines, 'Found 0 errors.')) {
+
+      if (isDone) {
         this.bufferedLines.length = 0
         this.eventEmitter.emit('build.done', this) // and watching
+        isDone = false
       }
+
+      if (this._state === WatchState.Start || this._state === WatchState.Succeeded) {
+        this.setState(WatchState.Building)
+      }
+      // if (this._includesString(this.bufferedLines, 'Successfully compiled')) { /* 'Found 0 errors.' */
+      //   this.bufferedLines.length = 0
+      //   this.eventEmitter.emit('build.done', this) // and watching
+      // }
       this.bufferedLines.length = 0
+    }
+  }
+
+  public printBufferedErrorLines (): void {
+    if (this.bufferedLines.length > 0) {
+      for (const line of this.bufferedLines) {
+        console.log(line) // allow console.log as we need raw logging
+      }
+      // if (this._includesString(this.bufferedLines, 'Successfully compiled')) { /* 'Found 0 errors.' */
+      //   this.bufferedLines.length = 0
+      //   this.eventEmitter.emit('build.done', this) // and watching
+      // }
+      this.bufferedLines.length = 0
+      this.setState(WatchState.Pending)
     }
   }
 

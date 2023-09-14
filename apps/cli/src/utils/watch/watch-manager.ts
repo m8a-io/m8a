@@ -85,7 +85,7 @@ export class WatchManager {
   }
 
   /**
-   * Controls the output of the dependent projects' dev commands
+   * Prints the build output of the dependent projects' dev command
    * @param payload
    * @type WriteBuildEvent
    */
@@ -95,7 +95,9 @@ export class WatchManager {
     const outputLines2d = data.toString().split('\n')
     const outputLines = [].concat(...outputLines2d)
     project.bufferedLines.push(...outputLines)
-
+    if (project.state === WatchState.Pending) {
+      project.setState(WatchState.Start)
+    }
     if (this.activeProject !== undefined && this.activeProject !== project) {
       if (!this.activeProject.live) {
         // Interrupt the currently active project
@@ -110,9 +112,30 @@ export class WatchManager {
 
     if (this.activeProject === undefined) {
       this._activateProject(project)
-    } else {
-      project.printBufferedLines()
     }
+    project.printBufferedLines()
+  }
+
+  /**
+   * Prints the error output of the dependent projects' dev command
+   * @param payload
+   * @type WriteBuildEvent
+   */
+  public writeErrorLines (payload: WriteBuildEvent): void {
+    const { project, payload: data } = payload
+    const outputLines2d = data.toString().split('\n')
+    const outputLines = [].concat(...outputLines2d)
+    project.bufferedLines.push(...outputLines)
+
+    if (this.activeProject !== undefined && this.activeProject !== project) {
+      if (!this.activeProject.live) {
+        // Interrupt the currently active project
+        this.logService.log('>>> (interrupted by upstream project)')
+        this.activeProject = undefined
+      }
+    }
+
+    project.printBufferedErrorLines()
   }
 
   /**
@@ -148,7 +171,7 @@ export class WatchManager {
         // success/failure is still interesting to the developer, so let's not disrupt the stream.
       }
     }
-
+    this.logService.error(`>>> ${project.name} failed to build! Still watching --------`)
     this._printCompletedAndActivateSomething()
   }
 
@@ -260,7 +283,7 @@ export class WatchManager {
       }
     }
     if (!this.devServerProject) {
-      this.logService.log('No dev server project found. Running watchers on dependent project builds only.')
+      this.logService.log('No dev server project found. Running dev commands for project(s) given.')
     }
   }
 
@@ -436,6 +459,6 @@ export class WatchManager {
    * Checks if the dev server app can be started
    */
   private _canStartDevServerApp (): boolean {
-    return !this.projects.some((p) => p.state !== WatchState.Succeeded)
+    return this.devServerProject && !this.projects.some((p) => p.state !== WatchState.Succeeded)
   }
 }
