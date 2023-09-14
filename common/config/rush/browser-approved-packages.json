@@ -120,7 +120,7 @@
     },
     {
       "name": "@nestjs/cli",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@nestjs/common",
@@ -200,11 +200,11 @@
     },
     {
       "name": "@swc/cli",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@swc/core",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@typegoose/typegoose",
@@ -300,6 +300,10 @@
     },
     {
       "name": "chalk-v2",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "chokidar",
       "allowedCategories": [ "libraries" ]
     },
     {

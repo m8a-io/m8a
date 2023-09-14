@@ -45,6 +45,11 @@ export class RunnerService {
     runner.stdout.on('data', (data) => {
       this.eventEmitter.emit('write.buildLines', { project: watchProject, payload: data })
     })
+
+    runner.stderr.on('data', (data) => {
+      this.eventEmitter.emit('build.failed', watchProject)
+      this.eventEmitter.emit('write.errorLines', { project: watchProject, payload: data })
+    })
   }
 
   public spawnDevAppCommand (
