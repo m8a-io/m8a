@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@m8a/nestjs-typegoose':
     specifier: latest
-    version: 11.1.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@typegoose/typegoose@11.5.0)(mongoose@7.5.0)
+    version: 11.1.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@typegoose/typegoose@11.5.0)(mongoose@7.5.1)
   '@nestjs/common':
     specifier: 10.2.5
     version: 10.2.5(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -19,13 +19,13 @@ dependencies:
     version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
   '@typegoose/typegoose':
     specifier: 11.5.0
-    version: 11.5.0(mongoose@7.5.0)
+    version: 11.5.0(mongoose@7.5.1)
   class-validator:
     specifier: 0.14.0
     version: 0.14.0
   mongoose:
-    specifier: 7.5.0
-    version: 7.5.0
+    specifier: 7.5.1
+    version: 7.5.1
   reflect-metadata:
     specifier: 0.1.13
     version: 0.1.13
@@ -1742,7 +1742,7 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
 
-  /@m8a/nestjs-typegoose@11.1.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@typegoose/typegoose@11.5.0)(mongoose@7.5.0):
+  /@m8a/nestjs-typegoose@11.1.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@typegoose/typegoose@11.5.0)(mongoose@7.5.1):
     resolution: {integrity: sha512-2zvMKJNLGLC9ifL8FBKyHp4h7Wr+PrbP9mNl2gYXXPNv39QF2I+TE1LnqgBaZeMa/TUhexOTbEYOjQMOteOiUQ==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -1753,9 +1753,9 @@ packages:
     dependencies:
       '@nestjs/common': 10.2.5(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@typegoose/typegoose': 11.5.0(mongoose@7.5.0)
+      '@typegoose/typegoose': 11.5.0(mongoose@7.5.1)
       is-class: 0.0.9
-      mongoose: 7.5.0
+      mongoose: 7.5.1
     dev: false
 
   /@mongodb-js/saslprep@1.1.0:
@@ -1997,7 +1997,7 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@typegoose/typegoose@11.5.0(mongoose@7.5.0):
+  /@typegoose/typegoose@11.5.0(mongoose@7.5.1):
     resolution: {integrity: sha512-+ca//+8hUzOdK7mJTxHwqMiQjarVGCkF5x073ZScXfWOw35kPOzvvQwBEqFiVMhKW5txkiswsALwriJxhYcO2A==}
     engines: {node: '>=14.17.0'}
     peerDependencies:
@@ -2005,7 +2005,7 @@ packages:
     dependencies:
       lodash: 4.17.21
       loglevel: 1.8.1
-      mongoose: 7.5.0
+      mongoose: 7.5.1
       reflect-metadata: 0.1.13
       semver: 7.5.4
       tslib: 2.6.2
@@ -5400,8 +5400,8 @@ packages:
       '@mongodb-js/saslprep': 1.1.0
     dev: false
 
-  /mongoose@7.5.0:
-    resolution: {integrity: sha512-FpOWOb0AJuaVcplmEyIJ2eCbVGe4gOoniPD+pmft5BrGrNrsFcnYXlERdXtBApGHMHPwD7WbxTyhCbUNr72F3Q==}
+  /mongoose@7.5.1:
+    resolution: {integrity: sha512-gJCkUtW3KgAu7Uf8HTVv+S3wf9+xldR5LFYM6mABJJQHQB0aWUGyC3bWsl2X/6dVHZSoQq3wh5UV7rWC4FrewA==}
     engines: {node: '>=14.20.1'}
     dependencies:
       bson: 5.4.0
