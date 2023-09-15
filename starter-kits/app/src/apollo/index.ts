@@ -29,8 +29,9 @@ const retryLink = new RetryLink({
   }
 })
 
-// set network connectivity flat to true, to assume connectivity is working
-LocalStorage.set('networkOk', false)
+// set network connectivity flag to true, to assume connectivity is working
+// if network connectivity is faulty, it will be caught below in errorLink
+LocalStorage.set('networkOk', true)
 
 export function getClientOptions(options?: Partial<BootFileParams<unknown>>): ApolloClientOptions<unknown> {
   const authLink = setContext(async () => {

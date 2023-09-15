@@ -197,6 +197,7 @@ export type RegisterInputDto = {
   firstName: Scalars['String']['input']
   lastName: Scalars['String']['input']
   password: Scalars['String']['input']
+  temp?: InputMaybe<Scalars['String']['input']>
 }
 
 /** Sort Directions */
@@ -244,7 +245,7 @@ export type UpdateOneUserInput = {
 
 export type User = {
   __typename?: 'User'
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was created. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was created. */
   createdAt: Scalars['DateTime']['output']
   createdBy: User
   /** The user's email address */
@@ -254,7 +255,7 @@ export type User = {
   id: Scalars['ID']['output']
   /** The user's last name */
   lastName: Scalars['String']['output']
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was modified. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was modified. */
   modifiedAt: Scalars['DateTime']['output']
   modifiedBy: User
   status: Scalars['String']['output']
@@ -340,7 +341,7 @@ export type UserDeleteFilter = {
 
 export type UserDeleteResponse = {
   __typename?: 'UserDeleteResponse'
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was created. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was created. */
   createdAt?: Maybe<Scalars['DateTime']['output']>
   createdBy?: Maybe<User>
   /** The user's email address */
@@ -350,7 +351,7 @@ export type UserDeleteResponse = {
   id?: Maybe<Scalars['ID']['output']>
   /** The user's last name */
   lastName?: Maybe<Scalars['String']['output']>
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was modified. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was modified. */
   modifiedAt?: Maybe<Scalars['DateTime']['output']>
   modifiedBy?: Maybe<User>
   status?: Maybe<Scalars['String']['output']>
