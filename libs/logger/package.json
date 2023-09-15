@@ -50,7 +50,7 @@
     "@nestjs/testing": "10.2.5",
     "@ogma/nestjs-module": "5.1.2",
     "@ogma/platform-fastify": "5.0.1",
-    "@rushstack/eslint-config": "3.3.3",
+    "@rushstack/eslint-config": "3.3.4",
     "@types/jest": "29.5.4",
     "@types/node": "18.17.16",
     "eslint": "8.49.0",
