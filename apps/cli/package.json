@@ -67,7 +67,7 @@
     "@types/cross-spawn": "6.0.2",
     "@types/inquirer": "^9.0.0",
     "@types/jest": "29.5.4",
-    "@types/node": "18.17.14",
+    "@types/node": "18.17.16",
     "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
