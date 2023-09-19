@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@m8a/logger": "workspace:*",
-    "@microsoft/rush-lib": "5.100.1",
+    "@microsoft/rush-lib": "5.107.0",
     "@nestjs/common": "10.2.5",
     "@nestjs/event-emitter": "2.0.2",
     "cross-spawn": "7.0.3",
