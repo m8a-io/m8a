@@ -24,7 +24,7 @@
     "_phase:build": "pnpm prebuild && tsc --project tsconfig.build.json",
     "_phase:test": "jest --detectOpenHandles",
     "prebuild": "rimraf dist",
-    "build": "pnpm prebuild && tsc --project tsconfig.build.json",
+    "build": "pnpm prebuild && tsc --project tsconfig.build.json && swc src -d dist --config-file .build.swcrc",
     "build:watch": "pnpm prebuild && tsc --project tsconfig.build.json --watch",
     "dev": "pnpm prebuild && swc src -d dist --config-file .build.swcrc -w",
     "dev:old": "pnpm prebuild && tsc --project tsconfig.build.json --watch",

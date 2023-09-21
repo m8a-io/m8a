@@ -22,7 +22,7 @@
   // import { Logout_Mutation, Me_Query } from '../graphql/gql-operations'
 
   export default defineComponent({
-    name: 'UserAccountMenu',
+    name: 'UserAvatarMenu',
 
     setup() {
       const $q = useQuasar()
@@ -57,16 +57,26 @@
         console.log('changePassword')
       }
 
+      function logout() {
+        try {
+          window.location.replace(
+            'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/logout?post_logout_redirect_uri=https://zeus-dev.m8a.io/&client_id=zeus-dev'
+          )
+        } catch (e) {
+          console.log(e)
+        }
+      }
+
       const menuItems = [
         {
           label: 'Logout',
-          // handler: logout,
+          handler: logout,
           icon: 'logout'
         },
         {
-          label: 'Change Password',
+          label: 'Account',
           handler: changePassword,
-          icon: 'lock'
+          icon: 'account_box'
         }
       ]
       return {

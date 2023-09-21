@@ -23,6 +23,7 @@
   import { useQuasar, useMeta } from 'quasar'
   import { useRoute, useRouter } from 'vue-router'
   import { useLoginWithTokenMutation } from './login.graphql'
+  import { userLoggedInVar } from '../../apollo'
 
   export default defineComponent({
     name: 'PageLogin',
@@ -51,6 +52,7 @@
           if (accessToken !== '') {
             $q.loading.hide()
             $q.localStorage.set('isLoggedIn', true)
+            userLoggedInVar.value = true
             $q.localStorage.set('token', accessToken)
             $q.localStorage.set('userId', userId)
             router.push('/')

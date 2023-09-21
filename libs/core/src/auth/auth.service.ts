@@ -9,7 +9,12 @@ import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
 import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 import { HttpService } from '@nestjs/axios'
-import { catchError, lastValueFrom, of, map, switchMap } from 'rxjs'
+import { catchError, lastValueFrom, of, map, switchMap, tap, firstValueFrom } from 'rxjs'
+import { UserAuthEntity, UserAuthService } from 'src/user'
+import { KeycloakTokenData } from './types/keycloak-token-data'
+import { KeycloakIntrospectionResult } from './types/keycloak-introspection-result'
+import { GraphQLError } from 'graphql'
+import { Console } from 'console'
 
 @Injectable()
 export class AuthService {
@@ -23,6 +28,7 @@ export class AuthService {
 
   constructor (
     private readonly userService: UserService,
+    private readonly userAuthService: UserAuthService,
     private readonly jwtService: JwtService,
     @Inject(CacheService) private cacheService: CacheService,
     private readonly envConfig: EnvironmentVariables,
@@ -37,7 +43,7 @@ export class AuthService {
    * @param ctx
    * @returns a valid access token and the user's id, which is the AccessTokenDTO.
    */
-  async login (username: string, password: string, ctx: IContext): Promise<AccessTokenDTO> {
+  public async login (username: string, password: string, ctx: IContext): Promise<AccessTokenDTO> {
     let accessToken = ''
     const userId = ''
 
@@ -93,47 +99,47 @@ export class AuthService {
 
   /**
    *
-   * @param token
+   * @param token - the very short-lived access token from Keycloak
    * @param ctx
    * @returns a valid access token and the user's id, which is the AccessTokenDTO.
    */
-  async loginWithToken (token: string, ctx: IContext): Promise<AccessTokenDTO> {
+  public async loginWithToken (token: string, ctx: IContext): Promise<AccessTokenDTO> {
     let accessToken = ''
     let refreshToken = ''
+    let keycloakTokenData = {} as KeycloakTokenData
 
-    const keyCloakData1 = {
+    const keyCloakInputData = {
       code: token,
       client_id: this.envConfig.CLIENT_ID,
       client_secret: this.envConfig.CLIENT_SECRET,
       grant_type: 'authorization_code',
-      redirect_uri: 'https://zeus-dev.m8a.io/callback'
+      redirect_uri: 'https://zeus-dev.m8a.io/callback',
+      scope: 'openid'
     }
 
     console.log('loginWithToken ', token)
-    // ping auth.m8a.io with access code, then get info about user from auth.m8a.io so it can be validated and we can retrieve access and refresh tokens
-    const { data } = await lastValueFrom(
+    // ping auth.m8a.io with access code, then get info about user from auth.m8a.io so it can be validated and we can retrieve "local" access and refresh tokens
+    const keycloakIntrospectionResult = await lastValueFrom(
       this.httpService
         .post(
           'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/token',
-          keyCloakData1,
+          keyCloakInputData,
           this.axiosConfig
         )
-        .pipe(switchMap((response) => this.getUserInfo(response.data.access_token)))
+        .pipe(
+          switchMap((response) => {
+            keycloakTokenData = response.data
+            return this.getIntrospectionData(response.data)
+          }),
+          tap((data) => console.log('data from introspection: ', data))
+        )
     )
 
     // if user is not found, return empty accessToken and userId i.e. no login
-    if (data === undefined || data.active === false) {
-      return { accessToken, userId: '' }
-    }
+    if (keycloakIntrospectionResult === undefined || keycloakIntrospectionResult.active === false) {
+      // return { accessToken, userId: '' }
+    } // TODO: more than likely we aren't checking properly above, if the call errors out.
 
-    console.log('data ', data)
-
-    // check org database for user
-    const [user] = await this.userService.query({
-      filter: {
-        m8aAuthId: { eq: data.sub }
-      }
-    })
     // temp only: needed to create user in org database
     // if (user.length === 0) {
     //   orgUser = await this.userService.createOne({
@@ -145,13 +151,35 @@ export class AuthService {
     //     status: 'Registered'
     //   })
     // }
-    console.log('user ', user)
 
-    // if user is not found in org database, error out with missing user error
+    console.log('keycloak sub ', keycloakIntrospectionResult)
 
+    // const userAuthData: UserAuthEntity = {
+    //   accessToken: keyCloakData.access_token,
+    //   expiresIn: keyCloakData.expires_in,
+    //   refreshExpiresIn: keyCloakData.refresh_expires_in,
+    //   refreshToken: keyCloakData.refresh_token,
+    //   tokenType: keyCloakData.token_type,
+    //   idToken: keyCloakData.id_token
+    // }
+
+    // check org database for user
+
+    const [orgUser] = await this.userAuthService.query({
+      filter: {
+        m8aAuthId: { eq: keycloakIntrospectionResult.sub } // user's id in Keycloak
+      }
+    })
+
+    console.log('orgUser ', orgUser)
+
+    // if user is not found in org database, no login
+    if (orgUser === undefined) {
+      // return { accessToken, userId: '' }
+    }
+    // 0d62ce97-46d6-4dbd-9a52-8f821e35c5f0"
     // if user is found, generate new access token and refresh token
-
-    const payload: IJwtPayload = { sub: user.id }
+    const payload: IJwtPayload = { sub: orgUser.id }
     accessToken = await this.jwtService.signAsync(payload, {
       secret: this.envConfig.ACCESS_SECRET,
       expiresIn: this.envConfig.ACCESS_TTL
@@ -162,7 +190,7 @@ export class AuthService {
       expiresIn: this.envConfig.REFRESH_TTL
     })
 
-    this.cacheService.set('refreshToken', user.id, refreshToken)
+    this.cacheService.set('refreshToken', orgUser.id, refreshToken)
 
     const ttlInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
 
@@ -174,8 +202,8 @@ export class AuthService {
       secure: true
     })
 
-    console.log("user logged in and we've gotten an Access Token and Refresh Token from Keycloak")
-    return { accessToken, userId: user.id }
+    console.log('user logged in via Keycloak, switch to application session - send Access Token and User Id')
+    return { accessToken, userId: orgUser.id }
   }
 
   /**
@@ -183,7 +211,7 @@ export class AuthService {
    * @param ctx
    * @returns a nulled out AccessTokenDTO
    */
-  async logout (ctx: IContext): Promise<AccessTokenDTO> {
+  public async logout (ctx: IContext): Promise<AccessTokenDTO> {
     const accessToken = ''
     const token = ctx.req.cookies.refreshToken
     let userId = ctx.req.user.userId
@@ -203,30 +231,28 @@ export class AuthService {
     return { accessToken, userId }
   }
 
-  async getCachedToken (): Promise<string> {
+  private async getCachedToken (): Promise<string> {
     console.log('hit getCachedToken')
     return (await this.cacheService.get('refreshToken', '1')) as string
   }
 
-  private getUserInfo (token: string) {
-    const keyCloakData2 = {
-      token,
+  private async getIntrospectionData (keyCloakData: KeycloakTokenData) {
+    console.log('data from keycloak: ', keyCloakData)
+
+    const keyCloakInputData = {
+      token: keyCloakData.access_token,
       client_id: this.envConfig.CLIENT_ID,
       client_secret: this.envConfig.CLIENT_SECRET
     }
 
-    return this.httpService
-      .post(
-        'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/token/introspect',
-        keyCloakData2,
-        this.axiosConfig
-      )
-      .pipe(
-        map((response) => response),
-        catchError((error) => {
-          console.error('error from m8a Auth: ', error.response)
-          return of(error)
-        })
-      )
+    return firstValueFrom(
+      this.httpService
+        .post(
+          'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/token/introspect',
+          keyCloakInputData,
+          this.axiosConfig
+        )
+        .pipe(map((response) => response.data))
+    )
   }
 }

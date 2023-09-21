@@ -13,12 +13,16 @@ import { TokenRefreshLink } from 'apollo-link-token-refresh'
 import jwt_decode from 'jwt-decode'
 import { RetryLink } from '@apollo/client/link/retry'
 import { onError } from '@apollo/client/link/error'
+import { ref } from 'vue'
 
 interface DecodedToken {
   foo: string
   exp: number
   iat: number
 }
+
+// Sets up our reactive variable for login status
+export const userLoggedInVar = ref(false)
 
 // No longer needed but keeping for reference
 // export const userLoggedInVar = makeVar(false)
@@ -171,9 +175,15 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   // )
 
   const errorLink = onError(({ graphQLErrors, networkError }) => {
-    LocalStorage.set('networkOk', false)
-    console.error(graphQLErrors)
-    console.error(networkError)
+    if (networkError) {
+      LocalStorage.set('networkOk', false)
+      console.error('There is a network error: ', networkError)
+    }
+    if (graphQLErrors) {
+      graphQLErrors.forEach(({ message, locations, path }) =>
+        console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
+      )
+    }
   })
 
   return <ApolloClientOptions<unknown>>Object.assign(

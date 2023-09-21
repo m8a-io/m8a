@@ -2,7 +2,7 @@ import { Args, Resolver, Mutation } from '@nestjs/graphql'
 import { RegisterInputDTO } from './dtos/register.input.dto'
 import { UserService } from '../user/user.service'
 import { UserDTO } from '../user/dtos/user.dto'
-import { UserEntity } from '../user/user.entity'
+import { UserEntity } from '../user/entities/user.entity'
 
 @Resolver(() => UserDTO)
 export class RegisterResolver {

@@ -37,7 +37,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: '*' // [/\.m8a\.io$/, '*']
+    origin: /\.m8a\.io$/
   })
 
   app.useGlobalPipes(new ValidationPipe())

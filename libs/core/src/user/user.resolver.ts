@@ -23,7 +23,6 @@ export class UserResolver extends CRUDResolver(UserDTO, {
     return user
   }
 
-  @Public()
   @Query(() => String)
   async helloWorld (): Promise<string> {
     // const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
