@@ -1,0 +1,17 @@
+mutation logout {
+  logout {
+    accessToken
+    userId
+  }
+}
+
+query me {
+  me {
+    id
+    firstName
+    lastName
+    username
+    email
+    status
+  }
+}

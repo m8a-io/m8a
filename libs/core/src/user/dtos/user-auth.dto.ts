@@ -1,7 +1,10 @@
-import { BaseDTO } from '../../base/dtos/base.dto'
 import { UserAuthEntity } from '../entities/user-auth.entity'
 
-export class UserAuthDTO extends BaseDTO {
+export class UserAuthDTO {
+  public _id!: string
+
+  public id!: string
+
   public firstName!: string
 
   public lastName!: string
@@ -15,6 +18,8 @@ export class UserAuthDTO extends BaseDTO {
   public status!: string
 
   public salt!: string
+
+  public m8aAuthId: string
 
   public userAuthData: UserAuthEntity
 }

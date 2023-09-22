@@ -68,10 +68,6 @@
       // const {  } = login(route.query.code as string)
       console.log('data', data(route.query.code as string))
 
-      // if(data.accessToken === ''){
-
-      // }
-
       onError((error) => {
         $q.loading.hide()
         console.log('got error', error)

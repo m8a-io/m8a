@@ -40,6 +40,7 @@ export class UserResolver extends CRUDResolver(UserDTO, {
   @Query(() => UserDTO)
   async me (@Context() ctx: IContext): Promise<UserDTO | undefined> {
     console.log('me requested')
+    console.log('ctx.req.user.userId: ', ctx.req.user.userId)
     const user = await this.userService.findById(ctx.req.user.userId)
     return user
   }

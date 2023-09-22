@@ -26,8 +26,6 @@ export class m8aAuthzGuard implements CanActivate {
     if (ctx.getContext()) {
       const { user } = ctx.getContext().req
       const { fieldName } = ctx.getInfo()
-      console.log('ctx info field nodes: ', ctx.getInfo().fieldNodes)
-      console.log('ctx info: ', ctx.getContext())
       user ? (this.userId = user.userId) : (this.userId = '')
       this.fieldName = fieldName
     }

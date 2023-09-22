@@ -32,7 +32,7 @@
 
 <script lang="ts">
   import EssentialLink from 'components/EssentialLink.vue'
-  import { defineComponent, ref, watch } from 'vue'
+  import { defineComponent, ref, watch, getCurrentInstance } from 'vue'
   import { LocalStorage, useQuasar } from 'quasar'
   import UserAvatar from 'components/UserAvatar.vue'
   import UserAvatarMenu from 'components/UserAvatarMenu.vue'
@@ -95,7 +95,6 @@
 
       darkIcon.value = 'light_mode'
 
-      const isLoggedIn = ref(false)
       console.log('user is logged in', userLoggedInVar.value)
 
       watch(darkMode, () => {

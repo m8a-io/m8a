@@ -27,6 +27,9 @@ export class UserEntity extends BaseEntity {
   @Prop()
   public salt!: string
 
+  @Prop({ index: true })
+  public m8aAuthId?: string
+
   @Prop()
   public userAuthData: UserAuthEntity
 }

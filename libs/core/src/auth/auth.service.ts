@@ -130,8 +130,7 @@ export class AuthService {
           switchMap((response) => {
             keycloakTokenData = response.data
             return this.getIntrospectionData(response.data)
-          }),
-          tap((data) => console.log('data from introspection: ', data))
+          })
         )
     )
 
@@ -154,14 +153,14 @@ export class AuthService {
 
     console.log('keycloak sub ', keycloakIntrospectionResult)
 
-    // const userAuthData: UserAuthEntity = {
-    //   accessToken: keyCloakData.access_token,
-    //   expiresIn: keyCloakData.expires_in,
-    //   refreshExpiresIn: keyCloakData.refresh_expires_in,
-    //   refreshToken: keyCloakData.refresh_token,
-    //   tokenType: keyCloakData.token_type,
-    //   idToken: keyCloakData.id_token
-    // }
+    const userAuthData: UserAuthEntity = {
+      accessToken: keycloakTokenData.access_token,
+      expiresIn: keycloakTokenData.expires_in,
+      refreshExpiresIn: keycloakTokenData.refresh_expires_in,
+      refreshToken: keycloakTokenData.refresh_token,
+      tokenType: keycloakTokenData.token_type,
+      idToken: keycloakTokenData.id_token
+    }
 
     // check org database for user
 
@@ -171,15 +170,22 @@ export class AuthService {
       }
     })
 
-    console.log('orgUser ', orgUser)
+    // update user with auth data from keycloak and setup orgUser for update
+    orgUser.userAuthData = userAuthData
+    const updateUserId = orgUser.id
+    delete orgUser._id
+    delete orgUser.id
+
+    // update user with auth data
+    await this.userAuthService.updateOne(updateUserId, orgUser)
 
     // if user is not found in org database, no login
     if (orgUser === undefined) {
-      // return { accessToken, userId: '' }
+      return { accessToken, userId: '' }
     }
     // 0d62ce97-46d6-4dbd-9a52-8f821e35c5f0"
     // if user is found, generate new access token and refresh token
-    const payload: IJwtPayload = { sub: orgUser.id }
+    const payload: IJwtPayload = { sub: updateUserId }
     accessToken = await this.jwtService.signAsync(payload, {
       secret: this.envConfig.ACCESS_SECRET,
       expiresIn: this.envConfig.ACCESS_TTL
@@ -190,7 +196,7 @@ export class AuthService {
       expiresIn: this.envConfig.REFRESH_TTL
     })
 
-    this.cacheService.set('refreshToken', orgUser.id, refreshToken)
+    this.cacheService.set('refreshToken', updateUserId, refreshToken)
 
     const ttlInMillis = ms(this.envConfig.REFRESH_TTL as StringValue)
 
@@ -203,7 +209,7 @@ export class AuthService {
     })
 
     console.log('user logged in via Keycloak, switch to application session - send Access Token and User Id')
-    return { accessToken, userId: orgUser.id }
+    return { accessToken, userId: updateUserId }
   }
 
   /**
