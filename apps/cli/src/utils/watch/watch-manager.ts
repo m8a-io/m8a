@@ -59,9 +59,6 @@ export class WatchManager {
    * Projects in rush.json must be marked with the tag "dev-server", for the manager to find it
    */
   public startDevServerApp () {
-    // if (this.devRunner) {
-    //   this.devRunner.
-    // }
     this.devRunner = this.runnerService.spawnDevAppCommand(
       'pnpm',
       ['run', 'dev'],
@@ -89,7 +86,6 @@ export class WatchManager {
    * @param payload
    * @type WriteBuildEvent
    */
-  // TODO: create a type for the writeBuildLines payload
   public writeBuildLines (payload: WriteBuildEvent): void {
     const { project, payload: data } = payload
     const outputLines2d = data.toString().split('\n')

@@ -1,4 +1,5 @@
 // Credit for this code goes to RushStack: lightwatch-plugin
+
 import { EventEmitter2 } from '@nestjs/event-emitter'
 /**
  * The state of a project in the watch mode.
@@ -167,10 +168,7 @@ export class WatchProject {
       if (this._state === WatchState.Start || this._state === WatchState.Succeeded) {
         this.setState(WatchState.Building)
       }
-      // if (this._includesString(this.bufferedLines, 'Successfully compiled')) { /* 'Found 0 errors.' */
-      //   this.bufferedLines.length = 0
-      //   this.eventEmitter.emit('build.done', this) // and watching
-      // }
+
       this.bufferedLines.length = 0
     }
   }
@@ -180,10 +178,7 @@ export class WatchProject {
       for (const line of this.bufferedLines) {
         console.log(line) // allow console.log as we need raw logging
       }
-      // if (this._includesString(this.bufferedLines, 'Successfully compiled')) { /* 'Found 0 errors.' */
-      //   this.bufferedLines.length = 0
-      //   this.eventEmitter.emit('build.done', this) // and watching
-      // }
+
       this.bufferedLines.length = 0
       this.setState(WatchState.Pending)
     }

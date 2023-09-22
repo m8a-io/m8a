@@ -323,7 +323,7 @@
       "packageName": "@m8a/cli",
       "projectFolder": "apps/cli",
       "reviewCategory": "apps",
-      "shouldPublish": false
+      "shouldPublish": true
     },
     {
       "packageName": "@m8a/core",

@@ -9,6 +9,13 @@ import { spawn as spawn2 } from 'child_process'
 export class RunnerService {
   constructor (private readonly logService: DevLoggerService, private eventEmitter: EventEmitter2) {}
 
+  /**
+   * Spawn a command and return the runner
+   * @param cmd
+   * @param params
+   * @param project
+   * @returns
+   */
   public spawnSync (cmd: string, params: any[], project?: { projectFolder: string }) {
     const runner = spawn.sync(cmd, params, { stdio: 'inherit', cwd: project.projectFolder })
 
@@ -19,6 +26,12 @@ export class RunnerService {
     return runner
   }
 
+  /**
+   * Spawn a command synchronously
+   * @param command
+   * @param params
+   * @returns
+   */
   public getSpawnOutput (command: string, params: string[]) {
     try {
       const child = spawn.sync(command, params)
@@ -28,6 +41,13 @@ export class RunnerService {
     }
   }
 
+  /**
+   * Spawn a dev command asynchronously
+   * @param cmd
+   * @param params
+   * @param project
+   * @param watchProject
+   */
   public spawnDevCommand (
     cmd: string,
     params: any[],
@@ -52,14 +72,20 @@ export class RunnerService {
     })
   }
 
+  /**
+   * Spawn a dev server app asynchronously
+   * @param cmd
+   * @param params
+   * @param project
+   * @returns
+   */
   public spawnDevAppCommand (
     cmd: string,
     params: any[],
     project: { projectFolder: string; packageName: string }
   ) {
-    // console.log('spawning app command')
     const runner = spawn2(cmd, params, { cwd: project.projectFolder, stdio: 'inherit' })
-    // console.log('spawned command')
+
     runner.on('error', (error) => {
       this.logService.error(`Command "${cmd}" failed with error: ${error}`)
       runner.removeAllListeners()
