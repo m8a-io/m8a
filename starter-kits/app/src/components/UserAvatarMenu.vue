@@ -18,36 +18,40 @@
 <script setup lang="ts">
   import { useQuasar } from 'quasar'
   import { useLogoutMutation, useMeQuery } from './user-avatar-menu.graphql'
+  import GlobalSpinner from 'components/GlobalSpinner.vue'
+  import { userLoggedInVar } from 'src/apollo'
 
   const $q = useQuasar()
-  const { logout } = useLogoutMutation()
+  const { logout, loading } = useLogoutMutation()
   const { me } = useMeQuery()
 
-  // Object.assign(me, $q.localStorage.getItem('me'))
-  // console.log('me local storage get', $q.localStorage.getItem('me'))
+  async function logoutUser() {
+    const {
+      data: { idToken }
+    } = await logout()
+    if (idToken !== null) {
+      $q.loading.hide()
+      $q.localStorage.set('isLoggedIn', false)
+      userLoggedInVar.value = false
+      $q.localStorage.remove('token')
+      $q.localStorage.remove('userId')
+      try {
+        window.location.replace(
+          `https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/logout?post_logout_redirect_uri=https://zeus-dev.m8a.io/&client_id=zeus-dev&id_token_hint=${idToken}`
+        )
+      } catch (e) {
+        console.log(e)
+      }
+    }
+  }
 
-  // const { mutate: logout } = useMutation(Logout_Mutation, () => ({
-  //   update: (
-  //     cache,
-  //     {
-  //       data: {
-  //         logout: { accessToken, userId }
-  //       }
-  //     }
-  //   ) => {
-  //     console.log('logging out: ', accessToken, userId)
-  //     if (!accessToken) {
-  //       $q.notify({
-  //         color: 'red-8',
-  //         message: 'You are logged out.',
-  //         icon: 'logout'
-  //       })
-  //       LocalStorage.set('isLoggedIn', true)
-  //       $q.localStorage.remove('userId')
-  //       $q.localStorage.remove('token')
-  //     }
-  //   }
-  // }))
+  if (loading) {
+    $q.loading.show({
+      spinner: GlobalSpinner,
+      delay: 300,
+      message: 'Logging you out!'
+    })
+  }
 
   function changePassword() {
     console.log('changePassword')
@@ -56,17 +60,17 @@
   // function logoutUser () {
   //   try {
   //     window.location.replace(
-  //       'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/logout?post_logout_redirect_uri=https://zeus-dev.m8a.io/&client_id=zeus-dev'
+  //       'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/logout?post_logout_redirect_uri=https://zeus-dev.m8a.io/&client_id=zeus-dev&id_token_hint=2023984239482'
   //     )
   //   } catch (e) {
   //     console.log(e)
   //   }
   // }
-  console.log('me in user avatar menu')
+
   const menuItems = [
     {
       label: 'Logout',
-      handler: logout,
+      handler: logoutUser,
       icon: 'logout'
     },
     {

@@ -1,10 +1,3 @@
-mutation logout {
-  logout {
-    accessToken
-    userId
-  }
-}
-
 query me {
   me {
     id
@@ -13,5 +6,11 @@ query me {
     username
     email
     status
+  }
+}
+
+mutation logout {
+  logout {
+    idToken
   }
 }

@@ -9,12 +9,11 @@ import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
 import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 import { HttpService } from '@nestjs/axios'
-import { catchError, lastValueFrom, of, map, switchMap, tap, firstValueFrom } from 'rxjs'
+import { lastValueFrom, map, switchMap, firstValueFrom } from 'rxjs'
 import { UserAuthEntity, UserAuthService } from 'src/user'
 import { KeycloakTokenData } from './types/keycloak-token-data'
-import { KeycloakIntrospectionResult } from './types/keycloak-introspection-result'
-import { GraphQLError } from 'graphql'
-import { Console } from 'console'
+
+import { LogoutDTO } from './refresh/dtos/logout.dto'
 
 @Injectable()
 export class AuthService {
@@ -217,10 +216,13 @@ export class AuthService {
    * @param ctx
    * @returns a nulled out AccessTokenDTO
    */
-  public async logout (ctx: IContext): Promise<AccessTokenDTO> {
+  public async logout (ctx: IContext): Promise<LogoutDTO> {
     const accessToken = ''
     const token = ctx.req.cookies.refreshToken
     let userId = ctx.req.user.userId
+
+    const user = await this.userAuthService.findById(userId)
+    const idToken = user.userAuthData.idToken
 
     ctx.reply.setCookie('refreshToken', '', {
       expires: new Date(Date.now()),
@@ -234,7 +236,7 @@ export class AuthService {
     userId = ''
     ctx.req.cookies.refreshToken = ''
     console.log('logged out user')
-    return { accessToken, userId }
+    return { idToken }
   }
 
   private async getCachedToken (): Promise<string> {

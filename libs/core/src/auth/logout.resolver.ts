@@ -1,7 +1,7 @@
 import { Context, Mutation, Resolver } from '@nestjs/graphql'
 import { IContext } from '../base/interfaces/context.interface'
 import { AuthService } from './auth.service'
-import { AccessTokenDTO } from './refresh/dtos/access-token.dto'
+import { LogoutDTO } from './refresh/dtos/logout.dto'
 
 @Resolver()
 export class LogoutResolver {
@@ -10,14 +10,14 @@ export class LogoutResolver {
   /**
    *
    * @param ctx injected ctx object
-   * @returns AccessTokenDTO, but nulled out and meaningless
+   * @returns LogoutDTO holding the id token for the id_token_hint for Keycloak
    */
-  @Mutation(() => AccessTokenDTO, {
+  @Mutation(() => LogoutDTO, {
     nullable: true,
     description: 'The logout mutation for the logout process.'
   })
-  async logout (@Context() ctx: IContext): Promise<AccessTokenDTO> {
-    const accessToken = await this.authService.logout(ctx)
-    return accessToken
+  async logout (@Context() ctx: IContext): Promise<LogoutDTO> {
+    const idToken = await this.authService.logout(ctx)
+    return idToken
   }
 }

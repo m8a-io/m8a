@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title>m8a-Zeus-Dev</q-toolbar-title>
+        <q-toolbar-title>m8a-zeus-dev</q-toolbar-title>
 
         <q-toggle color="light-blue" :icon="darkIcon" v-model="darkMode" />
         <div v-if="userLoggedInVar">
@@ -32,7 +32,7 @@
 
 <script lang="ts">
   import EssentialLink from 'components/EssentialLink.vue'
-  import { defineComponent, ref, watch, getCurrentInstance } from 'vue'
+  import { defineComponent, ref, watch } from 'vue'
   import { LocalStorage, useQuasar } from 'quasar'
   import UserAvatar from 'components/UserAvatar.vue'
   import UserAvatarMenu from 'components/UserAvatarMenu.vue'

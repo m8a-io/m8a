@@ -87,6 +87,11 @@ export type IdFilterComparison = {
   notLike?: InputMaybe<Scalars['ID']['input']>
 }
 
+export type LogoutDto = {
+  __typename?: 'LogoutDTO'
+  idToken?: Maybe<Scalars['String']['output']>
+}
+
 export type Mutation = {
   __typename?: 'Mutation'
   createManyUsers: Array<User>
@@ -98,7 +103,7 @@ export type Mutation = {
   /** The login mutation for the m8a Auth login process. */
   loginWithToken?: Maybe<AccessTokenDto>
   /** The logout mutation for the logout process. */
-  logout?: Maybe<AccessTokenDto>
+  logout?: Maybe<LogoutDto>
   /** This is the mutation for registering a new user. */
   register: User
   updateManyUsers: UpdateManyResponse
