@@ -57,16 +57,6 @@
     console.log('changePassword')
   }
 
-  // function logoutUser () {
-  //   try {
-  //     window.location.replace(
-  //       'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/logout?post_logout_redirect_uri=https://zeus-dev.m8a.io/&client_id=zeus-dev&id_token_hint=2023984239482'
-  //     )
-  //   } catch (e) {
-  //     console.log(e)
-  //   }
-  // }
-
   const menuItems = [
     {
       label: 'Logout',

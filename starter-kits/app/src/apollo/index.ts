@@ -36,6 +36,7 @@ const retryLink = new RetryLink({
 // set network connectivity flag to true, to assume connectivity is working
 // if network connectivity is faulty, it will be caught below in errorLink
 LocalStorage.set('networkOk', true)
+LocalStorage.set('apiOk', true)
 
 export function getClientOptions(options?: Partial<BootFileParams<unknown>>): ApolloClientOptions<unknown> {
   const authLink = setContext(async () => {
@@ -53,8 +54,26 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
 
   const refreshLink = new TokenRefreshLink({
     accessTokenField: 'accessToken',
-    // No need to refresh if access token exists and is and not expired
+    // No need to refresh if access token exists and is not expired
     isTokenValidOrUndefined: async (): Promise<boolean> => {
+      // first check health of api server
+      if (LocalStorage.getItem('apiOk') === false) {
+        const healthCheck = await fetch('https://zeus-dev-api.m8a.io/health', {
+          // TODO - CONFIG: get config value for refresh URL as it will be different for each tenant
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json'
+          },
+          credentials: 'include'
+        })
+        console.log('healthCheck', healthCheck.json.toString())
+        if (healthCheck.json.toString() !== 'ok') {
+          LocalStorage.set('apiOk', false)
+          console.error('API is not healthy')
+          return null // if api is not healthy, don't try to refresh token
+        }
+      }
+
       const token: string | null = LocalStorage.getItem('token')
       const userId: string | null = LocalStorage.getItem('userId')
 
@@ -202,9 +221,11 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
   const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (networkError) {
       LocalStorage.set('networkOk', false)
+      LocalStorage.set('apiOk', false)
       console.error('There is a network error: ', networkError)
     }
     if (graphQLErrors) {
+      LocalStorage.set('apiOk', false)
       graphQLErrors.forEach(({ message, locations, path }) =>
         console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
       )

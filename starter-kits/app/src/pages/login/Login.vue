@@ -31,7 +31,6 @@
     setup() {
       const gqlError = ref('')
       const $q = useQuasar()
-      const route = useRoute()
       const router = useRouter()
       const { loginWithToken, loading, onError } = useLoginWithTokenMutation()
 
@@ -41,14 +40,14 @@
 
       useMeta(metaData)
 
-      const data = async function (token: string) {
+      async function login(token: string) {
         try {
           const {
             data: { accessToken, userId }
           } = await loginWithToken({
             token
           })
-          console.log('AccessToken', accessToken)
+
           if (accessToken !== '') {
             $q.loading.hide()
             $q.localStorage.set('isLoggedIn', true)
@@ -57,16 +56,12 @@
             $q.localStorage.set('userId', userId)
             router.push('/')
           }
-          return data
         } catch (_error) {
           gqlError.value = _error.message
           $q.loading.hide()
           console.log('got error', _error)
         }
       }
-
-      // const {  } = login(route.query.code as string)
-      console.log('data', data(route.query.code as string))
 
       onError((error) => {
         $q.loading.hide()
@@ -80,6 +75,8 @@
           message: 'Logging you in!'
         })
       }
+
+      login(router.currentRoute.value.query.token as string)
 
       return {
         gqlError
