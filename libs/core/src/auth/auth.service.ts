@@ -217,7 +217,6 @@ export class AuthService {
    * @returns a nulled out AccessTokenDTO
    */
   public async logout (ctx: IContext): Promise<LogoutDTO> {
-    const accessToken = ''
     const token = ctx.req.cookies.refreshToken
     let userId = ctx.req.user.userId
 
@@ -237,11 +236,6 @@ export class AuthService {
     ctx.req.cookies.refreshToken = ''
     console.log('logged out user')
     return { idToken }
-  }
-
-  private async getCachedToken (): Promise<string> {
-    console.log('hit getCachedToken')
-    return (await this.cacheService.get('refreshToken', '1')) as string
   }
 
   private async getIntrospectionData (keyCloakData: KeycloakTokenData) {

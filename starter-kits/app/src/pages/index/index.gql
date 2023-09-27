@@ -2,8 +2,3 @@ query helloWorld {
   helloWorld
   helloWorld
 }
-
-query getCachedToken {
-  getCachedToken
-  getCachedToken
-}

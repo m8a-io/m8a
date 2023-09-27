@@ -6,7 +6,7 @@
       <q-card-section>
         <div class="text-h6">From the GraphQL API:</div>
       </q-card-section>
-      <q-card-section class="q-pt-none"> {{ helloWorld }} {{ getCachedToken }} </q-card-section>
+      <q-card-section class="q-pt-none"> {{ helloWorld }} </q-card-section>
     </q-card>
   </q-page>
 </template>
@@ -14,7 +14,7 @@
 <script setup lang="ts">
   import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useHelloWorldQuery, useGetCachedTokenQuery } from './index.graphql'
+  import { useHelloWorldQuery } from './index.graphql'
 
   defineOptions({
     name: 'PageIndex'
@@ -22,7 +22,6 @@
 
   const $q = useQuasar()
   const { helloWorld, loading, onResult } = useHelloWorldQuery()
-  const { getCachedToken } = useGetCachedTokenQuery()
   const metaData = {
     title: 'Home - m8a-Zeus-Dev'
   }
@@ -36,7 +35,6 @@
       message: 'Getting HelloWorld!'
     })
   }
-  console.log('cachedToken ', getCachedToken.value)
   onResult(() => {
     console.log('got result', helloWorld.value)
     $q.loading.hide()
