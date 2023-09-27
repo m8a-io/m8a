@@ -1,6 +1,6 @@
 {
   "name": "@m8a/cli",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "A CLI for working with m8a",
   "keywords": [
     "platform",
