@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/callback',
     redirect: (to) => {
-      console.log('token ', to.query.code)
+      console.log('token ', to.query)
       return { path: '/login', query: to.query }
     }
   },

@@ -360,6 +360,12 @@ importers:
 
   ../../libs/logger:
     dependencies:
+      '@nestjs/platform-fastify':
+        specifier: 10.2.5
+        version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
+      '@ogma/nestjs-module':
+        specifier: 5.1.2
+        version: 5.1.2(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       chalk-v2:
         specifier: 1.0.2
         version: 1.0.2
@@ -379,15 +385,9 @@ importers:
       '@nestjs/core':
         specifier: 10.2.5
         version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/platform-fastify':
-        specifier: 10.2.5
-        version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
       '@nestjs/testing':
         specifier: 10.2.5
         version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/platform-express@10.2.0)
-      '@ogma/nestjs-module':
-        specifier: 5.1.2
-        version: 5.1.2(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@ogma/platform-fastify':
         specifier: 5.0.1
         version: 5.0.1(@nestjs/platform-fastify@10.2.5)(@ogma/nestjs-module@5.1.2)(fastify@4.23.2)

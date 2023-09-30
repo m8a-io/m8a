@@ -71,6 +71,8 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
           LocalStorage.set('apiOk', false)
           console.error('API is not healthy')
           return null // if api is not healthy, don't try to refresh token
+        } else {
+          LocalStorage.set('apiOk', true)
         }
       }
 

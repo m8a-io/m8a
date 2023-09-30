@@ -132,10 +132,10 @@ export class AuthService {
           })
         )
     )
-
+    console.log('we are hitting the api!')
     // if user is not found, return empty accessToken and userId i.e. no login
     if (keycloakIntrospectionResult === undefined || keycloakIntrospectionResult.active === false) {
-      // return { accessToken, userId: '' }
+      return { accessToken, userId: '' }
     } // TODO: more than likely we aren't checking properly above, if the call errors out.
 
     // temp only: needed to create user in org database

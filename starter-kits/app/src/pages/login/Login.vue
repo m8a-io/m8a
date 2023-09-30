@@ -76,7 +76,7 @@
         })
       }
 
-      login(router.currentRoute.value.query.token as string)
+      login(router.currentRoute.value.query.code as string)
 
       return {
         gqlError

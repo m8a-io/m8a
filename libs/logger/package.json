@@ -1,6 +1,6 @@
 {
   "name": "@m8a/logger",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "The logger module for m8a applications.",
   "keywords": [
     "platform",
@@ -38,6 +38,8 @@
     "*.ts": "eslint --fix"
   },
   "dependencies": {
+    "@nestjs/platform-fastify": "10.2.5",
+    "@ogma/nestjs-module": "5.1.2",
     "chalk-v2": "1.0.2",
     "rxjs": "7.8.1"
   },
@@ -46,9 +48,7 @@
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/common": "10.2.5",
     "@nestjs/core": "10.2.5",
-    "@nestjs/platform-fastify": "10.2.5",
     "@nestjs/testing": "10.2.5",
-    "@ogma/nestjs-module": "5.1.2",
     "@ogma/platform-fastify": "5.0.1",
     "@rushstack/eslint-config": "3.3.4",
     "@types/jest": "29.5.5",
@@ -62,6 +62,6 @@
     "typescript": "4.9.5"
   },
   "peerDependencies": {
-    "@nestjs/common": "^10.0.0"
+    "@nestjs/common": "^10.2.0"
   }
 }
