@@ -1,4 +1,7 @@
-// Credit for this code goes to RushStack: lightwatch-plugin
+/**
+ * The following code is a derivative work of the code from the RushStack project's lightwatch-plugin
+ * which is licensed MIT.
+ * */
 
 import { EventEmitter2 } from '@nestjs/event-emitter'
 /**
@@ -146,13 +149,11 @@ export class WatchProject {
           console.log(line) // allow console.log as we need raw logging
           // we need to set a flag to catch the initial SWC output
           if (!this._initialSWCBuildCompleted && line.includes('Watching for file changes')) {
-            /* 'Found 0 errors.' for TSC compilation */
             this.bufferedLines.length = 0
             this._initialSWCBuildCompleted = true
             isDone = true
           }
           if (this._initialSWCBuildCompleted && line.includes('Successfully compiled')) {
-            /* 'Found 0 errors.' for TSC compilation */
             this.bufferedLines.length = 0
             isDone = true
           }
@@ -165,7 +166,7 @@ export class WatchProject {
         isDone = false
       }
 
-      if (this._state === WatchState.Start || this._state === WatchState.Succeeded) {
+      if (this._state === WatchState.Start) {
         this.setState(WatchState.Building)
       }
 

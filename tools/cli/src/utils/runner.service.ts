@@ -79,7 +79,7 @@ export class RunnerService {
    * @param project
    * @returns
    */
-  public spawnDevAppCommand (
+  public spawnDevServerCommand (
     cmd: string,
     params: any[],
     project: { projectFolder: string; packageName: string }

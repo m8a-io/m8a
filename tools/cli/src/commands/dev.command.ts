@@ -50,7 +50,7 @@ export class DevCommand extends CommandRunner {
   @Option({
     flags: '--just-deps <app>',
     description:
-      'This flag indicates only dependencies of your app will also be built and watched. Your app will need to be ran in a second terminal.'
+      'This flag indicates only dependencies of your app will be built and watched. Your app (with dev server) will need to be ran in a second terminal.'
   })
   parseJustDeps (app: string) {
     this.projects.push(app)
@@ -61,10 +61,10 @@ export class DevCommand extends CommandRunner {
     this.logService.addLine()
     this.logService.log('Starting your dev environment....')
 
-    // get the projects of the monorepo
-    const projectsToRun = this.watchManager.setupProjects(this.projects, this.option)
+    // get the projects of the monorepo to be watched
+    const projectsToWatch = this.watchManager.setupProjects(this.projects, this.option)
 
     // and run them with watchers
-    this.watchManager.startDevWatchers(projectsToRun)
+    this.watchManager.startDevWatchers(projectsToWatch)
   }
 }

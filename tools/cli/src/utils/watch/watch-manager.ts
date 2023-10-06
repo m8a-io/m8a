@@ -1,4 +1,7 @@
-// Partial credit for this code goes to RushStack: lightwatch-plugin
+/**
+ * The following code is a derivative work of the code from the RushStack project's lightwatch-plugin
+ * which is licensed MIT and the dimfeld/rush-dev-watcher project which is also MIT licensed.
+ * */
 
 import { Injectable } from '@nestjs/common'
 import { WatchProject, WatchState } from './watch-project'
@@ -31,7 +34,8 @@ export class WatchManager {
   ) {}
 
   /**
-   * Starts the dev commands which watch the project builds of dependent projects
+   * Starts the dev commands which watch the project builds of dependent projects and
+   * starts the dev server (the final application)
    * @param projects
    */
   public async startDevWatchers (projects: RushConfigurationProject[]) {
@@ -44,7 +48,6 @@ export class WatchManager {
     if (this.devServerProject && this.projects.length === 0) {
       this.startDevServerApp()
     }
-
     // this.projects are now our dependency projects only - run them.
     for (const project of this.projects) {
       await this._startBuildingDepProjects(
@@ -59,7 +62,8 @@ export class WatchManager {
    * Projects in rush.json must be marked with the tag "dev-server", for the manager to find it
    */
   public startDevServerApp () {
-    this.devRunner = this.runnerService.spawnDevAppCommand(
+    // we know that pnpm will be installed globally in the m8a workspace
+    this.devRunner = this.runnerService.spawnDevServerCommand(
       'pnpm',
       ['run', 'dev'],
       this.projectConfigs.find((p) => p.packageName === this.devServerProject.name)
@@ -102,9 +106,9 @@ export class WatchManager {
       }
     }
 
-    if (project.state === WatchState.Succeeded) {
-      project.setState(WatchState.Building)
-    }
+    // if (project.state === WatchState.Succeeded) {
+    //   project.setState(WatchState.Building)
+    // }
 
     if (this.activeProject === undefined) {
       this._activateProject(project)
@@ -173,11 +177,11 @@ export class WatchManager {
 
   /**
    * Sets up projects to be ready for building
-   * @param selectedProjects
+   * @param projectsToWatch
    * @param option
    * @returns a set of projects ready for building
    */
-  public setupProjects (selectedProjects: string[], option: string) {
+  public setupProjects (projectsToWatch: string[], option: string) {
     const rushConfig = rushLib.RushConfiguration.loadFromDefaultLocation({
       startingFolder: process.cwd()
     })
@@ -195,12 +199,13 @@ export class WatchManager {
       }
     }
 
-    for (const proj of selectedProjects) {
+    for (const proj of projectsToWatch) {
       const project = rushConfig.findProjectByShorthandName(proj)
       if (!project) {
         this.logService.error(`Could not find project ${proj}`)
         process.exit(1)
       }
+
       if (option !== 'justDeps') {
         projects.set(project.packageName, project)
       }
@@ -261,7 +266,7 @@ export class WatchManager {
   }
 
   /**
-   * Sets the dev server project
+   * Sets the dev server project to be watched
    */
   private _setDevServerProject (projects: RushConfigurationProject[]): void {
     for (const project of projects) {
@@ -313,6 +318,12 @@ export class WatchManager {
     const devCommand = packageJson.scripts.dev
     if (!devCommand) {
       this.logService.warn(`${project.packageName} has no dev command`)
+      this.projects.map((p) => {
+        if (p.name === project.packageName) {
+          p.setState(WatchState.Succeeded)
+        }
+        return p
+      })
       return Promise.resolve()
     }
 
@@ -346,7 +357,7 @@ export class WatchManager {
     // 1. Print any live projects that have already succeeded.
     // We avoid printing successes if it would cause already reported failures to scroll away.
     if (!anyFailuresReported) {
-      // TODO: Sort them chronologically? Or topologically?
+      // Sort them chronologically? Or topologically?
       for (const project of this.projects) {
         if (project.live && project.state === WatchState.Succeeded && !project.reported) {
           // Flush the project's output
