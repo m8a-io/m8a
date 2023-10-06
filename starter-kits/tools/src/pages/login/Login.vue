@@ -21,7 +21,7 @@
   import { defineComponent, ref } from 'vue'
   import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useRoute, useRouter } from 'vue-router'
+  import { useRouter } from 'vue-router'
   import { useLoginWithTokenMutation } from './login.graphql'
   import { userLoggedInVar } from '../../apollo'
 

@@ -321,7 +321,7 @@
     },
     {
       "packageName": "@m8a/cli",
-      "projectFolder": "apps/cli",
+      "projectFolder": "tools/cli",
       "reviewCategory": "apps",
       "shouldPublish": true
     },
