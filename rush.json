@@ -300,12 +300,6 @@
    */
   "projects": [
     {
-      "packageName": "@m8a/nestjs-typegoose",
-      "projectFolder": "libs/nestjs-typegoose",
-      "reviewCategory": "libraries",
-      "shouldPublish": true
-    },
-    {
       "packageName": "@m8a/starter-kit-api",
       "projectFolder": "starter-kits/api",
       "reviewCategory": "apps",
@@ -323,6 +317,12 @@
       "packageName": "@m8a/cli",
       "projectFolder": "tools/cli",
       "reviewCategory": "apps",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@m8a/nestjs-typegoose",
+      "projectFolder": "libs/nestjs-typegoose",
+      "reviewCategory": "libraries",
       "shouldPublish": true
     },
     {
