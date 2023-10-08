@@ -49,7 +49,7 @@
     "@m8a/eslint-config": "workspace:*",
     "@quasar/app-vite": "1.6.2",
     "@rushstack/eslint-config": "3.3.4",
-    "@types/node": "18.18.4",
+    "@types/node": "20.8.3",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "autoprefixer": "^10.4.2",
