@@ -60,7 +60,7 @@
     "@ptc-org/nestjs-query-typegoose": "4.0.0",
     "@typegoose/typegoose": "11.5.1",
     "argon2": "0.31.1",
-    "axios": "1.5.0",
+    "axios": "1.5.1",
     "cache-manager": "5.2.3",
     "cache-manager-redis-yet": "4.1.2",
     "camel-case": "4.1.2",
