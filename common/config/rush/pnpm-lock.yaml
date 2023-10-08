@@ -23,8 +23,8 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
       '@graphql-yoga/nestjs':
-        specifier: 2.1.0
-        version: 2.1.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/graphql@12.0.9)(graphql-yoga@4.0.4)(graphql@16.6.0)
+        specifier: 2.1.1
+        version: 2.1.1(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/graphql@12.0.9)(graphql-yoga@4.0.5)(graphql@16.6.0)
       '@m8a/nestjs-typegoose':
         specifier: workspace:*
         version: link:../nestjs-typegoose
@@ -56,8 +56,8 @@ importers:
         specifier: 10.2.5
         version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
       '@ogma/nestjs-module':
-        specifier: 5.1.2
-        version: 5.1.2(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 5.1.3
+        version: 5.1.3(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@ptc-org/nestjs-query-core':
         specifier: 4.0.0
         version: 4.0.0(@nestjs/common@10.2.5)(class-transformer@0.5.1)
@@ -98,8 +98,8 @@ importers:
         specifier: 16.6.0
         version: 16.6.0
       graphql-yoga:
-        specifier: 4.0.4
-        version: 4.0.4(graphql@16.6.0)
+        specifier: 4.0.5
+        version: 4.0.5(graphql@16.6.0)
       mongoose:
         specifier: 7.5.2
         version: 7.5.2
@@ -255,8 +255,8 @@ importers:
         specifier: 10.2.5
         version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
       '@ogma/nestjs-module':
-        specifier: 5.1.2
-        version: 5.1.2(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 5.1.3
+        version: 5.1.3(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       chalk-v2:
         specifier: 1.0.2
         version: 1.0.2
@@ -281,7 +281,7 @@ importers:
         version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/platform-express@10.2.0)
       '@ogma/platform-fastify':
         specifier: 5.0.1
-        version: 5.0.1(@nestjs/platform-fastify@10.2.5)(@ogma/nestjs-module@5.1.2)(fastify@4.23.2)
+        version: 5.0.1(@nestjs/platform-fastify@10.2.5)(@ogma/nestjs-module@5.1.3)(fastify@4.23.2)
       '@rushstack/eslint-config':
         specifier: 3.3.4
         version: 3.3.4(eslint@8.49.0)(typescript@4.9.5)
@@ -404,8 +404,8 @@ importers:
         specifier: 10.2.5
         version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
       '@ogma/nestjs-module':
-        specifier: 5.1.2
-        version: 5.1.2(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 5.1.3
+        version: 5.1.3(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1
@@ -3763,21 +3763,21 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@graphql-yoga/nestjs@2.1.0(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/graphql@12.0.9)(graphql-yoga@4.0.4)(graphql@16.6.0):
-    resolution: {integrity: sha512-LaKdPJrLSG8QLNm8Xp7f6xWO8tGLfHZyPrNKNpqClvk4X9DByraeMHArwEyP1YDScFbsIEKkLxTaM7JoLkLkpg==}
+  /@graphql-yoga/nestjs@2.1.1(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/graphql@12.0.9)(graphql-yoga@4.0.5)(graphql@16.6.0):
+    resolution: {integrity: sha512-MIeQrlKlb5JHfu0Dvd8v7VJazM/5nesUOfWaSdUYXUimE0OYIlOqZ4FECDJqiDhdLTIubb3QHc15yR7/qrhJmA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@nestjs/common': ^10.0.0
       '@nestjs/core': ^10.0.0
       '@nestjs/graphql': ^12.0.0
       graphql: 16.6.0 || ^16.0.0
-      graphql-yoga: ^4.0.4
+      graphql-yoga: ^4.0.5
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/graphql': 12.0.9(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@19.0.0)
       graphql: 16.6.0
-      graphql-yoga: 4.0.4(graphql@16.6.0)
+      graphql-yoga: 4.0.5(graphql@16.6.0)
     dev: false
 
   /@graphql-yoga/subscription@4.0.0:
@@ -4553,8 +4553,8 @@ packages:
   /@ogma/common@1.2.0:
     resolution: {integrity: sha512-y2GHkT4t3B9CoI7ELfgZXeMHiiOC/X4XvdeqYLbP5A3keop7fANzjd5pQdtyYQvdQ0lPzcHJiMvOGkIINZHZHQ==}
 
-  /@ogma/logger@3.1.2:
-    resolution: {integrity: sha512-F/KuVwhIGYhD7GkVXLxstsQMH+r9ZnzMd1Lu5puau+Yk2DQS/v4x4OQ4ecZbnaI5rxzuzI4kFa8XXvS0RIET7Q==}
+  /@ogma/logger@3.1.6:
+    resolution: {integrity: sha512-HSJ7YoGnTt1k605Sc5I9tQOjAaf5vN1OQSQ09tjmaideSBTD1ZicbCuyMu3Iy3nHEFZ35NURYrQfWlTvrE4P0A==}
     engines: {node: '>=10'}
     dependencies:
       '@ogma/common': 1.2.0
@@ -4563,8 +4563,8 @@ packages:
       on-exit-leak-free: 2.1.0
       sonic-boom: 3.3.0
 
-  /@ogma/nestjs-module@5.1.2(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1):
-    resolution: {integrity: sha512-n/QDNnNW9SZ/9p6gDsO4UQ/4n1d7X0D4EaqX9EbDZ+yphI4VI4DcRT4sibMMnIFCNfvz3IXgO5OvwkEOjbAAxQ==}
+  /@ogma/nestjs-module@5.1.3(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-H5l+L5wocgHQQFwte1NzH9rMg1VTqIG2YFPLY+fqiz9xdiR9P6XOLIEIFdmgGyj31TvOaVpdgq86HB8Obg5kFQ==}
     peerDependencies:
       '@nestjs/common': ^9.0.0 || ^10.0.0
       '@nestjs/core': ^9.0.0 || ^10.0.0
@@ -4573,13 +4573,13 @@ packages:
     dependencies:
       '@nestjs/common': 10.2.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.2.5(@nestjs/common@10.2.5)(@nestjs/platform-express@10.2.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@ogma/logger': 3.1.2
+      '@ogma/logger': 3.1.6
       '@ogma/styler': 1.0.1
       decorate-all: 1.2.1(reflect-metadata@0.1.13)
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
 
-  /@ogma/platform-fastify@5.0.1(@nestjs/platform-fastify@10.2.5)(@ogma/nestjs-module@5.1.2)(fastify@4.23.2):
+  /@ogma/platform-fastify@5.0.1(@nestjs/platform-fastify@10.2.5)(@ogma/nestjs-module@5.1.3)(fastify@4.23.2):
     resolution: {integrity: sha512-XZe5Fzh0ASq44N8K3NIb4XPkvqPN8ZXXjX3XVxNF6/Wk6K9dil/vwDcwu5y/IJUtpPXWJm0HLn74Y60B7UewVA==}
     peerDependencies:
       '@nestjs/platform-fastify': ^9.0.0 || ^10.0.0
@@ -4587,7 +4587,7 @@ packages:
       fastify: '>=4.0.0'
     dependencies:
       '@nestjs/platform-fastify': 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
-      '@ogma/nestjs-module': 5.1.2(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@ogma/nestjs-module': 5.1.3(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       fastify: 4.23.2
     dev: true
 
@@ -10551,8 +10551,8 @@ packages:
     dependencies:
       graphql: 16.6.0
 
-  /graphql-yoga@4.0.4(graphql@16.6.0):
-    resolution: {integrity: sha512-MvCLhFecYNIKuxAZisPjpIL9lxRYbpgPSNKENDO/8CV3oiFlsLJHZb5dp2sVAeLafXHeZ9TgkijLthUBc1+Jag==}
+  /graphql-yoga@4.0.5(graphql@16.6.0):
+    resolution: {integrity: sha512-vIbJU9QX5RP4PoxbMCHcfOlt/3EsC/0uLdAOlKaiUvlwJDTFCaIHo2X10vL4i/27Gw8g90ECIwm2YbmeLDwcqg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0

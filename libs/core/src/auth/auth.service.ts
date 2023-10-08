@@ -10,7 +10,7 @@ import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 import { HttpService } from '@nestjs/axios'
 import { lastValueFrom, map, switchMap, firstValueFrom } from 'rxjs'
-import { UserAuthEntity, UserAuthService } from 'src/user'
+import { UserAuthEntity, UserAuthService } from '../user'
 import { KeycloakTokenData } from './types/keycloak-token-data'
 
 import { LogoutDTO } from './refresh/dtos/logout.dto'
