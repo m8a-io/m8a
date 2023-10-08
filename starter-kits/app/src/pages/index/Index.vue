@@ -6,48 +6,38 @@
       <q-card-section>
         <div class="text-h6">From the GraphQL API:</div>
       </q-card-section>
-      <q-card-section class="q-pt-none"> {{ helloWorld }} {{ getCachedToken }} </q-card-section>
+      <q-card-section class="q-pt-none"> {{ helloWorld }} </q-card-section>
     </q-card>
   </q-page>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
+<script setup lang="ts">
   import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useHelloWorldQuery, useGetCachedTokenQuery } from './index.graphql'
+  import { useHelloWorldQuery } from './index.graphql'
 
-  export default defineComponent({
-    name: 'PageIndex',
+  defineOptions({
+    name: 'PageIndex'
+  })
 
-    setup() {
-      const $q = useQuasar()
-      const { helloWorld, loading, onResult } = useHelloWorldQuery()
-      const { getCachedToken } = useGetCachedTokenQuery()
-      const metaData = {
-        title: 'Home - m8a-Zeus-Dev'
-      }
+  const $q = useQuasar()
+  const { helloWorld, loading, onResult } = useHelloWorldQuery()
+  const metaData = {
+    title: 'Home - m8a-Zeus-Dev'
+  }
 
-      useMeta(metaData)
+  useMeta(metaData)
 
-      if (loading) {
-        $q.loading.show({
-          spinner: GlobalSpinner,
-          delay: 300,
-          message: 'Getting HelloWorld!'
-        })
-      }
-      console.log('cachedToken ', getCachedToken.value)
-      onResult(() => {
-        console.log('got result', helloWorld.value)
-        $q.loading.hide()
-      })
-
-      return {
-        helloWorld,
-        getCachedToken
-      }
-    }
+  if (loading) {
+    $q.loading.show({
+      spinner: GlobalSpinner,
+      delay: 300,
+      message: 'Getting HelloWorld!'
+    })
+  }
+  onResult(() => {
+    console.log('got result', helloWorld.value)
+    $q.loading.hide()
   })
 </script>
 <style lang="scss" scoped>

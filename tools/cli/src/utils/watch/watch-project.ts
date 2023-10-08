@@ -1,4 +1,8 @@
-// Credit for this code goes to RushStack: lightwatch-plugin
+/**
+ * The following code is a derivative work of the code from the RushStack project's lightwatch-plugin
+ * which is licensed MIT.
+ * */
+
 import { EventEmitter2 } from '@nestjs/event-emitter'
 /**
  * The state of a project in the watch mode.
@@ -145,13 +149,11 @@ export class WatchProject {
           console.log(line) // allow console.log as we need raw logging
           // we need to set a flag to catch the initial SWC output
           if (!this._initialSWCBuildCompleted && line.includes('Watching for file changes')) {
-            /* 'Found 0 errors.' for TSC compilation */
             this.bufferedLines.length = 0
             this._initialSWCBuildCompleted = true
             isDone = true
           }
           if (this._initialSWCBuildCompleted && line.includes('Successfully compiled')) {
-            /* 'Found 0 errors.' for TSC compilation */
             this.bufferedLines.length = 0
             isDone = true
           }
@@ -164,14 +166,12 @@ export class WatchProject {
         isDone = false
       }
 
-      if (this._state === WatchState.Start || this._state === WatchState.Succeeded) {
+      if (this._state === WatchState.Start) {
         this.setState(WatchState.Building)
       }
-      // if (this._includesString(this.bufferedLines, 'Successfully compiled')) { /* 'Found 0 errors.' */
-      //   this.bufferedLines.length = 0
-      //   this.eventEmitter.emit('build.done', this) // and watching
-      // }
+
       this.bufferedLines.length = 0
+      this.setState(WatchState.Pending)
     }
   }
 
@@ -180,10 +180,7 @@ export class WatchProject {
       for (const line of this.bufferedLines) {
         console.log(line) // allow console.log as we need raw logging
       }
-      // if (this._includesString(this.bufferedLines, 'Successfully compiled')) { /* 'Found 0 errors.' */
-      //   this.bufferedLines.length = 0
-      //   this.eventEmitter.emit('build.done', this) // and watching
-      // }
+
       this.bufferedLines.length = 0
       this.setState(WatchState.Pending)
     }

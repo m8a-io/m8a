@@ -1,5 +1,6 @@
 import { Prop, Index, ModelOptions } from '@typegoose/typegoose'
-import { BaseEntity } from '../base/entities/base.entity'
+import { BaseEntity } from '../../base/entities/base.entity'
+import { UserAuthEntity } from './user-auth.entity'
 
 @Index({ username: 1 }, { unique: true })
 @Index({ email: 1 }, { unique: true })
@@ -25,4 +26,10 @@ export class UserEntity extends BaseEntity {
 
   @Prop()
   public salt!: string
+
+  @Prop({ index: true })
+  public m8aAuthId?: string
+
+  @Prop()
+  public userAuthData: UserAuthEntity
 }
