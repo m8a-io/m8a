@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@m8a/eslint-config": "workspace:*",
-    "@nestjs/cli": "10.1.17",
+    "@nestjs/cli": "10.1.18",
     "@nestjs/testing": "10.2.5",
     "@rushstack/eslint-config": "3.3.4",
     "@swc/cli": "~0.1.62",
