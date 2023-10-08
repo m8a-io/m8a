@@ -48,19 +48,4 @@ export class LoginResolver {
       return { accessToken: '', userId: '' }
     }
   }
-
-  @Public()
-  @Query(() => String, {
-    nullable: true,
-    description: 'Testing the cache service.'
-  })
-  async getCachedToken (): Promise<string> {
-    console.log('logging in')
-    try {
-      return await this.authService.getCachedToken()
-    } catch (e) {
-      console.log('error', e)
-      return ''
-    }
-  }
 }

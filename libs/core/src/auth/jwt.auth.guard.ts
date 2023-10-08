@@ -22,15 +22,17 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleRequest (err: any, user: any) {
     if (err || !user) {
-      throw new GraphQLError(
-        'Your access is denied. If you think there is an error, please contact your administrator.',
-        {
-          extensions: {
-            code: 'UNAUTHORIZED',
-            myExtension: 'm8a-error-code-1002'
-          }
-        }
-      )
+      // return Promise.reject(
+      //   new GraphQLError(
+      //     'Your access is denied. If you think there is an error, please contact your administrator.',
+      //     {
+      //       extensions: {
+      //         code: 'UNAUTHORIZED',
+      //         myExtension: 'm8a-error-code-1003'
+      //       }
+      //     }
+      //   )
+      // )
     }
 
     return user

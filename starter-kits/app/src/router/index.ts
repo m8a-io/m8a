@@ -37,9 +37,13 @@ export default route(function (/* { store , ssrContext } */) {
 
     if (!LocalStorage.getItem('userId') && !['/callback', '/login'].includes(to.path)) {
       console.log('redirecting to keycloak')
-      window.location.replace(
-        'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/auth?scope=openid&redirect_uri=https://zeus-dev.m8a.io/callback&client_id=zeus-dev&response_type=code'
-      )
+      try {
+        window.location.replace(
+          'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/auth?scope=openid&redirect_uri=https://zeus-dev.m8a.io/callback&client_id=zeus-dev&response_type=code'
+        )
+      } catch (e) {
+        console.log(e)
+      }
     }
   })
 

@@ -6,7 +6,8 @@ import {
   UserModule,
   AuthModule,
   CacheModule,
-  M8aConfigModule
+  M8aConfigModule,
+  HealthModule
 } from '@m8a/core'
 import { LoggerModule, OgmaModuleConfig } from '@m8a/logger'
 import { OgmaModule } from '@ogma/nestjs-module'
@@ -23,7 +24,8 @@ import { OgmaModule } from '@ogma/nestjs-module'
     UserModule,
     OgmaModule.forRootAsync({
       useClass: OgmaModuleConfig
-    })
+    }),
+    HealthModule
   ],
   providers: []
 })

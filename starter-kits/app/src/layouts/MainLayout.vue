@@ -4,12 +4,12 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title>m8a-Zeus-Dev</q-toolbar-title>
+        <q-toolbar-title>m8a-zeus-dev</q-toolbar-title>
 
         <q-toggle color="light-blue" :icon="darkIcon" v-model="darkMode" />
-        <div v-if="isLoggedIn">
+        <div v-if="userLoggedInVar">
           <UserAvatar />
-          <UserAccountMenu />
+          <UserAvatarMenu />
         </div>
         <div v-else>
           <q-btn label="Sign In" flat @click="openSignInDialog" />
@@ -35,8 +35,9 @@
   import { defineComponent, ref, watch } from 'vue'
   import { LocalStorage, useQuasar } from 'quasar'
   import UserAvatar from 'components/UserAvatar.vue'
-  import UserAccountMenu from 'components/UserAccountMenu.vue'
+  import UserAvatarMenu from 'components/UserAvatarMenu.vue'
   import SignInCardVue from 'components/SignInCard.vue'
+  import { userLoggedInVar } from '../apollo'
 
   const linksList = [
     {
@@ -83,7 +84,7 @@
     components: {
       EssentialLink,
       UserAvatar,
-      UserAccountMenu
+      UserAvatarMenu
     },
 
     setup() {
@@ -94,9 +95,7 @@
 
       darkIcon.value = 'light_mode'
 
-      const isLoggedIn = ref(false)
-      isLoggedIn.value = LocalStorage.getItem('isLoggedIn') || false
-      console.log('user is logged in', isLoggedIn.value)
+      console.log('user is logged in', userLoggedInVar.value)
 
       watch(darkMode, () => {
         $q.dark.toggle()
@@ -120,7 +119,7 @@
       }
 
       return {
-        isLoggedIn,
+        userLoggedInVar,
         darkMode,
         darkIcon,
         essentialLinks: linksList,

@@ -87,6 +87,11 @@ export type IdFilterComparison = {
   notLike?: InputMaybe<Scalars['ID']['input']>
 }
 
+export type LogoutDto = {
+  __typename?: 'LogoutDTO'
+  idToken?: Maybe<Scalars['String']['output']>
+}
+
 export type Mutation = {
   __typename?: 'Mutation'
   createManyUsers: Array<User>
@@ -98,7 +103,7 @@ export type Mutation = {
   /** The login mutation for the m8a Auth login process. */
   loginWithToken?: Maybe<AccessTokenDto>
   /** The logout mutation for the logout process. */
-  logout?: Maybe<AccessTokenDto>
+  logout?: Maybe<LogoutDto>
   /** This is the mutation for registering a new user. */
   register: User
   updateManyUsers: UpdateManyResponse
@@ -160,8 +165,6 @@ export type OffsetPaging = {
 export type Query = {
   __typename?: 'Query'
   findUserByIdCustom: User
-  /** Testing the cache service. */
-  getCachedToken?: Maybe<Scalars['String']['output']>
   helloWorld: Scalars['String']['output']
   helloWorld2: Scalars['String']['output']
   me: User
@@ -197,6 +200,7 @@ export type RegisterInputDto = {
   firstName: Scalars['String']['input']
   lastName: Scalars['String']['input']
   password: Scalars['String']['input']
+  temp?: InputMaybe<Scalars['String']['input']>
 }
 
 /** Sort Directions */
@@ -244,7 +248,7 @@ export type UpdateOneUserInput = {
 
 export type User = {
   __typename?: 'User'
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was created. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was created. */
   createdAt: Scalars['DateTime']['output']
   createdBy: User
   /** The user's email address */
@@ -254,7 +258,7 @@ export type User = {
   id: Scalars['ID']['output']
   /** The user's last name */
   lastName: Scalars['String']['output']
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was modified. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was modified. */
   modifiedAt: Scalars['DateTime']['output']
   modifiedBy: User
   status: Scalars['String']['output']
@@ -340,7 +344,7 @@ export type UserDeleteFilter = {
 
 export type UserDeleteResponse = {
   __typename?: 'UserDeleteResponse'
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was created. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was created. */
   createdAt?: Maybe<Scalars['DateTime']['output']>
   createdBy?: Maybe<User>
   /** The user's email address */
@@ -350,7 +354,7 @@ export type UserDeleteResponse = {
   id?: Maybe<Scalars['ID']['output']>
   /** The user's last name */
   lastName?: Maybe<Scalars['String']['output']>
-  /** A generic datetime field used within an m8a data object. It is a timestamp of the date and time when the record was modified. */
+  /** A generic datetime field used within an m8a entity. It is a timestamp of the date and time when the record was modified. */
   modifiedAt?: Maybe<Scalars['DateTime']['output']>
   modifiedBy?: Maybe<User>
   status?: Maybe<Scalars['String']['output']>

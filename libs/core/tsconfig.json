@@ -13,6 +13,7 @@
     "incremental": true,
     "noEmitOnError": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "declaration": true,
+    "declarationMap": true
   }
 }

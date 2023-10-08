@@ -21,8 +21,9 @@
   import { defineComponent, ref } from 'vue'
   import GlobalSpinner from 'components/GlobalSpinner.vue'
   import { useQuasar, useMeta } from 'quasar'
-  import { useRoute, useRouter } from 'vue-router'
+  import { useRouter } from 'vue-router'
   import { useLoginWithTokenMutation } from './login.graphql'
+  import { userLoggedInVar } from '../../apollo'
 
   export default defineComponent({
     name: 'PageLogin',
@@ -30,7 +31,6 @@
     setup() {
       const gqlError = ref('')
       const $q = useQuasar()
-      const route = useRoute()
       const router = useRouter()
       const { loginWithToken, loading, onError } = useLoginWithTokenMutation()
 
@@ -40,35 +40,28 @@
 
       useMeta(metaData)
 
-      const data = async function (token: string) {
+      async function login(token: string) {
         try {
           const {
             data: { accessToken, userId }
           } = await loginWithToken({
             token
           })
-          console.log('AccessToken', accessToken)
+
           if (accessToken !== '') {
             $q.loading.hide()
             $q.localStorage.set('isLoggedIn', true)
+            userLoggedInVar.value = true
             $q.localStorage.set('token', accessToken)
             $q.localStorage.set('userId', userId)
             router.push('/')
           }
-          return data
         } catch (_error) {
           gqlError.value = _error.message
           $q.loading.hide()
           console.log('got error', _error)
         }
       }
-
-      // const {  } = login(route.query.code as string)
-      console.log('data', data(route.query.code as string))
-
-      // if(data.accessToken === ''){
-
-      // }
 
       onError((error) => {
         $q.loading.hide()
@@ -82,6 +75,8 @@
           message: 'Logging you in!'
         })
       }
+
+      login(router.currentRoute.value.query.code as string)
 
       return {
         gqlError
