@@ -67,7 +67,7 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "fastify": "4.23.2",
-    "graphql": "16.8.0",
+    "graphql": "16.8.1",
     "graphql-yoga": "4.0.4",
     "mongoose": "7.5.2",
     "mongoose-autopopulate": "1.0.1",
