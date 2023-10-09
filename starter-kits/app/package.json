@@ -35,7 +35,7 @@
     "qs": "6.11.2",
     "quasar": "2.12.7",
     "vue": "3.3.4",
-    "vue-router": "4.2.4"
+    "vue-router": "4.2.5"
   },
   "devDependencies": {
     "@dreamonkey/graphql-codegen-near-operation-file": "0.1.1",
