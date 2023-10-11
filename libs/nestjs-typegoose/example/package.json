@@ -38,7 +38,7 @@
     "@nestjs/common": "10.2.7",
     "@nestjs/core": "10.2.7",
     "@nestjs/platform-express": "10.2.7",
-    "@typegoose/typegoose": "11.5.1",
+    "@typegoose/typegoose": "11.6.0",
     "class-validator": "0.14.0",
     "mongoose": "7.6.0",
     "reflect-metadata": "0.1.13",
