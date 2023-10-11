@@ -9,8 +9,8 @@ dependencies:
     specifier: ^14.0.0
     version: 14.0.1
   rush-lint-staged-plugin:
-    specifier: ^0.1.6
-    version: 0.1.6
+    specifier: ^0.2.0
+    version: 0.2.0
 
 packages:
 
@@ -561,8 +561,8 @@ packages:
     resolution: {integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==}
     dev: false
 
-  /rush-lint-staged-plugin@0.1.6:
-    resolution: {integrity: sha512-4P33F4bajVeldZYHVH1f9PCWuxGk8KTP+V8RUgUrujT4nnjHwqmK1G46e8sDskyq9LmnVEMZsqEWz2spY803RA==}
+  /rush-lint-staged-plugin@0.2.0:
+    resolution: {integrity: sha512-xUWXhCL+gXDLEMkaMvpAz5DBAt0Bp6JYtOugBUZ/H5oPsS/qAQEbLcghlrCmkoaeNeV790JuwLh/YUGF9Lo/AA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       '@rushstack/node-core-library': 3.44.1

@@ -4,6 +4,6 @@
   "private": true,
   "dependencies": {
     "lint-staged": "^14.0.0",
-    "rush-lint-staged-plugin": "^0.1.6"
+    "rush-lint-staged-plugin": "^0.2.0"
   }
 }
