@@ -4,7 +4,6 @@
   "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
   "packageRules": [
     {
-      "automerge": true,
       "matchPackagePatterns": ["*"],
       "rangeStrategy": "replace"
     },
@@ -12,19 +11,22 @@
       "groupName": "all patched dependencies",
       "groupSlug": "all-patch",
       "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["patch"]
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
     },
     {
       "groupName": "all minor dependencies",
       "groupSlug": "all-minor",
       "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["minor"]
+      "matchUpdateTypes": ["minor"],
+      "automerge": false
     },
     {
       "groupName": "all major dependencies",
       "groupSlug": "all-major",
       "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["major"]
+      "matchUpdateTypes": ["major"],
+      "automerge": false
     }
   ]
 }
