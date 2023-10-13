@@ -115,7 +115,7 @@
       "@nestjs/common": "^10.0.0",
       "@types/inquirer": "^9.0.0",
       "graphql": "^16.0.0",
-      "ts-morph": "19.0.0",
+      "ts-morph": "20.0.0",
       "vite": "^4.0.0",
       "@graphql-codegen/typescript":"4.0.1",
       "@graphql-codegen/typescript-operations":"4.0.1",

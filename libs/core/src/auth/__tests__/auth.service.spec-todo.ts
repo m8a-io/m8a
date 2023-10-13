@@ -1,7 +1,7 @@
 // TODO: m8a-auth.service add proper tests for this
 
 import { Test, TestingModule } from '@nestjs/testing'
-import { AuthService } from './auth.service'
+import { AuthService } from '../auth.service'
 
 describe('RefreshService', () => {
   let service: AuthService
