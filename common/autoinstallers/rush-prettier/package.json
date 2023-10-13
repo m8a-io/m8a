@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@lukeapage/pretty-quick": "^4.0.1",
     "prettier": "^2.8.8",
-    "prettier-plugin-packagejson": "^2.4.6"
+    "prettier-plugin-packagejson": "^2.4.3",
+    "pretty-quick": "^3.1.3"
   }
 }

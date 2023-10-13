@@ -1,6 +1,6 @@
 {
   "extends": ["config:base"],
-  "ignoreDeps": ["@m8a/core", "@m8a/cli-lib", "@m8a/cli-local", "@m8a/logger"],
+  "ignoreDeps": ["@m8a/core", "@m8a/cli-lib", "@m8a/cli-local", "@m8a/logger", "pretty-quick"],
   "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
   "packageRules": [
     {
