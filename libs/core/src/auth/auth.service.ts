@@ -234,13 +234,10 @@ export class AuthService {
     this.cacheService.revoke(token, userId)
     userId = ''
     ctx.req.cookies.refreshToken = ''
-    console.log('logged out user')
     return { idToken }
   }
 
   private async getIntrospectionData (keyCloakData: KeycloakTokenData) {
-    console.log('data from keycloak: ', keyCloakData)
-
     const keyCloakInputData = {
       token: keyCloakData.access_token,
       client_id: this.envConfig.CLIENT_ID,

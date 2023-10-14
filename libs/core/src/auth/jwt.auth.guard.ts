@@ -1,10 +1,9 @@
 import { ExecutionContext, Injectable, Inject } from '@nestjs/common'
-import { FastifyRequest } from 'fastify'
 import { Reflector } from '@nestjs/core'
 import { GqlExecutionContext } from '@nestjs/graphql'
 import { AuthGuard } from '@nestjs/passport'
 import { IS_PUBLIC_KEY } from './decorators/public.decorator'
-import { GraphQLError } from 'graphql'
+// import { GraphQLError } from 'graphql'
 import { Observable } from 'rxjs'
 
 @Injectable()

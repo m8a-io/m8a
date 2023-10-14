@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common'
 import { GraphqlService } from './graphql.service'
 import { GraphQLModule as GQLModule } from '@nestjs/graphql'
 import { YogaDriver, YogaDriverConfig } from '@graphql-yoga/nestjs'
+import { IFastifyRequest, IFastifyReply } from '../base'
 
 @Module({
   imports: [
@@ -11,16 +12,15 @@ import { YogaDriver, YogaDriverConfig } from '@graphql-yoga/nestjs'
         return {
           path: process.env.GQL_PATH,
           autoSchemaFile: true,
-          // jit: 5,
-          // context: (request: FastifyRequest, reply: FastifyReply) => {
-          //   console.log('response ', reply)
-          //   return {
-          //   req: request,
-          //   res: reply
-          // }
-          // },
+          jit: 5,
+          context: (request: IFastifyRequest, reply: IFastifyReply) => {
+            return {
+              req: request,
+              res: reply
+            }
+          },
           subscription: {
-            context: (request, reply) => ({ req: request, res: reply })
+            context: (request: IFastifyRequest, reply: IFastifyRequest) => ({ req: request, res: reply })
           }
         }
       }
