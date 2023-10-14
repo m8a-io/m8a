@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "ignoreDeps": ["@m8a/core", "@m8a/cli-lib", "@m8a/cli-local", "@m8a/logger"],
+  "description": "fastify is added below in ignoreDeps because of 4.24 breaking in Nest",
+  "ignoreDeps": ["@m8a/core", "@m8a/cli-lib", "@m8a/cli-local", "@m8a/logger", "fastify"],
   "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
   "packageRules": [
     {
