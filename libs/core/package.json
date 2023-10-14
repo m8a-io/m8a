@@ -69,7 +69,7 @@
     "fastify": "4.23.2",
     "graphql": "16.8.1",
     "graphql-yoga": "4.0.5",
-    "mongoose": "7.6.1",
+    "mongoose": "7.6.2",
     "mongoose-autopopulate": "1.0.1",
     "ms": "3.0.0-canary.1",
     "nest-typed-config": "~2.9.0",
@@ -78,7 +78,7 @@
     "redis": "4.6.10"
   },
   "devDependencies": {
-    "@apollo/gateway": "2.5.5",
+    "@apollo/gateway": "2.5.6",
     "@m8a/eslint-config": "workspace:*",
     "@nestjs/cli": "10.1.18",
     "@nestjs/testing": "10.2.7",
@@ -88,7 +88,7 @@
     "@types/cache-manager": "4.0.3",
     "@types/cache-manager-redis-store": "2.0.2",
     "@types/jest": "29.5.5",
-    "@types/node": "20.8.5",
+    "@types/node": "20.8.6",
     "@types/passport-jwt": "3.0.10",
     "chokidar": "3.5.3",
     "dataloader": "2.2.2",
