@@ -1,8 +1,8 @@
 {
-  "name": "@m8a/starter-kit-app",
+  "name": "@m8a/zeus-app",
   "version": "0.0.1",
   "private": true,
-  "description": "A starter kit for front end work with m8a",
+  "description": "The 'god of gods' app for m8a",
   "keywords": [
     "platform",
     "PaaS",
