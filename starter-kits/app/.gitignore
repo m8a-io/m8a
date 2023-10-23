@@ -34,3 +34,5 @@ yarn-error.log*
 
 # GraphQL Code Generator
 src/**/*.graphql.ts
+src/graphql/**/*.ts
+
