@@ -1,0 +1,71 @@
+{
+  "name": "@m8a/starter-kit-app",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A starter kit for front end work with m8a",
+  "keywords": [
+    "platform",
+    "PaaS",
+    "SaaS",
+    "TypeScript"
+  ],
+  "license": "MIT",
+  "author": "Scott Molinari <scott.molinari@m8a.io>",
+  "scripts": {
+    "_phase:build": "quasar build",
+    "_phase:test": "echo \"No test specified\" && exit 0",
+    "b-loader": "tsc src/graphql/utils/operations-from-schema.ts",
+    "build": "quasar build",
+    "codegen": "graphql-codegen --config codegen.ts",
+    "dev": "quasar dev",
+    "lint": "eslint --ext .js,.ts,.vue ./ --fix",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@apollo/client": "3.8.5",
+    "@quasar/extras": "1.16.7",
+    "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
+    "@vue/apollo-composable": "4.0.0-beta.11",
+    "apollo-link-rest": "0.9.0",
+    "apollo-link-token-refresh": "0.6.0",
+    "graphql": "16.8.1",
+    "graphql-anywhere": "4.2.8",
+    "graphql-tag": "2.12.6",
+    "jwt-decode": "3.1.2",
+    "qs": "6.11.2",
+    "quasar": "2.12.7",
+    "vue": "3.3.4",
+    "vue-router": "4.2.5"
+  },
+  "devDependencies": {
+    "@dreamonkey/graphql-codegen-near-operation-file": "0.1.1",
+    "@dreamonkey/graphql-codegen-vue-apollo-plugin": "0.1.1",
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-operations": "4.0.1",
+    "@graphql-tools/schema": "10.0.0",
+    "@graphql-tools/utils": "10.0.7",
+    "@graphql-typed-document-node/core": "3.2.0",
+    "@m8a/eslint-config": "workspace:*",
+    "@quasar/app-vite": "1.6.2",
+    "@rushstack/eslint-config": "3.4.1",
+    "@types/node": "20.8.6",
+    "@typescript-eslint/eslint-plugin": "6.7.5",
+    "@typescript-eslint/parser": "6.7.5",
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.51.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "postcss": "8.4.31",
+    "typescript": "5.2.2"
+  },
+  "engines": {
+    "node": "^20 || ^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
+  "productName": "Quasar App"
+}

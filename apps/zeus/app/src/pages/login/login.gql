@@ -1,0 +1,6 @@
+mutation loginWithToken($token: String!) {
+  loginWithToken(token: $token) {
+    accessToken
+    userId
+  }
+}
