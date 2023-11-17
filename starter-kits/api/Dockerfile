@@ -2,7 +2,7 @@
 # BUILD FOR LOCAL DEVELOPMENT
 ###################
 
-FROM node:20-alpine AS development
+FROM node:21-alpine AS development
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -26,7 +26,7 @@ USER node
 # BUILD FOR PRODUCTION
 ###################
 
-FROM node:20-alpine AS build
+FROM node:21-alpine AS build
 
 # add pnpm
 RUN npm install -g pnpm
@@ -52,7 +52,7 @@ USER node
 # PRODUCTION
 ###################
 
-FROM node:20-alpine AS production
+FROM node:21-alpine AS production
 
 # Copy the bundled code from the build stage to the production image
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
