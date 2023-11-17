@@ -38,7 +38,7 @@
     "*.ts": "eslint --fix"
   },
   "dependencies": {
-    "@nestjs/platform-fastify": "10.2.7",
+    "@nestjs/platform-fastify": "10.2.8",
     "@ogma/nestjs-module": "5.1.3",
     "chalk-v2": "1.0.2",
     "rxjs": "7.8.1"
@@ -46,12 +46,12 @@
   "devDependencies": {
     "@golevelup/nestjs-modules": "0.7.0",
     "@m8a/eslint-config": "workspace:*",
-    "@nestjs/common": "10.2.7",
-    "@nestjs/core": "10.2.7",
-    "@nestjs/testing": "10.2.7",
+    "@nestjs/common": "10.2.8",
+    "@nestjs/core": "10.2.8",
+    "@nestjs/testing": "10.2.8",
     "@ogma/platform-fastify": "5.0.1",
     "@rushstack/eslint-config": "3.4.1",
-    "@types/jest": "29.5.5",
+    "@types/jest": "29.5.8",
     "@types/node": "20.8.6",
     "eslint": "8.51.0",
     "fastify": "4.23.2",
