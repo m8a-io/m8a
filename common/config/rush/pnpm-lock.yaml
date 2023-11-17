@@ -23,17 +23,17 @@ importers:
         specifier: workspace:*
         version: link:../../../libs/logger
       '@nestjs/common':
-        specifier: 10.2.7
-        version: 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-fastify':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       '@ogma/nestjs-module':
         specifier: 5.1.3
-        version: 5.1.3(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        version: 5.1.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1
@@ -48,8 +48,8 @@ importers:
         specifier: 10.1.18
         version: 10.1.18(@swc/cli@0.1.62)(@swc/core@1.3.93)
       '@nestjs/testing':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/platform-express@10.2.7)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
@@ -60,14 +60,14 @@ importers:
         specifier: ~1.3.84
         version: 1.3.93
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/node':
         specifier: 20.8.6
         version: 20.8.6
       '@types/supertest':
-        specifier: 2.0.14
-        version: 2.0.14
+        specifier: 2.0.16
+        version: 2.0.16
       eslint:
         specifier: 8.51.0
         version: 8.51.0
@@ -99,8 +99,8 @@ importers:
         specifier: 1.3.0
         version: 1.3.0
       ts-loader:
-        specifier: 9.5.0
-        version: 9.5.0(typescript@5.2.2)(webpack@5.89.0)
+        specifier: 9.5.1
+        version: 9.5.1(typescript@5.2.2)(webpack@5.89.0)
       tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0
@@ -114,23 +114,23 @@ importers:
   ../../apps/zeus/app:
     dependencies:
       '@apollo/client':
-        specifier: 3.8.5
-        version: 3.8.5(graphql@16.6.0)
+        specifier: 3.8.7
+        version: 3.8.7(graphql@16.6.0)
       '@quasar/extras':
-        specifier: 1.16.7
-        version: 1.16.7
+        specifier: 1.16.8
+        version: 1.16.8
       '@quasar/quasar-app-extension-apollo':
         specifier: 2.0.0-beta.5
-        version: 2.0.0-beta.5(typescript@5.2.2)(vue@3.3.4)
+        version: 2.0.0-beta.5(typescript@5.2.2)(vue@3.3.8)
       '@vue/apollo-composable':
         specifier: 4.0.0-beta.11
-        version: 4.0.0-beta.11(@apollo/client@3.8.5)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.4)
+        version: 4.0.0-beta.11(@apollo/client@3.8.7)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.8)
       apollo-link-rest:
         specifier: 0.9.0
-        version: 0.9.0(@apollo/client@3.8.5)(graphql@16.6.0)(qs@6.11.2)
+        version: 0.9.0(@apollo/client@3.8.7)(graphql@16.6.0)(qs@6.11.2)
       apollo-link-token-refresh:
-        specifier: 0.6.0
-        version: 0.6.0(@apollo/client@3.8.5)(graphql@16.6.0)
+        specifier: 0.6.1
+        version: 0.6.1(@apollo/client@3.8.7)(@types/node@20.8.6)(graphql@16.6.0)(typescript@5.2.2)
       graphql:
         specifier: 16.6.0
         version: 16.6.0
@@ -150,18 +150,18 @@ importers:
         specifier: 2.12.7
         version: 2.12.7
       vue:
-        specifier: 3.3.4
-        version: 3.3.4
+        specifier: 3.3.8
+        version: 3.3.8(typescript@5.2.2)
       vue-router:
         specifier: 4.2.5
-        version: 4.2.5(vue@3.3.4)
+        version: 4.2.5(vue@3.3.8)
     devDependencies:
       '@dreamonkey/graphql-codegen-near-operation-file':
-        specifier: 0.1.1
-        version: 0.1.1(vite@4.4.11)
+        specifier: 0.1.2
+        version: 0.1.2(vite@4.4.11)
       '@dreamonkey/graphql-codegen-vue-apollo-plugin':
-        specifier: 0.1.1
-        version: 0.1.1(@apollo/client@3.8.5)(@graphql-codegen/near-operation-file-preset@2.5.0)(@graphql-codegen/typed-document-node@4.0.1)(@graphql-codegen/typescript-operations@4.0.1)(@graphql-codegen/typescript@4.0.1)(@vue/apollo-composable@4.0.0-beta.11)(graphql@16.6.0)(vue@3.3.4)
+        specifier: 0.1.2
+        version: 0.1.2(@apollo/client@3.8.7)(@graphql-codegen/near-operation-file-preset@2.5.0)(@graphql-codegen/typed-document-node@4.0.1)(@graphql-codegen/typescript-operations@4.0.1)(@graphql-codegen/typescript@4.0.1)(@vue/apollo-composable@4.0.0-beta.11)(graphql@16.6.0)(vue@3.3.8)
       '@graphql-codegen/cli':
         specifier: 5.0.0
         version: 5.0.0(@types/node@20.8.6)(graphql@16.6.0)(typescript@5.2.2)
@@ -175,8 +175,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0(graphql@16.6.0)
       '@graphql-tools/utils':
-        specifier: 10.0.7
-        version: 10.0.7(graphql@16.6.0)
+        specifier: 10.0.8
+        version: 10.0.8(graphql@16.6.0)
       '@graphql-typed-document-node/core':
         specifier: 3.2.0
         version: 3.2.0(graphql@16.6.0)
@@ -185,7 +185,7 @@ importers:
         version: link:../../../libs/eslint
       '@quasar/app-vite':
         specifier: 1.6.2
-        version: 1.6.2(eslint@8.51.0)(quasar@2.12.7)(vue-router@4.2.5)(vue@3.3.4)
+        version: 1.6.2(eslint@8.51.0)(quasar@2.12.7)(vue-router@4.2.5)(vue@3.3.8)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
@@ -229,8 +229,8 @@ importers:
   ../../libs/core:
     dependencies:
       '@apollo/server':
-        specifier: 4.9.4
-        version: 4.9.4(graphql@16.6.0)
+        specifier: 4.9.5
+        version: 4.9.5(graphql@16.6.0)
       '@casl/ability':
         specifier: ~6.5.0
         version: 6.5.0
@@ -239,55 +239,55 @@ importers:
         version: 4.0.3
       '@graphql-yoga/nestjs':
         specifier: 2.1.1
-        version: 2.1.1(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/graphql@12.0.9)(graphql-yoga@4.0.5)(graphql@16.6.0)
+        version: 2.1.1(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/graphql@12.0.11)(graphql-yoga@4.0.5)(graphql@16.6.0)
       '@m8a/nestjs-typegoose':
         specifier: workspace:*
         version: link:../nestjs-typegoose
       '@nestjs/axios':
-        specifier: 3.0.0
-        version: 3.0.0(@nestjs/common@10.2.7)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 3.0.1
+        version: 3.0.1(@nestjs/common@10.2.8)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/cache-manager':
-        specifier: 2.1.0
-        version: 2.1.0(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(cache-manager@5.2.4)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 2.1.1
+        version: 2.1.1(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(cache-manager@5.2.4)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/common':
-        specifier: 10.2.7
-        version: 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/event-emitter':
-        specifier: 2.0.2
-        version: 2.0.2(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)
+        specifier: 2.0.3
+        version: 2.0.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)
       '@nestjs/graphql':
-        specifier: 12.0.9
-        version: 12.0.9(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0)
+        specifier: 12.0.11
+        version: 12.0.11(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0)
       '@nestjs/jwt':
         specifier: 10.1.1
-        version: 10.1.1(@nestjs/common@10.2.7)
+        version: 10.1.1(@nestjs/common@10.2.8)
       '@nestjs/passport':
         specifier: 10.0.2
-        version: 10.0.2(@nestjs/common@10.2.7)(passport@0.6.0)
+        version: 10.0.2(@nestjs/common@10.2.8)(passport@0.6.0)
       '@nestjs/platform-fastify':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       '@ogma/nestjs-module':
         specifier: 5.1.3
-        version: 5.1.3(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        version: 5.1.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@ptc-org/nestjs-query-core':
         specifier: 4.2.0
-        version: 4.2.0(@nestjs/common@10.2.7)(class-transformer@0.5.1)
+        version: 4.2.0(@nestjs/common@10.2.8)(class-transformer@0.5.1)
       '@ptc-org/nestjs-query-graphql':
         specifier: 4.2.0
-        version: 4.2.0(@apollo/gateway@2.5.6)(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/graphql@12.0.9)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql-subscriptions@2.0.0)(graphql@16.6.0)(ts-morph@20.0.0)
+        version: 4.2.0(@apollo/gateway@2.5.7)(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/graphql@12.0.11)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql-subscriptions@2.0.0)(graphql@16.6.0)(ts-morph@20.0.0)
       '@ptc-org/nestjs-query-typegoose':
         specifier: 4.2.0
-        version: 4.2.0(@m8a/nestjs-typegoose@..+libs+nestjs-typegoose)(@nestjs/common@10.2.7)(@typegoose/typegoose@11.6.0)(class-transformer@0.5.1)(mongoose@7.6.2)
+        version: 4.2.0(@m8a/nestjs-typegoose@..+libs+nestjs-typegoose)(@nestjs/common@10.2.8)(@typegoose/typegoose@11.6.0)(class-transformer@0.5.1)(mongoose@7.6.5)
       '@typegoose/typegoose':
         specifier: 11.6.0
-        version: 11.6.0(mongoose@7.6.2)
+        version: 11.6.0(mongoose@7.6.5)
       argon2:
-        specifier: 0.31.1
-        version: 0.31.1
+        specifier: 0.31.2
+        version: 0.31.2
       axios:
         specifier: 1.5.1
         version: 1.5.1
@@ -316,17 +316,17 @@ importers:
         specifier: 4.0.5
         version: 4.0.5(graphql@16.6.0)
       mongoose:
-        specifier: 7.6.2
-        version: 7.6.2
+        specifier: 7.6.5
+        version: 7.6.5
       mongoose-autopopulate:
         specifier: 1.0.1
-        version: 1.0.1(mongoose@7.6.2)
+        version: 1.0.1(mongoose@7.6.5)
       ms:
         specifier: 3.0.0-canary.1
         version: 3.0.0-canary.1
       nest-typed-config:
         specifier: ~2.9.0
-        version: 2.9.1(@nestjs/common@10.2.7)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)(typescript@5.2.2)
+        version: 2.9.1(@nestjs/common@10.2.8)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)(typescript@5.2.2)
       passport:
         specifier: 0.6.0
         version: 0.6.0
@@ -338,8 +338,8 @@ importers:
         version: 4.6.10
     devDependencies:
       '@apollo/gateway':
-        specifier: 2.5.6
-        version: 2.5.6(graphql@16.6.0)
+        specifier: 2.5.7
+        version: 2.5.7(graphql@16.6.0)
       '@m8a/eslint-config':
         specifier: workspace:*
         version: link:../eslint
@@ -347,8 +347,8 @@ importers:
         specifier: 10.1.18
         version: 10.1.18(@swc/cli@0.1.62)(@swc/core@1.3.93)
       '@nestjs/testing':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/platform-express@10.2.7)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
@@ -359,20 +359,20 @@ importers:
         specifier: ~1.3.84
         version: 1.3.93
       '@types/cache-manager':
-        specifier: 4.0.3
-        version: 4.0.3
+        specifier: 4.0.5
+        version: 4.0.5
       '@types/cache-manager-redis-store':
-        specifier: 2.0.2
-        version: 2.0.2
+        specifier: 2.0.4
+        version: 2.0.4
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/node':
         specifier: 20.8.6
         version: 20.8.6
       '@types/passport-jwt':
-        specifier: 3.0.10
-        version: 3.0.10
+        specifier: 3.0.13
+        version: 3.0.13
       chokidar:
         specifier: 3.5.3
         version: 3.5.3
@@ -401,8 +401,8 @@ importers:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.23.2)(jest@29.7.0)(typescript@5.2.2)
       ts-loader:
-        specifier: 9.5.0
-        version: 9.5.0(typescript@5.2.2)(webpack@5.89.0)
+        specifier: 9.5.1
+        version: 9.5.1(typescript@5.2.2)(webpack@5.89.0)
       ts-morph:
         specifier: ^20.0.0
         version: 20.0.0
@@ -467,11 +467,11 @@ importers:
   ../../libs/logger:
     dependencies:
       '@nestjs/platform-fastify':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       '@ogma/nestjs-module':
         specifier: 5.1.3
-        version: 5.1.3(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        version: 5.1.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       chalk-v2:
         specifier: 1.0.2
         version: 1.0.2
@@ -481,28 +481,28 @@ importers:
     devDependencies:
       '@golevelup/nestjs-modules':
         specifier: 0.7.0
-        version: 0.7.0(@nestjs/common@10.2.7)(rxjs@7.8.1)
+        version: 0.7.0(@nestjs/common@10.2.8)(rxjs@7.8.1)
       '@m8a/eslint-config':
         specifier: workspace:*
         version: link:../eslint
       '@nestjs/common':
-        specifier: 10.2.7
-        version: 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/testing':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/platform-express@10.2.7)
       '@ogma/platform-fastify':
         specifier: 5.0.1
-        version: 5.0.1(@nestjs/platform-fastify@10.2.7)(@ogma/nestjs-module@5.1.3)(fastify@4.23.2)
+        version: 5.0.1(@nestjs/platform-fastify@10.2.8)(@ogma/nestjs-module@5.1.3)(fastify@4.23.2)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/node':
         specifier: 20.8.6
         version: 20.8.6
@@ -538,29 +538,29 @@ importers:
         specifier: workspace:*
         version: link:../eslint
       '@nestjs/common':
-        specifier: 10.2.7
-        version: 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: ~10.2.0
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+        version: 10.2.7(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       '@nestjs/testing':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/platform-express@10.2.7)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
       '@typegoose/typegoose':
         specifier: 11.6.0
-        version: 11.6.0(mongoose@7.6.2)
+        version: 11.6.0(mongoose@7.6.5)
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/supertest':
-        specifier: 2.0.14
-        version: 2.0.14
+        specifier: 2.0.16
+        version: 2.0.16
       coveralls:
         specifier: 3.1.1
         version: 3.1.1
@@ -577,8 +577,8 @@ importers:
         specifier: 9.0.1
         version: 9.0.1
       mongoose:
-        specifier: 7.6.2
-        version: 7.6.2
+        specifier: 7.6.5
+        version: 7.6.5
       reflect-metadata:
         specifier: 0.1.13
         version: 0.1.13
@@ -610,17 +610,17 @@ importers:
         specifier: workspace:*
         version: link:../../libs/logger
       '@nestjs/common':
-        specifier: 10.2.7
-        version: 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-fastify':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       '@ogma/nestjs-module':
         specifier: 5.1.3
-        version: 5.1.3(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        version: 5.1.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1
@@ -635,8 +635,8 @@ importers:
         specifier: 10.1.18
         version: 10.1.18(@swc/cli@0.1.62)(@swc/core@1.3.93)
       '@nestjs/testing':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/platform-express@10.2.7)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
@@ -647,14 +647,14 @@ importers:
         specifier: ~1.3.84
         version: 1.3.93
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/node':
         specifier: 20.8.6
         version: 20.8.6
       '@types/supertest':
-        specifier: 2.0.14
-        version: 2.0.14
+        specifier: 2.0.16
+        version: 2.0.16
       eslint:
         specifier: 8.51.0
         version: 8.51.0
@@ -686,8 +686,8 @@ importers:
         specifier: 1.3.0
         version: 1.3.0
       ts-loader:
-        specifier: 9.5.0
-        version: 9.5.0(typescript@5.2.2)(webpack@5.89.0)
+        specifier: 9.5.1
+        version: 9.5.1(typescript@5.2.2)(webpack@5.89.0)
       tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0
@@ -701,23 +701,23 @@ importers:
   ../../starter-kits/app:
     dependencies:
       '@apollo/client':
-        specifier: 3.8.5
-        version: 3.8.5(graphql@16.6.0)
+        specifier: 3.8.7
+        version: 3.8.7(graphql@16.6.0)
       '@quasar/extras':
-        specifier: 1.16.7
-        version: 1.16.7
+        specifier: 1.16.8
+        version: 1.16.8
       '@quasar/quasar-app-extension-apollo':
         specifier: 2.0.0-beta.5
-        version: 2.0.0-beta.5(typescript@5.2.2)(vue@3.3.4)
+        version: 2.0.0-beta.5(typescript@5.2.2)(vue@3.3.8)
       '@vue/apollo-composable':
         specifier: 4.0.0-beta.11
-        version: 4.0.0-beta.11(@apollo/client@3.8.5)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.4)
+        version: 4.0.0-beta.11(@apollo/client@3.8.7)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.8)
       apollo-link-rest:
         specifier: 0.9.0
-        version: 0.9.0(@apollo/client@3.8.5)(graphql@16.6.0)(qs@6.11.2)
+        version: 0.9.0(@apollo/client@3.8.7)(graphql@16.6.0)(qs@6.11.2)
       apollo-link-token-refresh:
-        specifier: 0.6.0
-        version: 0.6.0(@apollo/client@3.8.5)(graphql@16.6.0)
+        specifier: 0.6.1
+        version: 0.6.1(@apollo/client@3.8.7)(@types/node@20.8.6)(graphql@16.6.0)(typescript@5.2.2)
       graphql:
         specifier: 16.6.0
         version: 16.6.0
@@ -737,18 +737,18 @@ importers:
         specifier: 2.12.7
         version: 2.12.7
       vue:
-        specifier: 3.3.4
-        version: 3.3.4
+        specifier: 3.3.8
+        version: 3.3.8(typescript@5.2.2)
       vue-router:
         specifier: 4.2.5
-        version: 4.2.5(vue@3.3.4)
+        version: 4.2.5(vue@3.3.8)
     devDependencies:
       '@dreamonkey/graphql-codegen-near-operation-file':
-        specifier: 0.1.1
-        version: 0.1.1(vite@4.4.11)
+        specifier: 0.1.2
+        version: 0.1.2(vite@4.4.11)
       '@dreamonkey/graphql-codegen-vue-apollo-plugin':
-        specifier: 0.1.1
-        version: 0.1.1(@apollo/client@3.8.5)(@graphql-codegen/near-operation-file-preset@2.5.0)(@graphql-codegen/typed-document-node@4.0.1)(@graphql-codegen/typescript-operations@4.0.1)(@graphql-codegen/typescript@4.0.1)(@vue/apollo-composable@4.0.0-beta.11)(graphql@16.6.0)(vue@3.3.4)
+        specifier: 0.1.2
+        version: 0.1.2(@apollo/client@3.8.7)(@graphql-codegen/near-operation-file-preset@2.5.0)(@graphql-codegen/typed-document-node@4.0.1)(@graphql-codegen/typescript-operations@4.0.1)(@graphql-codegen/typescript@4.0.1)(@vue/apollo-composable@4.0.0-beta.11)(graphql@16.6.0)(vue@3.3.8)
       '@graphql-codegen/cli':
         specifier: 5.0.0
         version: 5.0.0(@types/node@20.8.6)(graphql@16.6.0)(typescript@5.2.2)
@@ -762,8 +762,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0(graphql@16.6.0)
       '@graphql-tools/utils':
-        specifier: 10.0.7
-        version: 10.0.7(graphql@16.6.0)
+        specifier: 10.0.8
+        version: 10.0.8(graphql@16.6.0)
       '@graphql-typed-document-node/core':
         specifier: 3.2.0
         version: 3.2.0(graphql@16.6.0)
@@ -772,7 +772,7 @@ importers:
         version: link:../../libs/eslint
       '@quasar/app-vite':
         specifier: 1.6.2
-        version: 1.6.2(eslint@8.51.0)(quasar@2.12.7)(vue-router@4.2.5)(vue@3.3.4)
+        version: 1.6.2(eslint@8.51.0)(quasar@2.12.7)(vue-router@4.2.5)(vue@3.3.8)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
@@ -822,11 +822,11 @@ importers:
         specifier: 5.109.1
         version: 5.109.1(@types/node@20.8.6)
       '@nestjs/common':
-        specifier: 10.2.7
-        version: 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/event-emitter':
-        specifier: 2.0.2
-        version: 2.0.2(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)
+        specifier: 2.0.3
+        version: 2.0.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)
       cross-spawn:
         specifier: 7.0.3
         version: 7.0.3
@@ -834,8 +834,8 @@ importers:
         specifier: ~2.0.2
         version: 2.0.2
       nest-commander:
-        specifier: 3.12.0
-        version: 3.12.0(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@types/inquirer@9.0.4)
+        specifier: 3.12.2
+        version: 3.12.2(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@types/inquirer@9.0.4)(typescript@5.2.2)
       tree-kill:
         specifier: 1.2.2
         version: 1.2.2
@@ -847,11 +847,11 @@ importers:
         specifier: 10.1.18
         version: 10.1.18(@swc/cli@0.1.62)(@swc/core@1.3.93)
       '@nestjs/core':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/testing':
-        specifier: 10.2.7
-        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7)
+        specifier: 10.2.8
+        version: 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/platform-express@10.2.7)
       '@rushstack/eslint-config':
         specifier: 3.4.1
         version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
@@ -862,20 +862,20 @@ importers:
         specifier: ~1.3.84
         version: 1.3.93
       '@types/cross-spawn':
-        specifier: 6.0.3
-        version: 6.0.3
+        specifier: 6.0.5
+        version: 6.0.5
       '@types/inquirer':
         specifier: ^9.0.0
         version: 9.0.4
       '@types/jest':
-        specifier: 29.5.5
-        version: 29.5.5
+        specifier: 29.5.8
+        version: 29.5.8
       '@types/node':
         specifier: 20.8.6
         version: 20.8.6
       '@types/supertest':
-        specifier: 2.0.14
-        version: 2.0.14
+        specifier: 2.0.16
+        version: 2.0.16
       '@typescript-eslint/eslint-plugin':
         specifier: 6.7.5
         version: 6.7.5(@typescript-eslint/parser@6.7.5)(eslint@8.51.0)(typescript@5.2.2)
@@ -907,8 +907,8 @@ importers:
         specifier: 29.1.1
         version: 29.1.1(@babel/core@7.23.2)(jest@29.7.0)(typescript@5.2.2)
       ts-loader:
-        specifier: 9.5.0
-        version: 9.5.0(typescript@5.2.2)(webpack@5.89.0)
+        specifier: 9.5.1
+        version: 9.5.1(typescript@5.2.2)(webpack@5.89.0)
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@swc/core@1.3.93)(@types/node@20.8.6)(typescript@5.2.2)
@@ -1021,8 +1021,8 @@ packages:
       graphql: 16.6.0
     dev: false
 
-  /@apollo/client@3.8.5(graphql@16.6.0):
-    resolution: {integrity: sha512-/ueWC3f1pFeH+tWbM1phz6pzUGGijyml6oQ+LKUcQzpXF6tVFPrb6oUIUQCbZpr6Xmv/dtNiFDohc39ra7Solg==}
+  /@apollo/client@3.8.7(graphql@16.6.0):
+    resolution: {integrity: sha512-DnQtFkQrCyxHTSa9gR84YRLmU/al6HeXcLZazVe+VxKBmx/Hj4rV8xWtzfWYX5ijartsqDR7SJgV037MATEecA==}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -1054,18 +1054,18 @@ packages:
       tslib: 2.6.2
       zen-observable-ts: 1.2.5
 
-  /@apollo/composition@2.5.6(graphql@16.6.0):
-    resolution: {integrity: sha512-px3xvqgb3tyh7PtRNSBm0I5U2wmI+KcJBoM4xIVMEA+9vk3Mc46U3yXc/fTSGd6EPQD90jXVC56fwdWw/+f7oA==}
+  /@apollo/composition@2.5.7(graphql@16.6.0):
+    resolution: {integrity: sha512-Yx0F+GqKU0Yy6GJF7Rw7wgC5wPLG3eoReN7FUibswpZavf8HNTNniZu0BcB/rtOrAmznwCXkLw97KfAHQoj6YA==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@apollo/federation-internals': 2.5.6(graphql@16.6.0)
-      '@apollo/query-graphs': 2.5.6(graphql@16.6.0)
+      '@apollo/federation-internals': 2.5.7(graphql@16.6.0)
+      '@apollo/query-graphs': 2.5.7(graphql@16.6.0)
       graphql: 16.6.0
 
-  /@apollo/federation-internals@2.5.6(graphql@16.6.0):
-    resolution: {integrity: sha512-ZNJdEcWfKXlFDRYtoCftApQBJl1/aDUBnBfFJeXeTXW4FVhyGotVkWbJUIBlCHMISGmQQDNfRay9Dcp7uIda9A==}
+  /@apollo/federation-internals@2.5.7(graphql@16.6.0):
+    resolution: {integrity: sha512-+c7m2c4FG4lMURZhtjFP59mm4/0zM49w6C/9uxryXriZKG3l3n5Ay12V/w9LNm7laoQkZjIBECBU39yT40mdBw==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
@@ -1076,15 +1076,15 @@ packages:
       js-levenshtein: 1.1.6
       uuid: 9.0.1
 
-  /@apollo/gateway@2.5.6(graphql@16.6.0):
-    resolution: {integrity: sha512-zec9agl5UOjVM+bSGvldHlyx0OjFu6Mt8i/IfPi4fkH+8LJYzbshDTOQK2rDtPfbJoJpmgpCSO8XPzWZVOGvog==}
+  /@apollo/gateway@2.5.7(graphql@16.6.0):
+    resolution: {integrity: sha512-hLI15fg8O9FCCjo0f7H4CcMy6f2ux/U5MW1BU63xLtwJWCcxJhv2aaiEjdIkg4+RwbGB1JCPtQQ7EYZfNm+uXg==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@apollo/composition': 2.5.6(graphql@16.6.0)
-      '@apollo/federation-internals': 2.5.6(graphql@16.6.0)
-      '@apollo/query-planner': 2.5.6(graphql@16.6.0)
+      '@apollo/composition': 2.5.7(graphql@16.6.0)
+      '@apollo/federation-internals': 2.5.7(graphql@16.6.0)
+      '@apollo/query-planner': 2.5.7(graphql@16.6.0)
       '@apollo/server-gateway-interface': 1.1.1(graphql@16.6.0)
       '@apollo/usage-reporting-protobuf': 4.1.1
       '@apollo/utils.createhash': 2.0.1
@@ -1123,26 +1123,26 @@ packages:
       '@types/long': 4.0.2
       long: 4.0.0
 
-  /@apollo/query-graphs@2.5.6(graphql@16.6.0):
-    resolution: {integrity: sha512-W0Raf+hL93XgF3gNXE0eij1m7DGv1zfxsGEUG/GAuBtasOH3YMN5b4HZZm11IDCrQ45OltrnZtAZX8c6UqskrA==}
+  /@apollo/query-graphs@2.5.7(graphql@16.6.0):
+    resolution: {integrity: sha512-6kWJw4dYrk70jLEy/5fcfDaKB0vaFYe+NoLwDEZu7K3U4Y191xxNwUbjxkmQZSBwQ95beGrtOu7XWmJCnzKPlA==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@apollo/federation-internals': 2.5.6(graphql@16.6.0)
+      '@apollo/federation-internals': 2.5.7(graphql@16.6.0)
       deep-equal: 2.2.2
       graphql: 16.6.0
       ts-graphviz: 1.8.1
       uuid: 9.0.1
 
-  /@apollo/query-planner@2.5.6(graphql@16.6.0):
-    resolution: {integrity: sha512-7qrQl4/s1FOK0TZaa+0WwL17Us9Oy1I8bfpfjf+3xp8NtgOnFijXzJ32IOdjhW+mkt5EC4LrkBUWvygCULuMyQ==}
+  /@apollo/query-planner@2.5.7(graphql@16.6.0):
+    resolution: {integrity: sha512-WQ6UZNkd52M1OT+K1/OdfK/+8ktgj+KVr97QRm91eoydHldyG6oBuxC/1zdTKPY8wzL1ku6xNwRiAMUNe5cNZg==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@apollo/federation-internals': 2.5.6(graphql@16.6.0)
-      '@apollo/query-graphs': 2.5.6(graphql@16.6.0)
+      '@apollo/federation-internals': 2.5.7(graphql@16.6.0)
+      '@apollo/query-graphs': 2.5.7(graphql@16.6.0)
       '@apollo/utils.keyvaluecache': 2.1.1
       chalk: 4.1.2
       deep-equal: 2.2.2
@@ -1160,8 +1160,8 @@ packages:
       '@apollo/utils.logger': 2.0.1
       graphql: 16.6.0
 
-  /@apollo/server@4.9.4(graphql@16.6.0):
-    resolution: {integrity: sha512-lopNDM3sZerTcYH/P85QX5HqSNV4HoVbtX3zOrf0ak7eplhPDiGVyF0jQWRbL64znG6KXW+nMuLDTyFTMQnvgA==}
+  /@apollo/server@4.9.5(graphql@16.6.0):
+    resolution: {integrity: sha512-eDBfArYbZaTm1AGa82M1aL7lOscVhnZsH85+OWmHMIR98qntzEjNpWpQPYDTru63Qxs4kHcY29NUx/kMGZfGEA==}
     engines: {node: '>=14.16.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
@@ -2373,7 +2373,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
-    dev: true
 
   /@devexpress/error-stack-parser@2.0.6:
     resolution: {integrity: sha512-fneVypElGUH6Be39mlRZeAu00pccTlf4oVuzf9xPJD1cdEqI8NyAiQua/EW7lZdrbMUbgyXcJmfKPefhYius3A==}
@@ -2381,35 +2380,35 @@ packages:
       stackframe: 1.3.4
     dev: false
 
-  /@dreamonkey/graphql-codegen-near-operation-file@0.1.1(vite@4.4.11):
-    resolution: {integrity: sha512-e0LkYq+2KdiA44+nVvbxYn69Cbquw6lyME5x5WLcrpiCPnPB/h1yc3XDUwNZVvpNPWIGu9eX1a3Eb8vfofH4Ww==}
+  /@dreamonkey/graphql-codegen-near-operation-file@0.1.2(vite@4.4.11):
+    resolution: {integrity: sha512-ZqbIcaaQbL8cnKznm1Nsy7tDVTMV0EnWK/I8RFGwVq1LDrJmPqEHC+SmDdsxWrZPvYB3GYiCPabX+iu9iL3sPg==}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
       vite: 4.4.11(@types/node@20.8.6)
     dev: true
 
-  /@dreamonkey/graphql-codegen-vue-apollo-plugin@0.1.1(@apollo/client@3.8.5)(@graphql-codegen/near-operation-file-preset@2.5.0)(@graphql-codegen/typed-document-node@4.0.1)(@graphql-codegen/typescript-operations@4.0.1)(@graphql-codegen/typescript@4.0.1)(@vue/apollo-composable@4.0.0-beta.11)(graphql@16.6.0)(vue@3.3.4):
-    resolution: {integrity: sha512-poCMcl9AsgzCne6dzpX7acfLsFUHZ0ruxIecnAhW+B/LgW0jxypHODG5FD1O30juUl5HIBLQszkuAr1Sj2yOYw==}
+  /@dreamonkey/graphql-codegen-vue-apollo-plugin@0.1.2(@apollo/client@3.8.7)(@graphql-codegen/near-operation-file-preset@2.5.0)(@graphql-codegen/typed-document-node@4.0.1)(@graphql-codegen/typescript-operations@4.0.1)(@graphql-codegen/typescript@4.0.1)(@vue/apollo-composable@4.0.0-beta.11)(graphql@16.6.0)(vue@3.3.8):
+    resolution: {integrity: sha512-mB2k052ZIPwPjfEGo7eyqx2Z6SOpCUG7PKv4NvbfAmERO4+J2H6PbsqGPRkJoONLSINyrxh2mmd+gPcCR51jiw==}
     peerDependencies:
       '@apollo/client': ^3.6.0
-      '@graphql-codegen/near-operation-file-preset': ^2.4.4
-      '@graphql-codegen/typed-document-node': ^2.3.6 || ^3.0.0 || ^4.0.0
-      '@graphql-codegen/typescript': ^2.8.1 || ^3.0.0 || 4.0.1
-      '@graphql-codegen/typescript-operations': ^2.5.6 || ^3.0.0 || 4.0.1
+      '@graphql-codegen/near-operation-file-preset': ^2.4.4 || ^3.0.0
+      '@graphql-codegen/typed-document-node': ^2.3.6 || ^3.0.0 || ^4.0.0 || ^5.0.0
+      '@graphql-codegen/typescript': ^2.8.1 || ^3.0.0 || ^4.0.0 || 4.0.1
+      '@graphql-codegen/typescript-operations': ^2.5.6 || ^3.0.0 || ^4.0.0 || 4.0.1
       '@vue/apollo-composable': ^4.0.0-beta.1
       graphql: 16.6.0 || ^16.0.0
       vue: ^3.2.0
     dependencies:
-      '@apollo/client': 3.8.5(graphql@16.6.0)
+      '@apollo/client': 3.8.7(graphql@16.6.0)
       '@graphql-codegen/near-operation-file-preset': 2.5.0(graphql@16.6.0)
       '@graphql-codegen/plugin-helpers': 2.7.2(graphql@16.6.0)
       '@graphql-codegen/typed-document-node': 4.0.1(graphql@16.6.0)
       '@graphql-codegen/typescript': 4.0.1(graphql@16.6.0)
       '@graphql-codegen/typescript-operations': 4.0.1(graphql@16.6.0)
-      '@vue/apollo-composable': 4.0.0-beta.11(@apollo/client@3.8.5)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.4)
+      '@vue/apollo-composable': 4.0.0-beta.11(@apollo/client@3.8.7)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.8)
       graphql: 16.6.0
-      vue: 3.3.4
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
   /@envelop/core@4.0.3:
@@ -2725,24 +2724,24 @@ packages:
       prettier: 2.8.8
     dev: false
 
-  /@golevelup/nestjs-discovery@4.0.0(@nestjs/common@10.2.7)(@nestjs/core@10.2.7):
+  /@golevelup/nestjs-discovery@4.0.0(@nestjs/common@10.2.8)(@nestjs/core@10.2.8):
     resolution: {integrity: sha512-iyZLYip9rhVMR0C93vo860xmboRrD5g5F5iEOfpeblGvYSz8ymQrL9RAST7x/Fp3n+TAXSeOLzDIASt+rak68g==}
     peerDependencies:
       '@nestjs/common': ^10.x || ^10.0.0
       '@nestjs/core': ^10.x
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       lodash: 4.17.21
     dev: false
 
-  /@golevelup/nestjs-modules@0.7.0(@nestjs/common@10.2.7)(rxjs@7.8.1):
+  /@golevelup/nestjs-modules@0.7.0(@nestjs/common@10.2.8)(rxjs@7.8.1):
     resolution: {integrity: sha512-4WxGKubYx0IJF2rxL3S4SChKdl4ZDZPwCdSj6HxmmElXRyua/LlcwLH6NYquh4RRIkQGspDd5WpcMTBw3SxR5g==}
     peerDependencies:
       '@nestjs/common': ^10.x || ^10.0.0
       rxjs: ^7.x
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       lodash: 4.17.21
       rxjs: 7.8.1
     dev: true
@@ -2781,7 +2780,7 @@ packages:
       '@graphql-tools/load': 8.0.0(graphql@16.6.0)
       '@graphql-tools/prisma-loader': 8.0.1(@types/node@20.8.6)(graphql@16.6.0)
       '@graphql-tools/url-loader': 8.0.0(@types/node@20.8.6)(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@whatwg-node/fetch': 0.8.8
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.2.2)
@@ -2820,7 +2819,7 @@ packages:
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.0.1(graphql@16.6.0)
       '@graphql-tools/schema': 10.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.5.3
     dev: true
@@ -2889,7 +2888,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       change-case-all: 1.0.15
       common-tags: 1.8.2
       graphql: 16.6.0
@@ -2904,7 +2903,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.0.1(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.5.3
     dev: true
@@ -3007,7 +3006,7 @@ packages:
       '@graphql-codegen/plugin-helpers': 5.0.1(graphql@16.6.0)
       '@graphql-tools/optimize': 2.0.0(graphql@16.6.0)
       '@graphql-tools/relay-operation-optimizer': 7.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
@@ -3027,7 +3026,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@ardatan/sync-fetch': 0.0.1
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@whatwg-node/fetch': 0.9.13
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3041,7 +3040,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       dataloader: 2.2.2
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3055,7 +3054,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-tools/graphql-tag-pluck': 8.0.2(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       globby: 11.1.0
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3073,7 +3072,7 @@ packages:
       '@graphql-tools/batch-execute': 9.0.2(graphql@16.6.0)
       '@graphql-tools/executor': 1.2.0(graphql@16.6.0)
       '@graphql-tools/schema': 10.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       dataloader: 2.2.2
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3085,7 +3084,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@types/ws': 8.5.7
       graphql: 16.6.0
       graphql-ws: 5.14.1(graphql@16.6.0)
@@ -3103,7 +3102,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@repeaterjs/repeater': 3.0.4
       '@whatwg-node/fetch': 0.9.13
       extract-files: 11.0.0
@@ -3121,7 +3120,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@types/ws': 8.5.7
       graphql: 16.6.0
       isomorphic-ws: 5.0.0(ws@8.14.1)
@@ -3138,7 +3137,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
       '@repeaterjs/repeater': 3.0.4
       graphql: 16.6.0
@@ -3152,7 +3151,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-tools/graphql-tag-pluck': 8.0.2(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       is-glob: 4.0.3
       micromatch: 4.0.5
@@ -3171,7 +3170,7 @@ packages:
       '@ardatan/sync-fetch': 0.0.1
       '@graphql-tools/executor-http': 1.0.3(@types/node@20.8.6)(graphql@16.6.0)
       '@graphql-tools/graphql-tag-pluck': 8.0.2(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@whatwg-node/fetch': 0.9.13
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3189,7 +3188,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-tools/import': 7.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       globby: 11.1.0
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3207,7 +3206,7 @@ packages:
       '@babel/plugin-syntax-import-assertions': 7.22.5(@babel/core@7.23.2)
       '@babel/traverse': 7.23.2
       '@babel/types': 7.23.0
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.6.2
     transitivePeerDependencies:
@@ -3220,7 +3219,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       resolve-from: 5.0.0
       tslib: 2.6.2
@@ -3232,7 +3231,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       globby: 11.1.0
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3246,7 +3245,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-tools/schema': 10.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       p-limit: 3.1.0
       tslib: 2.6.2
@@ -3268,7 +3267,7 @@ packages:
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.6.2
 
@@ -3298,7 +3297,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-tools/url-loader': 8.0.0(@types/node@20.8.6)(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@types/js-yaml': 4.0.7
       '@types/json-stable-stringify': 1.0.34
       '@whatwg-node/fetch': 0.9.13
@@ -3345,7 +3344,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@ardatan/relay-compiler': 12.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.6.2
     transitivePeerDependencies:
@@ -3360,7 +3359,7 @@ packages:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-tools/merge': 9.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.6.2
       value-or-promise: 1.0.12
@@ -3388,7 +3387,7 @@ packages:
       '@graphql-tools/executor-graphql-ws': 1.1.0(graphql@16.6.0)
       '@graphql-tools/executor-http': 1.0.3(@types/node@20.8.6)(graphql@16.6.0)
       '@graphql-tools/executor-legacy-ws': 1.0.3(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@graphql-tools/wrap': 10.0.1(graphql@16.6.0)
       '@types/ws': 8.5.7
       '@whatwg-node/fetch': 0.9.13
@@ -3404,25 +3403,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@graphql-tools/utils@10.0.6(graphql@16.6.0):
-    resolution: {integrity: sha512-hZMjl/BbX10iagovakgf3IiqArx8TPsotq5pwBld37uIX1JiZoSbgbCIFol7u55bh32o6cfDEiiJgfAD5fbeyQ==}
+  /@graphql-tools/utils@10.0.8(graphql@16.6.0):
+    resolution: {integrity: sha512-yjyA8ycSa1WRlJqyX/aLqXeE5DvF/H02+zXMUFnCzIDrj0UvLMUrxhmVFnMK0Q2n3bh4uuTeY3621m5za9ovXw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: 16.6.0 || ^16.0.0
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
-      dset: 3.1.2
-      graphql: 16.6.0
-      tslib: 2.6.2
-    dev: false
-
-  /@graphql-tools/utils@10.0.7(graphql@16.6.0):
-    resolution: {integrity: sha512-KOdeMj6Hd/MENDaqPbws3YJl3wVy0DeYnL7PyUms5Skyf7uzI9INynDwPMhLXfSb0/ph6BXTwMd5zBtWbF8tBQ==}
-    engines: {node: '>=16.0.0'}
-    peerDependencies:
-      graphql: 16.6.0 || ^16.0.0
-    dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
+      cross-inspect: 1.0.0
       dset: 3.1.2
       graphql: 16.6.0
       tslib: 2.6.2
@@ -3453,7 +3441,7 @@ packages:
     dependencies:
       '@graphql-tools/delegate': 10.0.3(graphql@16.6.0)
       '@graphql-tools/schema': 10.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.6.2
       value-or-promise: 1.0.12
@@ -3473,7 +3461,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@graphql-yoga/nestjs@2.1.1(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/graphql@12.0.9)(graphql-yoga@4.0.5)(graphql@16.6.0):
+  /@graphql-yoga/nestjs@2.1.1(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/graphql@12.0.11)(graphql-yoga@4.0.5)(graphql@16.6.0):
     resolution: {integrity: sha512-MIeQrlKlb5JHfu0Dvd8v7VJazM/5nesUOfWaSdUYXUimE0OYIlOqZ4FECDJqiDhdLTIubb3QHc15yR7/qrhJmA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -3483,9 +3471,9 @@ packages:
       graphql: 16.6.0 || ^16.0.0
       graphql-yoga: ^4.0.5
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/graphql': 12.0.9(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/graphql': 12.0.11(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0)
       graphql: 16.6.0
       graphql-yoga: 4.0.5(graphql@16.6.0)
     dev: false
@@ -3814,7 +3802,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
 
   /@lukeed/csprng@1.1.0:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
@@ -3921,22 +3908,22 @@ packages:
       sparse-bitfield: 3.0.3
     optional: true
 
-  /@nestjs/axios@3.0.0(@nestjs/common@10.2.7)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1):
-    resolution: {integrity: sha512-ULdH03jDWkS5dy9X69XbUVbhC+0pVnrRcj7bIK/ytTZ76w7CgvTZDJqsIyisg3kNOiljRW/4NIjSf3j6YGvl+g==}
+  /@nestjs/axios@3.0.1(@nestjs/common@10.2.8)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-VlOZhAGDmOoFdsmewn8AyClAdGpKXQQaY1+3PGB+g6ceurGIdTxZgRX3VXc1T6Zs60PedWjg3A82TDOB05mrzQ==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
       axios: ^1.3.1
       reflect-metadata: ^0.1.12
       rxjs: ^6.0.0 || ^7.0.0
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       axios: 1.5.1
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
     dev: false
 
-  /@nestjs/cache-manager@2.1.0(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(cache-manager@5.2.4)(reflect-metadata@0.1.13)(rxjs@7.8.1):
-    resolution: {integrity: sha512-9kep3a8Mq5cMuXN/anGhSYc0P48CRBXk5wyJJRBFxhNkCH8AIzZF4CASGVDIEMmm3OjVcEUHojjyJwCODS17Qw==}
+  /@nestjs/cache-manager@2.1.1(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(cache-manager@5.2.4)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-oYfRys4Ng0zp2HTUPNjH7gizf4vvG3PQZZ+3yGemb3xrF+p3JxDSK0cDq9NTjHzD5UmhjiyAftB9GkuL+t3r9g==}
     peerDependencies:
       '@nestjs/common': ^9.0.0 || ^10.0.0
       '@nestjs/core': ^9.0.0 || ^10.0.0
@@ -3944,8 +3931,8 @@ packages:
       reflect-metadata: ^0.1.12
       rxjs: ^7.0.0
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       cache-manager: 5.2.4
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
@@ -3994,8 +3981,8 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nestjs/common@10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1):
-    resolution: {integrity: sha512-cUtCRXiUstDmh4bSBhVbq4cI439Gngp4LgLGLBmd5dqFQodfXKnSD441ldYfFiLz4rbUsnoMJz/8ZjuIEI+B7A==}
+  /@nestjs/common@10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-rmpwcdvq2IWMmsUVP8rsdKub6uDWk7dwCYo0aif50JTwcvcxzaP3iKVFKoSgvp0RKYu8h15+/AEOfaInmPpl0Q==}
     peerDependencies:
       class-transformer: '*'
       class-validator: '*'
@@ -4015,8 +4002,8 @@ packages:
       tslib: 2.6.2
       uid: 2.0.2
 
-  /@nestjs/core@10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1):
-    resolution: {integrity: sha512-5GSu53QUUcwX17sNmlJPa1I0wIeAZOKbedyVuQx0ZAwWVa9g0wJBbsNP+R4EJ+j5Dkdzt/8xkiZvnKt8RFRR8g==}
+  /@nestjs/core@10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-9+MZ2s8ixfY9Bl/M9ofChiyYymcwdK9ZWNH4GDMF7Am7XRAQ1oqde6MYGG05rhQwiVXuTwaYLlXciJKfsrg5qg==}
     requiresBuild: true
     peerDependencies:
       '@nestjs/common': ^10.0.0
@@ -4033,8 +4020,8 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/platform-express': 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/platform-express': 10.2.7(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
@@ -4046,21 +4033,21 @@ packages:
     transitivePeerDependencies:
       - encoding
 
-  /@nestjs/event-emitter@2.0.2(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13):
-    resolution: {integrity: sha512-qxJE+6yKSW/ReBzT1jKES2m3zZh6gmgunDtIvCl66G8i9zZ4TQciwoq01MigqnruTgXjH/AzNPqtr6ZUt207mg==}
+  /@nestjs/event-emitter@2.0.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13):
+    resolution: {integrity: sha512-Pt7KAERrgK0OjvarSI3wfVhwZ8X1iLq1lXuodyRe+Zx3aLLP7fraFUHirASbFkB6KIQ1Zj+gZ1g8a9eu4GfFhw==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
       '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0
       reflect-metadata: ^0.1.12
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       eventemitter2: 6.4.9
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/graphql@12.0.9(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0):
-    resolution: {integrity: sha512-A5oRD5GMwzaNZum06KSxKtqhC7LvS4p7v0hLGzvNWPuLrBjAjAnm/2NV8IV8lYiJXpPHNtSnnekZH9uvy/hZlw==}
+  /@nestjs/graphql@12.0.11(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0):
+    resolution: {integrity: sha512-iCyVs9+utCQt9ehMhUjQcEdjRN/MrcTBINd7P44O1fzGENuWMbt1Z8RCoZbeGi5iVPBY63HgYik+BnnICqmxZw==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
       '@nestjs/common': ^9.3.8 || ^10.0.0
@@ -4069,7 +4056,7 @@ packages:
       class-validator: '*'
       graphql: 16.6.0 || ^16.0.0
       reflect-metadata: ^0.1.13
-      ts-morph: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || 20.0.0
+      ts-morph: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || 20.0.0
     peerDependenciesMeta:
       '@apollo/subgraph':
         optional: true
@@ -4082,41 +4069,41 @@ packages:
     dependencies:
       '@graphql-tools/merge': 9.0.0(graphql@16.6.0)
       '@graphql-tools/schema': 10.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.6(graphql@16.6.0)
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/mapped-types': 2.0.2(@nestjs/common@10.2.7)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/mapped-types': 2.0.2(@nestjs/common@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
       chokidar: 3.5.3
       class-transformer: 0.5.1
       class-validator: 0.14.0
-      fast-glob: 3.3.1
+      fast-glob: 3.3.2
       graphql: 16.6.0
       graphql-tag: 2.12.6(graphql@16.6.0)
-      graphql-ws: 5.14.0(graphql@16.6.0)
+      graphql-ws: 5.14.2(graphql@16.6.0)
       lodash: 4.17.21
       normalize-path: 3.0.0
       reflect-metadata: 0.1.13
       subscriptions-transport-ws: 0.11.0(graphql@16.6.0)
       ts-morph: 20.0.0
       tslib: 2.6.2
-      uuid: 9.0.0
-      ws: 8.13.0
+      uuid: 9.0.1
+      ws: 8.14.2
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
     dev: false
 
-  /@nestjs/jwt@10.1.1(@nestjs/common@10.2.7):
+  /@nestjs/jwt@10.1.1(@nestjs/common@10.2.8):
     resolution: {integrity: sha512-sISYylg8y1Mb7saxPx5Zh11i7v9JOh70CEC/rN6g43MrbFlJ57c1eYFrffxip1YAx3DmV4K67yXob3syKZMOew==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@types/jsonwebtoken': 9.0.2
       jsonwebtoken: 9.0.0
     dev: false
 
-  /@nestjs/mapped-types@2.0.2(@nestjs/common@10.2.7)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13):
+  /@nestjs/mapped-types@2.0.2(@nestjs/common@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13):
     resolution: {integrity: sha512-V0izw6tWs6fTp9+KiiPUbGHWALy563Frn8X6Bm87ANLRuE46iuBMD5acKBDP5lKL/75QFvrzSJT7HkCbB0jTpg==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -4129,38 +4116,38 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       class-transformer: 0.5.1
       class-validator: 0.14.0
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/passport@10.0.2(@nestjs/common@10.2.7)(passport@0.6.0):
+  /@nestjs/passport@10.0.2(@nestjs/common@10.2.8)(passport@0.6.0):
     resolution: {integrity: sha512-od31vfB2z3y05IDB5dWSbCGE2+pAf2k2WCBinNuTTOxN0O0+wtO1L3kawj/aCW3YR9uxsTOVbTDwtwgpNNsnjQ==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
       passport: ^0.4.0 || ^0.5.0 || ^0.6.0
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       passport: 0.6.0
     dev: false
 
-  /@nestjs/platform-express@10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7):
+  /@nestjs/platform-express@10.2.7(@nestjs/common@10.2.8)(@nestjs/core@10.2.8):
     resolution: {integrity: sha512-p+kp6aJtkgAdVpUrCVmM6MKtOvjsbt7QofBiZMidjYesZkMeG5gZ1D2SK8XzvQ8VXHJfFgEdY2xcKGB+wJLOYQ==}
     peerDependencies:
       '@nestjs/common': ^10.0.0
       '@nestjs/core': ^10.0.0
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       body-parser: 1.20.2
       cors: 2.8.5
       express: 4.18.2
       multer: 1.4.4-lts.1
       tslib: 2.6.2
 
-  /@nestjs/platform-fastify@10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7):
-    resolution: {integrity: sha512-m/OADHxB7yY6TyADLmXJ3BCadG110g/O0nLj2LQDNRiNLiYrgpV3D/cGOcMqlQOG30GZ7BKl8Cq8CsKVtMhzZA==}
+  /@nestjs/platform-fastify@10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8):
+    resolution: {integrity: sha512-ZeqIHeGLD7YgJ22K9AkyjcFv/yH/LH+HmujukBq/yDLFlJuurKCgbDPfL0PHq0RRMZu5CeB0dhs8+qihw96yjA==}
     peerDependencies:
       '@fastify/static': ^6.0.0
       '@fastify/view': ^7.0.0 || ^8.0.0
@@ -4175,9 +4162,9 @@ packages:
       '@fastify/cors': 8.4.0
       '@fastify/formbody': 7.4.0
       '@fastify/middie': 8.3.0
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      fastify: 4.23.2
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      fastify: 4.24.3
       light-my-request: 5.11.0
       path-to-regexp: 3.2.0
       tslib: 2.6.2
@@ -4199,8 +4186,8 @@ packages:
       - chokidar
     dev: true
 
-  /@nestjs/testing@10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7):
-    resolution: {integrity: sha512-d2SIqiJIf/7NSILeNNWSdRvTTpHSouGgisGHwf5PVDC7z4/yXZw/wPO9eJhegnxFlqk6n2LW4QBTmMzbqjAfHA==}
+  /@nestjs/testing@10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/platform-express@10.2.7):
+    resolution: {integrity: sha512-9Kj5IQhM67/nj/MT6Wi2OmWr5YQnCMptwKVFrX1TDaikpY12196v7frk0jVjdT7wms7rV07GZle9I2z0aSjqtQ==}
     peerDependencies:
       '@nestjs/common': ^10.0.0
       '@nestjs/core': ^10.0.0
@@ -4212,9 +4199,9 @@ packages:
       '@nestjs/platform-express':
         optional: true
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/platform-express': 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/platform-express': 10.2.7(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
       tslib: 2.6.2
     dev: true
 
@@ -4266,7 +4253,7 @@ packages:
       on-exit-leak-free: 2.1.2
       sonic-boom: 3.7.0
 
-  /@ogma/nestjs-module@5.1.3(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+  /@ogma/nestjs-module@5.1.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-H5l+L5wocgHQQFwte1NzH9rMg1VTqIG2YFPLY+fqiz9xdiR9P6XOLIEIFdmgGyj31TvOaVpdgq86HB8Obg5kFQ==}
     peerDependencies:
       '@nestjs/common': ^9.0.0 || ^10.0.0
@@ -4274,23 +4261,23 @@ packages:
       reflect-metadata: ^0.1.0
       rxjs: ^7.0.0
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@ogma/logger': 3.1.6
       '@ogma/styler': 1.0.1
       decorate-all: 1.2.1(reflect-metadata@0.1.13)
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
 
-  /@ogma/platform-fastify@5.0.1(@nestjs/platform-fastify@10.2.7)(@ogma/nestjs-module@5.1.3)(fastify@4.23.2):
+  /@ogma/platform-fastify@5.0.1(@nestjs/platform-fastify@10.2.8)(@ogma/nestjs-module@5.1.3)(fastify@4.23.2):
     resolution: {integrity: sha512-XZe5Fzh0ASq44N8K3NIb4XPkvqPN8ZXXjX3XVxNF6/Wk6K9dil/vwDcwu5y/IJUtpPXWJm0HLn74Y60B7UewVA==}
     peerDependencies:
       '@nestjs/platform-fastify': ^9.0.0 || ^10.0.0
       '@ogma/nestjs-module': ^5.0.1
       fastify: '>=4.0.0'
     dependencies:
-      '@nestjs/platform-fastify': 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
-      '@ogma/nestjs-module': 5.1.3(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/platform-fastify': 10.2.8(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
+      '@ogma/nestjs-module': 5.1.3(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       fastify: 4.23.2
     dev: true
 
@@ -4491,20 +4478,20 @@ packages:
   /@protobufjs/utf8@1.1.0:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
 
-  /@ptc-org/nestjs-query-core@4.2.0(@nestjs/common@10.2.7)(class-transformer@0.5.1):
+  /@ptc-org/nestjs-query-core@4.2.0(@nestjs/common@10.2.8)(class-transformer@0.5.1):
     resolution: {integrity: sha512-6IDHTmQI32jjOQj+yQp0zGZ/Y7E9IUH5nAO8XLNNZ1IN76cDNQcoYYrS06JopQ/LP9wJRusHQgD0cEVUMobh7g==}
     peerDependencies:
       '@nestjs/common': ^9.0.0 || ^10.0.0
       class-transformer: ^0.5
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       class-transformer: 0.5.1
       lodash.merge: 4.6.2
       reflect-metadata: 0.1.13
       tslib: 2.6.2
     dev: false
 
-  /@ptc-org/nestjs-query-graphql@4.2.0(@apollo/gateway@2.5.6)(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/graphql@12.0.9)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql-subscriptions@2.0.0)(graphql@16.6.0)(ts-morph@20.0.0):
+  /@ptc-org/nestjs-query-graphql@4.2.0(@apollo/gateway@2.5.7)(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@nestjs/graphql@12.0.11)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql-subscriptions@2.0.0)(graphql@16.6.0)(ts-morph@20.0.0):
     resolution: {integrity: sha512-BjPoNjT5UjhpvSK0wJ/exeWpjzOTQsgQgOuYOuPzMx9pwf2zYL1GD+aH08vog3OkK5o/0g/pV3I6XTIBsxAN4g==}
     peerDependencies:
       '@apollo/gateway': ^0.44.1 || ^0.46.0 || ^0.48.0 || ^0.49.0 || ^0.50.0 || ^2.0.0
@@ -4517,11 +4504,11 @@ packages:
       graphql-subscriptions: ^2.0.0
       ts-morph: ^19.0.0 || 20.0.0
     dependencies:
-      '@apollo/gateway': 2.5.6(graphql@16.6.0)
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/graphql': 12.0.9(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0)
-      '@ptc-org/nestjs-query-core': 4.2.0(@nestjs/common@10.2.7)(class-transformer@0.5.1)
+      '@apollo/gateway': 2.5.7(graphql@16.6.0)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/graphql': 12.0.11(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@20.0.0)
+      '@ptc-org/nestjs-query-core': 4.2.0(@nestjs/common@10.2.8)(class-transformer@0.5.1)
       class-transformer: 0.5.1
       class-validator: 0.14.0
       dataloader: 2.2.2
@@ -4538,7 +4525,7 @@ packages:
       upper-case-first: 2.0.2
     dev: false
 
-  /@ptc-org/nestjs-query-typegoose@4.2.0(@m8a/nestjs-typegoose@..+libs+nestjs-typegoose)(@nestjs/common@10.2.7)(@typegoose/typegoose@11.6.0)(class-transformer@0.5.1)(mongoose@7.6.2):
+  /@ptc-org/nestjs-query-typegoose@4.2.0(@m8a/nestjs-typegoose@..+libs+nestjs-typegoose)(@nestjs/common@10.2.8)(@typegoose/typegoose@11.6.0)(class-transformer@0.5.1)(mongoose@7.6.5):
     resolution: {integrity: sha512-FVESO8bj2vRkWlaajairMTednVQ98YHL8APl7p8pnmnbhXkJPGK/KqY02N5jC58bomvpcj7x7I35nvoZRQI41Q==}
     peerDependencies:
       '@m8a/nestjs-typegoose': ^9.0.0 || ^10.0.0 || ^11.0.0
@@ -4547,21 +4534,21 @@ packages:
       mongoose: ^6.5.0 || ^7.0.3
     dependencies:
       '@m8a/nestjs-typegoose': link:../../libs/nestjs-typegoose
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@ptc-org/nestjs-query-core': 4.2.0(@nestjs/common@10.2.7)(class-transformer@0.5.1)
-      '@typegoose/typegoose': 11.6.0(mongoose@7.6.2)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@ptc-org/nestjs-query-core': 4.2.0(@nestjs/common@10.2.8)(class-transformer@0.5.1)
+      '@typegoose/typegoose': 11.6.0(mongoose@7.6.5)
       camel-case: 4.1.2
       is-class: 0.0.9
       lodash.escaperegexp: 4.1.2
       lodash.merge: 4.6.2
-      mongoose: 7.6.2
+      mongoose: 7.6.5
       reflect-metadata: 0.1.13
       tslib: 2.6.2
     transitivePeerDependencies:
       - class-transformer
     dev: false
 
-  /@quasar/app-vite@1.6.2(eslint@8.51.0)(quasar@2.12.7)(vue-router@4.2.5)(vue@3.3.4):
+  /@quasar/app-vite@1.6.2(eslint@8.51.0)(quasar@2.12.7)(vue-router@4.2.5)(vue@3.3.8):
     resolution: {integrity: sha512-keyJ28cqVtzNLDibQESo1c/DD++6+wqf8nQO6oMRqH6WgYcPs+YO1buRsRMXF9w3ghMCV0/9/Lj8Kyb7S55j6A==}
     engines: {node: ^24 || ^22 || ^20 || ^18 || ^16 || ^14.19, npm: '>= 6.14.12', yarn: '>= 1.17.3'}
     hasBin: true
@@ -4590,13 +4577,13 @@ packages:
         optional: true
     dependencies:
       '@quasar/render-ssr-error': 1.0.2
-      '@quasar/vite-plugin': 1.5.0(@vitejs/plugin-vue@2.3.4)(quasar@2.12.7)(vite@2.9.16)(vue@3.3.4)
+      '@quasar/vite-plugin': 1.5.0(@vitejs/plugin-vue@2.3.4)(quasar@2.12.7)(vite@2.9.16)(vue@3.3.8)
       '@rollup/pluginutils': 4.2.1
       '@types/chrome': 0.0.208
       '@types/compression': 1.7.3
       '@types/cordova': 0.0.34
       '@types/express': 4.17.19
-      '@vitejs/plugin-vue': 2.3.4(vite@4.4.11)(vue@3.3.4)
+      '@vitejs/plugin-vue': 2.3.4(vite@4.4.11)(vue@3.3.8)
       archiver: 5.3.2
       chokidar: 3.5.3
       ci-info: 3.9.0
@@ -4624,8 +4611,8 @@ packages:
       serialize-javascript: 6.0.1
       table: 6.8.1
       vite: 2.9.16(sass@1.32.12)
-      vue: 3.3.4
-      vue-router: 4.2.5(vue@3.3.4)
+      vue: 3.3.8(typescript@5.2.2)
+      vue-router: 4.2.5(vue@3.3.8)
       webpack-merge: 5.9.0
     transitivePeerDependencies:
       - less
@@ -4633,15 +4620,15 @@ packages:
       - stylus
     dev: true
 
-  /@quasar/extras@1.16.7:
-    resolution: {integrity: sha512-nYF3gVE/si1YJ/D4qmAiHGwxoJIDCvTT8NI6ZmbTMPrur4J8xBKhfhfhyLoQ4k2jJZP6Rx0rUcB71FBNC2C8vQ==}
+  /@quasar/extras@1.16.8:
+    resolution: {integrity: sha512-mNSwQ6wkIVoAemhYdLm9q/FVqLHmVONZgCYdLLeqpakKNsR0r/zHQnCngzdDaXI7veYEvE0uW1gJa1wdQsxXxA==}
     dev: false
 
-  /@quasar/quasar-app-extension-apollo@2.0.0-beta.5(typescript@5.2.2)(vue@3.3.4):
+  /@quasar/quasar-app-extension-apollo@2.0.0-beta.5(typescript@5.2.2)(vue@3.3.8):
     resolution: {integrity: sha512-z21348WlEoFa6UsmWB4Lw7hV+fHDe/GM9Gjp3tv2gzy6SdxrjVwo2yq4MY3QCbXYN5g1t9/4IFNOcHE1mJs3gQ==}
     dependencies:
-      '@apollo/client': 3.8.5(graphql@16.6.0)
-      '@vue/apollo-composable': 4.0.0-beta.11(@apollo/client@3.8.5)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.4)
+      '@apollo/client': 3.8.7(graphql@16.6.0)
+      '@vue/apollo-composable': 4.0.0-beta.11(@apollo/client@3.8.7)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.8)
       graphql: 16.6.0
       graphql-tag: 2.12.6(graphql@16.6.0)
     transitivePeerDependencies:
@@ -4661,7 +4648,7 @@ packages:
       stack-trace: 1.0.0-pre2
     dev: true
 
-  /@quasar/vite-plugin@1.5.0(@vitejs/plugin-vue@2.3.4)(quasar@2.12.7)(vite@2.9.16)(vue@3.3.4):
+  /@quasar/vite-plugin@1.5.0(@vitejs/plugin-vue@2.3.4)(quasar@2.12.7)(vite@2.9.16)(vue@3.3.8):
     resolution: {integrity: sha512-Kd4nFeWd0eAr7e+HMY8Wtmo86RjPZhCi6/bybTAyliFmS8AhZ2/oRTOGnBD9R1C6Ub3JPzC4eWFA20IlHa5A3w==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -4670,10 +4657,10 @@ packages:
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-beta.0
       vue: ^3.0.0
     dependencies:
-      '@vitejs/plugin-vue': 2.3.4(vite@4.4.11)(vue@3.3.4)
+      '@vitejs/plugin-vue': 2.3.4(vite@4.4.11)(vue@3.3.8)
       quasar: 2.12.7
       vite: 2.9.16(sass@1.32.12)
-      vue: 3.3.4
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
   /@redis/bloom@1.2.0(@redis/client@1.5.11):
@@ -4997,7 +4984,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-darwin-x64@1.3.93:
@@ -5006,7 +4992,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-arm-gnueabihf@1.3.93:
@@ -5015,7 +5000,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-arm64-gnu@1.3.93:
@@ -5024,7 +5008,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-arm64-musl@1.3.93:
@@ -5033,7 +5016,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-x64-gnu@1.3.93:
@@ -5042,7 +5024,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-x64-musl@1.3.93:
@@ -5051,7 +5032,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-win32-arm64-msvc@1.3.93:
@@ -5060,7 +5040,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-win32-ia32-msvc@1.3.93:
@@ -5069,7 +5048,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-win32-x64-msvc@1.3.93:
@@ -5078,7 +5056,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core@1.3.93:
@@ -5104,15 +5081,12 @@ packages:
       '@swc/core-win32-arm64-msvc': 1.3.93
       '@swc/core-win32-ia32-msvc': 1.3.93
       '@swc/core-win32-x64-msvc': 1.3.93
-    dev: true
 
   /@swc/counter@0.1.2:
     resolution: {integrity: sha512-9F4ys4C74eSTEUNndnER3VJ15oru2NumfQxS8geE+f3eB5xvfxpWyqE5XlVnxb/R14uoXi6SLbBwwiDSkv+XEw==}
-    dev: true
 
   /@swc/types@0.1.5:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
-    dev: true
 
   /@szmarczak/http-timer@1.1.2:
     resolution: {integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==}
@@ -5146,21 +5120,17 @@ packages:
 
   /@tsconfig/node10@1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
-    dev: true
 
   /@tsconfig/node12@1.0.11:
     resolution: {integrity: sha512-cqefuRsh12pWyGsIoBKJA9luFu3mRxCA+ORZvA4ktLSzIuCUtWVxGIuXigEwO5/ywWFMZ2QEGKWvkZG1zDMTag==}
-    dev: true
 
   /@tsconfig/node14@1.0.3:
     resolution: {integrity: sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==}
-    dev: true
 
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
-    dev: true
 
-  /@typegoose/typegoose@11.6.0(mongoose@7.6.2):
+  /@typegoose/typegoose@11.6.0(mongoose@7.6.5):
     resolution: {integrity: sha512-c6m5aTrv9tzqLmtR/txlg4sFKXfupBXMJlO4yRfg757rK5h2YfIoshMG3yi+0IEe8gkF5utCV/uh9vf8a+re4Q==}
     engines: {node: '>=14.17.0'}
     peerDependencies:
@@ -5168,7 +5138,7 @@ packages:
     dependencies:
       lodash: 4.17.21
       loglevel: 1.8.1
-      mongoose: 7.6.2
+      mongoose: 7.6.5
       reflect-metadata: 0.1.13
       semver: 7.5.4
       tslib: 2.6.2
@@ -5212,15 +5182,15 @@ packages:
       '@types/connect': 3.4.36
       '@types/node': 20.8.6
 
-  /@types/cache-manager-redis-store@2.0.2:
-    resolution: {integrity: sha512-Y9AkjU/y3If0nlJI/8k3mMmr/1FIuZ8U7biI5vQH0uP5mOb1Xycru6NcOiVKyUe/adHYUoY/EpnvWZ8NoBqRKQ==}
+  /@types/cache-manager-redis-store@2.0.4:
+    resolution: {integrity: sha512-EG4ac1KsUr07uv6N/O0X1OaQBNVKShVUxn+GwJQQpUkTEi4+KJl6yvqfwc4uTPT1+pwfKRgQhCoHQQCd/ObkZQ==}
     dependencies:
-      '@types/cache-manager': 4.0.3
+      '@types/cache-manager': 4.0.5
       '@types/redis': 2.8.32
     dev: true
 
-  /@types/cache-manager@4.0.3:
-    resolution: {integrity: sha512-tPo2eUsvPVk/i2AU7BKy2ekSoKFOkST918GF7Qvc4IMNTRHyekEWJtWS9sBdi+DaF/4saiBkgWji5HqH3X7W8g==}
+  /@types/cache-manager@4.0.5:
+    resolution: {integrity: sha512-DWzxGv0Kt7NKM2uFoHOHblobJJepgoC56sAEkyFJhqRG36nxvfkrr4Gb/1TXza32GC2A+Z8+bgxFT5FEMGdkyg==}
     dev: true
 
   /@types/cacheable-request@6.0.3:
@@ -5258,8 +5228,8 @@ packages:
     resolution: {integrity: sha512-rkiiTuf/z2wTd4RxFOb+clE7PF4AEJU0hsczbUdkHHBtkUmpWQpEddynNfJYKYtZFJKbq4F+brfekt1kx85IZA==}
     dev: true
 
-  /@types/cross-spawn@6.0.3:
-    resolution: {integrity: sha512-BDAkU7WHHRHnvBf5z89lcvACsvkz/n7Tv+HyD/uW76O29HoH1Tk/W6iQrepaZVbisvlEek4ygwT8IW7ow9XLAA==}
+  /@types/cross-spawn@6.0.5:
+    resolution: {integrity: sha512-wsIMP68FvGXk+RaWhraz6Xp4v7sl4qwzHAmtPaJEN2NRTXXI9LtFawUpeTsBNL/pd6QoLStdytCaAyiK7AEd/Q==}
     dependencies:
       '@types/node': 20.8.6
     dev: true
@@ -5347,8 +5317,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.1
     dev: true
 
-  /@types/jest@29.5.5:
-    resolution: {integrity: sha512-ebylz2hnsWR9mYvmBFbXJXr+33UPc4+ZdxyDXh5w0FlPBTfCVN3wPL+kuOiQt3xvrK419v7XWeAs+AeOksafXg==}
+  /@types/jest@29.5.8:
+    resolution: {integrity: sha512-fXEFTxMV2Co8ZF5aYFJv+YeA08RTYJfhtN5c9JSv/mFEMe+xxjufCb+PHL+bJcMs/ebPUsBu+UNTEz+ydXrR6g==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -5436,8 +5406,8 @@ packages:
   /@types/parse-json@4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
 
-  /@types/passport-jwt@3.0.10:
-    resolution: {integrity: sha512-D2A911g2uiFsq/XXFBxQjcBcK4c6zPF2gAx9blEfz2AOXx5UUwsd8ZcMTcPe8z9dhW8LQBYLjv+vug2dvnRevA==}
+  /@types/passport-jwt@3.0.13:
+    resolution: {integrity: sha512-fjHaC6Bv8EpMMqzTnHP32SXlZGaNfBPC/Po5dmRGYi2Ky7ljXPbGnOy+SxZqa6iZvFgVhoJ1915Re3m93zmcfA==}
     dependencies:
       '@types/express': 4.17.19
       '@types/jsonwebtoken': 9.0.3
@@ -5503,8 +5473,8 @@ packages:
       '@types/node': 20.8.6
     dev: true
 
-  /@types/supertest@2.0.14:
-    resolution: {integrity: sha512-Q900DeeHNFF3ZYYepf/EyJfZDA2JrnWLaSQ0YNV7+2GTo8IlJzauEnDGhya+hauncpBYTYGpVHwGdssJeAQ7eA==}
+  /@types/supertest@2.0.16:
+    resolution: {integrity: sha512-6c2ogktZ06tr2ENoZivgm7YnprnhYE4ZoXGMY+oA7IuAf17M8FWvujXZGmxLv8y0PTyts4x5A+erSwVUFA8XSg==}
     dependencies:
       '@types/superagent': 4.1.19
     dev: true
@@ -5911,7 +5881,7 @@ packages:
       '@ucast/core': 1.10.2
     dev: false
 
-  /@vitejs/plugin-vue@2.3.4(vite@4.4.11)(vue@3.3.4):
+  /@vitejs/plugin-vue@2.3.4(vite@4.4.11)(vue@3.3.8):
     resolution: {integrity: sha512-IfFNbtkbIm36O9KB8QodlwwYvTEsJb4Lll4c2IwB3VHc2gie2mSPtSzL0eYay7X2jd/2WX02FjSGTWR6OPr/zg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5919,10 +5889,10 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 4.4.11(@types/node@20.8.6)
-      vue: 3.3.4
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
-  /@vue/apollo-composable@4.0.0-beta.11(@apollo/client@3.8.5)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.4):
+  /@vue/apollo-composable@4.0.0-beta.11(@apollo/client@3.8.7)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.8):
     resolution: {integrity: sha512-ZtztRDrQe2sTn31h+teBfYw81AePfxlBssTaZVk2jOagdZgTfZigR7aJjO98FxwvGnB80ElWHKubvqYwNf8heg==}
     peerDependencies:
       '@apollo/client': ^3.4.13
@@ -5933,12 +5903,12 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      '@apollo/client': 3.8.5(graphql@16.6.0)
+      '@apollo/client': 3.8.7(graphql@16.6.0)
       graphql: 16.6.0
       throttle-debounce: 5.0.0
       ts-essentials: 9.4.1(typescript@5.2.2)
-      vue: 3.3.4
-      vue-demi: 0.14.6(vue@3.3.4)
+      vue: 3.3.8(typescript@5.2.2)
+      vue-demi: 0.14.6(vue@3.3.8)
     transitivePeerDependencies:
       - typescript
 
@@ -5949,12 +5919,28 @@ packages:
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
       source-map-js: 1.0.2
+    dev: false
+
+  /@vue/compiler-core@3.3.8:
+    resolution: {integrity: sha512-hN/NNBUECw8SusQvDSqqcVv6gWq8L6iAktUR0UF3vGu2OhzRqcOiAno0FmBJWwxhYEXRlQJT5XnoKsVq1WZx4g==}
+    dependencies:
+      '@babel/parser': 7.23.0
+      '@vue/shared': 3.3.8
+      estree-walker: 2.0.2
+      source-map-js: 1.0.2
 
   /@vue/compiler-dom@3.3.4:
     resolution: {integrity: sha512-wyM+OjOVpuUukIq6p5+nwHYtj9cFroz9cwkfmP9O1nzH68BenTTv0u7/ndggT8cIQlnBeOo6sUT/gvHcIkLA5w==}
     dependencies:
       '@vue/compiler-core': 3.3.4
       '@vue/shared': 3.3.4
+    dev: false
+
+  /@vue/compiler-dom@3.3.8:
+    resolution: {integrity: sha512-+PPtv+p/nWDd0AvJu3w8HS0RIm/C6VGBIRe24b9hSyNWOAPEUosFZ5diwawwP8ip5sJ8n0Pe87TNNNHnvjs0FQ==}
+    dependencies:
+      '@vue/compiler-core': 3.3.8
+      '@vue/shared': 3.3.8
 
   /@vue/compiler-sfc@3.3.4:
     resolution: {integrity: sha512-6y/d8uw+5TkCuzBkgLS0v3lSM3hJDntFEiUORM11pQ/hKvkhSKZrXW6i69UyXlJQisJxuUEJKAWEqWbWsLeNKQ==}
@@ -5969,12 +5955,34 @@ packages:
       magic-string: 0.30.5
       postcss: 8.4.31
       source-map-js: 1.0.2
+    dev: false
+
+  /@vue/compiler-sfc@3.3.8:
+    resolution: {integrity: sha512-WMzbUrlTjfYF8joyT84HfwwXo+8WPALuPxhy+BZ6R4Aafls+jDBnSz8PDz60uFhuqFbl3HxRfxvDzrUf3THwpA==}
+    dependencies:
+      '@babel/parser': 7.23.0
+      '@vue/compiler-core': 3.3.8
+      '@vue/compiler-dom': 3.3.8
+      '@vue/compiler-ssr': 3.3.8
+      '@vue/reactivity-transform': 3.3.8
+      '@vue/shared': 3.3.8
+      estree-walker: 2.0.2
+      magic-string: 0.30.5
+      postcss: 8.4.31
+      source-map-js: 1.0.2
 
   /@vue/compiler-ssr@3.3.4:
     resolution: {integrity: sha512-m0v6oKpup2nMSehwA6Uuu+j+wEwcy7QmwMkVNVfrV9P2qE5KshC6RwOCq8fjGS/Eak/uNb8AaWekfiXxbBB6gQ==}
     dependencies:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
+    dev: false
+
+  /@vue/compiler-ssr@3.3.8:
+    resolution: {integrity: sha512-hXCqQL/15kMVDBuoBYpUnSYT8doDNwsjvm3jTefnXr+ytn294ySnT8NlsFHmTgKNjwpuFy7XVV8yTeLtNl/P6w==}
+    dependencies:
+      '@vue/compiler-dom': 3.3.8
+      '@vue/shared': 3.3.8
 
   /@vue/devtools-api@6.5.1:
     resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
@@ -5987,36 +5995,50 @@ packages:
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
       magic-string: 0.30.5
+    dev: false
 
-  /@vue/reactivity@3.3.4:
-    resolution: {integrity: sha512-kLTDLwd0B1jG08NBF3R5rqULtv/f8x3rOFByTDz4J53ttIQEDmALqKqXY0J+XQeN0aV2FBxY8nJDf88yvOPAqQ==}
+  /@vue/reactivity-transform@3.3.8:
+    resolution: {integrity: sha512-49CvBzmZNtcHua0XJ7GdGifM8GOXoUMOX4dD40Y5DxI3R8OUhMlvf2nvgUAcPxaXiV5MQQ1Nwy09ADpnLQUqRw==}
     dependencies:
-      '@vue/shared': 3.3.4
+      '@babel/parser': 7.23.0
+      '@vue/compiler-core': 3.3.8
+      '@vue/shared': 3.3.8
+      estree-walker: 2.0.2
+      magic-string: 0.30.5
 
-  /@vue/runtime-core@3.3.4:
-    resolution: {integrity: sha512-R+bqxMN6pWO7zGI4OMlmvePOdP2c93GsHFM/siJI7O2nxFRzj55pLwkpCedEY+bTMgp5miZ8CxfIZo3S+gFqvA==}
+  /@vue/reactivity@3.3.8:
+    resolution: {integrity: sha512-ctLWitmFBu6mtddPyOKpHg8+5ahouoTCRtmAHZAXmolDtuZXfjL2T3OJ6DL6ezBPQB1SmMnpzjiWjCiMYmpIuw==}
     dependencies:
-      '@vue/reactivity': 3.3.4
-      '@vue/shared': 3.3.4
+      '@vue/shared': 3.3.8
 
-  /@vue/runtime-dom@3.3.4:
-    resolution: {integrity: sha512-Aj5bTJ3u5sFsUckRghsNjVTtxZQ1OyMWCr5dZRAPijF/0Vy4xEoRCwLyHXcj4D0UFbJ4lbx3gPTgg06K/GnPnQ==}
+  /@vue/runtime-core@3.3.8:
+    resolution: {integrity: sha512-qurzOlb6q26KWQ/8IShHkMDOuJkQnQcTIp1sdP4I9MbCf9FJeGVRXJFr2mF+6bXh/3Zjr9TDgURXrsCr9bfjUw==}
     dependencies:
-      '@vue/runtime-core': 3.3.4
-      '@vue/shared': 3.3.4
+      '@vue/reactivity': 3.3.8
+      '@vue/shared': 3.3.8
+
+  /@vue/runtime-dom@3.3.8:
+    resolution: {integrity: sha512-Noy5yM5UIf9UeFoowBVgghyGGPIDPy1Qlqt0yVsUdAVbqI8eeMSsTqBtauaEoT2UFXUk5S64aWVNJN4MJ2vRdA==}
+    dependencies:
+      '@vue/runtime-core': 3.3.8
+      '@vue/shared': 3.3.8
       csstype: 3.1.2
 
-  /@vue/server-renderer@3.3.4(vue@3.3.4):
-    resolution: {integrity: sha512-Q6jDDzR23ViIb67v+vM1Dqntu+HUexQcsWKhhQa4ARVzxOY2HbC7QRW/ggkDBd5BU+uM1sV6XOAP0b216o34JQ==}
+  /@vue/server-renderer@3.3.8(vue@3.3.8):
+    resolution: {integrity: sha512-zVCUw7RFskvPuNlPn/8xISbrf0zTWsTSdYTsUTN1ERGGZGVnRxM2QZ3x1OR32+vwkkCm0IW6HmJ49IsPm7ilLg==}
     peerDependencies:
-      vue: 3.3.4
+      vue: 3.3.8
     dependencies:
-      '@vue/compiler-ssr': 3.3.4
-      '@vue/shared': 3.3.4
-      vue: 3.3.4
+      '@vue/compiler-ssr': 3.3.8
+      '@vue/shared': 3.3.8
+      vue: 3.3.8(typescript@5.2.2)
 
   /@vue/shared@3.3.4:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
+    dev: false
+
+  /@vue/shared@3.3.8:
+    resolution: {integrity: sha512-8PGwybFwM4x8pcfgqEQFy70NaQxASvOC5DJwLQfpArw1UDfUXrJkdxD3BhVTMS+0Lef/TU7YO0Jvr0jJY8T+mw==}
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
@@ -6269,13 +6291,11 @@ packages:
   /acorn-walk@8.2.0:
     resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
     engines: {node: '>=0.4.0'}
-    dev: true
 
   /acorn@8.10.0:
     resolution: {integrity: sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
 
   /agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -6398,26 +6418,32 @@ packages:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  /apollo-link-rest@0.9.0(@apollo/client@3.8.5)(graphql@16.6.0)(qs@6.11.2):
+  /apollo-link-rest@0.9.0(@apollo/client@3.8.7)(graphql@16.6.0)(qs@6.11.2):
     resolution: {integrity: sha512-kuXjR56Y12w0TZcqwVaONKlipB6g3Ya1dAy4NMCaylPpNXq6tO+qzQFPUyDJC7B0JoJPIFjxPV2rAet4uGM4UQ==}
     peerDependencies:
       '@apollo/client': '>=3'
       graphql: 16.6.0 || ^16.0.0
       qs: '>=6'
     dependencies:
-      '@apollo/client': 3.8.5(graphql@16.6.0)
+      '@apollo/client': 3.8.7(graphql@16.6.0)
       graphql: 16.6.0
       qs: 6.11.2
     dev: false
 
-  /apollo-link-token-refresh@0.6.0(@apollo/client@3.8.5)(graphql@16.6.0):
-    resolution: {integrity: sha512-WT1Z1cpuB74PFRA/xRU3LR2c9lz4Rc3BlsFRe3xa7yKIJQLSlkT+oecb0iYUPPU/9rJuxNKNLcFBKvXdLTvmug==}
+  /apollo-link-token-refresh@0.6.1(@apollo/client@3.8.7)(@types/node@20.8.6)(graphql@16.6.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-1loepJ228nVU0Y9fx01GPbWeCHUdGXdctzn2BzduWDZ2XvIvcP4znDmZ4jR7lC5l7BmlkFKfQge4JJv6YI+p3Q==}
     peerDependencies:
       '@apollo/client': ^3.0.0
       graphql: 16.6.0 || ^16.0.0
     dependencies:
-      '@apollo/client': 3.8.5(graphql@16.6.0)
+      '@apollo/client': 3.8.7(graphql@16.6.0)
       graphql: 16.6.0
+      ts-node: 10.9.1(@swc/core@1.3.93)(@types/node@20.8.6)(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
+      - typescript
     dev: false
 
   /apollo-utilities@1.3.4(graphql@16.6.0):
@@ -6506,10 +6532,9 @@ packages:
 
   /arg@4.1.3:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
-    dev: true
 
-  /argon2@0.31.1:
-    resolution: {integrity: sha512-ik2xnJrLXazya7m4Nz1XfBSRjXj8Koq8qF9PsQC8059p20ifWc9zx/hgU3ItZh/3TnwXkv0RbhvjodPkmFf0bg==}
+  /argon2@0.31.2:
+    resolution: {integrity: sha512-QSnJ8By5Mth60IEte45w9Y7v6bWcQw3YhRtJKKN8oNCxnTLDiv/AXXkDPf2srTMfxFVn3QJdVv2nhXESsUa+Yg==}
     engines: {node: '>=14.0.0'}
     requiresBuild: true
     dependencies:
@@ -7699,16 +7724,6 @@ packages:
       path-type: 4.0.0
       yaml: 1.10.2
 
-  /cosmiconfig@8.2.0:
-    resolution: {integrity: sha512-3rTMnFJA1tCOPwRxtgF4wd7Ab2qvDbL8jX+3smjIbS4HlZBagTlpERbdN7iAbWlrfxE3M8c27kTwTawQ7st+OQ==}
-    engines: {node: '>=14'}
-    dependencies:
-      import-fresh: 3.3.0
-      js-yaml: 4.1.0
-      parse-json: 5.2.0
-      path-type: 4.0.0
-    dev: false
-
   /cosmiconfig@8.3.6(typescript@5.2.2):
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
     engines: {node: '>=14'}
@@ -7771,7 +7786,6 @@ packages:
 
   /create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
-    dev: true
 
   /cross-fetch@3.1.8:
     resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
@@ -7780,6 +7794,12 @@ packages:
     transitivePeerDependencies:
       - encoding
     dev: true
+
+  /cross-inspect@1.0.0:
+    resolution: {integrity: sha512-4PFfn4b5ZN6FMNGSZlyb7wUhuN8wvj8t/VQHZdM4JsDcruGJ8L2kf9zao98QIrBPFCpdk27qst/AGTl7pL3ypQ==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      tslib: 2.6.2
 
   /cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
@@ -8072,7 +8092,6 @@ packages:
   /diff@4.0.2:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
-    dev: true
 
   /dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -9095,6 +9114,17 @@ packages:
       merge2: 1.4.1
       micromatch: 4.0.5
 
+  /fast-glob@3.3.2:
+    resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
+    engines: {node: '>=8.6.0'}
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.5
+    dev: false
+
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
 
@@ -9137,6 +9167,28 @@ packages:
 
   /fastify@4.23.2:
     resolution: {integrity: sha512-WFSxsHES115svC7NrerNqZwwM0UOxbC/P6toT9LRHgAAFvG7o2AN5W+H4ihCtOGuYXjZf4z+2jXC89rVEoPWOA==}
+    dependencies:
+      '@fastify/ajv-compiler': 3.5.0
+      '@fastify/error': 3.4.0
+      '@fastify/fast-json-stringify-compiler': 4.3.0
+      abstract-logging: 2.0.1
+      avvio: 8.2.1
+      fast-content-type-parse: 1.1.0
+      fast-json-stringify: 5.8.0
+      find-my-way: 7.7.0
+      light-my-request: 5.11.0
+      pino: 8.16.0
+      process-warning: 2.2.0
+      proxy-addr: 2.0.7
+      rfdc: 1.3.0
+      secure-json-parse: 2.7.0
+      semver: 7.5.4
+      toad-cache: 3.3.0
+    transitivePeerDependencies:
+      - supports-color
+
+  /fastify@4.24.3:
+    resolution: {integrity: sha512-6HHJ+R2x2LS3y1PqxnwEIjOTZxFl+8h4kSC/TuDPXtA+v2JnV9yEtOsNSKK1RMD7sIR2y1ZsA4BEFaid/cK5pg==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.4.0
@@ -9820,7 +9872,7 @@ packages:
       '@graphql-tools/load': 8.0.0(graphql@16.6.0)
       '@graphql-tools/merge': 9.0.0(graphql@16.6.0)
       '@graphql-tools/url-loader': 8.0.0(@types/node@20.8.6)(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       cosmiconfig: 8.3.6(typescript@5.2.2)
       graphql: 16.6.0
       jiti: 1.20.0
@@ -9868,15 +9920,6 @@ packages:
       graphql: 16.6.0
       tslib: 2.6.2
 
-  /graphql-ws@5.14.0(graphql@16.6.0):
-    resolution: {integrity: sha512-itrUTQZP/TgswR4GSSYuwWUzrE/w5GhbwM2GX3ic2U7aw33jgEsayfIlvaj7/GcIvZgNMzsPTrE5hqPuFUiE5g==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      graphql: 16.6.0 || ^16.0.0
-    dependencies:
-      graphql: 16.6.0
-    dev: false
-
   /graphql-ws@5.14.1(graphql@16.6.0):
     resolution: {integrity: sha512-aqkls1espsygP1PfkAuuLIV96IbztQ6EaADse97pw8wRIMT3+AL/OYfS8V2iCRkc0gzckitoDRGCQEdnySggiA==}
     engines: {node: '>=10'}
@@ -9885,6 +9928,15 @@ packages:
     dependencies:
       graphql: 16.6.0
     dev: true
+
+  /graphql-ws@5.14.2(graphql@16.6.0):
+    resolution: {integrity: sha512-LycmCwhZ+Op2GlHz4BZDsUYHKRiiUz+3r9wbhBATMETNlORQJAaFlAgTFoeRh6xQoQegwYwIylVD1Qns9/DA3w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      graphql: 16.6.0 || ^16.0.0
+    dependencies:
+      graphql: 16.6.0
+    dev: false
 
   /graphql-yoga@4.0.5(graphql@16.6.0):
     resolution: {integrity: sha512-vIbJU9QX5RP4PoxbMCHcfOlt/3EsC/0uLdAOlKaiUvlwJDTFCaIHo2X10vL4i/27Gw8g90ECIwm2YbmeLDwcqg==}
@@ -9895,7 +9947,7 @@ packages:
       '@envelop/core': 4.0.3
       '@graphql-tools/executor': 1.2.0(graphql@16.6.0)
       '@graphql-tools/schema': 10.0.0(graphql@16.6.0)
-      '@graphql-tools/utils': 10.0.7(graphql@16.6.0)
+      '@graphql-tools/utils': 10.0.8(graphql@16.6.0)
       '@graphql-yoga/logger': 1.0.0
       '@graphql-yoga/subscription': 4.0.0
       '@whatwg-node/fetch': 0.9.13
@@ -10266,27 +10318,6 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@8.2.5:
-    resolution: {integrity: sha512-QAgPDQMEgrDssk1XiwwHoOGYF9BAbUcc1+j+FhEvaOt8/cKRqyLn0U5qA6F74fGhTMGxf92pOvPBeh29jQJDTQ==}
-    engines: {node: '>=12.0.0'}
-    dependencies:
-      ansi-escapes: 4.3.2
-      chalk: 4.1.2
-      cli-cursor: 3.1.0
-      cli-width: 3.0.0
-      external-editor: 3.1.0
-      figures: 3.2.0
-      lodash: 4.17.21
-      mute-stream: 0.0.8
-      ora: 5.4.1
-      run-async: 2.4.1
-      rxjs: 7.8.1
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      through: 2.3.8
-      wrap-ansi: 7.0.0
-    dev: false
-
   /inquirer@8.2.6:
     resolution: {integrity: sha512-M1WuAmb7pn9zdFRtQYk26ZBoY043Sse0wVDdk4Bppr+JOXyQYybdtvK+l9wUibhtjdjvtoiNy8tk+EgsYIUqKg==}
     engines: {node: '>=12.0.0'}
@@ -10306,7 +10337,6 @@ packages:
       strip-ansi: 6.0.1
       through: 2.3.8
       wrap-ansi: 6.2.0
-    dev: true
 
   /internal-slot@1.0.5:
     resolution: {integrity: sha512-Y+R5hJrzs52QCG2laLn4udYVnxsfny9CpOhNhUvk/SSSVyF6T27FzRbF0sroPidSu3X8oEAkOn2K804mjpt6UQ==}
@@ -11782,7 +11812,6 @@ packages:
 
   /make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
-    dev: true
 
   /make-fetch-happen@11.1.1:
     resolution: {integrity: sha512-rLWS7GCSTcEujjVBs2YqG7Y4643u8ucvCJeSRqiLYhesrDuzeuFIk37xREzAsfQaqzl8b9rNCE4m6J8tvX4Q8w==}
@@ -12177,16 +12206,16 @@ packages:
     optionalDependencies:
       '@mongodb-js/saslprep': 1.1.0
 
-  /mongoose-autopopulate@1.0.1(mongoose@7.6.2):
+  /mongoose-autopopulate@1.0.1(mongoose@7.6.5):
     resolution: {integrity: sha512-39rN0QQinA1iz/8JNVKM3MNq/zZrjStiWi8jA15diUC2nnJsvEgRXEir4L4D1azYxY+gBTuqEzLqd7Y+MC6pHQ==}
     peerDependencies:
       mongoose: 6.x || 7.x
     dependencies:
-      mongoose: 7.6.2
+      mongoose: 7.6.5
     dev: false
 
-  /mongoose@7.6.2:
-    resolution: {integrity: sha512-OVx6RWbfNOzBbfTvXoOkgZmaizdXDU/B/KbBjietXQoInSg/OSULjOavXJzL51XWFkbefqkOvbeE07DfvW6FkQ==}
+  /mongoose@7.6.5:
+    resolution: {integrity: sha512-ElHgGWVKQUawKBn0DXuHmSd3W5w5Kb8JUbDNQH30odhYCDKq9GCh+E1/SuN8jZGxrHgFyLrvYxLSpC36BpqS+w==}
     engines: {node: '>=14.20.1'}
     dependencies:
       bson: 5.5.0
@@ -12285,31 +12314,33 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
-  /nest-commander@3.12.0(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@types/inquirer@9.0.4):
-    resolution: {integrity: sha512-6ncAT13l7lH9Hya3GKKOIG+ltRD7b4idTlbuNXaCsm2IJIuuVxnx35UxiogJPz+GarE437H3I+GJXzehBnDQqg==}
+  /nest-commander@3.12.2(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(@types/inquirer@9.0.4)(typescript@5.2.2):
+    resolution: {integrity: sha512-iOIVzwepP21fFfU629lxGeWABhDRXfOmJeNsuqmdonx/TEYUpWuPJCPYMKRKOpv/UQj0vf/8hjbzq25VfU+0xQ==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
       '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0
       '@types/inquirer': ^8.1.3 || ^9.0.0
     dependencies:
       '@fig/complete-commander': 2.0.1(commander@11.0.0)
-      '@golevelup/nestjs-discovery': 4.0.0(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/core': 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@golevelup/nestjs-discovery': 4.0.0(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.8(@nestjs/common@10.2.8)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@types/inquirer': 9.0.4
       commander: 11.0.0
-      cosmiconfig: 8.2.0
-      inquirer: 8.2.5
+      cosmiconfig: 8.3.6(typescript@5.2.2)
+      inquirer: 8.2.6
+    transitivePeerDependencies:
+      - typescript
     dev: false
 
-  /nest-typed-config@2.9.1(@nestjs/common@10.2.7)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)(typescript@5.2.2):
+  /nest-typed-config@2.9.1(@nestjs/common@10.2.8)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)(typescript@5.2.2):
     resolution: {integrity: sha512-rPxpTI6mJtku8J//xYRwh5ylFRwSCscWu2qnPH8VZqDW22vlfa23rI1hC/Je4YOHy+nrzVBbulsCu9jWUvYKXA==}
     peerDependencies:
       '@nestjs/common': '>= 6.10.0 < 11 || ^10.0.0'
       reflect-metadata: ^0.1.12
       rxjs: '>= 6.0.0 < 8'
     dependencies:
-      '@nestjs/common': 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/common': 10.2.8(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       chalk: 4.1.2
       class-transformer: 0.5.1
       class-validator: 0.14.0
@@ -12321,7 +12352,7 @@ packages:
       set-value: 4.1.0
     optionalDependencies:
       '@iarna/toml': 2.2.5
-      '@nestjs/axios': 3.0.0(@nestjs/common@10.2.7)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/axios': 3.0.1(@nestjs/common@10.2.8)(axios@1.5.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       cosmiconfig: 8.3.6(typescript@5.2.2)
       dotenv: 16.3.1
       dotenv-expand: 10.0.0
@@ -14789,8 +14820,8 @@ packages:
       typescript: 5.1.6
     dev: true
 
-  /ts-loader@9.5.0(typescript@5.2.2)(webpack@5.89.0):
-    resolution: {integrity: sha512-LLlB/pkB4q9mW2yLdFMnK3dEHbrBjeZTYguaaIfusyojBgAGf5kF+O6KcWqiGzWqHk0LBsoolrp4VftEURhybg==}
+  /ts-loader@9.5.1(typescript@5.2.2)(webpack@5.89.0):
+    resolution: {integrity: sha512-rNH3sK9kGZcH9dYzC7CewQm4NtxJTjSEVRJ2DyBZR7f8/wcta+iV44UPCXc5+nzDzivKtlzV6c9P4e+oFhDLYg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
@@ -14845,7 +14876,6 @@ packages:
       typescript: 5.2.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
-    dev: true
 
   /ts-node@10.9.1(@types/node@20.5.1)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
@@ -15216,18 +15246,12 @@ packages:
     hasBin: true
     dev: false
 
-  /uuid@9.0.0:
-    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
-    hasBin: true
-    dev: false
-
   /uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
 
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
-    dev: true
 
   /v8-to-istanbul@9.1.3:
     resolution: {integrity: sha512-9lDD+EVI2fjFsMWXc6dy5JJzBsVTcQ2fVkfBvncZ6xJWG9wtBhOldG+mHkSL0+V1K/xgZz0JDO5UT5hFwHUghg==}
@@ -15332,7 +15356,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vue-demi@0.14.6(vue@3.3.4):
+  /vue-demi@0.14.6(vue@3.3.8):
     resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}
     engines: {node: '>=12'}
     hasBin: true
@@ -15344,7 +15368,7 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      vue: 3.3.4
+      vue: 3.3.8(typescript@5.2.2)
 
   /vue-eslint-parser@9.3.2(eslint@8.51.0):
     resolution: {integrity: sha512-q7tWyCVaV9f8iQyIA5Mkj/S6AoJ9KBN8IeUSf3XEmBrOtxOZnfTg5s4KClbZBCK3GtnT/+RyCLZyDHuZwTuBjg==}
@@ -15364,22 +15388,28 @@ packages:
       - supports-color
     dev: true
 
-  /vue-router@4.2.5(vue@3.3.4):
+  /vue-router@4.2.5(vue@3.3.8):
     resolution: {integrity: sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.5.1
-      vue: 3.3.4
+      vue: 3.3.8(typescript@5.2.2)
 
-  /vue@3.3.4:
-    resolution: {integrity: sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==}
+  /vue@3.3.8(typescript@5.2.2):
+    resolution: {integrity: sha512-5VSX/3DabBikOXMsxzlW8JyfeLKlG9mzqnWgLQLty88vdZL7ZJgrdgBOmrArwxiLtmS+lNNpPcBYqrhE6TQW5w==}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dependencies:
-      '@vue/compiler-dom': 3.3.4
-      '@vue/compiler-sfc': 3.3.4
-      '@vue/runtime-dom': 3.3.4
-      '@vue/server-renderer': 3.3.4(vue@3.3.4)
-      '@vue/shared': 3.3.4
+      '@vue/compiler-dom': 3.3.8
+      '@vue/compiler-sfc': 3.3.8
+      '@vue/runtime-dom': 3.3.8
+      '@vue/server-renderer': 3.3.8(vue@3.3.8)
+      '@vue/shared': 3.3.8
+      typescript: 5.2.2
 
   /walker@1.0.8:
     resolution: {integrity: sha512-ts/8E8l5b7kY0vlWLewOkDXMmPdLcVV4GmOQLyxuSswIJsweeFZtAsMF7k1Nszz+TYBQrlYRmzOnr398y1JemQ==}
@@ -15621,7 +15651,6 @@ packages:
       ansi-styles: 4.3.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
-    dev: true
 
   /wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
@@ -15680,19 +15709,6 @@ packages:
         optional: true
     dev: false
 
-  /ws@8.13.0:
-    resolution: {integrity: sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-    dev: false
-
   /ws@8.14.1:
     resolution: {integrity: sha512-4OOseMUq8AzRBI/7SLMUwO+FEDnguetSk7KMb1sHwvF2w2Wv5Hoj0nlifx8vtGsftE/jWHojPy8sMMzYLJ2G/A==}
     engines: {node: '>=10.0.0'}
@@ -15717,7 +15733,6 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
-    dev: true
 
   /xdg-basedir@4.0.0:
     resolution: {integrity: sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==}
@@ -15847,7 +15862,6 @@ packages:
   /yn@3.1.1:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
-    dev: true
 
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
