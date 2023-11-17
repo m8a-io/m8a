@@ -10,7 +10,7 @@ import type { BootFileParams } from '@quasar/app-vite'
 import { setContext } from '@apollo/client/link/context'
 import { LocalStorage } from 'quasar'
 import { TokenRefreshLink } from 'apollo-link-token-refresh'
-import jwt_decode from 'jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 import { RetryLink } from '@apollo/client/link/retry'
 import { onError } from '@apollo/client/link/error'
 import { ref } from 'vue'
@@ -85,7 +85,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
       }
       // make sure the token isn't expired
       if (token) {
-        const decodedToken: DecodedToken = jwt_decode(token)
+        const decodedToken: DecodedToken = jwtDecode(token)
         if (decodedToken.exp && decodedToken.exp * 1000 > Date.now()) {
           return true
         }

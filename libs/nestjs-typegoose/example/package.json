@@ -40,7 +40,7 @@
     "@nestjs/platform-express": "10.2.8",
     "@typegoose/typegoose": "11.7.1",
     "class-validator": "0.14.0",
-    "mongoose": "8.0.1",
+    "mongoose": "7.6.5",
     "reflect-metadata": "0.1.13",
     "rimraf": "5.0.5",
     "rxjs": "7.8.1"
