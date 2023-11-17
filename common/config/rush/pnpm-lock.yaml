@@ -11,6 +11,221 @@ importers:
 
   .: {}
 
+  ../../apps/zeus/api:
+    dependencies:
+      '@fastify/cookie':
+        specifier: 9.1.0
+        version: 9.1.0
+      '@m8a/core':
+        specifier: workspace:*
+        version: link:../../../libs/core
+      '@m8a/logger':
+        specifier: workspace:*
+        version: link:../../../libs/logger
+      '@nestjs/common':
+        specifier: 10.2.7
+        version: 10.2.7(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core':
+        specifier: 10.2.7
+        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/platform-express@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/platform-fastify':
+        specifier: 10.2.7
+        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)
+      '@ogma/nestjs-module':
+        specifier: 5.1.3
+        version: 5.1.3(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      class-transformer:
+        specifier: 0.5.1
+        version: 0.5.1
+      class-validator:
+        specifier: 0.14.0
+        version: 0.14.0
+    devDependencies:
+      '@m8a/eslint-config':
+        specifier: workspace:*
+        version: link:../../../libs/eslint
+      '@nestjs/cli':
+        specifier: 10.1.18
+        version: 10.1.18(@swc/cli@0.1.62)(@swc/core@1.3.93)
+      '@nestjs/testing':
+        specifier: 10.2.7
+        version: 10.2.7(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(@nestjs/platform-express@10.2.7)
+      '@rushstack/eslint-config':
+        specifier: 3.4.1
+        version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
+      '@swc/cli':
+        specifier: ~0.1.62
+        version: 0.1.62(@swc/core@1.3.93)(chokidar@3.5.3)
+      '@swc/core':
+        specifier: ~1.3.84
+        version: 1.3.93
+      '@types/jest':
+        specifier: 29.5.5
+        version: 29.5.5
+      '@types/node':
+        specifier: 20.8.6
+        version: 20.8.6
+      '@types/supertest':
+        specifier: 2.0.14
+        version: 2.0.14
+      eslint:
+        specifier: 8.51.0
+        version: 8.51.0
+      jest:
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.6)(ts-node@10.9.1)
+      prettier:
+        specifier: 3.0.3
+        version: 3.0.3
+      reflect-metadata:
+        specifier: 0.1.13
+        version: 0.1.13
+      rimraf:
+        specifier: ~5.0.0
+        version: 5.0.5
+      rxjs:
+        specifier: 7.8.1
+        version: 7.8.1
+      source-map-support:
+        specifier: 0.5.21
+        version: 0.5.21
+      supertest:
+        specifier: 6.3.3
+        version: 6.3.3
+      ts-jest:
+        specifier: 29.1.1
+        version: 29.1.1(@babel/core@7.23.2)(jest@29.7.0)(typescript@5.2.2)
+      ts-json-schema-generator:
+        specifier: 1.3.0
+        version: 1.3.0
+      ts-loader:
+        specifier: 9.5.0
+        version: 9.5.0(typescript@5.2.2)(webpack@5.89.0)
+      tsconfig-paths:
+        specifier: 4.2.0
+        version: 4.2.0
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+      webpack:
+        specifier: 5.89.0
+        version: 5.89.0(@swc/core@1.3.93)
+
+  ../../apps/zeus/app:
+    dependencies:
+      '@apollo/client':
+        specifier: 3.8.5
+        version: 3.8.5(graphql@16.6.0)
+      '@quasar/extras':
+        specifier: 1.16.7
+        version: 1.16.7
+      '@quasar/quasar-app-extension-apollo':
+        specifier: 2.0.0-beta.5
+        version: 2.0.0-beta.5(typescript@5.2.2)(vue@3.3.4)
+      '@vue/apollo-composable':
+        specifier: 4.0.0-beta.11
+        version: 4.0.0-beta.11(@apollo/client@3.8.5)(graphql@16.6.0)(typescript@5.2.2)(vue@3.3.4)
+      apollo-link-rest:
+        specifier: 0.9.0
+        version: 0.9.0(@apollo/client@3.8.5)(graphql@16.6.0)(qs@6.11.2)
+      apollo-link-token-refresh:
+        specifier: 0.6.0
+        version: 0.6.0(@apollo/client@3.8.5)(graphql@16.6.0)
+      graphql:
+        specifier: 16.6.0
+        version: 16.6.0
+      graphql-anywhere:
+        specifier: 4.2.8
+        version: 4.2.8(graphql@16.6.0)
+      graphql-tag:
+        specifier: 2.12.6
+        version: 2.12.6(graphql@16.6.0)
+      jwt-decode:
+        specifier: 3.1.2
+        version: 3.1.2
+      qs:
+        specifier: 6.11.2
+        version: 6.11.2
+      quasar:
+        specifier: 2.12.7
+        version: 2.12.7
+      vue:
+        specifier: 3.3.4
+        version: 3.3.4
+      vue-router:
+        specifier: 4.2.5
+        version: 4.2.5(vue@3.3.4)
+    devDependencies:
+      '@dreamonkey/graphql-codegen-near-operation-file':
+        specifier: 0.1.1
+        version: 0.1.1(vite@4.4.11)
+      '@dreamonkey/graphql-codegen-vue-apollo-plugin':
+        specifier: 0.1.1
+        version: 0.1.1(@apollo/client@3.8.5)(@graphql-codegen/near-operation-file-preset@2.5.0)(@graphql-codegen/typed-document-node@4.0.1)(@graphql-codegen/typescript-operations@4.0.1)(@graphql-codegen/typescript@4.0.1)(@vue/apollo-composable@4.0.0-beta.11)(graphql@16.6.0)(vue@3.3.4)
+      '@graphql-codegen/cli':
+        specifier: 5.0.0
+        version: 5.0.0(@types/node@20.8.6)(graphql@16.6.0)(typescript@5.2.2)
+      '@graphql-codegen/typescript':
+        specifier: 4.0.1
+        version: 4.0.1(graphql@16.6.0)
+      '@graphql-codegen/typescript-operations':
+        specifier: 4.0.1
+        version: 4.0.1(graphql@16.6.0)
+      '@graphql-tools/schema':
+        specifier: 10.0.0
+        version: 10.0.0(graphql@16.6.0)
+      '@graphql-tools/utils':
+        specifier: 10.0.7
+        version: 10.0.7(graphql@16.6.0)
+      '@graphql-typed-document-node/core':
+        specifier: 3.2.0
+        version: 3.2.0(graphql@16.6.0)
+      '@m8a/eslint-config':
+        specifier: workspace:*
+        version: link:../../../libs/eslint
+      '@quasar/app-vite':
+        specifier: 1.6.2
+        version: 1.6.2(eslint@8.51.0)(quasar@2.12.7)(vue-router@4.2.5)(vue@3.3.4)
+      '@rushstack/eslint-config':
+        specifier: 3.4.1
+        version: 3.4.1(eslint@8.51.0)(typescript@5.2.2)
+      '@types/node':
+        specifier: 20.8.6
+        version: 20.8.6
+      '@typescript-eslint/eslint-plugin':
+        specifier: 6.7.5
+        version: 6.7.5(@typescript-eslint/parser@6.7.5)(eslint@8.51.0)(typescript@5.2.2)
+      '@typescript-eslint/parser':
+        specifier: 6.7.5
+        version: 6.7.5(eslint@8.51.0)(typescript@5.2.2)
+      autoprefixer:
+        specifier: ^10.4.2
+        version: 10.4.16(postcss@8.4.31)
+      eslint:
+        specifier: 8.51.0
+        version: 8.51.0
+      eslint-config-standard:
+        specifier: ^17.0.0
+        version: 17.1.0(eslint-plugin-import@2.28.1)(eslint-plugin-n@16.2.0)(eslint-plugin-promise@6.1.1)(eslint@8.51.0)
+      eslint-plugin-import:
+        specifier: ^2.27.5
+        version: 2.28.1(eslint@8.51.0)
+      eslint-plugin-n:
+        specifier: ^16.0.0
+        version: 16.2.0(eslint@8.51.0)
+      eslint-plugin-promise:
+        specifier: ^6.0.0
+        version: 6.1.1(eslint@8.51.0)
+      eslint-plugin-vue:
+        specifier: ^9.0.0
+        version: 9.17.0(eslint@8.51.0)
+      postcss:
+        specifier: 8.4.31
+        version: 8.4.31
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
   ../../libs/core:
     dependencies:
       '@apollo/server':
@@ -1934,7 +2149,7 @@ packages:
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.22.5
+      '@babel/parser': 7.23.0
       '@babel/types': 7.23.0
       debug: 4.3.4
       globals: 11.12.0
@@ -7779,7 +7994,7 @@ packages:
       debug: 4.3.4
       deps-regex: 0.1.4
       findup-sync: 5.0.0
-      ignore: 5.1.9
+      ignore: 5.2.4
       is-core-module: 2.13.0
       js-yaml: 3.14.1
       json5: 2.2.3
@@ -9934,7 +10149,7 @@ packages:
   /ignore-walk@3.0.4:
     resolution: {integrity: sha512-PY6Ii8o1jMRA1z4F2hRkH/xN59ox43DavKvD3oDpfurRlOJyAHpifIwpbdv1n4jt4ov0jSpw3kQ4GhJnpBL6WQ==}
     dependencies:
-      minimatch: 3.0.8
+      minimatch: 3.1.2
     dev: false
 
   /ignore@5.1.9:
@@ -11303,7 +11518,7 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       graceful-fs: 4.2.11
-      js-yaml: 3.13.1
+      js-yaml: 3.14.1
       pify: 4.0.1
       strip-bom: 3.0.0
     dev: false
