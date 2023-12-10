@@ -1,6 +1,6 @@
 import { IContext } from '../base/interfaces/context.interface'
 import { UserService } from '../user/user.service'
-import { Inject, Injectable } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import ms, { StringValue } from 'ms'
 import { IJwtPayload } from './interfaces/jwt-payload.interface'
@@ -29,7 +29,7 @@ export class AuthService {
     private readonly userService: UserService,
     private readonly userAuthService: UserAuthService,
     private readonly jwtService: JwtService,
-    @Inject(CacheService) private cacheService: CacheService,
+    private cacheService: CacheService,
     private readonly envConfig: EnvironmentVariables,
     private readonly hashService: HashService,
     private readonly httpService: HttpService
