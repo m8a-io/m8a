@@ -1017,10 +1017,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.3.tgz#472eaab5f15c1ffdd7f8628bd4c4f753995ec79e"
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
-"@typegoose/typegoose@11.7.1":
-  version "11.7.1"
-  resolved "https://registry.yarnpkg.com/@typegoose/typegoose/-/typegoose-11.7.1.tgz#a16bc65a4e1207dd0c22b5f2579b1d66bfda3cc1"
-  integrity sha512-+tFasAsrn7mSEpHJvRcmEpCaupntiaCFImd2w/swEj8Sx5v3YTrwdKV2hjesZhIoLIMSQ+CrsNo+Y9RqTnmRig==
+"@typegoose/typegoose@12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@typegoose/typegoose/-/typegoose-12.0.0.tgz#1231b4e23c67c6d673ac25f8b0e0c8f00a166862"
+  integrity sha512-ZkRtjiCO4k05bLPtUXX3Ho7zMLLOKvg6+3JBVtadpC4xUu5htfDf5H+TI+w1jL1d8Q51aN8mHH7L5hr7OSkzoA==
   dependencies:
     lodash "^4.17.20"
     loglevel "^1.8.1"
@@ -1913,6 +1913,11 @@ bson@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/bson/-/bson-5.5.0.tgz#a419cc69f368d2def3b8b22ea03ed1c9be40e53f"
   integrity sha512-B+QB4YmDx9RStKv8LLSl/aVIEV3nYJc3cJNNTK2Cd1TL+7P+cNpw9mAPeCgc5K+j01Dv6sxUzcITXDx7ZU3F0w==
+
+bson@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-6.2.0.tgz#4b6acafc266ba18eeee111373c2699304a9ba0a3"
+  integrity sha512-ID1cI+7bazPDyL9wYy9GaQ8gEEohWvcUl/Yf0dIdutJxnmInEEyCsb4awy/OiBfall7zBA179Pahi3vCdFze3Q==
 
 buffer-crc32@~0.2.3:
   version "0.2.13"
@@ -4536,7 +4541,16 @@ mongodb-memory-server@9.1.1:
     mongodb-memory-server-core "9.1.1"
     tslib "^2.6.2"
 
-mongodb@5.9.1, mongodb@^5.9.1:
+mongodb@6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-6.2.0.tgz#2c9dcb3eeaf528ed850e94b3df392de6c6b0d7ab"
+  integrity sha512-d7OSuGjGWDZ5usZPqfvb36laQ9CPhnWkAGHT61x5P95p/8nMVeH8asloMwW6GcYFeB0Vj4CB/1wOTDG2RA9BFA==
+  dependencies:
+    "@mongodb-js/saslprep" "^1.1.0"
+    bson "^6.2.0"
+    mongodb-connection-string-url "^2.6.0"
+
+mongodb@^5.9.1:
   version "5.9.1"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-5.9.1.tgz#da03ea253b0972bf8097301fa5f65e34acad18fa"
   integrity sha512-NBGA8AfJxGPeB12F73xXwozt8ZpeIPmCUeWRwl9xejozTXFes/3zaep9zhzs1B/nKKsw4P3I4iPfXl3K7s6g+Q==
@@ -4547,14 +4561,14 @@ mongodb@5.9.1, mongodb@^5.9.1:
   optionalDependencies:
     "@mongodb-js/saslprep" "^1.1.0"
 
-mongoose@7.6.7:
-  version "7.6.7"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-7.6.7.tgz#1ca9650e6a5e0222d3e4b8e45a6b530d5dd21996"
-  integrity sha512-6Ihl7Y7OlSEMiwyjar3N8sMKRZa3LNGcayES8I+Hluo0sV6j1SVOo8MXXnwi+z3+Hcyk4zO47+xL87fBTNlWVw==
+mongoose@8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.0.3.tgz#f3708ba0f40b6dec8f5f1a5d40abd69a80207114"
+  integrity sha512-LJRT0yP4TW14HT4r2RkxqyvoTylMSzWpl5QOeVHTnRggCLQSpkoBdgbUtORFq/mSL2o9cLCPJz+6uzFj25qbHw==
   dependencies:
-    bson "^5.5.0"
+    bson "^6.2.0"
     kareem "2.5.1"
-    mongodb "5.9.1"
+    mongodb "6.2.0"
     mpath "0.9.0"
     mquery "5.0.0"
     ms "2.1.3"
