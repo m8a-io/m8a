@@ -28,11 +28,11 @@
   "devDependencies": {
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
-    "@rushstack/eslint-config": "3.4.1",
-    "@typescript-eslint/eslint-plugin": "6.11.0",
-    "@typescript-eslint/parser": "6.11.0",
-    "eslint": "8.53.0",
-    "eslint-config-prettier": "9.0.0",
+    "@rushstack/eslint-config": "3.5.0",
+    "@typescript-eslint/eslint-plugin": "6.13.2",
+    "@typescript-eslint/parser": "6.13.2",
+    "eslint": "8.55.0",
+    "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "27.6.0",
@@ -40,6 +40,6 @@
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-promise": "^6.0.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.3"
   }
 }
