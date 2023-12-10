@@ -26,8 +26,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.4.2",
-    "@commitlint/config-conventional": "18.4.2",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
     "@rushstack/eslint-config": "3.4.1",
     "@typescript-eslint/eslint-plugin": "6.11.0",
     "@typescript-eslint/parser": "6.11.0",

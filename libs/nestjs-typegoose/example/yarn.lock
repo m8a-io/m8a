@@ -877,19 +877,19 @@
     webpack "5.89.0"
     webpack-node-externals "3.0.0"
 
-"@nestjs/common@10.2.8":
-  version "10.2.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-10.2.8.tgz#f8934e6353440d6e51c89c0cf1b0f9aef54e8729"
-  integrity sha512-rmpwcdvq2IWMmsUVP8rsdKub6uDWk7dwCYo0aif50JTwcvcxzaP3iKVFKoSgvp0RKYu8h15+/AEOfaInmPpl0Q==
+"@nestjs/common@10.2.10":
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-10.2.10.tgz#22ba5c17962b54ffdf70a7bad690f1647995fe55"
+  integrity sha512-fwAk931rjW8CNH2Mgwawq/7HWHH1dxkOLdcgs7U52ddLk8CtHXjejm1cbNahewlSbNhvlOl7y1STLHutE6sUqw==
   dependencies:
     uid "2.0.2"
     iterare "1.2.1"
     tslib "2.6.2"
 
-"@nestjs/core@10.2.8":
-  version "10.2.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-10.2.8.tgz#7b3abcf375113faffeef989a3a945c2494d390ec"
-  integrity sha512-9+MZ2s8ixfY9Bl/M9ofChiyYymcwdK9ZWNH4GDMF7Am7XRAQ1oqde6MYGG05rhQwiVXuTwaYLlXciJKfsrg5qg==
+"@nestjs/core@10.2.10":
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-10.2.10.tgz#96b6fda7785402b0a3b819c15103675990b75290"
+  integrity sha512-+ckOI6BPi2ZMHikT9MCG4ctHDc4OnjhoIytrn7f2AYMMXI4bnutJhqyQKc30VDka5x3Wq6QAD57pgSP7y+JjJg==
   dependencies:
     uid "2.0.2"
     "@nuxtjs/opencollective" "0.3.2"
@@ -898,10 +898,10 @@
     path-to-regexp "3.2.0"
     tslib "2.6.2"
 
-"@nestjs/platform-express@10.2.8":
-  version "10.2.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-10.2.8.tgz#c5af1fe3afb6e9858fc5610fd11a247635187eff"
-  integrity sha512-WoSSVtwIRc5AdGMHWVzWZK4JZLT0f4o2xW8P9gQvcX+omL8W1kXCfY8GQYXNBG84XmBNYH8r0FtC8oMe/lH5NQ==
+"@nestjs/platform-express@10.2.10":
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-10.2.10.tgz#6ff94e5a3f3a15ff39d8044e966fd4ceecd8d068"
+  integrity sha512-U4KDgtMjH8TqEvt0RzC/POP8ABvL9bYoCScvlGtFSKgVGaMLBKkZ4+jHtbQx6qItYSlBBRUuz/dveMZCObfrkQ==
   dependencies:
     body-parser "1.20.2"
     cors "2.8.5"
@@ -931,10 +931,10 @@
     jsonc-parser "3.2.0"
     pluralize "8.0.0"
 
-"@nestjs/testing@10.2.8":
-  version "10.2.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-10.2.8.tgz#9bf0a05770b5afacf85aaf4abd99caa2284c3dd5"
-  integrity sha512-9Kj5IQhM67/nj/MT6Wi2OmWr5YQnCMptwKVFrX1TDaikpY12196v7frk0jVjdT7wms7rV07GZle9I2z0aSjqtQ==
+"@nestjs/testing@10.2.10":
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-10.2.10.tgz#bd0a1e86622f7aa8cf6d8804af0f23b9444c3099"
+  integrity sha512-IVLUnPz/+fkBtPATYfqTIP+phN9yjkXejmj+JyhmcfPJZpxBmD1i9VSMqa4u54l37j0xkGPscQ0IXpbhqMYUKw==
   dependencies:
     tslib "2.6.2"
 
@@ -1166,10 +1166,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@29.5.8":
-  version "29.5.8"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.8.tgz#ed5c256fe2bc7c38b1915ee5ef1ff24a3427e120"
-  integrity sha512-fXEFTxMV2Co8ZF5aYFJv+YeA08RTYJfhtN5c9JSv/mFEMe+xxjufCb+PHL+bJcMs/ebPUsBu+UNTEz+ydXrR6g==
+"@types/jest@29.5.11":
+  version "29.5.11"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.11.tgz#0c13aa0da7d0929f078ab080ae5d4ced80fa2f2c"
+  integrity sha512-S2mHmYIVe13vrm6q4kN6fLYYAka15ALQki/vgDC3mIukEOx8WJlv0kQPM+d4w8Gp6u0uSdKND04IlTXBv0rwnQ==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
@@ -1913,11 +1913,6 @@ bson@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/bson/-/bson-5.5.0.tgz#a419cc69f368d2def3b8b22ea03ed1c9be40e53f"
   integrity sha512-B+QB4YmDx9RStKv8LLSl/aVIEV3nYJc3cJNNTK2Cd1TL+7P+cNpw9mAPeCgc5K+j01Dv6sxUzcITXDx7ZU3F0w==
-
-bson@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/bson/-/bson-6.2.0.tgz#4b6acafc266ba18eeee111373c2699304a9ba0a3"
-  integrity sha512-ID1cI+7bazPDyL9wYy9GaQ8gEEohWvcUl/Yf0dIdutJxnmInEEyCsb4awy/OiBfall7zBA179Pahi3vCdFze3Q==
 
 buffer-crc32@~0.2.3:
   version "0.2.13"
@@ -4541,16 +4536,7 @@ mongodb-memory-server@9.1.1:
     mongodb-memory-server-core "9.1.1"
     tslib "^2.6.2"
 
-mongodb@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-6.2.0.tgz#2c9dcb3eeaf528ed850e94b3df392de6c6b0d7ab"
-  integrity sha512-d7OSuGjGWDZ5usZPqfvb36laQ9CPhnWkAGHT61x5P95p/8nMVeH8asloMwW6GcYFeB0Vj4CB/1wOTDG2RA9BFA==
-  dependencies:
-    "@mongodb-js/saslprep" "^1.1.0"
-    bson "^6.2.0"
-    mongodb-connection-string-url "^2.6.0"
-
-mongodb@^5.9.1:
+mongodb@5.9.1, mongodb@^5.9.1:
   version "5.9.1"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-5.9.1.tgz#da03ea253b0972bf8097301fa5f65e34acad18fa"
   integrity sha512-NBGA8AfJxGPeB12F73xXwozt8ZpeIPmCUeWRwl9xejozTXFes/3zaep9zhzs1B/nKKsw4P3I4iPfXl3K7s6g+Q==
@@ -4561,14 +4547,14 @@ mongodb@^5.9.1:
   optionalDependencies:
     "@mongodb-js/saslprep" "^1.1.0"
 
-mongoose@8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.0.1.tgz#27dee7cf9cf9b31c7b0536017700290f2b1a1135"
-  integrity sha512-O3TJrtLCt4H1eGf2HoHGcnOcCTWloQkpmIP3hA9olybX3OX2KUjdIIq135HD5paGjZEDJYKn9fw4eH5N477zqQ==
+mongoose@7.6.7:
+  version "7.6.7"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-7.6.7.tgz#1ca9650e6a5e0222d3e4b8e45a6b530d5dd21996"
+  integrity sha512-6Ihl7Y7OlSEMiwyjar3N8sMKRZa3LNGcayES8I+Hluo0sV6j1SVOo8MXXnwi+z3+Hcyk4zO47+xL87fBTNlWVw==
   dependencies:
-    bson "^6.2.0"
+    bson "^5.5.0"
     kareem "2.5.1"
-    mongodb "6.2.0"
+    mongodb "5.9.1"
     mpath "0.9.0"
     mquery "5.0.0"
     ms "2.1.3"
@@ -5086,7 +5072,12 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-reflect-metadata@0.1.13, reflect-metadata@^0.1.13:
+reflect-metadata@0.1.14:
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.14.tgz#24cf721fe60677146bb77eeb0e1f9dece3d65859"
+  integrity sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==
+
+reflect-metadata@^0.1.13:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
   integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
@@ -5781,10 +5772,10 @@ ts-loader@9.5.1:
     semver "^7.3.4"
     source-map "^0.7.4"
 
-ts-node@10.9.1:
-  version "10.9.1"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.9.1.tgz#e73de9102958af9e1f0b168a6ff320e25adcff4b"
-  integrity sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==
+ts-node@10.9.2:
+  version "10.9.2"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.9.2.tgz#70f021c9e185bccdca820e26dc413805c101c71f"
+  integrity sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==
   dependencies:
     "@cspotcode/source-map-support" "^0.8.0"
     "@tsconfig/node10" "^1.0.7"
