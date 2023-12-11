@@ -10,7 +10,7 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2020",
+    "target": "es2021",
     "sourceMap": false,
     "baseUrl": "./",
     "incremental": true,
