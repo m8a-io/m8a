@@ -110,6 +110,8 @@
    */
   "globalPeerDependencyRules": {
     "allowedVersions": {
+      "eslint-plugin-n": "16.0.0",
+      "@nestjs/common": "^10.0.0",
       "@types/inquirer": "^9.0.0",
       "ts-morph": "^21.0.0",
       "vite": "^4.0.0",

@@ -1,6 +1,6 @@
 import { IContext } from '../base/interfaces/context.interface'
 import { UserService } from '../user/user.service'
-import { Injectable } from '@nestjs/common'
+import { Inject, Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import ms, { StringValue } from 'ms'
 import { IJwtPayload } from './interfaces/jwt-payload.interface'
@@ -10,7 +10,7 @@ import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 import { HttpService } from '@nestjs/axios'
 import { lastValueFrom, map, switchMap, firstValueFrom } from 'rxjs'
-import { UserAuthEntity, UserAuthService } from '../user'
+import { UserAuthEntity, UserAuthService } from 'src/user'
 import { KeycloakTokenData } from './types/keycloak-token-data'
 
 import { LogoutDTO } from './refresh/dtos/logout.dto'
@@ -29,7 +29,7 @@ export class AuthService {
     private readonly userService: UserService,
     private readonly userAuthService: UserAuthService,
     private readonly jwtService: JwtService,
-    private cacheService: CacheService,
+    @Inject(CacheService) private cacheService: CacheService,
     private readonly envConfig: EnvironmentVariables,
     private readonly hashService: HashService,
     private readonly httpService: HttpService
@@ -234,10 +234,13 @@ export class AuthService {
     this.cacheService.revoke(token, userId)
     userId = ''
     ctx.req.cookies.refreshToken = ''
+    console.log('logged out user')
     return { idToken }
   }
 
   private async getIntrospectionData (keyCloakData: KeycloakTokenData) {
+    console.log('data from keycloak: ', keyCloakData)
+
     const keyCloakInputData = {
       token: keyCloakData.access_token,
       client_id: this.envConfig.CLIENT_ID,

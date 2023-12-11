@@ -12,6 +12,14 @@ import { IFastifyRequest, IFastifyReply } from '../base'
         return {
           path: process.env.GQL_PATH,
           autoSchemaFile: true,
+          // jit: 5,
+          // context: (request: FastifyRequest, reply: FastifyReply) => {
+          //   console.log('response ', reply)
+          //   return {
+          //   req: request,
+          //   res: reply
+          // }
+          // },
           jit: 5,
           context: (request: IFastifyRequest, reply: IFastifyReply) => {
             return {

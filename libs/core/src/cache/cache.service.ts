@@ -26,6 +26,7 @@ export class CacheService {
     const cacheKey = this.getKey(type, key)
     try {
       await this.cache.set(cacheKey, value, ttl)
+      console.log('cache saved', cacheKey, value, ttl)
     } catch (e) {
       console.log('Oops. Setting something to the cache failed.', e)
       throw e

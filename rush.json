@@ -300,20 +300,6 @@
    */
   "projects": [
     {
-      "packageName": "@m8a/zeus-api",
-      "projectFolder": "apps/zeus/api",
-      "reviewCategory": "apps",
-      "shouldPublish": false,
-      "tags": ["dev-server"]
-    },
-    {
-      "packageName": "@m8a/zeus-app",
-      "projectFolder": "apps/zeus/app",
-      "reviewCategory": "apps",
-      "shouldPublish": false,
-      "tags": ["dev-server"]
-    },
-    {
       "packageName": "@m8a/starter-kit-api",
       "projectFolder": "starter-kits/api",
       "reviewCategory": "apps",
@@ -355,7 +341,7 @@
       "packageName": "@m8a/logger",
       "projectFolder": "libs/logger",
       "reviewCategory": "libraries",
-      "shouldPublish": true
+      "shouldPublish": false
     }
 
     /**
