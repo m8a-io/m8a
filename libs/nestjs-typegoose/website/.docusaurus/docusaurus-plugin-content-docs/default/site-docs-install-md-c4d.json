@@ -1,5 +1,4 @@
 {
-  "unversionedId": "install",
   "id": "install",
   "title": "Installation",
   "description": "Welcome to the nestjs-typegoose. The Typegoose module/ plugin for NestJS.",
@@ -8,6 +7,7 @@
   "slug": "/install",
   "permalink": "/docs/install",
   "draft": false,
+  "unlisted": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/install.md",
   "tags": [],
   "version": "current",

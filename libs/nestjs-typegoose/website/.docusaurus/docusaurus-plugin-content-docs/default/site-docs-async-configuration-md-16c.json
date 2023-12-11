@@ -1,5 +1,4 @@
 {
-  "unversionedId": "async-configuration",
   "id": "async-configuration",
   "title": "Async Configuration",
   "description": "To provide asynchronous mongoose schema options (similar to nestjs mongoose implementation) you can use the TypegooseModule.forRootAsync",
@@ -8,6 +7,7 @@
   "slug": "/async-configuration",
   "permalink": "/docs/async-configuration",
   "draft": false,
+  "unlisted": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/async-configuration.md",
   "tags": [],
   "version": "current",

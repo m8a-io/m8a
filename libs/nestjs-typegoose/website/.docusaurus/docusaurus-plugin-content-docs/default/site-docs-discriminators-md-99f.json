@@ -1,5 +1,4 @@
 {
-  "unversionedId": "discriminators",
   "id": "discriminators",
   "title": "Mongoose Discriminators",
   "description": "To add discriminators to a model, you may specify a discriminators array in the long-form options shown below.",
@@ -8,6 +7,7 @@
   "slug": "/discriminators",
   "permalink": "/docs/discriminators",
   "draft": false,
+  "unlisted": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/discriminators.md",
   "tags": [],
   "version": "current",

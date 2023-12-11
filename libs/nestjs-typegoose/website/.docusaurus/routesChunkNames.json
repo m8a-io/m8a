@@ -1,10 +1,16 @@
 {
-  "/docs-b68": {
-    "__comp": "1be78505",
+  "/docs-6e9": {
+    "__comp": "5e95c892",
     "__context": {
-      "plugin": "eb54544b"
-    },
-    "versionMetadata": "935f2afb"
+      "plugin": "52663520"
+    }
+  },
+  "/docs-2c5": {
+    "__comp": "a7bd4aaa",
+    "version": "935f2afb"
+  },
+  "/docs-29d": {
+    "__comp": "a94703ab"
   },
   "/docs/async-configuration-4ef": {
     "__comp": "17896441",
@@ -38,10 +44,10 @@
     "__comp": "17896441",
     "content": "6476eba6"
   },
-  "/-709": {
+  "/-336": {
     "__comp": "c4f5d8e4",
     "__context": {
-      "plugin": "240e7a45"
+      "plugin": "f96294a6"
     },
     "config": "5e9f5e1a"
   }

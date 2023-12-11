@@ -1,5 +1,4 @@
 {
-  "unversionedId": "faq",
   "id": "faq",
   "title": "FAQ",
   "description": "No FAQs currently",
@@ -8,6 +7,7 @@
   "slug": "/faq",
   "permalink": "/docs/faq",
   "draft": false,
+  "unlisted": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/faq.md",
   "tags": [],
   "version": "current",

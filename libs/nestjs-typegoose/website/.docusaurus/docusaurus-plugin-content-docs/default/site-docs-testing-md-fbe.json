@@ -1,5 +1,4 @@
 {
-  "unversionedId": "testing",
   "id": "testing",
   "title": "Testing",
   "description": "Like @nestjs/mongoose (see the testing section) nestjs-typegoose's forFeature and forRoot rely on a database connection to work. To unit test your CatService without connecting to a mongo database you need to create a fake model using a custom provider.",
@@ -8,6 +7,7 @@
   "slug": "/testing",
   "permalink": "/docs/testing",
   "draft": false,
+  "unlisted": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/testing.md",
   "tags": [],
   "version": "current",

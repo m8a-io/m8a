@@ -17,25 +17,29 @@
             "type": "link",
             "label": "Installation",
             "href": "/docs/install",
-            "docId": "install"
+            "docId": "install",
+            "unlisted": false
           },
           {
             "type": "link",
             "label": "Basic Usage",
             "href": "/docs/usage",
-            "docId": "usage"
+            "docId": "usage",
+            "unlisted": false
           },
           {
             "type": "link",
             "label": "Testing",
             "href": "/docs/testing",
-            "docId": "testing"
+            "docId": "testing",
+            "unlisted": false
           },
           {
             "type": "link",
             "label": "FAQ",
             "href": "/docs/faq",
-            "docId": "faq"
+            "docId": "faq",
+            "unlisted": false
           }
         ],
         "collapsed": true,
@@ -49,25 +53,29 @@
             "type": "link",
             "label": "Mongoose Discriminators",
             "href": "/docs/discriminators",
-            "docId": "discriminators"
+            "docId": "discriminators",
+            "unlisted": false
           },
           {
             "type": "link",
             "label": "Multiple MongoDB Connections",
             "href": "/docs/multiple-connections",
-            "docId": "multiple-connections"
+            "docId": "multiple-connections",
+            "unlisted": false
           },
           {
             "type": "link",
             "label": "Async Configuration",
             "href": "/docs/async-configuration",
-            "docId": "async-configuration"
+            "docId": "async-configuration",
+            "unlisted": false
           },
           {
             "type": "link",
             "label": "Schema Options",
             "href": "/docs/schema-options",
-            "docId": "schema-options"
+            "docId": "schema-options",
+            "unlisted": false
           }
         ],
         "collapsed": true,

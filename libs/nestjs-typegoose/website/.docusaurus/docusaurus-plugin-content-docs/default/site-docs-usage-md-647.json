@@ -1,5 +1,4 @@
 {
-  "unversionedId": "usage",
   "id": "usage",
   "title": "Basic Usage",
   "description": "Check out this example project if you need help.",
@@ -8,6 +7,7 @@
   "slug": "/usage",
   "permalink": "/docs/usage",
   "draft": false,
+  "unlisted": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/usage.md",
   "tags": [],
   "version": "current",

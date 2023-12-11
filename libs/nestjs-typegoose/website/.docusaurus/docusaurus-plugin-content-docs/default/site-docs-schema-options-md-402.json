@@ -1,5 +1,4 @@
 {
-  "unversionedId": "schema-options",
   "id": "schema-options",
   "title": "Schema Options",
   "description": "To add custom mongoose schema options you can simply change Typegoose.forFeature to the following format:",
@@ -8,6 +7,7 @@
   "slug": "/schema-options",
   "permalink": "/docs/schema-options",
   "draft": false,
+  "unlisted": false,
   "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/schema-options.md",
   "tags": [],
   "version": "current",

@@ -186,11 +186,11 @@ export default {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: '/home/dev/m8a/deps/nestjs-typegoose/website/sidebars.js',
+          sidebarPath: '/home/scott/Documents/tmp/m8a/libs/nestjs-typegoose/website/sidebars.js',
           editUrl: 'https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website'
         },
         theme: {
-          customCss: '/home/dev/m8a/deps/nestjs-typegoose/website/src/css/custom.css'
+          customCss: '/home/scott/Documents/tmp/m8a/libs/nestjs-typegoose/website/src/css/custom.css'
         }
       }
     ]
@@ -216,6 +216,12 @@ export default {
   titleDelimiter: '|',
   noIndex: false,
   markdown: {
-    mermaid: false
+    format: 'mdx',
+    mermaid: false,
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true
+    }
   }
 }

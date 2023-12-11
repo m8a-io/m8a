@@ -15,12 +15,11 @@
           "editUrlLocalized": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/sidebars.js",
-          "contentPath": "/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/docs",
-          "contentPathLocalized": "/home/scott/Documents/tmp/m8a/deps/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/home/scott/Documents/tmp/m8a/libs/nestjs-typegoose/website/sidebars.js",
+          "contentPath": "/home/scott/Documents/tmp/m8a/libs/nestjs-typegoose/website/docs",
+          "contentPathLocalized": "/home/scott/Documents/tmp/m8a/libs/nestjs-typegoose/website/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
-              "unversionedId": "async-configuration",
               "id": "async-configuration",
               "title": "Async Configuration",
               "description": "To provide asynchronous mongoose schema options (similar to nestjs mongoose implementation) you can use the TypegooseModule.forRootAsync",
@@ -29,6 +28,7 @@
               "slug": "/async-configuration",
               "permalink": "/docs/async-configuration",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/async-configuration.md",
               "tags": [],
               "version": "current",
@@ -47,7 +47,6 @@
               }
             },
             {
-              "unversionedId": "discriminators",
               "id": "discriminators",
               "title": "Mongoose Discriminators",
               "description": "To add discriminators to a model, you may specify a discriminators array in the long-form options shown below.",
@@ -56,6 +55,7 @@
               "slug": "/discriminators",
               "permalink": "/docs/discriminators",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/discriminators.md",
               "tags": [],
               "version": "current",
@@ -74,7 +74,6 @@
               }
             },
             {
-              "unversionedId": "faq",
               "id": "faq",
               "title": "FAQ",
               "description": "No FAQs currently",
@@ -83,6 +82,7 @@
               "slug": "/faq",
               "permalink": "/docs/faq",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/faq.md",
               "tags": [],
               "version": "current",
@@ -101,7 +101,6 @@
               }
             },
             {
-              "unversionedId": "install",
               "id": "install",
               "title": "Installation",
               "description": "Welcome to the nestjs-typegoose. The Typegoose module/ plugin for NestJS.",
@@ -110,6 +109,7 @@
               "slug": "/install",
               "permalink": "/docs/install",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/install.md",
               "tags": [],
               "version": "current",
@@ -124,7 +124,6 @@
               }
             },
             {
-              "unversionedId": "multiple-connections",
               "id": "multiple-connections",
               "title": "Multiple MongoDB Connections",
               "description": "To have multiple MongoDB connections one needs to add a connectionName string to forRoot and forFeature.",
@@ -133,6 +132,7 @@
               "slug": "/multiple-connections",
               "permalink": "/docs/multiple-connections",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/multiple-connections.md",
               "tags": [],
               "version": "current",
@@ -151,7 +151,6 @@
               }
             },
             {
-              "unversionedId": "schema-options",
               "id": "schema-options",
               "title": "Schema Options",
               "description": "To add custom mongoose schema options you can simply change Typegoose.forFeature to the following format:",
@@ -160,6 +159,7 @@
               "slug": "/schema-options",
               "permalink": "/docs/schema-options",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/schema-options.md",
               "tags": [],
               "version": "current",
@@ -174,7 +174,6 @@
               }
             },
             {
-              "unversionedId": "testing",
               "id": "testing",
               "title": "Testing",
               "description": "Like @nestjs/mongoose (see the testing section) nestjs-typegoose's forFeature and forRoot rely on a database connection to work. To unit test your CatService without connecting to a mongo database you need to create a fake model using a custom provider.",
@@ -183,6 +182,7 @@
               "slug": "/testing",
               "permalink": "/docs/testing",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/testing.md",
               "tags": [],
               "version": "current",
@@ -201,7 +201,6 @@
               }
             },
             {
-              "unversionedId": "usage",
               "id": "usage",
               "title": "Basic Usage",
               "description": "Check out this example project if you need help.",
@@ -210,6 +209,7 @@
               "slug": "/usage",
               "permalink": "/docs/usage",
               "draft": false,
+              "unlisted": false,
               "editUrl": "https://github.com/m8a-io/m8a/edit/dev/deps/nestjs-typegoose/website/docs/usage.md",
               "tags": [],
               "version": "current",
