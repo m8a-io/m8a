@@ -1,6 +1,6 @@
 import { ExecutionContext, Injectable, Inject } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
-import { GqlExecutionContext } from '@nestjs/graphql'
+import { GqlContextType, GqlExecutionContext } from '@nestjs/graphql'
 import { AuthGuard } from '@nestjs/passport'
 import { IS_PUBLIC_KEY } from './decorators/public.decorator'
 // import { GraphQLError } from 'graphql'
@@ -14,8 +14,14 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
   }
 
   getRequest (context: ExecutionContext) {
-    const ctx = GqlExecutionContext.create(context)
-    return ctx.getContext().req
+    let ctx: GqlExecutionContext
+    switch (context.getType<GqlContextType>()) {
+    case 'graphql':
+      ctx = GqlExecutionContext.create(context)
+      return ctx.getContext().req
+    default: // 'http' | 'ws' | 'rpc'
+      return context.switchToHttp().getRequest()
+    }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

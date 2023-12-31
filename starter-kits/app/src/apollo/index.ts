@@ -41,6 +41,7 @@ LocalStorage.set('apiOk', true)
 export function getClientOptions(options?: Partial<BootFileParams<unknown>>): ApolloClientOptions<unknown> {
   const authLink = setContext(async () => {
     const token: string | null = await LocalStorage.getItem('token')
+    console.log('in the authLink with access token: ', token)
     if (token) {
       LocalStorage.set('isLoggedIn', true)
       userLoggedInVar.value = true
@@ -96,6 +97,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
       LocalStorage.remove('userId')
       return false
     },
+
     fetchAccessToken: async () => {
       const userId: string | null = LocalStorage.getItem('userId')
       if (!userId) {
@@ -113,12 +115,14 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
       })
       return response.json()
     },
+
     handleFetch: (newToken) => {
       // save new access token to state
       LocalStorage.set('token', newToken)
       LocalStorage.set('isLoggedIn', true)
       userLoggedInVar.value = true
     },
+
     handleResponse: () => (response: { accessToken: string; userId: string }) => {
       if (!response) {
         return { accessToken: '' }
@@ -136,6 +140,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
       }
       return { accessToken: response.accessToken }
     },
+
     handleError: (error) => {
       console.error('Cannot refresh access token:', error)
       LocalStorage.set('isLoggedIn', false)
@@ -143,8 +148,7 @@ export function getClientOptions(options?: Partial<BootFileParams<unknown>>): Ap
       LocalStorage.remove('userId')
       userLoggedInVar.value = false
       // we are not logged in, so redirect to keycloak to get logged in
-      // TODO: - CONFIG - get config value for keycloak URL as it will be different for each system
-      // i.e. m8a-team or m8a-network
+      // TODO: - CONFIG - get config value for keycloak URL as it will be different for each system i.e. m8a-team or m8a-network
       try {
         window.location.replace(
           'https://auth.m8a.io/realms/m8a-team/protocol/openid-connect/auth?scope=openid&redirect_uri=https://zeus-dev.m8a.io/callback&client_id=zeus-dev&response_type=code'

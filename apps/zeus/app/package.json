@@ -24,7 +24,7 @@
   "dependencies": {
     "@apollo/client": "3.8.8",
     "@quasar/extras": "1.16.9",
-    "@quasar/quasar-app-extension-apollo": "2.0.0-beta.5",
+    "@quasar/quasar-app-extension-apollo": "2.2.0-beta.2",
     "@vue/apollo-composable": "4.0.0-beta.12",
     "apollo-link-rest": "0.9.0",
     "apollo-link-token-refresh": "0.6.1",

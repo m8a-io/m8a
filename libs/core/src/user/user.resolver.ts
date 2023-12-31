@@ -1,6 +1,6 @@
 import { IContext } from '../base/interfaces/context.interface'
 import { CRUDResolver, PagingStrategies } from '@ptc-org/nestjs-query-graphql'
-import { Args, Resolver, Query, Context, Mutation } from '@nestjs/graphql'
+import { Args, Resolver, Query, Context } from '@nestjs/graphql'
 import { UserDTO } from './dtos/user.dto'
 import { UserInputDTO } from './dtos/user.input.dto'
 import { UserService } from './user.service'
