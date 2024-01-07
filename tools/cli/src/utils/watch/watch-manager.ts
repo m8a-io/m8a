@@ -329,9 +329,9 @@ export class WatchManager {
 
     const command = ['dev']
 
-    if (devCommand.includes('tsc')) {
-      command.push('--preserveWatchOutput')
-    }
+    // if (devCommand.includes('tsc')) {
+    //   command.push('--preserveWatchOutput')
+    // }
 
     if (this.activeProject === undefined) {
       this._activateProject(watchProject)
