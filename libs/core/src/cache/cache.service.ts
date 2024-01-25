@@ -22,7 +22,8 @@ export class CacheService {
     }
   }
 
-  async set (type: string, key: string, value, ttl: number = this.ttl): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  async set (type: string, key: string, value: any, ttl: number = this.ttl): Promise<void> {
     const cacheKey = this.getKey(type, key)
     try {
       await this.cache.set(cacheKey, value, ttl)

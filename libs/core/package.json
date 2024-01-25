@@ -1,7 +1,7 @@
 {
   "name": "@m8a/core",
   "version": "0.0.9",
-  "description": "The core modules for m8a applications.",
+  "description": "The core modules for m8a TypeScript applications.",
   "keywords": [
     "platform",
     "PaaS",
@@ -26,7 +26,7 @@
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && tsc --project tsconfig.build.json && swc src -d dist --config-file .build.swcrc",
     "build:watch": "pnpm prebuild && tsc --project tsconfig.build.json --watch",
-    "dev": "pnpm prebuild && swc src -d dist --config-file .build.swcrc -w",
+    "dev": "pnpm prebuild && tsc --emitDeclarationOnly && swc src -d dist --config-file .build.swcrc -w",
     "dev:old": "pnpm prebuild && tsc --project tsconfig.build.json --watch",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "lint": "eslint --fix ./",

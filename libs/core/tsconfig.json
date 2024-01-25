@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
+    "strict": true,
     "module": "commonjs",
     "removeComments": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es2021",
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": "./",
@@ -14,6 +15,7 @@
     "noEmitOnError": true,
     "skipLibCheck": true,
     "declaration": true,
+    "declarationDir": "dist",
     "declarationMap": true
   }
 }

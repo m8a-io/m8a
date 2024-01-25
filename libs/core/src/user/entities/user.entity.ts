@@ -31,5 +31,5 @@ export class UserEntity extends BaseEntity {
   public m8aAuthId?: string
 
   @Prop()
-  public userAuthData: UserAuthEntity
+  public userAuthData!: UserAuthEntity
 }
