@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
     "builder": "swc",
-    "typeCheck": true
+    "typeCheck": false
   }
 }
