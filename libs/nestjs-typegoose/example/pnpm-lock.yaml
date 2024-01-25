@@ -56,8 +56,8 @@ devDependencies:
     specifier: 20.11.6
     version: 20.11.6
   '@types/supertest':
-    specifier: 2.0.16
-    version: 2.0.16
+    specifier: 6.0.2
+    version: 6.0.2
   '@typescript-eslint/eslint-plugin':
     specifier: 6.19.1
     version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.26.0)(typescript@5.3.3)
@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^2.26.0
     version: 2.26.0(@typescript-eslint/parser@6.19.1)(eslint@8.26.0)
   eslint-plugin-jsdoc:
-    specifier: ^47.0.0
-    version: 47.0.0(eslint@8.26.0)
+    specifier: ^48.0.0
+    version: 48.0.3(eslint@8.26.0)
   eslint-plugin-prefer-arrow:
     specifier: ^1.2.3
     version: 1.2.3(eslint@8.26.0)
@@ -1296,9 +1296,10 @@ packages:
       '@types/node': 20.11.6
     dev: true
 
-  /@types/supertest@2.0.16:
-    resolution: {integrity: sha512-6c2ogktZ06tr2ENoZivgm7YnprnhYE4ZoXGMY+oA7IuAf17M8FWvujXZGmxLv8y0PTyts4x5A+erSwVUFA8XSg==}
+  /@types/supertest@6.0.2:
+    resolution: {integrity: sha512-137ypx2lk/wTQbW6An6safu9hXmajAifU/s7szAHLN/FeIm5w7yR0Wkl9fdJMRSHwOn4HLAI0DaB2TOORuhPDg==}
     dependencies:
+      '@types/methods': 1.1.4
       '@types/superagent': 8.1.1
     dev: true
 
@@ -2628,9 +2629,9 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jsdoc@47.0.0(eslint@8.26.0):
-    resolution: {integrity: sha512-0AsSpqE1xLSW8mZMW3i7o4VeNxCzI1JJaoAxlx1F2Oj1Cn1UYToJl4M36Bu7iVMDTykzwVbnsCJnWFiJZcPlLQ==}
-    engines: {node: '>=16'}
+  /eslint-plugin-jsdoc@48.0.3(eslint@8.26.0):
+    resolution: {integrity: sha512-+vQWLZ9QmT23yU+8yolfga6p9AtC6dUCwtVoJe4+DClvhnoGswKZcOqw+tMA/lkj5zbgr67PYWwgMvQftPx7Dw==}
+    engines: {node: '>=18'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
     dependencies:
