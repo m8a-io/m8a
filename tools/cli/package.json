@@ -11,7 +11,7 @@
   "license": "MIT",
   "author": "Scott Molinari <scott.molinari@m8a.io>",
   "bin": {
-    "m8a": "./dist/main.js"
+    "m8a": "./dist/src/main.js"
   },
   "scripts": {
     "_phase:build": "pnpm prebuild && swc src -d dist --config-file .build.swcrc",
