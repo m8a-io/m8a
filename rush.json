@@ -4,7 +4,6 @@
  */
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/json-schemas/main/rush/v5/rush.schema.json",
-
   /**
    * (Required) This specifies the version of the Rush engine to be used in this repo.
    * Rush's "version selector" feature ensures that the globally installed tool will
@@ -26,7 +25,6 @@
    * for details about these alternatives.
    */
   "pnpmVersion": "8.7.6",
-
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
    * Other releases may have bugs.  In particular, the "latest" version will not be a
@@ -39,7 +37,6 @@
    * LTS versions: https://nodejs.org/en/download/releases/
    */
   "nodeSupportedVersionRange": ">=18.17.1 <21.0.0",
-
   /**
    * If the version check above fails, Rush will display a message showing the current
    * node version and the supported version range. You can use this setting to provide
@@ -47,7 +44,6 @@
    * tool or script you'd like the user to use to get in line with the expected version.
    */
   "nodeSupportedVersionInstructions": "m8a currently isn't tested with this Node version. If the Node version you have is older, please upgrade. If it is newer, downgrade please. Odd-numbered major versions of Node.js are experimental and are not supported.",
-
   /**
    * Odd-numbered major versions of Node.js are experimental.  Even-numbered releases
    * spend six months in a stabilization period before the first Long Term Support (LTS) version.
@@ -60,7 +56,6 @@
    * to disable Rush's warning.
    */
   // "suppressNodeLtsWarning": false,
-
   /**
    * If you would like the version specifiers for your dependencies to be consistent, then
    * uncomment this line. This is effectively similar to running "rush check" before any
@@ -73,7 +68,6 @@
    * section of the common-versions.json.
    */
   "ensureConsistentVersions": true,
-
   /**
    * Large monorepos can become intimidating for newcomers if project folder paths don't follow
    * a consistent and recognizable pattern.  When the system allows nested folder trees,
@@ -99,7 +93,6 @@
    */
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 4,
-
   /**
    * Today the npmjs.com registry enforces fairly strict naming rules for packages, but in the early
    * days there was no standard and hardly any enforcement.  A few large legacy projects are still using
@@ -112,7 +105,6 @@
    * The default value is false.
    */
   // "allowMostlyStandardPackageNames": true,
-
   /**
    * This feature helps you to review and approve new packages before they are introduced
    * to your monorepo.  For example, you may be concerned about licensing, code quality,
@@ -123,7 +115,6 @@
   "approvedPackagesPolicy": {
     "reviewCategories": ["apps", "libraries"]
   },
-
   /**
    * If you use Git as your version control system, this section has some additional
    * optional features you can use.
@@ -173,7 +164,6 @@
      */
     // "changefilesCommitMessage": "Rush change"
   },
-
   "repository": {
     /**
      * The URL of this Git repository, used by "rush change" to determine the base branch for your PR.
@@ -191,20 +181,17 @@
      * to retrieve the latest activity for the remote main branch.
      */
     "url": "https://github.com/m8a-io/m8a.git",
-
     /**
      * The default branch name. This tells "rush change" which remote branch to compare against.
      * The default value is "main"
      */
     "defaultBranch": "dev"
-
     /**
      * The default remote. This tells "rush change" which remote to compare against if the remote URL is
      * not set or if a remote matching the provided remote URL is not found.
      */
     // "defaultRemote": "origin"
   },
-
   /**
    * Event hooks are customized script actions that Rush executes when specific events occur
    */
@@ -215,23 +202,19 @@
     "preRushInstall": [
       // "common/scripts/pre-rush-install.js"
     ],
-
     /**
      * The list of shell commands to run after the Rush installation finishes
      */
     "postRushInstall": [],
-
     /**
      * The list of shell commands to run before the Rush build command starts
      */
     "preRushBuild": [],
-
     /**
      * The list of shell commands to run after the Rush build command finishes
      */
     "postRushBuild": []
   },
-
   /**
    * Installation variants allow you to maintain a parallel set of configuration files that can be
    * used to build the entire monorepo with an alternate set of dependencies.  For example, suppose
@@ -262,7 +245,6 @@
     //   "description": "Build this repo using the previous release of the SDK"
     // }
   ],
-
   /**
    * Rush can collect anonymous telemetry about everyday developer activity such as
    * success/failure of installs, builds, and other operations.  You can use this to identify
@@ -272,14 +254,12 @@
    * in the "eventHooks" section.
    */
   // "telemetryEnabled": false,
-
   /**
    * Allows creation of hotfix changes. This feature is experimental so it is disabled by default.
    * If this is set, 'rush change' only allows a 'hotfix' change type to be specified. This change type
    * will be used when publishing subsequent changes from the monorepo.
    */
   // "hotfixChangeEnabled": false,
-
   /**
    * This is an optional, but recommended, list of allowed tags that can be applied to Rush projects
    * using the "tags" setting in this file.  This list is useful for preventing mistakes such as misspelling,
@@ -289,7 +269,6 @@
    * ".", and "@" characters.
    */
   // "allowedProjectTags": [ "tools", "frontend-team", "1.0.0-release" ],
-
   /**
    * (Required) This is the inventory of projects to be managed by Rush.
    *
@@ -299,6 +278,20 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
+    {
+      "packageName": "@m8a/zeus-api",
+      "projectFolder": "apps/zeus/api",
+      "reviewCategory": "apps",
+      "shouldPublish": false,
+      "tags": ["dev-server"]
+    },
+    {
+      "packageName": "@m8a/zeus-app",
+      "projectFolder": "apps/zeus/app",
+      "reviewCategory": "apps",
+      "shouldPublish": false,
+      "tags": ["dev-server"]
+    },
     {
       "packageName": "@m8a/starter-kit-api",
       "projectFolder": "starter-kits/api",
@@ -343,24 +336,20 @@
       "reviewCategory": "libraries",
       "shouldPublish": true
     }
-
     /**
      * The NPM package name of the project (must match package.json)
      */
     // "packageName": "my-app",
-
     /**
      * The path to the project folder, relative to the rush.json config file.
      */
     // "projectFolder": "apps/my-app",
-
     /**
      * An optional category for usage in the "browser-approved-packages.json"
      * and "nonbrowser-approved-packages.json" files.  The value must be one of the
      * strings from the "reviewCategories" defined above.
      */
     // "reviewCategory": "production",
-
     /**
      * A list of Rush project names that are to be installed from NPM
      * instead of linking to the local project.
@@ -387,20 +376,17 @@
     // "decoupledLocalDependencies": [
     //   "my-toolchain"
     //],
-
     /**
      * If true, then this project will be ignored by the "rush check" command.
      * The default value is false.
      */
     //  "skipRushCheck": false,
-
     /**
      * A flag indicating that changes to this project will be published to npm, which affects
      * the Rush change and publish workflows. The default value is false.
      * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
      */
     //  "shouldPublish": false,
-
     /**
      * Facilitates postprocessing of a project's files prior to publishing.
      *
@@ -409,14 +395,12 @@
      * must contain its own package.json file, which is typically a build output.
      */
     //  "publishFolder": "temp/publish",
-
     /**
      * An optional version policy associated with the project.  Version policies are defined
      * in "version-policies.json" file.  See the "rush publish" documentation for more info.
      * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
      */
     //  "versionPolicyName": "",
-
     /**
      * An optional set of custom tags that can be used to select this project.  For example,
      * adding "my-custom-tag" will allow this project to be selected by the

@@ -3,7 +3,7 @@ https://docs.nestjs.com/controllers#controllers
 */
 
 import { Controller, Get } from '@nestjs/common'
-import { Public } from 'src/auth'
+import { Public } from '../auth'
 
 @Public()
 @Controller()

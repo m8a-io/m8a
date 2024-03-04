@@ -19,7 +19,7 @@ export class UserAuthDTO {
 
   public salt!: string
 
-  public m8aAuthId: string
+  public m8aAuthId!: string
 
-  public userAuthData: UserAuthEntity
+  public userAuthData!: UserAuthEntity
 }

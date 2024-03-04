@@ -2,7 +2,7 @@
 ###################
 # BUILD FOR m8a DEVELOPMENT
 ###################
-FROM node:18-alpine
+FROM node:21-alpine
 
 # Run everything as root
 USER root

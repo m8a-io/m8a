@@ -26,20 +26,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.7.2",
-    "@commitlint/config-conventional": "17.7.0",
-    "@rushstack/eslint-config": "3.3.4",
-    "@typescript-eslint/eslint-plugin": "5.62.0",
-    "@typescript-eslint/parser": "5.62.0",
-    "eslint": "8.49.0",
-    "eslint-config-prettier": "9.0.0",
+    "@commitlint/cli": "19.0.3",
+    "@commitlint/config-conventional": "19.0.3",
+    "@rushstack/eslint-config": "3.6.4",
+    "@typescript-eslint/eslint-plugin": "7.1.0",
+    "@typescript-eslint/parser": "7.1.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jest": "27.4.2",
-    "eslint-plugin-jsdoc": "^46.0.0",
+    "eslint-plugin-jest": "27.9.0",
+    "eslint-plugin-jsdoc": "^48.0.0",
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-promise": "^6.0.0",
-    "typescript": "4.9.5"
+    "typescript": "5.3.3"
   }
 }

@@ -1,12 +1,41 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "ignoreDeps": ["@m8a/core", "@m8a/cli-lib", "@m8a/cli-local", "@m8a/logger"],
-  "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
+  "description": "fastify is added below in ignoreDeps because of 4.24 breaking in Nest",
+  "ignoreDeps": ["@m8a/core", "@m8a/cli-lib", "@m8a/cli-local", "@m8a/logger", "fastify", "node"],
+  "schedule": ["after 10pm and before 5am every friday"],
+  "baseBranches": ["smolinari-updates"],
   "packageRules": [
     {
-      "automerge": true,
       "matchPackagePatterns": ["*"],
       "rangeStrategy": "replace"
+    },
+    {
+      "groupName": "all patched dependencies",
+      "groupSlug": "all-patch",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "groupName": "all minor dependencies",
+      "groupSlug": "all-minor",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": false
+    },
+    {
+      "groupName": "all major dependencies",
+      "groupSlug": "all-major",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "Special consideration for prettier because pretty-quick doesn't support v3 of prettier yet",
+      "matchFileNames": ["common/autoinstallers/rush-prettier/package.json"],
+      "matchPackageNames": ["prettier"],
+      "allowedVersions": "^2.8.8"
     }
   ]
 }

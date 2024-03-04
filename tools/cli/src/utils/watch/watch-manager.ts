@@ -205,6 +205,7 @@ export class WatchManager {
         this.logService.error(`Could not find project ${proj}`)
         process.exit(1)
       }
+
       if (option !== 'justDeps') {
         projects.set(project.packageName, project)
       }
@@ -328,9 +329,9 @@ export class WatchManager {
 
     const command = ['dev']
 
-    if (devCommand.includes('tsc')) {
-      command.push('--preserveWatchOutput')
-    }
+    // if (devCommand.includes('tsc')) {
+    //   command.push('--preserveWatchOutput')
+    // }
 
     if (this.activeProject === undefined) {
       this._activateProject(watchProject)

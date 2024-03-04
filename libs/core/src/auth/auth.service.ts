@@ -1,6 +1,6 @@
 import { IContext } from '../base/interfaces/context.interface'
 import { UserService } from '../user/user.service'
-import { Inject, Injectable } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import ms, { StringValue } from 'ms'
 import { IJwtPayload } from './interfaces/jwt-payload.interface'
@@ -10,7 +10,7 @@ import { EnvironmentVariables } from '../config/env/env.schema'
 import { HashService } from '../user/hash.service'
 import { HttpService } from '@nestjs/axios'
 import { lastValueFrom, map, switchMap, firstValueFrom } from 'rxjs'
-import { UserAuthEntity, UserAuthService } from 'src/user'
+import { UserAuthDTO, UserAuthEntity, UserAuthService } from '../user'
 import { KeycloakTokenData } from './types/keycloak-token-data'
 
 import { LogoutDTO } from './refresh/dtos/logout.dto'
@@ -29,7 +29,7 @@ export class AuthService {
     private readonly userService: UserService,
     private readonly userAuthService: UserAuthService,
     private readonly jwtService: JwtService,
-    @Inject(CacheService) private cacheService: CacheService,
+    private cacheService: CacheService,
     private readonly envConfig: EnvironmentVariables,
     private readonly hashService: HashService,
     private readonly httpService: HttpService
@@ -161,19 +161,26 @@ export class AuthService {
       idToken: keycloakTokenData.id_token
     }
 
-    // check org database for user
-
+    // check org's user database for user
     const [orgUser] = await this.userAuthService.query({
       filter: {
         m8aAuthId: { eq: keycloakIntrospectionResult.sub } // user's id in Keycloak
       }
     })
 
+    if (orgUser === undefined) {
+      return { accessToken, userId: '' }
+    }
+
     // update user with auth data from keycloak and setup orgUser for update
+    // TODO: OMG this is so ugly, but it works for now
     orgUser.userAuthData = userAuthData
     const updateUserId = orgUser.id
-    delete orgUser._id
-    delete orgUser.id
+    function f (x: Partial<UserAuthDTO>) {
+      delete x._id
+      delete x.id
+    }
+    f(orgUser)
 
     // update user with auth data
     await this.userAuthService.updateOne(updateUserId, orgUser)
@@ -221,6 +228,10 @@ export class AuthService {
     let userId = ctx.req.user.userId
 
     const user = await this.userAuthService.findById(userId)
+
+    if (user === undefined) {
+      return { idToken: '' }
+    }
     const idToken = user.userAuthData.idToken
 
     ctx.reply.setCookie('refreshToken', '', {
@@ -234,13 +245,10 @@ export class AuthService {
     this.cacheService.revoke(token, userId)
     userId = ''
     ctx.req.cookies.refreshToken = ''
-    console.log('logged out user')
     return { idToken }
   }
 
   private async getIntrospectionData (keyCloakData: KeycloakTokenData) {
-    console.log('data from keycloak: ', keyCloakData)
-
     const keyCloakInputData = {
       token: keyCloakData.access_token,
       client_id: this.envConfig.CLIENT_ID,
