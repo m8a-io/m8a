@@ -171,6 +171,7 @@ export class WatchProject {
       }
 
       this.bufferedLines.length = 0
+      this.setState(WatchState.Pending)
     }
   }
 

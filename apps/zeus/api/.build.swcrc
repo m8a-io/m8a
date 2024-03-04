@@ -4,7 +4,10 @@
     "target": "es2021",
     "baseUrl": ".",
     "paths": {
-      "*": ["*", "src/*"],
+      "*": [
+        "*",
+        "src/*"
+      ],
     },
     "parser": {
       "syntax": "typescript",

@@ -4,11 +4,13 @@
  */
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush-project.schema.json",
+
   /**
    * Optionally specifies another JSON config file that this file extends from. This provides a way for standard
    * settings to be shared across multiple projects.
    */
   // "extends": "my-rig/profiles/default/config/rush-project.json",
+
   /**
    * The incremental analyzer can skip Rush commands for projects whose input files have not changed since
    * the last build.  Normally, every Git-tracked file under the project folder is assumed to be an input.
@@ -18,6 +20,7 @@
   "incrementalBuildIgnoredGlobs": [
     // "etc/api-report/*.md"
   ],
+
   /**
    * Disable caching for this project. The project will never be restored from cache. This may be useful
    * if this project affects state outside of its folder.
@@ -25,17 +28,30 @@
    * Default value: false
    */
   // "disableBuildCacheForProject": true,
+
   /**
    * Options for individual commands and phases.
    */
   "operationSettings": [
     {
-      "operationName": "_phase:build",
-      "outputFolderNames": ["dist"]
-    },
-    {
-      "operationName": "_phase:test",
-      "outputFolderNames": ["test/coverage", "test/jest-reports"]
+      //   /**
+      //    * (Required) The name of the operation.
+      //    * This should be a key in the "package.json" file's "scripts" section.
+      //    */
+      "operationName": "build",
+      //
+      //   /**
+      //    * Specify the folders where this operation writes its output files.  If enabled, the Rush build cache
+      //    * will restore these folders from the cache.  The strings are folder names under the project root folder.
+      //    * These folders should not be tracked by Git.  They must not contain symlinks.
+      //    */
+      "outputFolderNames": ["lib", "dist"]
+      //
+      //   /**
+      //    * Disable caching for this operation.  The operation will never be restored from cache.
+      //    * This may be useful if this operation affects state outside of its folder.
+      //    */
+      //   // "disableBuildCacheForOperation": true
     }
   ]
 }

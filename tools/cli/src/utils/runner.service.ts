@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common'
 import * as spawn from 'cross-spawn'
-import { DevLoggerService } from '@m8a/logger'
 import { WatchProject } from './watch'
 import { EventEmitter2 } from '@nestjs/event-emitter'
 import { spawn as spawn2 } from 'child_process'
+import { Injectable } from '@nestjs/common'
+import { DevLoggerService } from '@m8a/logger'
 
 @Injectable()
 export class RunnerService {
