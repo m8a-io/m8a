@@ -63,7 +63,7 @@
     "axios": "1.6.7",
     "cache-manager": "5.4.0",
     "cache-manager-redis-yet": "4.1.2",
-    "camel-case": "4.1.2",
+    "camel-case": "5.0.0",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
     "fastify": "4.23.2",
@@ -100,7 +100,7 @@
     "rxjs": "7.8.1",
     "ts-jest": "29.1.2",
     "ts-loader": "9.5.1",
-    "ts-morph": "^21.0.0",
+    "ts-morph": "^22.0.0",
     "tslib": "2.6.2",
     "typescript": "5.3.3",
     "webpack": "5.90.3"
