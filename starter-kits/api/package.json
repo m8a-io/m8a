@@ -62,8 +62,8 @@
     "ts-json-schema-generator": "1.5.0",
     "ts-loader": "9.5.1",
     "tsconfig-paths": "4.2.0",
-    "typescript": "5.3.3",
-    "webpack": "5.90.3"
+    "typescript": "5.4.3",
+    "webpack": "5.91.0"
   },
   "peerDependenciesMeta": {
     "@m8a/core": {
