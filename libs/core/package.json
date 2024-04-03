@@ -26,7 +26,7 @@
     "prebuild": "rimraf dist",
     "build": "pnpm prebuild && tsc --project tsconfig.build.json && swc src -d dist --config-file .build.swcrc",
     "build:watch": "pnpm prebuild && tsc --project tsconfig.build.json --watch",
-    "dev": "pnpm prebuild && tsc --emitDeclarationOnly && swc src -d dist --config-file .build.swcrc -w",
+    "dev": "pnpm prebuild && tsc --project tsconfig.build.json && swc src -d dist --config-file .build.swcrc --strip-leading-paths -w",
     "dev:old": "pnpm prebuild && tsc --project tsconfig.build.json --watch",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "lint": "eslint --fix ./",

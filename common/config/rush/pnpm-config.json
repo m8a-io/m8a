@@ -103,13 +103,10 @@
   "globalPeerDependencyRules": {
     "allowedVersions": {
       "@types/inquirer": "^9.0.0",
-      "ts-morph": "^21.0.0",
+      "ts-morph": "^22.0.0",
       "vite": "^4.0.0",
       "@typegoose/typegoose": "^12.1.0",
-      "mongoose": "^8.0.3",
-      "reflect-metadata": "^0.2.1",
-      "@swc/cli": "^0.3.0",
-      "@m8a/nestjs-typegoose": "^12.0.0",
+      "@m8a/nestjs-typegoose": "^12.0.0"
     }
   },
   /**

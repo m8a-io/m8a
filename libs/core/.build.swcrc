@@ -3,9 +3,6 @@
   "jsc": {
     "target": "es2021",
     "baseUrl": ".",
-    "paths": {
-      "*": ["*", "src/*"],
-    },
     "parser": {
       "syntax": "typescript",
       "dynamicImport": true,
@@ -15,6 +12,12 @@
       "legacyDecorator": true,
       "decoratorMetadata": true,
       "useDefineForClassFields": false
+    },
+    "paths": {
+      "*": [
+        "*",
+        "src/*"
+      ]
     },
     "loose": false,
     "externalHelpers": false,
@@ -28,6 +31,7 @@
     "noInterop": true
   },
   "minify": false,
+  "sourceMaps": true,
   "exclude": [
     "node_modules",
     "test",
