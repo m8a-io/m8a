@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { RunnerService } from './runner.service'
-import { CheckForService } from './checkFor.service'
+import { CheckForService } from './check-for.service'
 import { LoggerModule } from '@m8a/logger'
 import { WatchManager, WatchListeners } from './watch'
 

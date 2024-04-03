@@ -9,10 +9,6 @@ export type HelloWorldQueryVariables = Types.Exact<{ [key: string]: never }>
 
 export type HelloWorldQuery = { __typename?: 'Query'; helloWorld: string }
 
-export type GetCachedTokenQueryVariables = Types.Exact<{ [key: string]: never }>
-
-export type GetCachedTokenQuery = { __typename?: 'Query'; getCachedToken?: string | null }
-
 export const HelloWorldDocument = {
   kind: 'Document',
   definitions: [
@@ -30,23 +26,6 @@ export const HelloWorldDocument = {
     }
   ]
 } as unknown as DocumentNode<HelloWorldQuery, HelloWorldQueryVariables>
-export const GetCachedTokenDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'getCachedToken' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: 'getCachedToken' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'getCachedToken' } }
-        ]
-      }
-    }
-  ]
-} as unknown as DocumentNode<GetCachedTokenQuery, GetCachedTokenQueryVariables>
 export function useHelloWorldQuery(
   variables: VueApolloQuery.VariablesParameter<HelloWorldQueryVariables> = {},
   options: VueApolloQuery.OptionsParameter<HelloWorldQuery, HelloWorldQueryVariables> = {}
@@ -68,26 +47,4 @@ export function useHelloWorldLazyQuery(
 export type HelloWorldCompositionFunctionResult = VueApolloUseQueryReturn<
   HelloWorldQuery,
   HelloWorldQueryVariables
->
-export function useGetCachedTokenQuery(
-  variables: VueApolloQuery.VariablesParameter<GetCachedTokenQueryVariables> = {},
-  options: VueApolloQuery.OptionsParameter<GetCachedTokenQuery, GetCachedTokenQueryVariables> = {}
-) {
-  const useQuery = vueApolloUseQuery(GetCachedTokenDocument, variables, options)
-  return {
-    ...useQuery,
-    getCachedToken: vueComputed(() => useQuery.result.value?.getCachedToken)
-  }
-}
-
-export function useGetCachedTokenLazyQuery(
-  variables: VueApolloQuery.VariablesParameter<GetCachedTokenQueryVariables> = {},
-  options: VueApolloQuery.OptionsParameter<GetCachedTokenQuery, GetCachedTokenQueryVariables> = {}
-) {
-  return vueApolloUseLazyQuery(GetCachedTokenDocument, variables, options)
-}
-
-export type GetCachedTokenCompositionFunctionResult = VueApolloUseQueryReturn<
-  GetCachedTokenQuery,
-  GetCachedTokenQueryVariables
 >
