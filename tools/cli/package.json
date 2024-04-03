@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@m8a/logger": "workspace:*",
-    "@microsoft/rush-lib": "5.117.2",
+    "@microsoft/rush-lib": "5.119.0",
     "@nestjs/common": "10.3.3",
     "@nestjs/event-emitter": "2.0.4",
     "cross-spawn": "7.0.3",
@@ -67,10 +67,10 @@
     "@types/cross-spawn": "6.0.6",
     "@types/inquirer": "^9.0.0",
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.24",
+    "@types/node": "20.12.3",
     "@types/supertest": "6.0.2",
-    "@typescript-eslint/eslint-plugin": "7.1.0",
-    "@typescript-eslint/parser": "7.1.0",
+    "@typescript-eslint/eslint-plugin": "7.5.0",
+    "@typescript-eslint/parser": "7.5.0",
     "eslint": "8.57.0",
     "jest": "29.7.0",
     "prettier": "3.2.5",
@@ -82,7 +82,7 @@
     "ts-loader": "9.5.1",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
-    "typescript": "5.3.3",
-    "webpack": "5.90.3"
+    "typescript": "5.4.3",
+    "webpack": "5.91.0"
   }
 }
