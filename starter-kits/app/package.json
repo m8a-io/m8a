@@ -32,8 +32,8 @@
     "graphql-anywhere": "4.2.8",
     "graphql-tag": "2.12.6",
     "jwt-decode": "4.0.0",
-    "qs": "6.11.2",
-    "quasar": "2.14.6",
+    "qs": "6.12.0",
+    "quasar": "2.15.2",
     "vue": "3.4.21",
     "vue-router": "4.3.0"
   },
@@ -47,11 +47,11 @@
     "@graphql-tools/utils": "10.1.0",
     "@graphql-typed-document-node/core": "3.2.0",
     "@m8a/eslint-config": "workspace:*",
-    "@quasar/app-vite": "1.7.3",
+    "@quasar/app-vite": "1.8.0",
     "@rushstack/eslint-config": "3.6.4",
-    "@types/node": "20.11.24",
-    "@typescript-eslint/eslint-plugin": "7.1.0",
-    "@typescript-eslint/parser": "7.1.0",
+    "@types/node": "20.12.3",
+    "@typescript-eslint/eslint-plugin": "7.5.0",
+    "@typescript-eslint/parser": "7.5.0",
     "autoprefixer": "^10.4.2",
     "eslint": "8.57.0",
     "eslint-config-standard": "^17.0.0",
@@ -60,7 +60,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.0.0",
     "postcss": "8.4.35",
-    "typescript": "5.3.3"
+    "typescript": "5.4.3"
   },
   "engines": {
     "node": "^20 || ^18",
