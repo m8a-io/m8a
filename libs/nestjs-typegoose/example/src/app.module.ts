@@ -6,9 +6,7 @@ import { CatsModule } from './cat/cats.module'
 
 @Module({
   imports: [
-    TypegooseModule.forRoot('mongodb://localhost:27017/nest', {
-      useNewUrlParser: true
-    }),
+    TypegooseModule.forRoot('mongodb://localhost:27017/nest'),
     CatsModule
   ],
   controllers: [AppController],
