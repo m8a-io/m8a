@@ -45,9 +45,7 @@ import { CatsModule } from "./cat.module.ts";
 
 @Module({
   imports: [
-    TypegooseModule.forRoot("mongodb://localhost:27017/nest", {
-      useNewUrlParser: true,
-    }),
+    TypegooseModule.forRoot("mongodb://localhost:27017/nest"),
     CatsModule,
   ],
 })
