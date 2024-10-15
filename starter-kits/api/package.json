@@ -47,7 +47,7 @@
     "@rushstack/eslint-config": "3.6.8",
     "@swc/cli": "~0.3.0",
     "@swc/core": "~1.4.0",
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.13",
     "@types/node": "20.12.3",
     "@types/supertest": "6.0.2",
     "eslint": "9.9.0",
