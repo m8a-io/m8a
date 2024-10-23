@@ -61,7 +61,7 @@
     "@nestjs/cli": "10.4.5",
     "@nestjs/core": "10.4.5",
     "@nestjs/testing": "10.4.5",
-    "@rushstack/eslint-config": "3.7.1",
+    "@rushstack/eslint-config": "4.0.2",
     "@swc/cli": "~0.4.0",
     "@swc/core": "~1.7.0",
     "@types/cross-spawn": "6.0.6",
