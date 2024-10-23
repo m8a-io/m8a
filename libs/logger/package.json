@@ -39,7 +39,8 @@
   },
   "dependencies": {
     "@nestjs/platform-fastify": "10.4.5",
-    "@ogma/nestjs-module": "5.2.0",
+    "@ogma/nestjs-module": "5.2.1",
+    "@ogma/styler": "^1.0.0",
     "chalk-v2": "1.0.2",
     "rxjs": "7.8.1"
   },

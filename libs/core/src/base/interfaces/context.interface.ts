@@ -21,11 +21,7 @@ export interface IFastifyReply {
 
 export interface IFastifyRequest extends FastifyRequest {
   cookies: { [cookieName: string]: string }
-  unsignCookie(value: string): {
-    valid: boolean
-    renew: boolean
-    value: string | null
-  }
+  unsignCookie(value: string): { valid: false; renew: false; value: null }
   user: { userId: string }
 }
 

@@ -41,6 +41,7 @@
     "@dreamonkey/graphql-codegen-near-operation-file": "0.1.2",
     "@dreamonkey/graphql-codegen-vue-apollo-plugin": "0.1.2",
     "@graphql-codegen/cli": "5.0.3",
+    "@graphql-codegen/near-operation-file-preset": "^3.0.0",
     "@graphql-codegen/typescript": "4.1.0",
     "@graphql-codegen/typescript-operations": "4.3.0",
     "@graphql-tools/schema": "10.0.7",
