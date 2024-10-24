@@ -30,7 +30,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@fastify/cookie": "11.0.1",
+    "@fastify/cookie": "9.4.0",
     "@m8a/core": "workspace:*",
     "@m8a/logger": "workspace:*",
     "@nestjs/common": "10.4.5",

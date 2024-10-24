@@ -87,7 +87,8 @@
     "graphql": "16.9.0",
     "eslint": "8.50.0",
     "ts-morph": "^22.0.0",
-    "lru-cache": "^11.0.0"
+    "lru-cache": "^11.0.0",
+    "chokidar": "^4.0.0"
   },
   // "example2": "npm:@company/example2@^1.0.0"
   // },
