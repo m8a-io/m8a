@@ -4,935 +4,583 @@
   "packages": [
     {
       "name": "@apollo/client",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@apollo/gateway",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@apollo/server",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@casl/ability",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@commitlint/cli",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@commitlint/config-conventional",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@dreamonkey/graphql-codegen-near-operation-file",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@dreamonkey/graphql-codegen-vue-apollo-plugin",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@envelop/core",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@fastify/cookie",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@golevelup/nestjs-modules",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@graphql-codegen/cli",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-codegen/client-preset",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@graphql-codegen/near-operation-file-preset",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-codegen/typescript",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-codegen/typescript-operations",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-tools/schema",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-tools/utils",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-typed-document-node/core",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@graphql-yoga/nestjs",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@m8a/cli",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@m8a/cli-lib",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@m8a/cli-local",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@m8a/core",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@m8a/eslint-config",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@m8a/logger",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@m8a/nestjs-typegoose",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@microsoft/rush-lib",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@nestjs/axios",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/cache-manager",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/cli",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@nestjs/common",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@nestjs/core",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@nestjs/event-emitter",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@nestjs/graphql",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/jwt",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/mercurius",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/passport",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/platform-express",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@nestjs/platform-fastify",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@nestjs/testing",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@ogma/nestjs-module",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@ogma/platform-fastify",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "@ogma/styler",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@ptc-org/nestjs-query-core",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@ptc-org/nestjs-query-graphql",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@ptc-org/nestjs-query-typegoose",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@quasar/app-vite",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@quasar/extras",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@quasar/quasar-app-extension-apollo",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "@rushstack/eslint-config",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@swc/cli",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@swc/core",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@typegoose/typegoose",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "@types/cache-manager",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@types/cache-manager-redis-store",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@types/cross-spawn",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@types/inquirer",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@types/jest",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@types/node",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "@types/passport-jwt",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@types/supertest",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "@vue/apollo-composable",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "apollo-link-rest",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "apollo-link-token-refresh",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "apollo-server-errors",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "argon2",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "autoprefixer",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "axios",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "cache-manager",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "cache-manager-redis-store",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "cache-manager-redis-yet",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "camel-case",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "chalk",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "chalk-v2",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "chokidar",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "class-transformer",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "coveralls",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "cross-spawn",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "dag-map",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "dataloader",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-config-standard",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-import",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-jest",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-jsdoc",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-n",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-prefer-arrow",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-prettier",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "eslint-plugin-promise",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "eslint-plugin-vue",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "execa",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "fastify",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "got",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "graphql",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "graphql-anywhere",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "graphql-code-generator",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "graphql-subscriptions",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "graphql-tag",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "graphql-tools",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "graphql-yoga",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "husky",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "is-class",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "jest",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "jwt-decode",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "mercurius",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "mercurius-integration-testing",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "mongodb-memory-server",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "mongoose",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "mongoose-autopopulate",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "ms",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "nest-commander",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "nest-typed-config",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "passport",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "passport-jwt",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "postcss",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "prettier",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "qs",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "quasar",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "read-package-json",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "redis",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "rimraf",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "rxjs",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "source-map-support",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "superagent",
-      "allowedCategories": [
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "libraries", "production" ]
     },
     {
       "name": "supertest",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "swc-loader",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "tree-kill",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "ts-json-schema-generator",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "ts-loader",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "ts-morph",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "ts-node",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     },
     {
       "name": "tsconfig-paths",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "tslib",
-      "allowedCategories": [
-        "libraries"
-      ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "typescript",
-      "allowedCategories": [
-        "apps",
-        "libraries",
-        "production"
-      ]
+      "allowedCategories": [ "apps", "libraries", "production" ]
     },
     {
       "name": "vite",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "vue",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "vue-router",
-      "allowedCategories": [
-        "apps"
-      ]
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "webpack",
-      "allowedCategories": [
-        "apps",
-        "libraries"
-      ]
+      "allowedCategories": [ "apps", "libraries" ]
     }
   ]
 }

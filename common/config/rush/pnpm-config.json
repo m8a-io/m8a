@@ -84,7 +84,11 @@
    */
   "globalOverrides": {
     // "class-validator": "0.14.0"
-    "graphql": "16.6.0"
+    "graphql": "16.9.0",
+    "eslint": "8.50.0",
+    "ts-morph": "^22.0.0",
+    "lru-cache": "^11.0.0",
+    "chokidar": "^4.0.0"
   },
   // "example2": "npm:@company/example2@^1.0.0"
   // },
@@ -106,7 +110,9 @@
       "ts-morph": "^22.0.0",
       "vite": "^4.0.0",
       "@typegoose/typegoose": "^12.1.0",
-      "@m8a/nestjs-typegoose": "^12.0.0"
+      "@m8a/nestjs-typegoose": "^12.0.0",
+      "eslint-plugin-n": "17.11.1",
+      "eslint-plugin-promise":"7.1.0"
     }
   },
   /**
@@ -194,5 +200,6 @@
     //   "do-something": "echo Also not a good practice"
     // },
     // "pnpm": { "futurePnpmFeature": true }
-  }
+  },
+  "autoInstallPeers": true
 }
